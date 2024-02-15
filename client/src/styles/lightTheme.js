@@ -1,3 +1,5 @@
+// DO UZGODNIENIA / POPRAWY
+
 export const lightTheme = {
   black: "#000000",
   white: "#ffffff",
@@ -16,3 +18,5 @@ export const lightTheme = {
   success: "#3cbc81",
   mediaBg: "#ebf3d4",
 };
+
+// DO UZGODNIENIA / POPRAWY
