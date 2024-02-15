@@ -4,15 +4,11 @@ import connectToDb from "./database/db.js";
 
 const PORT = process.env.PORT || 3000;
 
-const startServer = () => {
+const runApplication = async () => {
+  await connectToDb();
   app.listen(PORT, () => {
     console.log(`Server running. Use our API on port: ${PORT}`);
   });
-};
-
-const runApplication = async () => {
-  //await connectToDb();
-  startServer();
 };
 
 runApplication();
