@@ -1,9 +1,9 @@
 import { createGlobalStyle } from "styled-components";
+import { normalize } from "styled-normalize";
 
 export const GlobalStyles = createGlobalStyle`
-  @import '~@csstools/normalize.css';
+  ${normalize}
 
-  /* colors */
   :root {
   --black: #000000;
   --white: #ffffff;
@@ -22,15 +22,13 @@ export const GlobalStyles = createGlobalStyle`
   --success: #3cbc81;
   --mediaBg: #ebf3d4;
   --darkBg: #1e1f28;
-}
+  }
 
   body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-      sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, 'Poppins', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-color: rgb(226, 225, 225);
+    background-color: #fafafa;
   }
   code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
