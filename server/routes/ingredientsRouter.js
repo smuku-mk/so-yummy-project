@@ -5,6 +5,6 @@ import { searchIngredient } from "../controllers/searchIngredient.js";
 const ingredientsRouter = express.Router();
 
 ingredientsRouter.get("/list", listIngredients);
-ingredientsRouter.get("/search", searchIngredient);
+ingredientsRouter.get("/", searchIngredient);
 
 export default ingredientsRouter;
