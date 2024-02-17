@@ -1,31 +1,34 @@
-import { sendUserVerificationMail } from "./user.mailer";
+import sendMail from "../mail/mail.service.js";
+import { generateAccessToken } from "../auth/auth.service.js";
 import {
   createUser,
-  DuplicatedKeyError,
   getUser,
   updateUser,
-  generateAccessToken,
-} from "./user.service";
-
-import multer from "multer";
+  DuplicatedKeyError,
+} from "./user.service.js";
 
 export const signupHandler = async (req, res, next) => {
   try {
     const { name, email, password } = req.body;
-    const createdUser = await createUser({ name, email, password });
+    const verificationToken = generateAccessToken({ email });
+    const createdUser = await createUser({
+      name,
+      email,
+      password,
+      verificationToken,
+    });
 
-    await sendUserVerificationMail(
-      createdUser.email,
-      createdUser.verificationToken
-    );
+    await sendMail(email, verificationToken);
 
-    return res.status(201).send({
+    return res.status(200).send({
       user: {
         name: createdUser.name,
         email: createdUser.email,
         avatarURL: createdUser.avatarURL,
         verify: createdUser.verify,
       },
+      verificationToken: verificationToken,
+      avatarURL: createdUser.avatarURL,
     });
   } catch (e) {
     console.error(e);
@@ -78,6 +81,7 @@ export const loginHandler = async (req, res, next) => {
 
 export const logoutHandler = async (req, res, next) => {
   try {
+    console.log("User details:", req.user);
     const { email } = req.user;
     await updateUser(email, { token: null });
 
@@ -116,11 +120,11 @@ export const verifyHandler = async (req, res, next) => {
     if (!user) {
       return res
         .status(404)
-        .send({ message: "Verification token is not valid or expired. " });
+        .send({ message: "Verification token is not valid or expired." });
     }
 
     if (user.verified) {
-      return res.status(400).send({ message: "User is already verified. " });
+      return res.status(400).send({ message: "User is already verified." });
     }
 
     await updateUser(user.email, {
@@ -129,8 +133,9 @@ export const verifyHandler = async (req, res, next) => {
     });
 
     return res.status(200).send({ message: "User has been verified." });
-  } catch (e) {
-    return next(e);
+  } catch (error) {
+    console.error("Error while verifying user:", error);
+    return next(error);
   }
 };
 

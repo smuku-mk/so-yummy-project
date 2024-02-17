@@ -1,4 +1,4 @@
-import bcrypt from "bcryptjs";
+import bcrypt from "bcrypt";
 import { Schema, model } from "mongoose";
 
 const userSchema = new Schema(
@@ -24,7 +24,7 @@ const userSchema = new Schema(
     avatarURL: {
       type: String,
     },
-    verify: {
+    verified: {
       type: Boolean,
       default: false,
     },

@@ -2,7 +2,7 @@ import path from "path";
 import Jimp from "jimp";
 import fs from "fs";
 import multer from "multer";
-import User from "../../models/users.js";
+import User from "./user.schema.js";
 
 export const tempDir = path.join(process.cwd(), "temp");
 export const storeImg = path.join(process.cwd(), "public/avatars");

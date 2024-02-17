@@ -1,5 +1,5 @@
-import {verifyToken } from "./auth.service";
-import { getUser } from "../users/user.service";
+import { verifyToken } from "./auth.service.js";
+import { getUser } from "../users/user.service.js";
 
 export const extractTokenFromHeaders = (headers) => {
   return headers.authorization?.replace("Bearer ", "");

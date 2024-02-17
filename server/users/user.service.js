@@ -1,30 +1,32 @@
-import User from "./user.schema";
 import gravatar from "gravatar";
-import { v4 as uuidv4 } from "uuid";
+import User from "./user.schema.js";
 
-class DuplicatedKeyError extends Error {
+export class DuplicatedKeyError extends Error {
   constructor(keyName, value) {
     super(`${keyName} has to be unique. ${value} is already taken.`);
   }
 }
 
-class UnknownDatabaseError extends Error {
+export class UnknownDatabaseError extends Error {
   constructor() {
     super("Oops, something went wrong at database layer.");
   }
 }
 
-export const createUser = async ({ name, email, password }) => {
+export const createUser = async ({
+  name,
+  email,
+  password,
+  verificationToken,
+}) => {
   try {
-    const verificationToken = uuidv4();
     const avatar = gravatar.url(email);
     const newUser = await User.create({
       name,
       email,
       password,
-      avatarURL: avatar,
       verificationToken,
-      verified: false,
+      avatarURL: avatar,
     });
     return newUser;
   } catch (e) {
@@ -41,19 +43,34 @@ export const createUser = async ({ name, email, password }) => {
 
 export const getUser = async (filter) => {
   try {
-    return await User.findOne(filter);
-  } catch (e) {
-    console.error(e);
-    throw new UnknownDatabaseError();
+    console.log("Filter:", filter); // Dodajemy log
+
+    const user = await User.findOne(filter);
+    if (!user) {
+      throw new Error("User not found");
+    }
+    return user;
+  } catch (error) {
+    console.error("Error while fetching user:", error);
+    throw new Error("UnknownDatabaseError");
   }
 };
 
 export const updateUser = async (email, userData) => {
   try {
-    return await User.findOneAndUpdate({ email }, userData, { new: true });
-  } catch (e) {
-    console.error(e);
-    throw new UnknownDatabaseError();
+    const updatedUser = await User.findOneAndUpdate({ email }, userData, {
+      new: true,
+    });
+    if (!updatedUser) {
+      throw new Error("User not found");
+    }
+
+    console.log("User updated successfully:", updatedUser); // Dodajemy log
+
+    return updatedUser;
+  } catch (error) {
+    console.error("Error while updating user:", error);
+    throw new Error("UnknownDatabaseError");
   }
 };
 

@@ -6,18 +6,17 @@ import {
   currentHandler,
   verifyHandler,
   resendVerificationHandler,
-  verifyHandler,
   updateUserNameHandler,
-} from "./user.controller";
+} from "./user.controller.js";
 
 import {
   userValidationMiddleware,
   userNameValidator,
   userLoginValidator,
-} from "./user.validators";
-import { upload, updateAvatar } from "./user.avatar";
+} from "./user.validators.js";
+import { upload, updateAvatar } from "./user.avatar.js";
 
-import { authMiddleware } from "../auth/auth.middlewares";
+import { authMiddleware } from "../auth/auth.middlewares.js";
 
 export const usersRouter = express.Router();
 
