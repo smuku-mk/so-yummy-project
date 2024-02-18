@@ -1,3 +1,9 @@
+import React from "react";
+
 export const App = () => {
-  return <h1>Hellllllo0000</h1>;
+  return (
+    <>
+      <h1>Hellllllo0000</h1>
+    </>
+  );
 };
