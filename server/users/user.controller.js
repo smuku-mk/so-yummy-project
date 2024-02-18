@@ -1,4 +1,5 @@
 import sendMail from "../mail/mail.service.js";
+import User from "./user.schema.js";
 import { generateAccessToken } from "../auth/auth.service.js";
 import {
   createUser,
@@ -18,7 +19,7 @@ export const signupHandler = async (req, res, next) => {
       verificationToken,
     });
 
-    await sendMail(email, verificationToken);
+    await sendMail(email, verificationToken, name);
 
     return res.status(200).send({
       user: {
@@ -81,13 +82,20 @@ export const loginHandler = async (req, res, next) => {
 
 export const logoutHandler = async (req, res, next) => {
   try {
-    console.log("User details:", req.user);
-    const { email } = req.user;
-    await updateUser(email, { token: null });
+    const token = req.headers.authorization.split(" ")[1];
 
-    return res.status(204).send();
-  } catch (e) {
-    return next(e);
+    const user = await User.findOne({ token });
+
+    if (!user) {
+      return res.status(401).json({ message: "Unauthorized" });
+    }
+
+    user.token = null;
+    await user.save();
+
+    return res.status(200).json({ message: "User logged out successfully" });
+  } catch (error) {
+    next(error);
   }
 };
 
@@ -141,7 +149,9 @@ export const verifyHandler = async (req, res, next) => {
 
 export const resendVerificationHandler = async (req, res, next) => {
   try {
-    const user = await getUser({ email: req.body.email });
+    const { email } = req.body;
+
+    const user = await getUser({ email });
 
     if (!user) {
       return res.status(404).send({ message: "User does not exist." });
@@ -151,10 +161,10 @@ export const resendVerificationHandler = async (req, res, next) => {
       return res.status(400).send({ message: "User is already verified." });
     }
 
-    await sendUserVerificationMail(user.email, user.verificationToken);
+    await sendMail(email, user.verificationToken, user.name);
 
-    return res.status(204).send();
-  } catch {
-    return next(e);
+    return res.status(200).send({ message: "Email resent successfully." }); // Dodano komunikat o sukcesie w ciele odpowiedzi
+  } catch (error) {
+    return next(error);
   }
 };

@@ -2,8 +2,8 @@
   "name": "server",
   "type": "module",
   "scripts": {
-    "start": "cross-env NODE_ENV=production node ./server.js",
-    "start:dev": "cross-env NODE_ENV=development nodemon ./server.js"
+    "start": "cross-env NODE_ENV=production node ./server/server.js",
+    "start:dev": "cross-env NODE_ENV=development nodemon ./server/server.js"
   },
   "dependencies": {
     "cors": "^2.8.5",

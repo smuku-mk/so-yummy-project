@@ -1,27 +1,39 @@
 import jwt from "jsonwebtoken";
 import dotenv from "dotenv";
+
 dotenv.config();
 
 export const generateAccessToken = (user) => {
-  return jwt.sign(user, process.env.JWT_SECRET, {
-    expiresIn: "1d",
-  });
+  try {
+    if (!process.env.JWT_SECRET) {
+      throw new Error("JWT_SECRET not defined in environment variables.");
+    }
+
+    return jwt.sign(user, process.env.JWT_SECRET, {
+      expiresIn: "1w",
+    });
+  } catch (error) {
+    console.error("Error generating access token:", error);
+    throw new Error("Access token generation failed.");
+  }
 };
 
 export const verifyToken = (token) => {
   try {
+    if (!process.env.JWT_SECRET) {
+      throw new Error("JWT_SECRET not defined in environment variables.");
+    }
+
     return jwt.verify(token, process.env.JWT_SECRET);
-  } catch (e) {
-    console.error(e);
+  } catch (error) {
+    console.error("Error verifying token:", error);
 
-    if (e instanceof jwt.TokenExpiredError) {
+    if (error instanceof jwt.TokenExpiredError) {
       throw new Error("Token expired.");
-    }
-
-    if (e instanceof jwt.JsonWebTokenError) {
+    } else if (error instanceof jwt.JsonWebTokenError) {
       throw new Error("Token is invalid.");
+    } else {
+      throw new Error("Unknown token verification error.");
     }
-
-    throw new Error("Unknown token verification error.");
   }
 };
