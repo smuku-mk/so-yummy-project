@@ -2,8 +2,7 @@ import React, { useEffect, useState } from "react";
 import { RecipeCard } from "./RecipeCard";
 
 export const SearchPage = () => {
-  const [searchTerm, setSearchTerm] = useState("");
-  const [searchBy, setSearchBy] = useState("");
+  //fetchning recipes
   const [recipes, setRecipes] = useState([]);
   const [error, setError] = useState(null);
 
@@ -44,12 +43,17 @@ export const SearchPage = () => {
     }
   };
 
+  //event handler
+  const [searchTerm, setSearchTerm] = useState("");
+  const [searchBy, setSearchBy] = useState("Title");
+
   const handleSearchClick = () => {
     if (searchTerm !== "" && searchBy !== "") {
       fetchRecipes();
     }
   };
 
+  //render
   return (
     <div style={{ padding: "1em" }}>
       <h1>Search</h1>
