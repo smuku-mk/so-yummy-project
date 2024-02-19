@@ -3,6 +3,6 @@
     "start:dev": "concurrently \"npm --prefix server run start:dev\" \"npm --prefix client run start\""
   },
   "devDependencies": {
-    "nodemon": "^3.0.3"
+    "concurrently": "^8.2.2"
   }
 }
