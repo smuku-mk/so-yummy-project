@@ -1,7 +1,7 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
-export const Footer = styled.footer`  
-color: var(--footerTxt);
+export const AllFooter = styled.footer`
+  color: ${(props) => props.theme.mainBg};
   background-color: var(--currentUser);
   width: 100%;
   text-align: center;
@@ -9,11 +9,11 @@ color: var(--footerTxt);
   padding-top: 64px;
   padding-bottom: 50px;
   margin: 0 auto;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   @media screen and (min-width: 768px) {
     text-align: left;
   }
-}`;
+`;
 
 export const Container = styled.div`
   display: flex;

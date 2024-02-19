@@ -1,5 +1,5 @@
 import React from 'react';
-import svg from '../../images/sprites.svg';
+// import svg from '../../images/sprites.svg';
 import { Subscription, Subscribe, Newsletter, Form, Email, Button } from './SubscribeForm.styled';
 
 export const SubscribeForm = () => {

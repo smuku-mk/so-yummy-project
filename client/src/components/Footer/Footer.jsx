@@ -1,13 +1,12 @@
-import React from 'react';
-import FollowUs from './FollowUs/FollowUs';
-import Nav from './Nav/Nav';
-import SubscribeForm from './SubscribeForm/SubscribeForm';
-import svg from '../../images/sprites.svg';
-import { Footer, Container, Information, Title, List, Features } from './Footer.styled';
+import { FollowUs } from "./FollowUs";
+import { Nav } from "./Nav";
+import { SubscribeForm } from "./SubscribeForm";
+// import svg from "../../images/sprites.svg";
+import { AllFooter, Container, Information, Title, List, Features } from "./Footer.styled";
 
 export const Footer = () => {
   return (
-    <Footer>
+    <AllFooter>
       <Container>
         <Information>
           <Title>
@@ -29,6 +28,6 @@ export const Footer = () => {
         <SubscribeForm />
       </Container>
       <FollowUs />
-    </Footer>
+    </AllFooter>
   );
 };
