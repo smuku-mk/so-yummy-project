@@ -1,5 +1,4 @@
-import styled from "@emotion/styled";
-
+import styled from '@emotion/styled';
 
 export const Footer = styled.footer`  
 color: var(--footerTxt);
@@ -25,7 +24,7 @@ export const Container = styled.div`
     flex-direction: row;
     justify-content: space-around;
   }
-  `;
+`;
 
 export const Information = styled.div``;
 
@@ -60,6 +59,7 @@ export const List = styled.ul`
 `;
 
 export const Features = styled.li`
-&:not(:last-child) {
-  padding-bottom: 12px;
-}`;
+  &:not(:last-child) {
+    padding-bottom: 12px;
+  }
+`;

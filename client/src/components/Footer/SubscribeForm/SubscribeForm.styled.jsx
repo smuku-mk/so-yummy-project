@@ -1,4 +1,4 @@
-import styled from "@emotion/styled";
+import styled from '@emotion/styled';
 
 export const Subscription = styled.div`
   @media screen and (max-width: 767px) {
@@ -11,7 +11,8 @@ export const Subscription = styled.div`
     justify-content: center;
     align-items: center;
     text-align: center;
-  }`;
+  }
+`;
 
 export const Subscribe = styled.p`
   margin: 0;
@@ -19,7 +20,8 @@ export const Subscribe = styled.p`
   font-size: 18px;
   @media screen and (max-width: 1199px) {
     display: none;
-  }`;
+  }
+`;
 
 export const Newsletter = styled.p`
   padding: 14px 0 28px 0;
@@ -31,7 +33,8 @@ export const Newsletter = styled.p`
   width: 339px;
   @media screen and (max-width: 1199px) {
     display: none;
-  }`;
+  }
+`;
 
 export const Form = styled.form`
   display: flex;
@@ -45,7 +48,8 @@ export const Form = styled.form`
 
   @media screen and (min-width: 768px) {
     gap: 16px;
-  }`;
+  }
+`;
 
 export const Email = styled.input`
   background-color: inherit;
@@ -90,5 +94,5 @@ export const Button = styled.button`
 
   @media screen and (min-width: 1199px) {
     width: 339px;
-  }`;
-
+  }
+`;
