@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { Container, Title, Text, Register, Signin } from "./WelcomePage.styled";
 
 const WelcomePage = () => {
