@@ -69,7 +69,7 @@ export const lightTheme = {
 
     //Fav, ingredients, my recs + pagination, search, shopping list
     mainTxt: "#3e4462",
-    text: "#23262a",
+    // text: "#23262a",
     bannerBg: "#ffffff",
     lightTxt: "#fafafa",
     iconBg: "#ebf3d4",

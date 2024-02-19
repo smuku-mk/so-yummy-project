@@ -67,7 +67,7 @@ export const darkTheme = {
 
     //Fav, ingredients, my recs + pagination, search, shopping list
     mainTxt: "fafafa",
-    text: "fafafa",
+    // text: "fafafa",
     bannerBg: "#2a2c36",
     lightTxt: "#fafafa",
     iconBg: "#1e1f28",
