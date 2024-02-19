@@ -1,13 +1,5 @@
 import express from "express";
-import {
-  signupHandler,
-  loginHandler,
-  logoutHandler,
-  currentHandler,
-  verifyHandler,
-  resendVerificationHandler,
-  updateUserNameHandler,
-} from "./user.controller.js";
+import * as ctrlUser from "./user.controller.js";
 
 import {
   userValidationMiddleware,
@@ -20,17 +12,17 @@ import { authMiddleware } from "../auth/auth.middlewares.js";
 
 export const usersRouter = express.Router();
 
-usersRouter.post("/signup", userValidationMiddleware, signupHandler);
-usersRouter.post("/login", userLoginValidator, loginHandler);
-usersRouter.post("/logout", authMiddleware, logoutHandler);
-usersRouter.get("/current", authMiddleware, currentHandler);
-usersRouter.get("/verify/:verificationToken", verifyHandler);
-usersRouter.post("/verify", resendVerificationHandler);
+usersRouter.post("/signup", userValidationMiddleware, ctrlUser.signupHandler);
+usersRouter.post("/login", userLoginValidator, ctrlUser.loginHandler);
+usersRouter.post("/logout", authMiddleware, ctrlUser.logoutHandler);
+usersRouter.get("/current", authMiddleware, ctrlUser.currentHandler);
+usersRouter.get("/verify/:verificationToken", ctrlUser.verifyHandler);
+usersRouter.post("/verify", ctrlUser.resendVerificationHandler);
 usersRouter.patch(
   "/",
   authMiddleware,
   userNameValidator,
-  updateUserNameHandler
+  ctrlUser.updateUserNameHandler
 );
 
 usersRouter.post(

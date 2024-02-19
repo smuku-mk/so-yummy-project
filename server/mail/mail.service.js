@@ -1,7 +1,5 @@
 import nodemailer from "nodemailer";
-import dotenv from "dotenv";
-dotenv.config();
-import User from "../users/user.schema.js";
+import "dotenv/config";
 
 const sendMail = async (email, verificationToken, name) => {
   const transporter = nodemailer.createTransport({

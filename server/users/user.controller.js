@@ -1,18 +1,14 @@
 import sendMail from "../mail/mail.service.js";
 import User from "./user.schema.js";
 import { generateAccessToken } from "../auth/auth.service.js";
-import {
-  createUser,
-  getUser,
-  updateUser,
-  DuplicatedKeyError,
-} from "./user.service.js";
+
+import * as ctrlUser from "./user.service.js";
 
 export const signupHandler = async (req, res, next) => {
   try {
     const { name, email, password } = req.body;
     const verificationToken = generateAccessToken({ email });
-    const createdUser = await createUser({
+    const createdUser = await ctrlUser.createUser({
       name,
       email,
       password,
@@ -34,7 +30,7 @@ export const signupHandler = async (req, res, next) => {
   } catch (e) {
     console.error(e);
     const { message } = e;
-    if (e instanceof DuplicatedKeyError) {
+    if (e instanceof ctrlUser.DuplicatedKeyError) {
       return res.status(409).send({ message });
     }
 
@@ -45,7 +41,7 @@ export const signupHandler = async (req, res, next) => {
 export const loginHandler = async (req, res, next) => {
   try {
     const { email, password } = req.body;
-    const userEntity = await getUser({ email });
+    const userEntity = await ctrlUser.getUser({ email });
 
     if (!userEntity) {
       return res.status(401).send({ message: "Wrong credentials." });
@@ -67,7 +63,7 @@ export const loginHandler = async (req, res, next) => {
     };
 
     const token = generateAccessToken(userPayload);
-    await updateUser(userEntity.email, { token });
+    await ctrlUser.updateUser(userEntity.email, { token });
 
     return res.status(200).send({
       user: userPayload,
@@ -110,7 +106,7 @@ export const currentHandler = async (req, res, next) => {
 
 export const updateUserNameHandler = async (req, res, next) => {
   try {
-    const user = await updateUser(req.user.email, req.body);
+    const user = await ctrlUser.updateUser(req.user.email, req.body);
     if (!user) {
       return res.status(404).json({ message: "Not found" });
     }
@@ -123,7 +119,7 @@ export const updateUserNameHandler = async (req, res, next) => {
 export const verifyHandler = async (req, res, next) => {
   try {
     const { verificationToken } = req.params;
-    const user = await getUser({ verificationToken });
+    const user = await ctrlUser.getUser({ verificationToken });
 
     if (!user) {
       return res
@@ -151,7 +147,7 @@ export const resendVerificationHandler = async (req, res, next) => {
   try {
     const { email } = req.body;
 
-    const user = await getUser({ email });
+    const user = await ctrlUser.getUser({ email });
 
     if (!user) {
       return res.status(404).send({ message: "User does not exist." });
