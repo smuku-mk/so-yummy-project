@@ -1,10 +1,12 @@
 import express from "express";
 import { listIngredients } from "../controllers/listIngredients.js";
 import { searchIngredient } from "../controllers/searchIngredient.js";
+import { getRecipesByIngredient } from "../controllers/getRecipesByIngredient.js";
 
 const ingredientsRouter = express.Router();
 
 ingredientsRouter.get("/list", listIngredients);
-ingredientsRouter.get("/", searchIngredient);
+ingredientsRouter.get("/test", searchIngredient); //test
+ingredientsRouter.get("/", getRecipesByIngredient);
 
 export default ingredientsRouter;
