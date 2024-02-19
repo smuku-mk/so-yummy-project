@@ -1,0 +1,22 @@
+import styled from "@emotion/styled";
+
+export const SocialsContainer = styled.div``;
+
+export const Socials = styled.ul`
+  display: flex;
+  flex-direction: row;
+  gap: 2.5px;
+  list-style: none;
+  text-align: center;
+  justify-content: center;
+  margin: 0;
+  padding: 44px 0 0 0;
+
+  @media screen and (max-width: 1199px) {
+    padding-top: 38px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    padding-top: 41px;
+  }
+`;
