@@ -7,6 +7,7 @@ export const App = () => {
   return (
     <Routes>
       <Route path="/" element={<SharedLayout />}></Route>
+      <Route path="/search" element={<SearchPage />}></Route>
     </Routes>
   );
 };
