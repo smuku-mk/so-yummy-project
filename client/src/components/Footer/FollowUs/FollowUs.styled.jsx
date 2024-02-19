@@ -1,4 +1,4 @@
-import styled from '@emotion/styled';
+import styled from 'styled-components';
 
 export const SocialsContainer = styled.div``;
 
@@ -12,11 +12,11 @@ export const Socials = styled.ul`
   margin: 0;
   padding: 44px 0 0 0;
 
-  @media screen and (max-width: 1199px) {
+  @media screen and (min-width: 768px) {
     padding-top: 38px;
   }
 
-  @media screen and (min-width: 1200px) {
+  @media screen and (min-width: 1280px) {
     padding-top: 41px;
   }
 `;

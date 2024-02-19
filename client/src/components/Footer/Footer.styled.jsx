@@ -1,4 +1,4 @@
-import styled from '@emotion/styled';
+import styled from 'styled-components';
 
 export const Footer = styled.footer`  
 color: var(--footerTxt);
@@ -51,7 +51,7 @@ export const List = styled.ul`
     display: none;
   }
 
-  @media screen and (min-width: 1200px) {
+  @media screen and (min-width: 1280px) {
     padding-top: 40px;
     font-size: 18px;
     line-height: 133%;

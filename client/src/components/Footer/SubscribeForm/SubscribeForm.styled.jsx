@@ -1,12 +1,10 @@
-import styled from '@emotion/styled';
+import styled from 'styled-components';
 
 export const Subscription = styled.div`
-  @media screen and (max-width: 767px) {
-    display: flex;
-    justify-content: center;
-  }
+  display: flex;
+  justify-content: center;
 
-  @media screen and (min-width: 768px) and (max-width: 1199px) {
+  @media screen and (min-width: 768px) and (max-width: 1279px) {
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -18,7 +16,7 @@ export const Subscribe = styled.p`
   margin: 0;
   font-weight: 700;
   font-size: 18px;
-  @media screen and (max-width: 1199px) {
+  @media screen and (max-width: 1279px) {
     display: none;
   }
 `;
@@ -31,7 +29,7 @@ export const Newsletter = styled.p`
   line-height: 129%;
   letter-spacing: -0.02em;
   width: 339px;
-  @media screen and (max-width: 1199px) {
+  @media screen and (max-width: 1279px) {
     display: none;
   }
 `;
@@ -42,7 +40,7 @@ export const Form = styled.form`
   justify-content: center;
   gap: 8px;
 
-  @media screen and (min-width: 768px) and (max-width: 1199px) {
+  @media screen and (min-width: 768px) and (max-width: 1279px) {
     flex-direction: row;
   }
 
@@ -67,7 +65,7 @@ export const Email = styled.input`
     font-size: 14px;
     width: 259px;
   }
-  @media screen and (min-width: 1199px) {
+  @media screen and (min-width: 1280px) {
     font-size: 18px;
     width: 339px;
   }
@@ -92,7 +90,7 @@ export const Button = styled.button`
     width: 187px;
   }
 
-  @media screen and (min-width: 1199px) {
+  @media screen and (min-width: 1280px) {
     width: 339px;
   }
 `;
