@@ -10,14 +10,13 @@ export const CardWrapper = styled.div`
   border: 1px solid rgba(34, 60, 80, 0.2);
   background: #FFFFFF;
 
-  @media  {
+  @media screen and (min-width: 768px) {
     position: relative;
     display: flex;
     padding: 28px 24px;
     margin-bottom: 8px;
   }
-
-  @media  {
+  @media screen and (min-width: 1440px) {
     position: relative;
     padding: 40px;
     margin-bottom: 50px;
@@ -30,14 +29,14 @@ export const CardImg = styled.img`
   height: 124px;
   border-radius: 8px;
 
-  @media  {
+  @media screen and (min-width: 768px) {
     display: block;
     width: 228px;
     height: 232px;
     border-radius: 8px;
   }
 
-  @media  {
+  @media screen and (min-width: 1440px) {
     display: block;
     width: 318px;
     height: 324px;
@@ -52,14 +51,14 @@ export const CardTextWrapper = styled.div`
   height: 124px;
   margin-left: 14px;
 
-  @media  {
+  @media screen and (min-width: 768px) {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     height: 232px;
   }
 
-  @media  {
+  @media screen and (min-width: 1440px) {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -69,20 +68,18 @@ export const CardTextWrapper = styled.div`
 `;
 
 export const CardTitle = styled.h3`
-  font-family: 'Poppins';
-  font-style: normal;
   font-weight: 500;
   font-size: 14px;
   line-height: 14px;
   letter-spacing: -0.24px;
   color: #3E4462;
 
-  @media  {
+  @media screen and (min-width: 768px) {
     font-size: 24px;
     line-height: 24px;
   }
 
-  @media  {
+  @media screen and (min-width: 1440px) {
     font-size: 24px;
     line-height: 24px;
   }
