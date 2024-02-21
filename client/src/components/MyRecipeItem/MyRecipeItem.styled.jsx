@@ -93,15 +93,13 @@ export const CardDescription = styled.p`
   max-height: 50px;
   width: 163px;
   padding: 0;
-  font-family: 'Poppins';
-  font-style: normal;
   font-weight: 400;
   font-size: 8px;
   line-height: 10px;
   letter-spacing: -0.02em;
   color: #23262A;
 
-  @media  {
+  @media screen and (min-width: 768px) {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -112,7 +110,7 @@ export const CardDescription = styled.p`
     line-height: 18px;
   }
 
-  @media {
+  @media screen and (min-width: 1440px) {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -125,21 +123,19 @@ export const CardDescription = styled.p`
 
 export const CardTime = styled.p`
   display: inline-block;
-  font-family: 'Poppins';
-  font-style: normal;
   font-weight: 500;
   font-size: 10px;
   line-height: 14px;
   letter-spacing: -0.24px;
   color: #3E4462;
 
-  @media  {
+  @media screen and (min-width: 768px) {
     display: inline-block;
     font-size: 14px;
     line-height: 20px;
   }
 
-  @media  {
+  @media screen and (min-width: 1440px) {
     display: inline-block;
     font-size: 14px;
     line-height: 20px;
@@ -155,8 +151,6 @@ export const CardButtonSee = styled.button`
   height: 27px;
   right: 9px;
   bottom: 14px;
-  font-family: 'Poppins';
-  font-style: normal;
   font-weight: 400;
   font-size: 10px;
   line-height: 15px;
@@ -172,7 +166,7 @@ export const CardButtonSee = styled.button`
     background: #8BAA36;
   }
 
-  @media  {
+  @media screen and (min-width: 768px) {
     position: absolute;
     width: 138px;
     height: 45px;
@@ -185,7 +179,7 @@ export const CardButtonSee = styled.button`
     }
   }
 
-  @media  {
+  @media screen and (min-width: 1440px) {
     position: absolute;
     width: 172px;
     height: 54px;
@@ -222,7 +216,7 @@ export const CardButtonDelete = styled.button`
     background: #22252a;
   }
 
-  @media  {
+  @media screen and (min-width: 768px) {
     position: absolute;
     width: 38px;
     height: 38px;
@@ -233,7 +227,7 @@ export const CardButtonDelete = styled.button`
     }
   }
 
-  @media  {
+  @media screen and (min-width: 1440px) {
     position: absolute;
     width: 44px;
     height: 44px;
@@ -264,7 +258,7 @@ export const CardIcon = styled.div`
     height: 11px;
   }
 
-  @media  {
+  @media screen and (min-width: 768px) {
     width: 38px;
     height: 38px;
   }
@@ -272,8 +266,7 @@ export const CardIcon = styled.div`
     width: 16px;
     height: 18px;
   }
-
-  @media  {
+  @media screen and (min-width: 1440px) {
     width: 44px;
     height: 44px;
     svg {

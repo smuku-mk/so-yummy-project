@@ -4,7 +4,4 @@ export const ListWrapper = styled.ul`
   display: flex;
   flex-direction: column;
   margin: 0 auto;
-  li {
-    list-style-type: none;
-  }
 `;
