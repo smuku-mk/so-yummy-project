@@ -1,17 +1,20 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const AllFooter = styled.footer`
-  color: ${(props) => props.theme.mainBg};
-  background-color: var(--currentUser);
+  color: ${props => props.theme.mainBg};
+  background-color: ${props => props.theme.currentUser};
   width: 100%;
   text-align: center;
-  padding: 0;
-  padding-top: 64px;
-  padding-bottom: 50px;
+  padding: 35px 0 18px 0;
   margin: 0 auto;
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
   @media screen and (min-width: 768px) {
+    padding: 50px 0 24px 0;
     text-align: left;
+  }
+
+  @media screen and (min-width: 1280px) {
+    padding: 64px 0 50px 0;
   }
 `;
 
@@ -20,9 +23,14 @@ export const Container = styled.div`
   flex-wrap: wrap;
   flex-direction: column;
   @media screen and (min-width: 768px) {
-    display: flex;
+    margin: 0 auto;
     flex-direction: row;
     justify-content: space-around;
+    max-width: 768px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    max-width: 1240px;
   }
 `;
 
@@ -60,6 +68,9 @@ export const List = styled.ul`
 
 export const Features = styled.li`
   &:not(:last-child) {
+  padding-bottom: 10px;
+
+  @media screen and (min-width: 1280px) {
     padding-bottom: 12px;
   }
 `;

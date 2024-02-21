@@ -22,6 +22,13 @@ export const Links = styled.li`
   letter-spacing: -0.02em;
   cursor: pointer;
   &::not(:last-child) {
+  padding-bottom: 14px;
+
+  @media screen and (min-width: 768px) {
+    padding-bottom: 20px;
+  }
+
+  @media screen and (min-width: 1280px) {
     padding-bottom: 24px;
   }
 `;
