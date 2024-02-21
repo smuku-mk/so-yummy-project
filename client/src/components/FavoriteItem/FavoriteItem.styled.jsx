@@ -10,14 +10,14 @@ export const CardWrapper = styled.div`
   border: 1px solid rgba(34, 60, 80, 0.2);
   background: #FFFFFF;
 
-  @media {
+  @media screen and (min-width: 768px) {
     position: relative;
     display: flex;
     justify-content: flex-start;
     padding: 28px 24px;
   }
 
-  @media {
+  @media screen and (min-width: 1440px) {
     position: relative;
     padding: 40px;
     margin-bottom: 50px;
@@ -28,13 +28,12 @@ export const CardImg = styled.img`
   width: 124px;
   height: 124px;
   border-radius: 8px;
-
-  @media {
+  @media screen and (min-width: 768px) {
     width: 228px;
     height: 232px;
   }
 
-  @media {
+  @media screen and (min-width: 1440px) {
     width: 318px;
     height: 324px;
   }
@@ -47,7 +46,7 @@ export const CardTextWrapper = styled.div`
   height: 124px;
   margin-left: 14px;
 
-  @media {
+  @media screen and (min-width: 768px) {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -56,7 +55,7 @@ export const CardTextWrapper = styled.div`
     margin-left: 24px;
   }
 
-  @media {
+  @media screen and (min-width: 1440px) {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -72,12 +71,12 @@ export const CardTitle = styled.h3`
   letter-spacing: -0.24px;
   color: #3E4462;
 
-  @media {
+  @media screen and (min-width: 768px) {
     font-size: 24px;
     line-height: 24px;
   }
 
-  @media {
+  @media screen and (min-width: 1440px) {
     font-size: 24px;
     line-height: 24px;
   }
@@ -93,14 +92,14 @@ export const CardDescription = styled.p`
   color: #23262A;
   ;
 
-  @media {
+  @media screen and (min-width: 768px) {
     display: inline-block;
     max-height: 80px;
     font-size: 14px;
     line-height: 18px;
   }
 
-  @media {
+  @media screen and (min-width: 1440px) {
     display: inline-block;
     max-height: 160px;
     font-size: 18px;
@@ -117,13 +116,13 @@ export const CardTime = styled.p`
   color: #3e4462;
   ;
 
-  @media {
+  @media screen and (min-width: 768px) {
     display: inline-block;
     font-size: 14px;
     line-height: 20px;
   }
 
-  @media {
+  @media screen and (min-width: 1440px) {
     display: inline-block;
     font-size: 14px;
     line-height: 20px;
@@ -133,7 +132,7 @@ export const CardTime = styled.p`
 export const CardButtonSee = styled.div`
   display: none;
 
-  @media {
+  @media screen and (min-width: 768px) {
     position: absolute;
     display: flex;
     justify-content: center;
@@ -158,7 +157,7 @@ export const CardButtonSee = styled.div`
     }
   }
 
-  @media {
+  @media screen and (min-width: 1440px) {
     position: absolute;
     display: flex;
     justify-content: center;
@@ -191,14 +190,14 @@ export const CardButtonDelete = styled.button`
     background: #8BAA36;
   }
 
-  @media {
+  @media screen and (min-width: 768px) {
     position: absolute;
     width: 38px;
     height: 38px;
     right: 24px;
     top: 28px;
 
-    @media {
+    @media screen and (min-width: 1440px) {
       position: absolute;
       width: 44px;
       height: 44px;
@@ -228,7 +227,7 @@ export const CardIcon = styled.div`
     height: 11px;
   }
 
-  @media {
+  @media screen and (min-width: 768px) {
     width: 38px;
     height: 38px;
   }
@@ -237,7 +236,7 @@ export const CardIcon = styled.div`
     height: 18px;
   }
 
-  @media {
+  @media screen and (min-width: 1440px) {
     width: 44px;
     height: 44px;
     svg {
