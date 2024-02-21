@@ -17,7 +17,7 @@ export const Socials = styled.ul`
     gap: 18px;
   }
 
-  @media screen and (min-width: 1280px) {
+  @media screen and (min-width: 1440px) {
     padding-top: 41px;
   }
 `;
