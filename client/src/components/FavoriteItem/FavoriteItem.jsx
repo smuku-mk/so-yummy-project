@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-// import { svg } from 'svglocation';
 
 import {
   CardWrapper,
@@ -11,7 +10,7 @@ import {
   CardTime,
   CardButtonSee,
   CardButtonDelete,
-  // CardIcon,
+  CardIcon,
 } from './FavoriteItem.styled';
 
 export default function FavoriteItem({ recipe, location, removeFavorite }) {
@@ -33,9 +32,9 @@ export default function FavoriteItem({ recipe, location, removeFavorite }) {
           removeFavorite(recipeId);
         }}
       >
-        {/* <CardIcon>
-          <UseSvg id="trashbinsvg" />
-        </CardIcon> */}
+        <CardIcon>
+          <UseSvg id="icon-trash" />
+        </CardIcon>
       </CardButtonDelete>
     </CardWrapper>
   );

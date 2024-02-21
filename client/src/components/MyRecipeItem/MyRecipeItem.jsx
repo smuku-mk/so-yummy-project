@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-// import { svg } from 'svglocation';
 
 import {
   CardWrapper,
@@ -11,7 +10,7 @@ import {
   CardTime,
   CardButtonSee,
   CardButtonDelete,
-  // CardIcon,
+  CardIcon,
 } from './MyRecipesItem.styled';
 
 const MyRecipesItem = ({ recipe, location, removeOwnRecipe }) => {
@@ -34,9 +33,9 @@ const MyRecipesItem = ({ recipe, location, removeOwnRecipe }) => {
           removeOwnRecipe(recipeId);
         }}
       >
-        {/* <CardIcon>
-          <UseSvg id="trashsvg" />
-        </CardIcon> */}
+        <CardIcon>
+          <UseSvg id="icon-trash" />
+        </CardIcon>
       </CardButtonDelete>
     </CardWrapper>
   );
