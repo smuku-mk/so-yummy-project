@@ -5,7 +5,7 @@ export const SocialsContainer = styled.div``;
 export const Socials = styled.ul`
   display: flex;
   flex-direction: row;
-  gap: 2.5px;
+  gap: 14px;
   list-style: none;
   text-align: center;
   justify-content: center;
@@ -14,9 +14,10 @@ export const Socials = styled.ul`
 
   @media screen and (min-width: 768px) {
     padding-top: 38px;
+    gap: 18px;
   }
 
-  @media screen and (min-width: 1280px) {
+  @media screen and (min-width: 1440px) {
     padding-top: 41px;
   }
 `;
