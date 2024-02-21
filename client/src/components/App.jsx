@@ -1,7 +1,8 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { SharedLayout } from "./SharedLayout";
 import { lazy } from "react";
-
+import { MyRecipesPage } from '../pages/MyRecipePage';
+import { FavoritePage } from '../pages/MyRecipePage';
 const lazyLoad = (page) => lazy(() => import("../pages").then((module) => ({ default: module[page] })));
 const WelcomePage = lazyLoad("WelcomePage");
 
@@ -12,6 +13,8 @@ export const App = () => {
         <Route path="/" element={<SharedLayout />}>
           <Route index element={<WelcomePage />} />
         </Route>
+        <Route path="/my" element={<MyRecipesPage />} />
+        <Route path="/favorite" element={<FavoritePage />} />
       </Routes>
     </Router>
   );

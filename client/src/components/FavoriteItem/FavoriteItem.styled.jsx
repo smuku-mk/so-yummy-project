@@ -25,19 +25,16 @@ export const CardWrapper = styled.div`
 `;
 
 export const CardImg = styled.img`
-  display: block;
   width: 124px;
   height: 124px;
   border-radius: 8px;
 
   @media {
-    display: block;
     width: 228px;
     height: 232px;
   }
 
   @media {
-    display: block;
     width: 318px;
     height: 324px;
   }
@@ -69,8 +66,6 @@ export const CardTextWrapper = styled.div`
 `;
 
 export const CardTitle = styled.h3`
-  font-family: 'Poppins';
-  font-style: normal;
   font-weight: 500;
   font-size: 14px;
   line-height: 14px;
@@ -91,8 +86,6 @@ export const CardTitle = styled.h3`
 export const CardDescription = styled.p`
   display: inline-block;
   max-height: 60px;
-  font-family: 'Poppins';
-  font-style: normal;
   font-weight: 400;
   font-size: 8px;
   line-height: 10px;
@@ -117,8 +110,6 @@ export const CardDescription = styled.p`
 
 export const CardTime = styled.p`
   display: inline-block;
-  font-family: 'Poppins';
-  font-style: normal;
   font-weight: 500;
   font-size: 10px;
   line-height: 14px;
@@ -152,8 +143,6 @@ export const CardButtonSee = styled.div`
     right: 24px;
     bottom: 28px;
     background: #22252A;
-    font-family: 'Poppins';
-    font-style: normal;
     font-weight: 400;
     font-size: 14px;
     line-height: 21px;

@@ -2,7 +2,7 @@ import instanceBackEnd from '../RequestBackEnd';
 
 const queryRecipeMinePage = async quantity => {
   try {
-    const { data } = await instanceBacEnd.get(
+    const { data } = await instanceBackEnd.get(
       `/recipes/main-page?query=${quantity}`
     );
     return data;
