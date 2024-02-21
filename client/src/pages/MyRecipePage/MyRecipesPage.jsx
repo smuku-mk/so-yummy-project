@@ -1,13 +1,13 @@
-import React, { useState, useEffect } from 'react'; 
-import { useLocation } from 'react-router-dom';
-import instanceBackEnd from '../../../../server/helpers/Request/queryBackEnd';
+import React, { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
+import instanceBackEnd from "../../../../server/helpers/Request/queryBackEnd";
 // import { MainPageTitle } from 'locationMainPageTitle';
 // import { MainContainer } from 'location/MainContainer';
-import MyRecipesList from '../../components/MyRecipesList/MyRecipesList';
-import { Children } from 'react';
-import { queryBackEnd } from 'helpers/request';
-import { Container, Pagination, Stack } from '@mui/material';
-import { PaginationWrapper, ImgWrapper, ImgTitle } from './MyRecipePage.styled';
+import MyRecipesList from "../../components/MyRecipeList";
+import { Children } from "react";
+import { queryBackEnd } from "helpers/request";
+// import { Container, Pagination, Stack } from "@mui/material";
+import { PaginationWrapper, ImgWrapper, ImgTitle } from "./MyRecipesPage.styled";
 // import imgIngradients from 'locationOfingradients.png';
 
 const MyRecipesPage = () => {
@@ -21,13 +21,13 @@ const MyRecipesPage = () => {
     setRecipes([]);
     const data = queryBackEnd.queryOwnRecipes();
     data
-      .then(results => {
+      .then((results) => {
         setRecipes(results.result.data.list);
         setAllItem(results.result.data.totalItem);
         const pageQty = Math.ceil(results.result.data.totalItem / 4);
         setAllPage(pageQty);
       })
-      .catch(error => {
+      .catch((error) => {
         console.log(error);
       });
   }, []);
@@ -36,13 +36,13 @@ const MyRecipesPage = () => {
     setCurrentPage(num);
     instanceBackEnd
       .get(`/ownRecipes?page=${num}`)
-      .then(response => setRecipes(response.data.result.data.list))
-      .catch(error => {
+      .then((response) => setRecipes(response.data.result.data.list))
+      .catch((error) => {
         console.log(error.message);
       });
   };
 
-  const removeOwnRecipe = recipeId => {
+  const removeOwnRecipe = (recipeId) => {
     const lastItem = allItem % 4;
     let pageBack;
     if (currentPage !== 1 || lastItem === 1) {
@@ -50,7 +50,7 @@ const MyRecipesPage = () => {
     } else pageBack = currentPage;
     instanceBackEnd
       .delete(`/ownRecipes/${recipeId}?page=${pageBack}`)
-      .then(res => {
+      .then((res) => {
         const list = res.data.result.list;
         setRecipes(list);
         const totalItem = res.data.result.totalItem;
@@ -58,25 +58,21 @@ const MyRecipesPage = () => {
         const quantity = Math.ceil(totalItem / 4);
         setAllPage(quantity);
       })
-      .catch(error => {
+      .catch((error) => {
         console.log(error.message);
         setRecipes([]);
       });
   };
   return (
     <MainContainer>
-      <MainPageTitle title={'My recipes'} />
+      <MainPageTitle title={"My recipes"} />
       {recipes.length !== 0 ? (
-        <MyRecipesList
-          recipes={recipes}
-          location={location}
-          removeOwnRecipe={removeOwnRecipe}
-        >
+        <MyRecipesList recipes={recipes} location={location} removeOwnRecipe={removeOwnRecipe}>
           {Children}
         </MyRecipesList>
       ) : (
         <ImgWrapper>
-          <img src={imgIngradients} alt={'Empty list'} />
+          <img src={imgIngradients} alt={"Empty list"} />
           <ImgTitle>The list is empty</ImgTitle>
         </ImgWrapper>
       )}
@@ -89,7 +85,7 @@ const MyRecipesPage = () => {
                 page={currentPage}
                 onChange={changeNum}
                 siblingCount={1}
-                sx={{ marginY: 3, marginX: 'auto' }}
+                sx={{ marginY: 3, marginX: "auto" }}
               />
             )}
           </Stack>

@@ -1,4 +1,3 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 
 import {
@@ -13,7 +12,7 @@ import {
   CardIcon,
 } from './FavoriteItem.styled';
 
-export default function FavoriteItem({ recipe, location, removeFavorite }) {
+export const FavoriteItem = ({ recipe, location, removeFavorite }) => {
   const recipeId = recipe._id;
   return (
     <CardWrapper>
