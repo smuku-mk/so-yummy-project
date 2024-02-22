@@ -5,7 +5,7 @@ import instanceBackEnd from "../../../../server/helpers/Request/queryBackEnd";
 // import { MainContainer } from 'location/MainContainer';
 import MyRecipesList from "../../components/MyRecipeList/MyRecipesList";
 import { Children } from "react";
-import { queryBackEnd } from "helpers/request";
+import { queryBackEnd } from "../../../../server/helpers/RequestBackEnd";
 import { Container, Pagination, Stack } from "@mui/material";
 import { PaginationWrapper, ImgWrapper, ImgTitle } from "../MyRecipePage/MyRecipesPage.styled";
 // import imgIngradients from 'locationOfingradients.png';
