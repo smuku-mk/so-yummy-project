@@ -4,7 +4,7 @@ import { useLocation } from "react-router-dom";
 // import { MainContainer } from 'location/MainContainer';
 import MyRecipesList from "../../components/MyRecipeList/MyRecipesList";
 import { Children } from "react";
-import { queryBackEnd } from "../../components/Request/queryBackEnd";
+import  queryBackEnd  from "../../components/Request/queryBackEnd";
 import { Container, Pagination, Stack } from "@mui/material";
 import { PaginationWrapper, ImgWrapper, ImgTitle } from "../MyRecipePage/MyRecipesPage.styled";
 import instanceBackEnd from '../../components/Request/RequestBackEnd';
@@ -64,18 +64,18 @@ const MyRecipesPage = () => {
       });
   };
   return (
-    <MainContainer>
-      <MainPageTitle title={"My recipes"} />
-      {recipes.length !== 0 ? (
-        <MyRecipesList recipes={recipes} location={location} removeOwnRecipe={removeOwnRecipe}>
-          {Children}
-        </MyRecipesList>
-      ) : (
-        <ImgWrapper>
-          <img src={imgIngradients} alt={"Empty list"} />
-          <ImgTitle>The list is empty</ImgTitle>
-        </ImgWrapper>
-      )}
+    // <MainContainer>
+    //   <MainPageTitle title={"My recipes"} />
+    //   {recipes.length !== 0 ? (
+    //     <MyRecipesList recipes={recipes} location={location} removeOwnRecipe={removeOwnRecipe}>
+    //       {Children}
+    //     </MyRecipesList>
+    //   ) : (
+    //     <ImgWrapper>
+    //       <img src={imgIngradients} alt={"Empty list"} />
+    //       <ImgTitle>The list is empty</ImgTitle>
+    //     </ImgWrapper>
+    //   )}
       <PaginationWrapper>
         <Container>
           <Stack spacing={2}>
@@ -91,7 +91,7 @@ const MyRecipesPage = () => {
           </Stack>
         </Container>
       </PaginationWrapper>
-    </MainContainer>
+    // </MainContainer>
   );
 };
 

@@ -60,23 +60,23 @@ const FavoritePage = () => {
       });
   };
   return (
-    <MainContainer>
-      <MainPageTitle title={'Favorite'} />
-      {recipes.length !== 0 ? (
-        <FavoriteList
-          recipes={recipes}
-          allItem={allItem}
-          location={location}
-          removeFavorite={removeFavorite}
-        >
-          {Children}
-        </FavoriteList>
-      ) : (
-        <ImgWrapper>
-          <img src={imgIngradients} alt={'Empty list'} />
-          <ImgTitle>The list is empty</ImgTitle>
-        </ImgWrapper>
-      )}
+    // <MainContainer>
+    //   <MainPageTitle title={'Favorite'} />
+    //   {recipes.length !== 0 ? (
+    //     <FavoriteList
+    //       recipes={recipes}
+    //       allItem={allItem}
+    //       location={location}
+    //       removeFavorite={removeFavorite}
+    //     >
+    //       {Children}
+    //     </FavoriteList>
+    //   ) : (
+    //     <ImgWrapper>
+    //       <img src={imgIngradients} alt={'Empty list'} />
+    //       <ImgTitle>The list is empty</ImgTitle>
+    //     </ImgWrapper>
+    //   )}
       <PaginationWrapper>
         <Container>
           <Stack spacing={2}>
@@ -92,7 +92,7 @@ const FavoritePage = () => {
           </Stack>
         </Container>
       </PaginationWrapper>
-    </MainContainer>
+    // </MainContainer>
   );
 };
 
