@@ -4,6 +4,7 @@ import logger from "morgan";
 import "dotenv/config";
 import ingredientsRouter from "./routes/ingredientsRouter.js";
 import recipesRouter from "./routes/recipesRouter.js";
+import popularRouter from "./routes/popularRouter.js";
 import searchRouter from "./routes/searchRouter.js";
 import { usersRouter } from "./users/user.router.js";
 import swaggerUi from "swagger-ui-express";
@@ -19,6 +20,8 @@ app.use(logger(formatsLogger));
 
 app.use("/ingredients", ingredientsRouter);
 app.use("/recipes", recipesRouter);
+app.use("/popular-recipes", popularRouter);
+
 app.use("/users", usersRouter);
 app.use("/search", searchRouter);
 
