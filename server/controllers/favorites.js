@@ -1,4 +1,3 @@
-import mongoose from "mongoose";
 import { Recipe } from "../database/models/recipesSchema";
 
 export const addToFav = async (req, res) => {
@@ -27,9 +26,7 @@ export const removeFromFav = async (req, res) => {
     if (!recipe) {
       return res.status(404).json({ message: `Recipe not found` });
     }
-    recipe.favorites = recipe.favorites.filter(
-      (favorite) => favorite !== userId
-    );
+    recipe.favorites = recipe.favorites.filter((favorite) => favorite !== userId);
     await recipe.save();
     return res.status(200).json({ message: `Recipe removed from favorites` });
   } catch (error) {
@@ -43,9 +40,7 @@ export const getUserFavs = async (req, res) => {
   try {
     const recipes = await Recipe.find({ favorites: userId });
     if (!recipes || recipes.length === 0) {
-      return res
-        .status(404)
-        .json({ message: `You don't have any favorites yet :(` });
+      return res.status(404).json({ message: `You don't have any favorites yet :(` });
     }
     return res.status(200).json(recipes);
   } catch (error) {

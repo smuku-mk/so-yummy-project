@@ -1,18 +1,8 @@
-import mongoose from "mongoose";
 import * as Recipe from "../database/models/recipesSchema";
 
 export const addRecipe = async (req, res) => {
   const userId = req.user.id;
-  const {
-    title,
-    description,
-    category,
-    time,
-    ingredients,
-    thumb,
-    preview,
-    instructions,
-  } = req.body;
+  const { title, description, category, time, ingredients, thumb, preview, instructions } = req.body;
   try {
     const newRecipe = new Recipe({
       title,
@@ -36,9 +26,7 @@ export const deleteRecipeById = async (req, res) => {
   const { id } = req.params;
   try {
     const deletedRecipe = await Recipe.findByIdAndDelete(id);
-    return res
-      .status(200)
-      .json({ message: `Recipe deleted`, recipe: deletedRecipe });
+    return res.status(200).json({ message: `Recipe deleted`, recipe: deletedRecipe });
   } catch (error) {
     return res.status(400).json({ message: `Failed to delete recipe` });
   }
