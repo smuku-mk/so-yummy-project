@@ -1,12 +1,10 @@
 import { SigninForm } from "../../components/SigninForm/SigninForm";
-import { SigninPage } from "./SigninPage.styled";
+import { LoginPage } from "./SigninPage.styled";
 
-const SigninPage = () => {
+export const SigninPage = () => {
   return (
-    <SigninPage>
+    <LoginPage>
       <SigninForm />
-    </SigninPage>
+    </LoginPage>
   );
 };
-
-export default SigninPage;

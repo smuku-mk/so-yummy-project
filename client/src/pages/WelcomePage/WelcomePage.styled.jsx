@@ -77,6 +77,7 @@ export const Register = styled(Link)`
   background-color: ${(props) => props.theme.brandGreen};
   font-size: 14px;
   border-radius: 24px 44px;
+  margin-right: 12px;
 
   & :hover,
   :focus {
@@ -85,8 +86,9 @@ export const Register = styled(Link)`
   }
 
   @media (min-width: 768px) {
-    padding: 20px 44px;
+    padding: 18px 36px;
     font-size: 16px;
+    margin-right: 18px;
   }
 `;
 
@@ -104,7 +106,7 @@ export const Signin = styled(Link)`
   }
 
   @media (min-width: 768px) {
-    padding: 20px 44px;
+    padding: 18px 36px;
     font-size: 16px;
   }
 `;
