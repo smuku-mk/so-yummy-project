@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import instanceBackEnd from '../../../../server/helpers/RequestBackEnd';
 // import { MainContainer } from 'locationof/MainContainer';
 import FavoriteList from '../../components/FavoriteList/FavoriteList';
 // import { MainPageTitle } from 'locationof/MainPageTitle';
 import { Children } from 'react';
 import queryBackEnd from '../../../../server/helpers/Request/queryBackEnd';
-// import { Container, Pagination, Stack } from '@mui/material';
+import { Container, Pagination, Stack } from '@mui/material';
 import { PaginationWrapper, ImgWrapper, ImgTitle } from './FavoritePage.styled';
+import instanceBackEnd from '../../../../server/helpers/RequestBackEnd';
 // import imgIngradients from 'locationof/ingradients.png';
 
 const FavoritePage = () => {

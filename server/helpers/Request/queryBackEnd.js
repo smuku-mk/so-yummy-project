@@ -1,6 +1,5 @@
 import instanceBackEnd from '../RequestBackEnd';
 
-
 const queryRecipeId = async id => {
   try {
     const { data } = await instanceBackEnd.get(`/recipes/${id}`);

@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
-import instanceBackEnd from "../../../../server/helpers/Request/queryBackEnd";
 // import { MainPageTitle } from 'locationMainPageTitle';
 // import { MainContainer } from 'location/MainContainer';
 import MyRecipesList from "../../components/MyRecipeList/MyRecipesList";
 import { Children } from "react";
-import { queryBackEnd } from "../../../../server/helpers/RequestBackEnd";
+import { queryBackEnd } from "../../../../server/helpers/Request/queryBackEnd";
 import { Container, Pagination, Stack } from "@mui/material";
 import { PaginationWrapper, ImgWrapper, ImgTitle } from "../MyRecipePage/MyRecipesPage.styled";
+import instanceBackEnd from '../../../../server/helpers/RequestBackEnd';
 // import imgIngradients from 'locationOfingradients.png';
 
 const MyRecipesPage = () => {
