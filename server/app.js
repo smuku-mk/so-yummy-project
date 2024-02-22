@@ -4,7 +4,7 @@ import logger from "morgan";
 import "dotenv/config";
 import ingredientsRouter from "./routes/ingredientsRouter.js";
 import recipesRouter from "./routes/recipesRouter.js";
-
+import popularRouter from "./routes/popularRouter.js";
 import { usersRouter } from "./users/user.router.js";
 
 const app = express();
@@ -16,6 +16,7 @@ app.use(express.json());
 app.use(logger(formatsLogger));
 app.use("/ingredients", ingredientsRouter);
 app.use("/recipes", recipesRouter);
+app.use("/popular-recipes", popularRouter);
 
 app.use("/users", usersRouter);
 app.use((req, res, next) => {
