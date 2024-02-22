@@ -4,8 +4,6 @@
   "private": true,
   "dependencies": {
     "@babel/core": "^7.23.9",
-    "@emotion/react": "^11.10.6",
-    "@emotion/styled": "^11.10.6",
     "@reduxjs/toolkit": "^2.2.1",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
@@ -17,6 +15,7 @@
     "react-router-dom": "^6.22.1",
     "react-scripts": "5.0.1",
     "react-svg": "^16.1.33",
+    "redux": "^5.0.1",
     "styled-components": "^6.1.8",
     "styled-normalize": "^8.1.1",
     "yup": "^1.0.2"

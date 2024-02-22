@@ -3,12 +3,12 @@ import ReactDOM from "react-dom/client";
 import { Provider } from "react-redux";
 import { ThemeProvider } from "styled-components";
 import { GlobalStyles } from "./styles";
-import { lightTheme, darkTheme } from "./styles/theme";
+import { lightTheme, darkTheme } from "./styles";
 import { App } from "./components";
 import store from "./redux/store";
 
 const Root = () => {
-  const [theme, setTheme] = useState("dark");
+  const [theme, setTheme] = useState("light");
 
   const toggleTheme = () => {
     setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
