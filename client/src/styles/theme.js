@@ -1,14 +1,11 @@
-// export const lightTheme = {
-//   bg: "#FAFAFA",
-//   whiteText: "#FAFAFA",
-//   brand: "#8baa36",
-///////////////////////////
+// export const basic = {
 //   black: "#000000",
 //   white: "#ffffff",
-//   dark: "#1e1f28",
+//   brand: "#8baa36",
 //   fontLight: "#fafafa",
 //   fontDark: "#3e4462",
-//   accentDark: "#3e4462",
+//   accentDark: "#22252a",
+//   highlightDark: "#1e1f28",
 //   transparent: "#d9d9d9",
 //   accentLight: "#efefef",
 //   borderLight: "#f0f0f0",
@@ -18,46 +15,9 @@
 //   warning: "#f6c23e",
 //   success: "#3cbc81",
 //   mediaBg: "#ebf3d4",
+//   darkBg: "#1e1f28",
 //   formDark: "#2a2c36",
 // };
-
-// export const darkTheme = {
-//   bg: "#1E1F28",
-//   whiteText: "#FAFAFA",
-//   brand: "#8baa36",
-////////////////////////////
-//   closeBtn: "#1f242e",
-//   headers: "#001833",
-//   underline: "#e0e0e0",
-//   inputBorder: "#f5f5f5",
-//   counterBorder: "#333333",
-//   scroll: "#e7e5e5",
-//   under: "#707070",
-//   checkbox: "#7e7e7e",
-//   pageNumber: "#656565",
-//   arrow: "#a9a9a9",
-// };
-
-export const basic = {
-  black: "#000000",
-  white: "#ffffff",
-  brand: "#8baa36",
-  fontLight: "#fafafa",
-  fontDark: "#3e4462",
-  accentDark: "#22252a",
-  highlightDark: "#1e1f28",
-  transparent: "#d9d9d9",
-  accentLight: "#efefef",
-  borderLight: "#f0f0f0",
-  borderDark: "#23262a",
-  inputText: "#bdbdbd",
-  error: "#e74a3b",
-  warning: "#f6c23e",
-  success: "#3cbc81",
-  mediaBg: "#ebf3d4",
-  darkBg: "#1e1f28",
-  formDark: "#2a2c36",
-};
 
 export const lightTheme = {
   mainBg: "#fafafa",
