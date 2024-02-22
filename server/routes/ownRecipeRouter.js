@@ -8,9 +8,7 @@ import {
 const ownRecipesRouter = express.Router();
 
 ownRecipesRouter.post("/", addRecipe);
-
 ownRecipesRouter.delete("/:recipeId", deleteRecipeById);
-
 ownRecipesRouter.get(":/userId/recipes", getUserRecipes);
 
 export default ownRecipesRouter;
