@@ -1,14 +1,59 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import start_mobile from "../../images/mobile_img/start_mobile.jpg";
+import start_tablet from "../../images/tablet_img/start_tablet.jpg";
+import start_desktop from "../../images/desktop_img/start_desktop.jpg";
 
-export const Container = styled.div``;
+export const Container = styled.div`
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-image: url(${start_mobile});
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  height: 100vh;
+
+  @media (min-width: 768px) {
+    background-image: url(${start_tablet});
+  }
+
+  @media (min-width: 1440px) {
+    background-image: url(${start_desktop});
+  }
+`;
+
+export const Logo = styled.svg`
+  margin-left: auto;
+  margin-right: auto;
+  width: 54px;
+  height: 54px;
+
+  @media (min-width: 768px) {
+    width: 68px;
+    height: 68px;
+`;
+
+export const TextBox = styled.div`
+  padding: 28px 35px 44px 35px;
+
+  @media (min-width: 768px) {
+    padding: 44px 134px 40px 134px;
+  }
+
+  @media (min-width: 1440px) {
+    padding: 44px 400px 40px 400px;
+  }
+`;
 
 export const Title = styled.h3`
   font-size: 24px;
   letter-spacing: -0.02em;
-  color: var(--fontLight);
+  color: ${(props) => props.theme.mainBg};
   font-weight: 600;
   text-align: center;
+  margin-bottom: 14px;
 
   @media (min-width: 768px) {
     font-size: 28px;
@@ -18,7 +63,7 @@ export const Title = styled.h3`
 export const Text = styled.p`
   font-size: 14px;
   letter-spacing: -0.02em;
-  color: var(--fontLight);
+  color: ${(props) => props.theme.mainBg};
   text-align: center;
 
   @media (min-width: 768px) {
@@ -27,38 +72,45 @@ export const Text = styled.p`
 `;
 
 export const Register = styled(Link)`
-  color: var(--fontLight);
+  color: ${(props) => props.theme.mainBg};
   padding: 12px 24px;
-  background-color: var(--brand);
+  background-color: ${(props) => props.theme.brandGreen};
   font-size: 14px;
   border-radius: 24px 44px;
 
-  &:focus,
-  :hover {
-    background-color: transparent;
+  & :hover,
+  :focus {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px soild ${(props) => props.theme.mainBg};
   }
 
   @media (min-width: 768px) {
-    padding: 22px 44px;
+    padding: 20px 44px;
     font-size: 16px;
   }
 `;
 
 export const Signin = styled(Link)`
-  color: var(--fontLight);
+  color: ${(props) => props.theme.mainBg};
   padding: 12px 24px;
-  background-color: transparent;
+  background-color: rgba(255, 255, 255, 0);
   font-size: 14px;
   border-radius: 24px 44px;
-  background-color: var(--brand);
+  border: 1px soild ${(props) => props.theme.mainBg};
 
   &:focus,
   :hover {
-    background-color: var(--brand);
+    background-color: ${(props) => props.theme.brandGreen};
   }
 
   @media (min-width: 768px) {
-    padding: 22px 44px;
+    padding: 20px 44px;
     font-size: 16px;
   }
+`;
+
+export const Buttons = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
