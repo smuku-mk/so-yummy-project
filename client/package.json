@@ -15,11 +15,10 @@
     "react-router-dom": "^6.22.1",
     "react-scripts": "5.0.1",
     "react-svg": "^16.1.33",
+    "redux": "^5.0.1",
     "styled-components": "^6.1.8",
     "styled-normalize": "^8.1.1",
-    "yup": "^1.0.2",
-    "@emotion/react": "^11.10.6",
-    "@emotion/styled": "^11.10.6"
+    "yup": "^1.0.2"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -44,5 +43,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11"
   }
 }
