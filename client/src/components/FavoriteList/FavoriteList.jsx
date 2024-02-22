@@ -1,5 +1,5 @@
 import React from "react";
-import { FavoriteItem } from "../FavoriteItem";
+import { FavoriteItem } from "../FavoriteItem/FavoriteItem";
 import { ListWrapper } from "./FavoriteList.styled";
 
 const FavoriteList = ({ recipes, allItem, location, removeFavorite }) => {

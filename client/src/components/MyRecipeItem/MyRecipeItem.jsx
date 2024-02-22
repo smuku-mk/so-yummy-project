@@ -11,7 +11,7 @@ import {
   CardButtonSee,
   CardButtonDelete,
   CardIcon,
-} from '../MyRecipeItem/MyRecipeItem.styled';
+} from './MyRecipeItem.styled';
 
 const MyRecipesItem = ({ recipe, location, removeOwnRecipe }) => {
   const recipeId = recipe._id;

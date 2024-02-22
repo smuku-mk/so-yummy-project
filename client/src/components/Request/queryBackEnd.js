@@ -1,4 +1,4 @@
-import instanceBackEnd from '../RequestBackEnd';
+import instanceBackEnd from './RequestBackEnd';
 
 const queryRecipeId = async id => {
   try {

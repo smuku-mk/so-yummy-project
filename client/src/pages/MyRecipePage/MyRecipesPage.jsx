@@ -4,10 +4,10 @@ import { useLocation } from "react-router-dom";
 // import { MainContainer } from 'location/MainContainer';
 import MyRecipesList from "../../components/MyRecipeList/MyRecipesList";
 import { Children } from "react";
-import { queryBackEnd } from "../../../../server/helpers/Request/queryBackEnd";
+import { queryBackEnd } from "../../components/Request/queryBackEnd";
 import { Container, Pagination, Stack } from "@mui/material";
 import { PaginationWrapper, ImgWrapper, ImgTitle } from "../MyRecipePage/MyRecipesPage.styled";
-import instanceBackEnd from '../../../../server/helpers/RequestBackEnd';
+import instanceBackEnd from '../../components/Request/RequestBackEnd';
 // import imgIngradients from 'locationOfingradients.png';
 
 const MyRecipesPage = () => {

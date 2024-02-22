@@ -4,10 +4,10 @@ import { useLocation } from 'react-router-dom';
 import FavoriteList from '../../components/FavoriteList/FavoriteList';
 // import { MainPageTitle } from 'locationof/MainPageTitle';
 import { Children } from 'react';
-import queryBackEnd from '../../../../server/helpers/Request/queryBackEnd';
+import queryBackEnd from '../../components/Request/queryBackEnd';
 import { Container, Pagination, Stack } from '@mui/material';
 import { PaginationWrapper, ImgWrapper, ImgTitle } from './FavoritePage.styled';
-import instanceBackEnd from '../../../../server/helpers/RequestBackEnd';
+import instanceBackEnd from '../../components/Request/RequestBackEnd';
 // import imgIngradients from 'locationof/ingradients.png';
 
 const FavoritePage = () => {

@@ -32,7 +32,7 @@ export const FavoriteItem = ({ recipe, location, removeFavorite }) => {
         }}
       >
         <CardIcon>
-          <UseSvg id="icon-trash" />
+          {/* <UseSvg id="icon-trash" /> */}
         </CardIcon>
       </CardButtonDelete>
     </CardWrapper>

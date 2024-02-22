@@ -1,6 +1,6 @@
 import React from 'react';
 import MyRecipesItem from '../MyRecipeItem/MyRecipeItem';
-import { ListWrapper } from '../MyRecipeList/MyRecipesList.styled';
+import { ListWrapper } from './MyRecipesList.styled';
 
 const MyRecipesList = ({ recipes, location, removeOwnRecipe }) => {
   return (
