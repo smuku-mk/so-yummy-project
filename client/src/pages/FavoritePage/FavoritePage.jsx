@@ -6,7 +6,7 @@ import FavoriteList from '../../components/FavoriteList/FavoriteList';
 // import { MainPageTitle } from 'locationof/MainPageTitle';
 import { Children } from 'react';
 import queryBackEnd from '../../../../server/helpers/Request/queryBackEnd';
-import { Container, Pagination, Stack } from '@mui/material';
+// import { Container, Pagination, Stack } from '@mui/material';
 import { PaginationWrapper, ImgWrapper, ImgTitle } from './FavoritePage.styled';
 // import imgIngradients from 'locationof/ingradients.png';
 

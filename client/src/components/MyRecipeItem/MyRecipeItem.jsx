@@ -11,7 +11,7 @@ import {
   CardButtonSee,
   CardButtonDelete,
   CardIcon,
-} from './MyRecipesItem.styled';
+} from '../MyRecipeItem/MyRecipeItem.styled';
 
 const MyRecipesItem = ({ recipe, location, removeOwnRecipe }) => {
   const recipeId = recipe._id;
@@ -34,7 +34,7 @@ const MyRecipesItem = ({ recipe, location, removeOwnRecipe }) => {
         }}
       >
         <CardIcon>
-          <UseSvg id="icon-trash" />
+          {/* <UseSvg id="icon-trash" /> */}
         </CardIcon>
       </CardButtonDelete>
     </CardWrapper>
