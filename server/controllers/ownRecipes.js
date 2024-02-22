@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 import * as Recipe from "../database/models/recipesSchema";
 
-export async function addRecipe(req, res) {
+export const addRecipe = async (req, res) => {
   const userId = req.user.id;
   const {
     title,
@@ -30,9 +30,9 @@ export async function addRecipe(req, res) {
   } catch (error) {
     return res.status(400).json({ message: `Failed to add recipe` });
   }
-}
+};
 
-export async function deleteRecipeById(req, res) {
+export const deleteRecipeById = async (req, res) => {
   const { id } = req.params;
   try {
     const deletedRecipe = await Recipe.findByIdAndDelete(id);
@@ -42,9 +42,9 @@ export async function deleteRecipeById(req, res) {
   } catch (error) {
     return res.status(400).json({ message: `Failed to delete recipe` });
   }
-}
+};
 
-export async function getUserRecipes(req, res) {
+export const getUserRecipes = async (req, res) => {
   const userId = req.user.id;
   try {
     const recipes = await Recipe.find({ owner: userId });
@@ -55,4 +55,4 @@ export async function getUserRecipes(req, res) {
   } catch {
     return res.status(500).json({ message: `Failed to load!` });
   }
-}
+};

@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 import { Recipe } from "../database/models/recipesSchema";
 
-export async function addToFav(req, res) {
+export const addToFav = async (req, res) => {
   const { userId } = req.params;
   const { recipeId } = req.body;
 
@@ -16,9 +16,9 @@ export async function addToFav(req, res) {
   } catch (error) {
     return res.status(500).json({ message: `Something went wrong` });
   }
-}
+};
 
-export async function removeFromFav(req, res) {
+export const removeFromFav = async (req, res) => {
   const { userId } = req.params;
   const { recipeId } = req.body;
 
@@ -35,9 +35,9 @@ export async function removeFromFav(req, res) {
   } catch (error) {
     return res.status(500).json({ message: `Something went wrong` });
   }
-}
+};
 
-export async function getUserFavs(req, res) {
+export const getUserFavs = async (req, res) => {
   const { userId } = req.params;
 
   try {
@@ -51,4 +51,4 @@ export async function getUserFavs(req, res) {
   } catch (error) {
     return res.status(500).json({ message: `Something went wrong` });
   }
-}
+};
