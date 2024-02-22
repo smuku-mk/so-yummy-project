@@ -1,38 +1,40 @@
 const express = require("express");
-const shoppingListRouter = express.Router();
-const listIngredients = require("../controllers/listIngredients");
+const router = express.Router();
+const {
+  listIngredients,
+  addIngredients,
+  removeIngredients,
+} = require("../controllers/ingredients/listIngredients");
 
-router.get("/", async (req, res) => {
+router.get("/", async (req, res, next) => {
   try {
     const shoppingList = await listIngredients;
     res.json({ shoppingList });
   } catch (error) {
-    console.error(error);
-    res.status(500).json({ message: "Internal Server Error" });
+    next(error);
   }
 });
 
-router.post("/add", async (req, res) => {
+router.post("/add", async (req, res, next) => {
   try {
-    const { productId } = req.body;
+    const newIngredient = await addIngredients;
 
-    res
-      .status(201)
-      .json({ message: "Product added to shopping list successfully" });
+    res.status(201).json(newIngredient);
   } catch (error) {
-    console.error(error);
-    res.status(500).json({ message: "Internal Server Error" });
+    next(error);
   }
 });
 
-router.delete("/remove/:productId", async (req, res) => {
+router.delete("/remove/:productId", async (req, res, next) => {
   try {
-    const productId = req.params.productId;
-
-    res.json({ message: "Product removed from shopping list successfully" });
+    const removedIngredient = await removeIngredients;
+    if (removedIngredient) {
+      res.json(removedIngredient);
+    } else {
+      res.status(404).json({ message: `Ingredient with id ${id} not found` });
+    }
   } catch (error) {
-    console.error(error);
-    res.status(500).json({ message: "Internal Server Error" });
+    next(error);
   }
 });
 

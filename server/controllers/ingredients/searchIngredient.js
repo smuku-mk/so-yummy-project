@@ -1,4 +1,4 @@
-import Ingredient from "../database/models/ingredientsSchema.js";
+import Ingredient from "../../database/models/ingredientsSchema.js";
 
 export const searchIngredient = async (req, res) => {
   const name = req.query.name;

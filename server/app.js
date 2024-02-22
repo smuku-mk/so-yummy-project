@@ -6,6 +6,8 @@ import ingredientsRouter from "./routes/ingredientsRouter.js";
 import recipesRouter from "./routes/recipesRouter.js";
 import shoppingListRouter from "./routes/shoppingListRouter.js";
 
+import { usersRouter } from "./users/user.router.js";
+
 const app = express();
 const formatsLogger = app.get("env") === "development" ? "dev" : "short";
 
@@ -17,6 +19,7 @@ app.use("/ingredients", ingredientsRouter);
 app.use("/recipes", recipesRouter);
 app.use("/shopping-list", shoppingListRouter);
 
+app.use("/users", usersRouter);
 app.use((req, res, next) => {
   res.status(404).send("404 Not Found");
 });
