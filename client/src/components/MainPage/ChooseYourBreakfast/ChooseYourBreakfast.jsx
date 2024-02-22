@@ -1,9 +1,4 @@
-import {
-  Block,
-  Text,
-  TextDAH,
-  Button,
-} from "./MobileChooseYourBreakfast.styled";
+import { Block, Text, TextDAH, Button } from "./ChooseYourBreakfast.styled";
 
 const ChooseYourBreakfast = () => {
   return (
@@ -13,6 +8,7 @@ const ChooseYourBreakfast = () => {
         ingredients in one satisfying meal
       </Text>
       <Button href="/categories">See recipes</Button>
+      {/* w button jeszcze ikonka powinna byc */}
     </Block>
   );
 };

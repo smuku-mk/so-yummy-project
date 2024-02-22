@@ -1,4 +1,4 @@
-import ChooseYourBreakfast from "../../components/MainPage/ChooseYourBreakfast/СhooseYourBreakfast";
+import ChooseYourBreakfast from "../../components/MainPage/ChooseYourBreakfast/ChooseYourBreakfast";
 import Search from "../../components/MainPage/Search/Search";
 import PreviewCategories from "../../components/MainPage/PreviewCategories/PreviewCategories";
 import {
@@ -20,12 +20,37 @@ import {
   CategoryBlock2,
   DesktopMainSection,
   CategoriesDesktopSection,
-} from "./MainPage.styled";
+  BackgroundImage1Mobile,
+  BackgroundImage1Tablet,
+  BackgroundImage1Desktop,
+  BackgroundImage2Mobile,
+  BackgroundImage2Tablet,
+  BackgroundImage2Desktop,
+  BackgroundImage3Mobile,
+  BackgroundImage3Tablet,
+  BackgroundImage3Desktop,
+} from "./MainPages.styled";
+import leaves_mobile from "../../images/mobile_img/leaves@1x_mobile.png";
+import leaves_tablet from "../../images/tablet_img/leaves@1x_tablet.png";
+import leaves_desktop from "../../images/desktop_img/leaves@1x_desktop.png";
 
 const MainPage = () => {
   return (
     <>
       <MainSection>
+        <BackgroundImage1Mobile
+          src={leaves_mobile}
+          alt="leaves"
+        ></BackgroundImage1Mobile>
+        <BackgroundImage1Tablet
+          src={leaves_tablet}
+          alt="leaves"
+        ></BackgroundImage1Tablet>
+        <BackgroundImage1Desktop
+          src={leaves_desktop}
+          alt="leaves"
+        ></BackgroundImage1Desktop>
+
         <DesktopMainSection>
           <TabletSectionMain>
             <MainTitle>
@@ -203,6 +228,35 @@ const MainPage = () => {
             </CategoryBlock2>
           </CategoryListItem>
         </CategoriesListContainer>
+        <BackgroundImage2Mobile
+          src={leaves_mobile}
+          alt="leaves"
+        ></BackgroundImage2Mobile>
+
+        <BackgroundImage2Tablet
+          src={leaves_tablet}
+          alt="leaves"
+        ></BackgroundImage2Tablet>
+
+        <BackgroundImage2Desktop
+          src={leaves_desktop}
+          alt="leaves"
+        ></BackgroundImage2Desktop>
+
+        <BackgroundImage3Mobile
+          src={leaves_mobile}
+          alt="leaves"
+        ></BackgroundImage3Mobile>
+
+        <BackgroundImage3Tablet
+          src={leaves_tablet}
+          alt="leaves"
+        ></BackgroundImage3Tablet>
+
+        <BackgroundImage3Desktop
+          src={leaves_desktop}
+          alt="leaves"
+        ></BackgroundImage3Desktop>
       </CategoriesSection>
       <OtherCategoriesSection>
         <OtherCategoriesButton href="/categories">

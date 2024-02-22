@@ -10,6 +10,8 @@ import { useState, useEffect } from "react";
 const PreviewCategories = ({ pictureDescription, button }) => {
   const [categories, setCategories] = useState([]);
 
+  // do poprawy
+
   useEffect(() => {
     fetch("/recipes/main-page")
       .then((response) => response.json())

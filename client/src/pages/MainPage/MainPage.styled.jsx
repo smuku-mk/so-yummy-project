@@ -1,28 +1,50 @@
 import styled from "styled-components";
-import yummy_mobile from "../../images/mobile_img/yummy_mobile.png";
-import yummy_tablet from "../../images/tablet_img/yummy_tablet.png";
-import yummy_desktop from "../../images/desktop_img/yummy_tablet.png";
-// import backgroundImage3 from "../components/img/backgroundImage.png";
+import yummy_mobile from "../../components/images/mobile_img/yummy_mobile.png";
+import yummy_tablet from "../../components/images/tablet_img/yummy_tablet.png";
+import yummy_desktop from "../../components/images/desktop_img/yummy_desktop.png";
+import leaves1x_mobile from "../../components/images/mobile_img/leaves@1x_mobile.png";
+import leaves1x_tablet from "../../components/images/tablet_img/leaves@1x_tablet.png";
+import leaves1x_desktop from "../../components/images/desktop_img/leaves@1x_desktop.png";
+import background_mobile from "../../components/images/mobile_img/background_mobile.png";
+import background_tablet from "../../components/images/tablet_img/background_tablet.png";
+import background_desktop from "../../components/images/desktop_img/background_desktop.png";
 
 export const MainSection = styled.div`
+  position: relative;
   height: 777px;
   width: 100%;
-  background-color: #fafafa;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding-top: 132px;
+  background-image: url(${leaves1x_mobile}), url(${background_mobile});
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: -10px 70px, 60px center;
 
   @media (min-width: 768px) {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    background-image: url(${leaves1x_tablet}), url(${background_tablet});
+    background-position: 300px 70px, 500px center;
+  }
+
+  @media (min-width: 1440px) {
+    padding-left: 100px;
+    padding-right: 184px;
+    padding-top: 126px;
+    background-image: url(${leaves1x_desktop}), url(${background_desktop});
+    background-position: 1200px 40px, 1000px center;
+    background-size: 976px 944px;
+    height: 800px;
   }
 `;
 
 export const TabletSectionMain = styled.div`
   @media (min-width: 768px) {
-    margin-right: 4px;
+    width: 369px;
+    margin-left: 32px;
   }
 `;
 
@@ -30,6 +52,7 @@ export const CategoriesSection = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
 `;
 
 export const OtherCategoriesSection = styled.div`
@@ -37,26 +60,33 @@ export const OtherCategoriesSection = styled.div`
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  margin-bottom: 646px;
 `;
 
 export const MainTitle = styled.h1`
+  font-family: "Poppins", sans-serif;
   font-weight: 400;
   font-size: 60px;
-  line-height: 100%;
+  line-height: 1;
+  letter-spacing: -0.01em;
   text-align: center;
   color: #22252a;
-  font-family: "Poppins", sans-serif;
+  margin-left: 36px;
+  margin-right: 36px;
 
   @media (min-width: 768px) {
     font-size: 72px;
-    width: 364px;
-    height: 72px;
+    margin-left: 0;
+    margin-right: 0;
+    text-align: left;
   }
 
-  @media (min-width: 1280px) {
+  @media (min-width: 1440px) {
     font-size: 100px;
     padding-bottom: 14px;
     text-align: left;
+    margin-left: 0;
+    margin-right: 0;
   }
 `;
 
@@ -65,30 +95,33 @@ export const SoText = styled.span`
 `;
 
 export const MainDescription = styled.p`
+  font-family: "Poppins", sans-serif;
   font-weight: 400;
   font-size: 14px;
+  line-height: 1.28571;
   letter-spacing: -0.02em;
   text-align: center;
-  color: #23262a;
+  margin-left: 64px;
+  margin-right: 63px;
   margin-top: 14px;
+  color: #23262a;
   width: 248px;
   height: 72px;
-  font-family: "Poppins", sans-serif;
 
   @media (min-width: 768px) {
-    width: 362px;
-    height: 54px;
-    text-align: center;
+    text-align: left;
     margin-top: 24px;
+    margin-right: 0;
+    margin-left: 0;
+    width: 362px;
   }
 
-  @media (min-width: 1280px) {
+  @media (min-width: 1440px) {
     width: 465px;
-    height: 72px;
     font-size: 18px;
     margin-bottom: 50px;
     text-align: left;
-    padding-top: 14px;
+    margin-top: 0;
   }
 `;
 
@@ -102,6 +135,7 @@ export const PictureBlockContainer = styled.div`
   justify-content: center;
   align-items: center;
   padding-left: 88px;
+  z-index: 2;
 
   @media (min-width: 768px) {
     width: 378px;
@@ -112,12 +146,12 @@ export const PictureBlockContainer = styled.div`
     background-image: url(${yummy_tablet});
   }
 
-  @media (min-width: 1280px) {
+  @media (min-width: 1440px) {
     width: 578px;
     height: 539px;
     padding-top: 336px;
     padding-left: 342px;
-    padding-right: 0;
+    padding-right: 184px;
     background-image: url(${yummy_desktop});
   }
 `;
@@ -177,7 +211,7 @@ export const CategoriesTabletSection = styled.div`
     margin-top: 32px;
   }
 
-  @media (min-width: 1280px) {
+  @media (min-width: 1440px) {
     display: none;
   }
 `;
@@ -209,17 +243,20 @@ export const CategoryBlock1 = styled.div``;
 export const CategoryBlock2 = styled.div``;
 
 export const DesktopMainSection = styled.div`
-  @media (min-width: 1280px) {
+  @media (min-width: 1440px) {
+    width: 510px;
+    height: 71px;
     margin-right: 73px;
+    margin-bottom: 267px;
   }
 `;
 
 export const CategoriesDesktopSection = styled.div`
-  @media (max-width: 1279px) {
+  @media (max-width: 1439px) {
     display: none;
   }
 
-  @media (min-width: 1280px) {
+  @media (min-width: 1440px) {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -227,14 +264,164 @@ export const CategoriesDesktopSection = styled.div`
   }
 `;
 
-// export const BackgroundBlockImage3 = styled.div`
-//     width: 941px;
-//     height: 912px;
-//     background-image: url(${backgroundImage3});
-//     background-size: cover;
-//     background-repeat: no-repeat;
-//     position: absolute;
-//     right: 0;
-//     filter: blur(4px);
-//     z-index: -1;
-// `;
+export const BackgroundImage1Mobile = styled.img`
+  width: 171px;
+  height: 184px;
+  object-fit: cover;
+  position: absolute;
+  top: 48px;
+  left: -100px;
+  transform: rotate(-65deg);
+  filter: blur(5px);
+
+  @media (min-width: 767px) {
+    display: none;
+  }
+`;
+
+export const BackgroundImage1Tablet = styled.img`
+  @media (max-width: 767px) {
+    display: none;
+  }
+
+  @media (min-width: 768px) {
+    width: 292px;
+    height: 315px;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: -175px;
+    transform: rotate(-65deg);
+    filter: blur(5px);
+  }
+
+  @media (min-width: 1439px) {
+    display: none;
+  }
+`;
+
+export const BackgroundImage1Desktop = styled.img`
+  @media (max-width: 1439px) {
+    display: none;
+  }
+
+  @media (min-width: 1440px) {
+    width: 438px;
+    height: 474px;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: -230px;
+    transform: rotate(-65deg);
+    filter: blur(5px);
+  }
+`;
+
+export const BackgroundImage2Mobile = styled.img`
+  width: 256px;
+  height: 382px;
+  object-fit: cover;
+  position: absolute;
+  top: 2000px;
+  left: -50px;
+  transform: rotate(80deg);
+  filter: blur(5px);
+
+  @media (min-width: 767px) {
+    display: none;
+  }
+`;
+
+export const BackgroundImage2Tablet = styled.img`
+  @media (max-width: 767px) {
+    display: none;
+  }
+
+  @media (min-width: 768px) {
+    width: 423px;
+    height: 646px;
+    object-fit: cover;
+    position: absolute;
+    top: 2100px;
+    left: -100px;
+    transform: rotate(80deg);
+    filter: blur(5px);
+  }
+
+  @media (min-width: 1439px) {
+    display: none;
+  }
+`;
+
+export const BackgroundImage2Desktop = styled.img`
+  @media (max-width: 1439px) {
+    display: none;
+  }
+
+  @media (min-width: 1440px) {
+    width: 568px;
+    height: 852px;
+    object-fit: cover;
+    position: absolute;
+    top: 2200px;
+    left: -200px;
+    transform: rotate(80deg);
+    filter: blur(5px);
+  }
+`;
+
+export const BackgroundImage3Mobile = styled.img`
+  width: 160px;
+  height: 172px;
+  object-fit: cover;
+  position: absolute;
+  top: 2650px;
+  right: 0;
+  transform: rotate(80deg);
+  filter: blur(5px);
+  transform: rotate(-90deg);
+
+  @media (min-width: 767px) {
+    display: none;
+  }
+`;
+
+export const BackgroundImage3Tablet = styled.img`
+  @media (max-width: 767px) {
+    display: none;
+  }
+
+  @media (min-width: 768px) {
+    width: 290px;
+    height: 313px;
+    object-fit: cover;
+    position: absolute;
+    top: 2750px;
+    right: 0px;
+    transform: rotate(80deg);
+    filter: blur(5px);
+    transform: rotate(-90deg);
+  }
+
+  @media (min-width: 1439px) {
+    display: none;
+  }
+`;
+
+export const BackgroundImage3Desktop = styled.img`
+  @media (max-width: 1439px) {
+    display: none;
+  }
+
+  @media (min-width: 1440px) {
+    width: 438px;
+    height: 474px;
+    object-fit: cover;
+    position: absolute;
+    top: 2750px;
+    right: 20px;
+    transform: rotate(80deg);
+    filter: blur(5px);
+    transform: rotate(-90deg);
+  }
+`;
