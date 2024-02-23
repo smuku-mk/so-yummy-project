@@ -2,9 +2,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { SharedLayout } from "./SharedLayout";
 import { lazy } from "react";
 
-function lazyLoad(pageName) {
-  return lazy(() => import(`../pages/${pageName}/${pageName}`));
-}
+const lazyLoad = (page) => lazy(() => import("../pages").then((module) => ({ default: module[page] })));
 const WelcomePage = lazyLoad("WelcomePage");
 const SigninPage = lazyLoad("SigninPage");
 const RegisterPage = lazyLoad("RegisterPage");

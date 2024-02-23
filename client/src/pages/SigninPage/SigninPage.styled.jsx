@@ -1,4 +1,4 @@
-import styled from "@emotion/styled";
+import styled from "styled-components";
 
 export const SigninPageStyled = styled.section`
   @media (min-width: 768px) {
