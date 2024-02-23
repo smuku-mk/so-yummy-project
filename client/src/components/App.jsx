@@ -3,16 +3,20 @@ import { SharedLayout } from "./SharedLayout";
 import { lazy } from "react";
 
 function lazyLoad(pageName) {
-  return lazy(() => import(`../pages/${pageName}`));
+  return lazy(() => import(`../pages/${pageName}/${pageName}`));
 }
-//const WelcomePage = lazyLoad("WelcomePage");
+const WelcomePage = lazyLoad("WelcomePage");
+const SigninPage = lazyLoad("SigninPage");
+const RegisterPage = lazyLoad("RegisterPage");
 
 export const App = () => {
   return (
     <Router>
       <Routes>
         <Route path="/" element={<SharedLayout />}>
-          {/* <Route index element={<WelcomePage />} /> */}
+          <Route index element={<WelcomePage />} />
+          <Route path="signin" element={<SigninPage />} />
+          <Route path="register" element={<RegisterPage />} />
         </Route>
       </Routes>
     </Router>

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { logIn } from "../../redux/auth/operations";
 import { selectIsLoggedIn } from "../../redux/auth/selectors";
@@ -10,7 +11,7 @@ import {
   Icon,
   Input,
   Submit,
-  Link,
+  //Link,
 } from "./SigininForm.styled";
 
 export const SigninForm = () => {

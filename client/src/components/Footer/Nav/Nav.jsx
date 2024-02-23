@@ -5,11 +5,11 @@ export const Nav = () => {
   return (
     <NavContainer>
       <Navigation>
-        <Links>Ingredients</Links>
+        {/* <Links>Ingredients</Links>
         <Links>Add recipes</Links>
         <Links>My recipes</Links>
         <Links>Favorite</Links>
-        <Links>Shopping list</Links>
+        <Links>Shopping list</Links> */}
       </Navigation>
     </NavContainer>
   );

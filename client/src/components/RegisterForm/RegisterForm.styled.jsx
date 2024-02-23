@@ -82,8 +82,8 @@ export const Submit = styled.button`
   }
 `;
 
-export const Link = styled.link`
+/* export const Link = styled.link`
   text-align: center;
   font-size: 14px;
   color: var(--fontLight);
-`;
+`; */
