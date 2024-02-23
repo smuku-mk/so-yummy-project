@@ -1,15 +1,15 @@
 import React from 'react';
-import { NavContainer, Navigation, Links } from './Nav.styled';
+import { NavContainer, Navigation, LinksStyled } from './Nav.styled';
 
 export const Nav = () => {
   return (
     <NavContainer>
       <Navigation>
-        {/* <Links>Ingredients</Links>
-        <Links>Add recipes</Links>
-        <Links>My recipes</Links>
-        <Links>Favorite</Links>
-        <Links>Shopping list</Links> */}
+        <p>Ingredients</p>
+        <p>Add recipes</p>
+        <p>My recipes</p>
+        <p>Favorite</p>
+        <p>Shopping list</p>
       </Navigation>
     </NavContainer>
   );

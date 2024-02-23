@@ -18,7 +18,7 @@ export const Navigation = styled.ul`
   }
 `;
 
-/* export const Links = styled.li`
+export const LinksStyled = styled.li`
   font-weight: 500;
   font-size: 14px;
   line-height: 129%;
@@ -34,4 +34,4 @@ export const Navigation = styled.ul`
   @media screen and (min-width: 1440px) {
     padding-bottom: 24px;
   }
-`; */
+`;
