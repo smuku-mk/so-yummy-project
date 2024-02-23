@@ -12,10 +12,10 @@ import instanceBackEnd from '../../components/Request/RequestBackEnd';
 
 const FavoritePage = () => {
   // const location = useLocation();
-  const [recipes, setRecipes] = useState([]);
+  const [, setRecipes] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [allPage, setAllPage] = useState();
-  const [allItem, setAllItem] = useState();
+  const [, setAllItem] = useState();
 
   useEffect(() => {
     const data = queryBackEnd.queryAllFavorite();
