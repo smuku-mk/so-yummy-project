@@ -1,5 +1,4 @@
-import React from "react";
-import { ErrorMessage } from "./CategoriesPage.styled";
+import { ErrorMessage } from "./ErrorMessage.styled";
 
 const ErrorMessage = ({ message }) => {
   return (

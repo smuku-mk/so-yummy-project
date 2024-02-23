@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from "react";
 import { getCategoryPage } from "../api";
-import RecipeList from "./RecipeList";
+import RecipeList from "./RecipeList/RecipeList";
 import {
   TabsContainer,
   ScrollButton,
@@ -8,10 +7,9 @@ import {
   StyledSpan,
   CategoryList,
   CategoryItem,
-  ErrorMessage,
   Header,
 } from "./CategoriesPage.styled";
-import ErrorMessage from "./ErrorMessage";
+import ErrorMessage from "./ErrorMessage/ErrorMessage";
 
 const CategoriesPage = () => {
   const [category, setCategory] = useState("Beef");
@@ -55,48 +53,29 @@ const CategoriesPage = () => {
           <StyledSpan></StyledSpan>
         </ScrollButton>
         <CategoryList>
-          <CategoryItem onClick={() => handleCategoryChange("Beef")}>
-            Beef
-          </CategoryItem>
-          <CategoryItem onClick={() => handleCategoryChange("Breakfast")}>
-            Breakfast
-          </CategoryItem>
-          <CategoryItem onClick={() => handleCategoryChange("Chicken")}>
-            Chicken
-          </CategoryItem>
-          <CategoryItem onClick={() => handleCategoryChange("Dessert")}>
-            Dessert
-          </CategoryItem>
-          <CategoryItem onClick={() => handleCategoryChange("Goat")}>
-            Goat
-          </CategoryItem>
-          <CategoryItem onClick={() => handleCategoryChange("Lamb")}>
-            Lamb
-          </CategoryItem>
-          <CategoryItem onClick={() => handleCategoryChange("Miscellaneous")}>
-            Miscellaneous
-          </CategoryItem>
-          <CategoryItem onClick={() => handleCategoryChange("Pasta")}>
-            Pasta
-          </CategoryItem>
-          <CategoryItem onClick={() => handleCategoryChange("Pork")}>
-            Pork
-          </CategoryItem>
-          <CategoryItem onClick={() => handleCategoryChange("Seafood")}>
-            Seafood
-          </CategoryItem>
-          <CategoryItem onClick={() => handleCategoryChange("Side")}>
-            Side
-          </CategoryItem>
-          <CategoryItem onClick={() => handleCategoryChange("Starter")}>
-            Starter
-          </CategoryItem>
-          <CategoryItem onClick={() => handleCategoryChange("Vegan")}>
-            Vegan
-          </CategoryItem>
-          <CategoryItem onClick={() => handleCategoryChange("Vegetarian")}>
-            Vegetarian
-          </CategoryItem>
+          {[
+            "Beef",
+            "Breakfast",
+            "Chicken",
+            "Dessert",
+            "Goat",
+            "Lamb",
+            "Miscellaneous",
+            "Pasta",
+            "Pork",
+            "Seafood",
+            "Side",
+            "Starter",
+            "Vegan",
+            "Vegetarian",
+          ].map((category) => (
+            <CategoryItem
+              key={category}
+              onClick={() => handleCategoryChange(category)}
+            >
+              {category}
+            </CategoryItem>
+          ))}
         </CategoryList>
         <ScrollButton>
           <StyledSvg focusable="false" aria-hidden="true" viewBox="0 0 24 24">

@@ -97,13 +97,6 @@ export const CategoryItem = styled.li`
   flex-direction: column;
 `;
 
-export const ErrorMessage = styled.div`
-  color: #ff0000;
-  font-size: 18px;
-  font-weight: bold;
-  margin-top: 16px;
-`;
-
 export const Header = styled.h2`
   padding-bottom: 72px;
   font-size: 32px;
@@ -111,18 +104,4 @@ export const Header = styled.h2`
   padding-top: 114px;
   font-family: Poppins;
   color: rgb(0, 24, 51);
-`;
-
-const StyledDiv = styled.div`
-  padding-top: 32px;
-  margin-bottom: 100px;
-  display: flex;
-  flex-wrap: wrap;
-  row-gap: 28px;
-
-  @media screen and (min-width: 768px) {
-    padding-top: 50px;
-    gap: 32px;
-    margin-bottom: 200px;
-  }
 `;
