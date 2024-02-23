@@ -1,18 +1,8 @@
-import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { logIn } from "../../redux/auth/operations";
 import { selectIsLoggedIn } from "../../redux/auth/selectors";
 import { useNavigate } from "react-router-dom";
-import {
-  Form,
-  Title,
-  Label,
-  InputContainer,
-  Icon,
-  Input,
-  Submit,
-  //Link,
-} from "./SigininForm.styled";
+import { Form, Title, Label, InputContainer, Icon, Input, Submit, StyledLink } from "./SigininForm.styled";
 
 export const SigninForm = () => {
   const dispatch = useDispatch();
@@ -50,7 +40,7 @@ export const SigninForm = () => {
         </InputContainer>
         <Submit type="submit">Log In</Submit>
       </Form>
-      <Link to="/register">Registration</Link>
+      <StyledLink to="/register">Registration</StyledLink>
     </div>
   );
 };

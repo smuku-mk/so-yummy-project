@@ -4,7 +4,7 @@ import { Provider } from "react-redux";
 import { ThemeProvider } from "styled-components";
 import { GlobalStyles } from "./styles";
 import { lightTheme, darkTheme } from "./styles";
-import { App } from "./components/App";
+import { App } from "./components";
 import store from "./redux/store";
 
 const Root = () => {
