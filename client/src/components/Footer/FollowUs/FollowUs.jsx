@@ -1,6 +1,6 @@
 import React from 'react';
 import { SocialsContainer, Socials } from './FollowUs.styled';
-import svg from '../../images/sprites.svg';
+// import svg from '../../images/sprites.svg';
 
 export const FollowUs = () => {
   return (
