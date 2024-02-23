@@ -1,17 +1,17 @@
 import React, { useState, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+// import { useLocation } from 'react-router-dom';
 // import { MainContainer } from 'locationof/MainContainer';
-import FavoriteList from '../../components/FavoriteList/FavoriteList';
+// import FavoriteList from '../../components/FavoriteList/FavoriteList';
 // import { MainPageTitle } from 'locationof/MainPageTitle';
-import { Children } from 'react';
+// import { Children } from 'react';
 import queryBackEnd from '../../components/Request/queryBackEnd';
 import { Container, Pagination, Stack } from '@mui/material';
-import { PaginationWrapper, ImgWrapper, ImgTitle } from './FavoritePage.styled';
+import { PaginationWrapper } from './FavoritePage.styled';
 import instanceBackEnd from '../../components/Request/RequestBackEnd';
 // import imgIngradients from 'locationof/ingradients.png';
 
 const FavoritePage = () => {
-  const location = useLocation();
+  // const location = useLocation();
   const [recipes, setRecipes] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [allPage, setAllPage] = useState();
@@ -39,26 +39,26 @@ const FavoritePage = () => {
       .catch(error => console.log(error.message));
   };
 
-  const removeFavorite = recipeId => {
-    const lastItem = allItem % 4;
-    let pageBack;
-    if (currentPage !== 1 || lastItem === 1) {
-      pageBack = currentPage - 1;
-    } else pageBack = currentPage;
-    instanceBackEnd
-      .patch(`/favorite/remove?page=${pageBack}`, { recipe: `${recipeId}` })
-      .then(res => {
-        const list = res.data.result.data.list;
-        setRecipes(list);
-        const totalItem = res.data.result.data.totalItem;
-        setAllItem(totalItem);
-        const quantity = Math.ceil(totalItem / 4);
-        setAllPage(quantity);
-      })
-      .catch(error => {
-        console.log(error.message);
-      });
-  };
+  // const removeFavorite = recipeId => {
+  //   const lastItem = allItem % 4;
+  //   let pageBack;
+  //   if (currentPage !== 1 || lastItem === 1) {
+  //     pageBack = currentPage - 1;
+  //   } else pageBack = currentPage;
+  //   instanceBackEnd
+  //     .patch(`/favorite/remove?page=${pageBack}`, { recipe: `${recipeId}` })
+  //     .then(res => {
+  //       const list = res.data.result.data.list;
+  //       setRecipes(list);
+  //       const totalItem = res.data.result.data.totalItem;
+  //       setAllItem(totalItem);
+  //       const quantity = Math.ceil(totalItem / 4);
+  //       setAllPage(quantity);
+  //     })
+  //     .catch(error => {
+  //       console.log(error.message);
+  //     });
+  // };
   return (
     // <MainContainer>
     //   <MainPageTitle title={'Favorite'} />

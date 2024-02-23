@@ -1,17 +1,17 @@
 import React, { useState, useEffect } from "react";
-import { useLocation } from "react-router-dom";
+// import { useLocation } from "react-router-dom";
 // import { MainPageTitle } from 'locationMainPageTitle';
 // import { MainContainer } from 'location/MainContainer';
-import MyRecipesList from "../../components/MyRecipeList/MyRecipesList";
-import { Children } from "react";
+// import MyRecipesList from "../../components/MyRecipeList/MyRecipesList";
+// import { Children } from "react";
 import  queryBackEnd  from "../../components/Request/queryBackEnd";
 import { Container, Pagination, Stack } from "@mui/material";
-import { PaginationWrapper, ImgWrapper, ImgTitle } from "../MyRecipePage/MyRecipesPage.styled";
+import { PaginationWrapper } from "../MyRecipePage/MyRecipesPage.styled";
 import instanceBackEnd from '../../components/Request/RequestBackEnd';
 // import imgIngradients from 'locationOfingradients.png';
 
 const MyRecipesPage = () => {
-  const location = useLocation();
+  // const location = useLocation();
   const [recipes, setRecipes] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [allPage, setAllPage] = useState();
@@ -42,27 +42,27 @@ const MyRecipesPage = () => {
       });
   };
 
-  const removeOwnRecipe = (recipeId) => {
-    const lastItem = allItem % 4;
-    let pageBack;
-    if (currentPage !== 1 || lastItem === 1) {
-      pageBack = currentPage - 1;
-    } else pageBack = currentPage;
-    instanceBackEnd
-      .delete(`/ownRecipes/${recipeId}?page=${pageBack}`)
-      .then((res) => {
-        const list = res.data.result.list;
-        setRecipes(list);
-        const totalItem = res.data.result.totalItem;
-        setAllItem(totalItem);
-        const quantity = Math.ceil(totalItem / 4);
-        setAllPage(quantity);
-      })
-      .catch((error) => {
-        console.log(error.message);
-        setRecipes([]);
-      });
-  };
+  // const removeOwnRecipe = (recipeId) => {
+  //   const lastItem = allItem % 4;
+  //   let pageBack;
+  //   if (currentPage !== 1 || lastItem === 1) {
+  //     pageBack = currentPage - 1;
+  //   } else pageBack = currentPage;
+  //   instanceBackEnd
+  //     .delete(`/ownRecipes/${recipeId}?page=${pageBack}`)
+  //     .then((res) => {
+  //       const list = res.data.result.list;
+  //       setRecipes(list);
+  //       const totalItem = res.data.result.totalItem;
+  //       setAllItem(totalItem);
+  //       const quantity = Math.ceil(totalItem / 4);
+  //       setAllPage(quantity);
+  //     })
+  //     .catch((error) => {
+  //       console.log(error.message);
+  //       setRecipes([]);
+  //     });
+  // };
   return (
     // <MainContainer>
     //   <MainPageTitle title={"My recipes"} />
