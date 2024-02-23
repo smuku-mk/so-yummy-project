@@ -1,13 +1,13 @@
 import styled from "styled-components";
-import yummy_mobile from "../../components/images/mobile_img/yummy_mobile.png";
-import yummy_tablet from "../../components/images/tablet_img/yummy_tablet.png";
-import yummy_desktop from "../../components/images/desktop_img/yummy_desktop.png";
-import leaves1x_mobile from "../../components/images/mobile_img/leaves@1x_mobile.png";
-import leaves1x_tablet from "../../components/images/tablet_img/leaves@1x_tablet.png";
-import leaves1x_desktop from "../../components/images/desktop_img/leaves@1x_desktop.png";
-import background_mobile from "../../components/images/mobile_img/background_mobile.png";
-import background_tablet from "../../components/images/tablet_img/background_tablet.png";
-import background_desktop from "../../components/images/desktop_img/background_desktop.png";
+import yummy_mobile from "../../images/mobile_img/yummy_mobile.png";
+import yummy_tablet from "../../images/tablet_img/yummy_tablet.png";
+import yummy_desktop from "../../images/desktop_img/yummy_desktop.png";
+import leaves1x_mobile from "../../images/mobile_img/leaves@1x_mobile.png";
+import leaves1x_tablet from "../../images/tablet_img/leaves@1x_tablet.png";
+import leaves1x_desktop from "../../images/desktop_img/leaves@1x_desktop.png";
+import background_mobile from "../../images/mobile_img/background_mobile.png";
+import background_tablet from "../../images/tablet_img/background_tablet.png";
+import background_desktop from "../../images/desktop_img/background_desktop.png";
 
 export const MainSection = styled.div`
   position: relative;
@@ -83,7 +83,6 @@ export const MainTitle = styled.h1`
 
   @media (min-width: 1440px) {
     font-size: 100px;
-    padding-bottom: 14px;
     text-align: left;
     margin-left: 0;
     margin-right: 0;

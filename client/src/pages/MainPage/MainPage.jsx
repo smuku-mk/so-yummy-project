@@ -29,7 +29,7 @@ import {
   BackgroundImage3Mobile,
   BackgroundImage3Tablet,
   BackgroundImage3Desktop,
-} from "./MainPages.styled";
+} from "./MainPage.styled";
 import leaves_mobile from "../../images/mobile_img/leaves@1x_mobile.png";
 import leaves_tablet from "../../images/tablet_img/leaves@1x_tablet.png";
 import leaves_desktop from "../../images/desktop_img/leaves@1x_desktop.png";
@@ -80,15 +80,18 @@ const MainPage = () => {
                 <PreviewCategories
                   pictureDescription={"Banana Pancakes"}
                   button={true}
+                  breakfast={1}
                 ></PreviewCategories>
               </CategoriesMobileSection>
 
               <CategoriesTabletSection>
                 <PreviewCategories
                   pictureDescription={"Banana Pancakes"}
+                  breakfast={1}
                 ></PreviewCategories>
                 <PreviewCategories
                   pictureDescription={"Ham hock colcannon"}
+                  breakfast={2}
                   button={true}
                 ></PreviewCategories>
               </CategoriesTabletSection>
@@ -96,15 +99,19 @@ const MainPage = () => {
               <CategoriesDesktopSection>
                 <PreviewCategories
                   pictureDescription={"Banana Pancakes"}
+                  breakfast={1}
                 ></PreviewCategories>
                 <PreviewCategories
                   pictureDescription={"Ham hock colcannon"}
+                  breakfast={2}
                 ></PreviewCategories>
                 <PreviewCategories
                   pictureDescription={"Polish Pancakes"}
+                  breakfast={3}
                 ></PreviewCategories>
                 <PreviewCategories
                   pictureDescription={"Boxty Breakfast"}
+                  breakfast={4}
                   button={true}
                 ></PreviewCategories>
               </CategoriesDesktopSection>
@@ -119,15 +126,18 @@ const MainPage = () => {
                 <PreviewCategories
                   pictureDescription={"Banana Pancakes"}
                   button={true}
+                  miscellaneous={1}
                 ></PreviewCategories>
               </CategoriesMobileSection>
 
               <CategoriesTabletSection>
                 <PreviewCategories
                   pictureDescription={"Banana Pancakes"}
+                  miscellaneous={1}
                 ></PreviewCategories>
                 <PreviewCategories
                   pictureDescription={"Ham hock colcannon"}
+                  miscellaneous={2}
                   button={true}
                 ></PreviewCategories>
               </CategoriesTabletSection>
@@ -135,15 +145,19 @@ const MainPage = () => {
               <CategoriesDesktopSection>
                 <PreviewCategories
                   pictureDescription={"Banana Pancakes"}
+                  miscellaneous={1}
                 ></PreviewCategories>
                 <PreviewCategories
                   pictureDescription={"Ham hock colcannon"}
+                  miscellaneous={2}
                 ></PreviewCategories>
                 <PreviewCategories
                   pictureDescription={"Polish Pancakes"}
+                  miscellaneous={3}
                 ></PreviewCategories>
                 <PreviewCategories
                   pictureDescription={"Boxty Breakfast"}
+                  miscellaneous={4}
                   button={true}
                 ></PreviewCategories>
               </CategoriesDesktopSection>
@@ -158,15 +172,18 @@ const MainPage = () => {
                 <PreviewCategories
                   pictureDescription={"Banana Pancakes"}
                   button={true}
+                  chicken={1}
                 ></PreviewCategories>
               </CategoriesMobileSection>
 
               <CategoriesTabletSection>
                 <PreviewCategories
                   pictureDescription={"Banana Pancakes"}
+                  chicken={1}
                 ></PreviewCategories>
                 <PreviewCategories
                   pictureDescription={"Ham hock colcannon"}
+                  chicken={2}
                   button={true}
                 ></PreviewCategories>
               </CategoriesTabletSection>
@@ -174,15 +191,19 @@ const MainPage = () => {
               <CategoriesDesktopSection>
                 <PreviewCategories
                   pictureDescription={"Banana Pancakes"}
+                  chicken={1}
                 ></PreviewCategories>
                 <PreviewCategories
                   pictureDescription={"Ham hock colcannon"}
+                  chicken={2}
                 ></PreviewCategories>
                 <PreviewCategories
                   pictureDescription={"Polish Pancakes"}
+                  chicken={3}
                 ></PreviewCategories>
                 <PreviewCategories
                   pictureDescription={"Boxty Breakfast"}
+                  chicken={4}
                   button={true}
                 ></PreviewCategories>
               </CategoriesDesktopSection>
@@ -197,15 +218,18 @@ const MainPage = () => {
                 <PreviewCategories
                   pictureDescription={"Banana Pancakes"}
                   button={true}
+                  desserts={1}
                 ></PreviewCategories>
               </CategoriesMobileSection>
 
               <CategoriesTabletSection>
                 <PreviewCategories
                   pictureDescription={"Banana Pancakes"}
+                  desserts={1}
                 ></PreviewCategories>
                 <PreviewCategories
                   pictureDescription={"Ham hock colcannon"}
+                  desserts={2}
                   button={true}
                 ></PreviewCategories>
               </CategoriesTabletSection>
@@ -213,15 +237,19 @@ const MainPage = () => {
               <CategoriesDesktopSection>
                 <PreviewCategories
                   pictureDescription={"Banana Pancakes"}
+                  desserts={1}
                 ></PreviewCategories>
                 <PreviewCategories
                   pictureDescription={"Ham hock colcannon"}
+                  desserts={2}
                 ></PreviewCategories>
                 <PreviewCategories
                   pictureDescription={"Polish Pancakes"}
+                  desserts={3}
                 ></PreviewCategories>
                 <PreviewCategories
                   pictureDescription={"Boxty Breakfast"}
+                  desserts={4}
                   button={true}
                 ></PreviewCategories>
               </CategoriesDesktopSection>
