@@ -17,7 +17,7 @@ import {
   ListSpanRemove,
   ListSpanNumber,
   ListNav,
-} from "./ShoppingList.styled";
+} from "../../pages/ShoppingListPage/ShoppingList.styled";
 
 export const IngredientsShoppingList = () => {
   const ingredients = useSelector((state) => state.ingredients.ingredients);
