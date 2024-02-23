@@ -1,4 +1,4 @@
-import AddRecipeForm from 'components/AddRecipeForm/AddRecipeForm';
+/* import AddRecipeForm from '../../components/AddRecipePage/AddRecipeForm';
 import { Container } from 'components/common/Container.styled';
 import PopularRecipes from 'components/PopularRecipes/PopularRecipes';
 import { FlexContainer, MainTitle, Section } from './AddRecipePage.styled';
@@ -31,4 +31,4 @@ export default function AddRecipePage() {
       </Container>
     </Section>
   );
-}
+} */

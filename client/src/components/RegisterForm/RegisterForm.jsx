@@ -1,4 +1,4 @@
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { register } from "../../redux/auth/operations";
 import { selectIsLoggedIn } from "../../redux/auth/selectors";
 import { useNavigate } from "react-router-dom";

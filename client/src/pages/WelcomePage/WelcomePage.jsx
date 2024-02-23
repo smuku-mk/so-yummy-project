@@ -1,6 +1,6 @@
 import { Container, Title, Text, Register, Signin } from "./WelcomePage.styled";
 
-export const WelcomePage = () => {
+const WelcomePage = () => {
   return (
     <Container>
       <Title>Welcome to the app!</Title>
@@ -13,3 +13,4 @@ export const WelcomePage = () => {
     </Container>
   );
 };
+export default WelcomePage;

@@ -1,4 +1,4 @@
-import styled from '@emotion/styled';
+/* import styled from '@emotion/styled';
 
 export const Section = styled.section`
   padding: 50px 0 76px;
@@ -37,4 +37,4 @@ export const MainTitle = styled.h1`
       theme.breakpoints[2]} - 1px)) {
     font-size: 44px;
   }
-`;
+`; */
