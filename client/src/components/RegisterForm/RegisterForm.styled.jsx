@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 export const Form = styled.form`
   display: flex;
@@ -82,7 +83,7 @@ export const Submit = styled.button`
   }
 `;
 
-export const Link = styled.link`
+export const StyledLink = styled(Link)`
   text-align: center;
   font-size: 14px;
   color: var(--fontLight);

@@ -1,10 +1,10 @@
 import { RegisterForm } from "../../components/RegisterForm/RegisterForm";
-import { RegistrowaniePage } from "./RegisterPage.styled";
+import { RegisterPageStyled } from "./RegisterPage.styled";
 
 export const RegisterPage = () => {
   return (
-    <RegistrowaniePage>
+    <RegisterPageStyled>
       <RegisterForm />
-    </RegistrowaniePage>
+    </RegisterPageStyled>
   );
 };
