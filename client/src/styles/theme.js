@@ -1,3 +1,24 @@
+// export const basic = {
+//   black: "#000000",
+//   white: "#ffffff",
+//   brand: "#8baa36",
+//   fontLight: "#fafafa",
+//   fontDark: "#3e4462",
+//   accentDark: "#22252a",
+//   highlightDark: "#1e1f28",
+//   transparent: "#d9d9d9",
+//   accentLight: "#efefef",
+//   borderLight: "#f0f0f0",
+//   borderDark: "#23262a",
+//   inputText: "#bdbdbd",
+//   error: "#e74a3b",
+//   warning: "#f6c23e",
+//   success: "#3cbc81",
+//   mediaBg: "#ebf3d4",
+//   darkBg: "#1e1f28",
+//   formDark: "#2a2c36",
+// };
+
 export const lightTheme = {
   mainBg: "#fafafa",
 
@@ -21,7 +42,7 @@ export const lightTheme = {
   oddTxt: "#3e4462",
   headers: "#001833", //all main headers on all pages
   recTitle: "#3e4462",
-  label: "##ffffff",
+  label: "#ffffff",
   fontLight: "#fafafa",
   btns: "#8baa36",
 
@@ -68,7 +89,6 @@ export const lightTheme = {
 
   //Fav, ingredients, my recs + pagination, search, shopping list
   mainTxt: "#3e4462",
-  // text: "#23262a",
   bannerBg: "#ffffff",
   lightTxt: "#fafafa",
   iconBg: "#ebf3d4",
@@ -81,6 +101,7 @@ export const lightTheme = {
   arrow: "#a9a9a9",
   black: "#000000",
   closeX: "1f242e",
+  borderItem: "#E0E0E0",
 };
 
 export const darkTheme = {
@@ -151,7 +172,6 @@ export const darkTheme = {
 
   //Fav, ingredients, my recs + pagination, search, shopping list
   mainTxt: "fafafa",
-  // text: "fafafa",
   bannerBg: "#2a2c36",
   lightTxt: "#fafafa",
   iconBg: "#1e1f28",
