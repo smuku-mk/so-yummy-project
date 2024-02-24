@@ -60,6 +60,29 @@ export const Form = styled.form`
   }
 `;
 
+export const FormContainer = styled.div``;
+
+export const Icon = styled.svg`
+  position: absolute;
+  width: 16px;
+  height: 12px;
+  margin-left: 14px;
+  margin-top: 11px;
+  fill: ${props => props.theme.footerTxt};
+
+  @media screen and (min-width: 768px) {
+    width: 20px;
+    height: 16px;
+    margin-left: 15px;
+    margin-top: 15px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    margin-left: 40px;
+    margin-top: 20px;
+  }
+`;
+
 export const Email = styled.input`
   background-color: inherit;
   color: inherit;

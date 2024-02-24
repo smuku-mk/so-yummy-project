@@ -2,13 +2,14 @@ import styled from 'styled-components';
 
 export const SocialsContainer = styled.div``;
 
-export const Socials = styled.ul`
+export const SocialsList = styled.ul`
   display: flex;
   flex-direction: row;
   gap: 14px;
   list-style: none;
   text-align: center;
   justify-content: center;
+  align-items: center;
   margin: 0;
   padding: 44px 0 0 0;
 
@@ -19,5 +20,16 @@ export const Socials = styled.ul`
 
   @media screen and (min-width: 1440px) {
     padding-top: 41px;
+  }
+`;
+
+export const SocialMedia = styled.li``;
+
+export const SocialIcon = styled.svg`
+  width: 20px;
+  height: 20px;
+  fill: ${props => props.theme.social};
+  &:hover {
+    fill: ${props => props.theme.socialHover};
   }
 `;

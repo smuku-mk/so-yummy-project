@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const AllFooter = styled.footer`
   color: ${props => props.theme.mainBg};
@@ -37,13 +37,30 @@ export const Container = styled.div`
 export const Information = styled.div``;
 
 export const Title = styled.p`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin: 0;
   font-weight: 700;
   font-size: 18px;
   line-height: 100%;
   letter-spacing: 0.01em;
   @media screen and (min-width: 768px) {
+    justify-content: left;
     font-size: 28px;
+  }
+`;
+
+export const Logo = styled.svg`
+  width: 32px;
+  height: 32px;
+  padding-right: 8px;
+  fill: ${props => props.theme.iconBg};
+  stroke: ${props => props.theme.social};
+  @media screen and (min-width: 768px) {
+    width: 44px;
+    height: 44px;
+    padding-right: 12px;
   }
 `;
 
@@ -57,7 +74,7 @@ export const List = styled.ul`
     font-size: 14px;
     line-height: 129%;
     letter-spacing: -0.02em;
-    padding: 24px 0 0 0;
+    padding: 24px 0 0 20px;
   }
 
   @media screen and (min-width: 1440px) {
