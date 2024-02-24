@@ -2,7 +2,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { register } from "../../redux/auth/operations";
 import { selectIsLoggedIn } from "../../redux/auth/selectors";
 import { useNavigate } from "react-router-dom";
-import { Form, Title, Label, Input, Submit, StyledLink, InputContainer } from "./RegisterForm.styled";
+import { Form, Title, Label, Input, Submit, Icon } from "./RegisterForm.styled";
+import sprites from "../../images/sprites.svg";
 
 export const RegisterForm = () => {
   const dispatch = useDispatch();
@@ -27,22 +28,46 @@ export const RegisterForm = () => {
 
   return (
     <div>
-      <Form onSubmit={handleSubmit} autoComplete="off">
+      <Form onSubmit={handleSubmit}>
         <Title>Registration</Title>
-        <InputContainer>
-          <Label>
-            <Input type="text" name="name" placeholder="Name" />
-          </Label>
-          <Label>
-            <Input type="email" name="email" placeholder="Email" />
-          </Label>
-          <Label>
-            <Input type="password" name="password" placeholder="Password" />
-          </Label>
-        </InputContainer>
-        <Submit type="submit">Register</Submit>
+        <Label>
+          <Input
+            id="name"
+            type="text"
+            name="name"
+            placeholder="Name"
+            autocomplete="off"
+          />
+          <Icon>
+            <use xlinkHref={`${sprites}#icon-user`} />
+          </Icon>
+        </Label>
+        <Label>
+          <Input
+            id="email"
+            type="email"
+            name="email"
+            placeholder="Email"
+            autocomplete="off"
+          />
+          <Icon>
+            <use xlinkHref={`${sprites}#icon-email`} />
+          </Icon>
+        </Label>
+        <Label>
+          <Input
+            id="password"
+            type="password"
+            name="password"
+            placeholder="Password"
+            autocomplete="off"
+          />
+          <Icon>
+            <use xlinkHref={`${sprites}#icon-password`} />
+          </Icon>
+        </Label>
+        <Submit type="submit">Sign up</Submit>
       </Form>
-      <StyledLink to="/signin">Sign In</StyledLink>
     </div>
   );
 };
