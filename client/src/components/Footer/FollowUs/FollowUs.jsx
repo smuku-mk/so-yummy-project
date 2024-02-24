@@ -1,6 +1,6 @@
-import React from 'react';
-import sprites from '../../images/sprites.svg';
-import { SocialsContainer, SocialsList, SocialMedia, SocialIcon } from './FollowUs.styled';
+import React from "react";
+import sprites from "../../../images/sprites.svg";
+import { SocialsContainer, SocialsList, SocialMedia, SocialIcon } from "./FollowUs.styled";
 
 export const FollowUs = () => {
   return (

@@ -1,5 +1,5 @@
 import React from 'react';
-import sprites from '../../images/sprites.svg';
+import sprites from "../../../images/sprites.svg";
 import {
   Subscription,
   Subscribe,
