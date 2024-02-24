@@ -42,7 +42,7 @@ export const lightTheme = {
   oddTxt: "#3e4462",
   headers: "#001833", //all main headers on all pages
   recTitle: "#3e4462",
-  label: "##ffffff",
+  label: "#ffffff",
   fontLight: "#fafafa",
   btns: "#8baa36",
 
@@ -101,6 +101,7 @@ export const lightTheme = {
   arrow: "#a9a9a9",
   black: "#000000",
   closeX: "1f242e",
+  borderItem: "#E0E0E0",
 };
 
 export const darkTheme = {

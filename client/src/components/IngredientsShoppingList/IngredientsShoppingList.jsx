@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import svg from "../images/sprites.svg";
+import svg from "../../images/sprites.svg";
 import {
   removeIngredient,
   fetchShoppingList,
