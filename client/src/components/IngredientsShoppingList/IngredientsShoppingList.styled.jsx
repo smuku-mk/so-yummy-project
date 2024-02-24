@@ -4,6 +4,33 @@ export const ListWrapper = styled.div`
   display: flex;
   flex-direction: column;
 `;
+
+export const MainPageTitle = styled.h2`
+  width: 90%;
+  display: flex;
+  align-items: center;
+  font-size: 28px;
+  color: ${(props) => props.theme.black};
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  margin-left: 2rem;
+
+  @media (min-width: 768px) {
+    font-size: 32px;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  @media (min-width: 1440px) {
+    font-size: 44px;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+`;
+
 export const ListNav = styled.div`
   display: flex;
   justify-content: center;
@@ -16,8 +43,8 @@ export const ListHead = styled.h1`
   font-size: 10px;
   width: 90%;
   height: 40px;
-  color: var(--white);
-  background-color: var(--brand);
+  color: ${(props) => props.theme.bannerBg};
+  background-color: ${(props) => props.theme.green};
   border-radius: 5px;
   gap: 5rem;
 
@@ -58,7 +85,7 @@ export const ListItem = styled.li`
   width: 90%;
   display: flex;
   padding: 1rem;
-  border-bottom: 1px solid var(--mediaBg);
+  border-bottom: 1px solid ${(props) => props.theme.borderItem};
   margin-left: auto;
   margin-right: auto;
 
@@ -73,9 +100,8 @@ export const ListImage = styled.img`
   width: 60px;
   height: 60px;
   margin-right: 1rem;
-  background-color: var(--mediaBg);
+  background-color: ${(props) => props.theme.itemBg};
   border-radius: 5px;
-
   @media (min-width: 768px) {
     width: 81px;
     height: 81px;
@@ -93,8 +119,8 @@ export const ListAmount = styled.span`
   margin-left: auto;
   width: 40px;
   height: 20px;
-  background-color: var(--brand);
-  coolor: var(--white);
+  background-color: ${(props) => props.theme.green};
+  color: ${(props) => props.theme.bannerBg};
   border-radius: 5px;
 
   @media (min-width: 768px) {

@@ -1,12 +1,13 @@
-const express = require("express");
-const router = express.Router();
-const {
-  listIngredients,
-  addIngredients,
-  removeIngredients,
-} = require("../controllers/ingredients/listIngredients");
+import express from "express";
+import { listIngredients } from "../controllers/ingredients/listIngredients.js";
+import { addIngredients } from "../controllers/ingredients/addIngredients.js";  
+import { removeIngredients } from "../controllers/ingredients/removeIngredients.js"; 
 
-router.get("/", async (req, res, next) => {
+
+const ShoppingListRouter = express.Router();
+
+
+ShoppingListRouter.get("/", async (req, res, next) => {
   try {
     const shoppingList = await listIngredients;
     res.json({ shoppingList });
@@ -15,7 +16,7 @@ router.get("/", async (req, res, next) => {
   }
 });
 
-router.post("/add", async (req, res, next) => {
+ShoppingListRouter.post("/add", async (req, res, next) => {
   try {
     const newIngredient = await addIngredients;
 
@@ -25,7 +26,7 @@ router.post("/add", async (req, res, next) => {
   }
 });
 
-router.delete("/remove/:productId", async (req, res, next) => {
+ShoppingListRouter.delete("/remove/:productId", async (req, res, next) => {
   try {
     const removedIngredient = await removeIngredients;
     if (removedIngredient) {
@@ -38,4 +39,4 @@ router.delete("/remove/:productId", async (req, res, next) => {
   }
 });
 
-module.exports = shoppingListRouter;
+export default ShoppingListRouter;

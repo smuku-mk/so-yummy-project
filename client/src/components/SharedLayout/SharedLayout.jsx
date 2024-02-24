@@ -15,3 +15,11 @@ export const SharedLayout = () => {
     </Container>
   );
 };
+
+export const SharedLayoutTest = () => {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <Outlet />
+    </Suspense>
+  );
+};
