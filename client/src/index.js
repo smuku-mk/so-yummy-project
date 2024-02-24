@@ -6,6 +6,7 @@ import { GlobalStyles } from "./styles";
 import { lightTheme, darkTheme } from "./styles";
 import { App } from "./components";
 import store from "./redux/store";
+import { BrowserRouter } from "react-router-dom";
 
 const Root = () => {
   const [theme, setTheme] = useState("light");
@@ -19,7 +20,9 @@ const Root = () => {
       <Provider store={store}>
         <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
           <GlobalStyles />
-          <App toggleTheme={toggleTheme} />
+          <BrowserRouter basename="/">
+            <App toggleTheme={toggleTheme} />
+          </BrowserRouter>
         </ThemeProvider>
       </Provider>
     </React.StrictMode>
