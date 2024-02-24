@@ -2,11 +2,11 @@ import notfound1x_mobile from "../../images/mobile_img/notfound1x_mobile.png";
 import notfound2x_mobile from "../../images/mobile_img/notfound2x_mobile.png";
 import notfound1x_tablet from "../../images/tablet_img/notfound1x_tablet.png";
 import notfound2x_tablet from "../../images/tablet_img/notfound2x_tablet.png";
-import notfound1x_dekstop from "../../images/dekstop_img/notfound1x_dekstop.png";
-import notfound2x_dekstop from "../../images/dekstop_img/notfound2x_dekstop.png";
+import notfound1x_desktop from "../../images/desktop_img/notfound1x_desktop.png";
+import notfound2x_desktop from "../../images/desktop_img/notfound2x_desktop.png";
 import { Container, PicBox, TextBox, Title, Text } from "./NotFoundPage.styled";
 
-export const NotFound = () => {
+export const NotFoundPage = () => {
   return (
     <Container>
       <PicBox>
@@ -22,7 +22,7 @@ export const NotFound = () => {
           />
           <source
             media="(min-width: 1440px)"
-            srcSet={`${notfound1x_dekstop}, ${notfound2x_dekstop} 2x`}
+            srcSet={`${notfound1x_desktop}, ${notfound2x_desktop} 2x`}
           />
         </picture>
       </PicBox>

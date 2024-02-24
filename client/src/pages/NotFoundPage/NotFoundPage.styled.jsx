@@ -14,7 +14,7 @@ export const Container = styled.div`
 
 export const PicBox = styled.div`
   display: flex;
-  justyfy-content: center;
+  justify-content: center;
   margin-bottom: 14px;
 
   @media screen and (min-width: 768px) {
