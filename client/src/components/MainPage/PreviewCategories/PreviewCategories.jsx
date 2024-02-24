@@ -5,22 +5,22 @@ import {
   PictureDescription,
   Button,
   BlockPictureImg,
+  CategoryBlock1,
+  CategoryBlock2,
+  CategoryTitle,
+  CategoriesTabletSection,
+  CategoriesListContainer,
+  CategoryElement,
+  CategoriesMobileSection,
+  CategoriesDesktopSection,
 } from "./PreviewCategories.styled";
 import { useState, useEffect } from "react";
 
-const PreviewCategories = ({
-  button,
-  breakfast,
-  miscellaneous,
-  chicken,
-  desserts,
-}) => {
+const PreviewCategories = ({ mobile, tablet, desktop }) => {
   const [breakfastData, setBreakfastData] = useState([]);
   const [miscellaneousData, setMiscellaneousData] = useState([]);
   const [chickenData, setChickenData] = useState([]);
   const [dessertsData, setDessertsData] = useState([]);
-
-  // do poprawy
 
   useEffect(() => {
     fetch("http://localhost:5000/recipes/main-page")
@@ -58,283 +58,567 @@ const PreviewCategories = ({
   const threeDesserts = dessertsData.length > 0 ? dessertsData[2] : null;
   const fourDesserts = dessertsData.length > 0 ? dessertsData[3] : null;
 
-  if (breakfast === 1) {
-    return (
-      <Block>
-        {firstBreakfast && (
-          <BlockPicture>
-            <BlockPictureImg src={firstBreakfast.thumb} alt="zdjecie" />
-            <BlockPictureDescription>
-              <PictureDescription>{firstBreakfast.title}</PictureDescription>
-            </BlockPictureDescription>
-          </BlockPicture>
-        )}
+  return (
+    <>
+      {mobile && (
+        <>
+          <CategoriesListContainer>
+            <CategoryElement>
+              <CategoriesMobileSection>
+                <CategoryBlock1>
+                  <CategoryTitle>Breakfast</CategoryTitle>
+                </CategoryBlock1>
+                <CategoryBlock2>
+                  <Block>
+                    {firstBreakfast && (
+                      <BlockPicture>
+                        <BlockPictureImg
+                          src={firstBreakfast.thumb}
+                          alt="zdjecie"
+                        />
+                        <BlockPictureDescription>
+                          <PictureDescription>
+                            {firstBreakfast.title}
+                          </PictureDescription>
+                        </BlockPictureDescription>
+                      </BlockPicture>
+                    )}
 
-        {button && <Button>See all</Button>}
-      </Block>
-    );
-  }
+                    <Button>See all</Button>
+                  </Block>
 
-  if (breakfast === 2) {
-    return (
-      <Block>
-        {twoBreakfast && (
-          <BlockPicture>
-            <BlockPictureImg src={twoBreakfast.thumb} alt="zdjecie" />
-            <BlockPictureDescription>
-              <PictureDescription>{twoBreakfast.title}</PictureDescription>
-            </BlockPictureDescription>
-          </BlockPicture>
-        )}
+                  <CategoryBlock1>
+                    <CategoryTitle>Miscellaneous</CategoryTitle>
+                  </CategoryBlock1>
 
-        {button && <Button>See all</Button>}
-      </Block>
-    );
-  }
+                  <Block>
+                    {firstMiscellaneous && (
+                      <BlockPicture>
+                        <BlockPictureImg
+                          src={firstMiscellaneous.thumb}
+                          alt="zdjecie"
+                        />
+                        <BlockPictureDescription>
+                          <PictureDescription>
+                            {firstMiscellaneous.title}
+                          </PictureDescription>
+                        </BlockPictureDescription>
+                      </BlockPicture>
+                    )}
 
-  if (breakfast === 3) {
-    return (
-      <Block>
-        {threeBreakfast && (
-          <BlockPicture>
-            <BlockPictureImg src={threeBreakfast.thumb} alt="zdjecie" />
-            <BlockPictureDescription>
-              <PictureDescription>{threeBreakfast.title}</PictureDescription>
-            </BlockPictureDescription>
-          </BlockPicture>
-        )}
+                    <Button>See all</Button>
+                  </Block>
 
-        {button && <Button>See all</Button>}
-      </Block>
-    );
-  }
+                  <CategoryBlock1>
+                    <CategoryTitle>Chicken</CategoryTitle>
+                  </CategoryBlock1>
 
-  if (breakfast === 4) {
-    return (
-      <Block>
-        {fourBreakfast && (
-          <BlockPicture>
-            <BlockPictureImg src={fourBreakfast.thumb} alt="zdjecie" />
-            <BlockPictureDescription>
-              <PictureDescription>{fourBreakfast.title}</PictureDescription>
-            </BlockPictureDescription>
-          </BlockPicture>
-        )}
+                  <Block>
+                    {firstChicken && (
+                      <BlockPicture>
+                        <BlockPictureImg
+                          src={firstChicken.thumb}
+                          alt="zdjecie"
+                        />
+                        <BlockPictureDescription>
+                          <PictureDescription>
+                            {firstChicken.title}
+                          </PictureDescription>
+                        </BlockPictureDescription>
+                      </BlockPicture>
+                    )}
 
-        {button && <Button>See all</Button>}
-      </Block>
-    );
-  }
+                    <Button>See all</Button>
+                  </Block>
 
-  if (miscellaneous === 1) {
-    return (
-      <Block>
-        {firstMiscellaneous && (
-          <BlockPicture>
-            <BlockPictureImg src={firstMiscellaneous.thumb} alt="zdjecie" />
-            <BlockPictureDescription>
-              <PictureDescription>
-                {firstMiscellaneous.title}
-              </PictureDescription>
-            </BlockPictureDescription>
-          </BlockPicture>
-        )}
+                  <CategoryBlock1>
+                    <CategoryTitle>desserts</CategoryTitle>
+                  </CategoryBlock1>
 
-        {button && <Button>See all</Button>}
-      </Block>
-    );
-  }
+                  <Block>
+                    {firstDesserts && (
+                      <BlockPicture>
+                        <BlockPictureImg
+                          src={firstDesserts.thumb}
+                          alt="zdjecie"
+                        />
+                        <BlockPictureDescription>
+                          <PictureDescription>
+                            {firstDesserts.title}
+                          </PictureDescription>
+                        </BlockPictureDescription>
+                      </BlockPicture>
+                    )}
 
-  if (miscellaneous === 2) {
-    return (
-      <Block>
-        {twoMiscellaneous && (
-          <BlockPicture>
-            <BlockPictureImg src={twoMiscellaneous.thumb} alt="zdjecie" />
-            <BlockPictureDescription>
-              <PictureDescription>{twoMiscellaneous.title}</PictureDescription>
-            </BlockPictureDescription>
-          </BlockPicture>
-        )}
+                    <Button>See all</Button>
+                  </Block>
+                </CategoryBlock2>
+              </CategoriesMobileSection>
+            </CategoryElement>
+          </CategoriesListContainer>
+        </>
+      )}
 
-        {button && <Button>See all</Button>}
-      </Block>
-    );
-  }
+      {tablet && (
+        <>
+          <CategoriesListContainer>
+            <CategoryElement>
+              <CategoryBlock1>
+                <CategoryTitle>Breakfast</CategoryTitle>
+              </CategoryBlock1>
+              <CategoryBlock2>
+                <CategoriesTabletSection>
+                  <Block>
+                    {firstBreakfast && (
+                      <BlockPicture>
+                        <BlockPictureImg
+                          src={firstBreakfast.thumb}
+                          alt="zdjecie"
+                        />
+                        <BlockPictureDescription>
+                          <PictureDescription>
+                            {firstBreakfast.title}
+                          </PictureDescription>
+                        </BlockPictureDescription>
+                      </BlockPicture>
+                    )}
+                  </Block>
 
-  if (miscellaneous === 3) {
-    return (
-      <Block>
-        {threeMiscellaneous && (
-          <BlockPicture>
-            <BlockPictureImg src={threeMiscellaneous.thumb} alt="zdjecie" />
-            <BlockPictureDescription>
-              <PictureDescription>
-                {threeMiscellaneous.title}
-              </PictureDescription>
-            </BlockPictureDescription>
-          </BlockPicture>
-        )}
+                  <Block>
+                    {twoBreakfast && (
+                      <BlockPicture>
+                        <BlockPictureImg
+                          src={twoBreakfast.thumb}
+                          alt="zdjecie"
+                        />
+                        <BlockPictureDescription>
+                          <PictureDescription>
+                            {twoBreakfast.title}
+                          </PictureDescription>
+                        </BlockPictureDescription>
+                      </BlockPicture>
+                    )}
 
-        {button && <Button>See all</Button>}
-      </Block>
-    );
-  }
+                    <Button>See all</Button>
+                  </Block>
+                </CategoriesTabletSection>
 
-  if (miscellaneous === 4) {
-    return (
-      <Block>
-        {fourMiscellaneous && (
-          <BlockPicture>
-            <BlockPictureImg src={fourMiscellaneous.thumb} alt="zdjecie" />
-            <BlockPictureDescription>
-              <PictureDescription>{fourMiscellaneous.title}</PictureDescription>
-            </BlockPictureDescription>
-          </BlockPicture>
-        )}
+                <CategoryBlock1>
+                  <CategoryTitle>Miscellaneous</CategoryTitle>
+                </CategoryBlock1>
 
-        {button && <Button>See all</Button>}
-      </Block>
-    );
-  }
+                <CategoriesTabletSection>
+                  <Block>
+                    {firstMiscellaneous && (
+                      <BlockPicture>
+                        <BlockPictureImg
+                          src={firstMiscellaneous.thumb}
+                          alt="zdjecie"
+                        />
+                        <BlockPictureDescription>
+                          <PictureDescription>
+                            {firstMiscellaneous.title}
+                          </PictureDescription>
+                        </BlockPictureDescription>
+                      </BlockPicture>
+                    )}
+                  </Block>
 
-  if (chicken === 1) {
-    return (
-      <Block>
-        {firstChicken && (
-          <BlockPicture>
-            <BlockPictureImg src={firstChicken.thumb} alt="zdjecie" />
-            <BlockPictureDescription>
-              <PictureDescription>{firstChicken.title}</PictureDescription>
-            </BlockPictureDescription>
-          </BlockPicture>
-        )}
+                  <Block>
+                    {twoMiscellaneous && (
+                      <BlockPicture>
+                        <BlockPictureImg
+                          src={twoMiscellaneous.thumb}
+                          alt="zdjecie"
+                        />
+                        <BlockPictureDescription>
+                          <PictureDescription>
+                            {twoMiscellaneous.title}
+                          </PictureDescription>
+                        </BlockPictureDescription>
+                      </BlockPicture>
+                    )}
 
-        {button && <Button>See all</Button>}
-      </Block>
-    );
-  }
+                    <Button>See all</Button>
+                  </Block>
+                </CategoriesTabletSection>
 
-  if (chicken === 2) {
-    return (
-      <Block>
-        {twoChicken && (
-          <BlockPicture>
-            <BlockPictureImg src={twoChicken.thumb} alt="zdjecie" />
-            <BlockPictureDescription>
-              <PictureDescription>{twoChicken.title}</PictureDescription>
-            </BlockPictureDescription>
-          </BlockPicture>
-        )}
+                <CategoryBlock1>
+                  <CategoryTitle>Chicken</CategoryTitle>
+                </CategoryBlock1>
 
-        {button && <Button>See all</Button>}
-      </Block>
-    );
-  }
+                <CategoriesTabletSection>
+                  <Block>
+                    {firstChicken && (
+                      <BlockPicture>
+                        <BlockPictureImg
+                          src={firstChicken.thumb}
+                          alt="zdjecie"
+                        />
+                        <BlockPictureDescription>
+                          <PictureDescription>
+                            {firstChicken.title}
+                          </PictureDescription>
+                        </BlockPictureDescription>
+                      </BlockPicture>
+                    )}
+                  </Block>
 
-  if (chicken === 3) {
-    return (
-      <Block>
-        {threeChicken && (
-          <BlockPicture>
-            <BlockPictureImg src={threeChicken.thumb} alt="zdjecie" />
-            <BlockPictureDescription>
-              <PictureDescription>{threeChicken.title}</PictureDescription>
-            </BlockPictureDescription>
-          </BlockPicture>
-        )}
+                  <Block>
+                    {twoChicken && (
+                      <BlockPicture>
+                        <BlockPictureImg src={twoChicken.thumb} alt="zdjecie" />
+                        <BlockPictureDescription>
+                          <PictureDescription>
+                            {twoChicken.title}
+                          </PictureDescription>
+                        </BlockPictureDescription>
+                      </BlockPicture>
+                    )}
 
-        {button && <Button>See all</Button>}
-      </Block>
-    );
-  }
+                    <Button>See all</Button>
+                  </Block>
+                </CategoriesTabletSection>
 
-  if (chicken === 4) {
-    return (
-      <Block>
-        {fourChicken && (
-          <BlockPicture>
-            <BlockPictureImg src={fourChicken.thumb} alt="zdjecie" />
-            <BlockPictureDescription>
-              <PictureDescription>{fourChicken.title}</PictureDescription>
-            </BlockPictureDescription>
-          </BlockPicture>
-        )}
+                <CategoryBlock1>
+                  <CategoryTitle>desserts</CategoryTitle>
+                </CategoryBlock1>
 
-        {button && <Button>See all</Button>}
-      </Block>
-    );
-  }
+                <CategoriesTabletSection>
+                  <Block>
+                    {firstDesserts && (
+                      <BlockPicture>
+                        <BlockPictureImg
+                          src={firstDesserts.thumb}
+                          alt="zdjecie"
+                        />
+                        <BlockPictureDescription>
+                          <PictureDescription>
+                            {firstDesserts.title}
+                          </PictureDescription>
+                        </BlockPictureDescription>
+                      </BlockPicture>
+                    )}
+                  </Block>
 
-  if (desserts === 1) {
-    return (
-      <Block>
-        {firstDesserts && (
-          <BlockPicture>
-            <BlockPictureImg src={firstDesserts.thumb} alt="zdjecie" />
-            <BlockPictureDescription>
-              <PictureDescription>{firstDesserts.title}</PictureDescription>
-            </BlockPictureDescription>
-          </BlockPicture>
-        )}
+                  <Block>
+                    {twoDesserts && (
+                      <BlockPicture>
+                        <BlockPictureImg
+                          src={twoDesserts.thumb}
+                          alt="zdjecie"
+                        />
+                        <BlockPictureDescription>
+                          <PictureDescription>
+                            {twoDesserts.title}
+                          </PictureDescription>
+                        </BlockPictureDescription>
+                      </BlockPicture>
+                    )}
 
-        {button && <Button>See all</Button>}
-      </Block>
-    );
-  }
+                    <Button>See all</Button>
+                  </Block>
+                </CategoriesTabletSection>
+              </CategoryBlock2>
+            </CategoryElement>
+          </CategoriesListContainer>
+        </>
+      )}
 
-  if (desserts === 2) {
-    return (
-      <Block>
-        {twoDesserts && (
-          <BlockPicture>
-            <BlockPictureImg src={twoDesserts.thumb} alt="zdjecie" />
-            <BlockPictureDescription>
-              <PictureDescription>{twoDesserts.title}</PictureDescription>
-            </BlockPictureDescription>
-          </BlockPicture>
-        )}
+      {desktop && (
+        <>
+          <CategoriesListContainer>
+            <CategoryElement>
+              <CategoryBlock1>
+                <CategoryTitle>Breakfast</CategoryTitle>
+              </CategoryBlock1>
+              <CategoryBlock2>
+                <CategoriesDesktopSection>
+                  <Block>
+                    {firstBreakfast && (
+                      <BlockPicture>
+                        <BlockPictureImg
+                          src={firstBreakfast.thumb}
+                          alt="zdjecie"
+                        />
+                        <BlockPictureDescription>
+                          <PictureDescription>
+                            {firstBreakfast.title}
+                          </PictureDescription>
+                        </BlockPictureDescription>
+                      </BlockPicture>
+                    )}
+                  </Block>
 
-        {button && <Button>See all</Button>}
-      </Block>
-    );
-  }
+                  <Block>
+                    {twoBreakfast && (
+                      <BlockPicture>
+                        <BlockPictureImg
+                          src={twoBreakfast.thumb}
+                          alt="zdjecie"
+                        />
+                        <BlockPictureDescription>
+                          <PictureDescription>
+                            {twoBreakfast.title}
+                          </PictureDescription>
+                        </BlockPictureDescription>
+                      </BlockPicture>
+                    )}
+                  </Block>
 
-  if (desserts === 3) {
-    return (
-      <Block>
-        {threeDesserts && (
-          <BlockPicture>
-            <BlockPictureImg src={threeDesserts.thumb} alt="zdjecie" />
-            <BlockPictureDescription>
-              <PictureDescription>{threeDesserts.title}</PictureDescription>
-            </BlockPictureDescription>
-          </BlockPicture>
-        )}
+                  <Block>
+                    {threeBreakfast && (
+                      <BlockPicture>
+                        <BlockPictureImg
+                          src={threeBreakfast.thumb}
+                          alt="zdjecie"
+                        />
+                        <BlockPictureDescription>
+                          <PictureDescription>
+                            {threeBreakfast.title}
+                          </PictureDescription>
+                        </BlockPictureDescription>
+                      </BlockPicture>
+                    )}
+                  </Block>
 
-        {button && <Button>See all</Button>}
-      </Block>
-    );
-  }
+                  <Block>
+                    {fourBreakfast && (
+                      <BlockPicture>
+                        <BlockPictureImg
+                          src={fourBreakfast.thumb}
+                          alt="zdjecie"
+                        />
+                        <BlockPictureDescription>
+                          <PictureDescription>
+                            {fourBreakfast.title}
+                          </PictureDescription>
+                        </BlockPictureDescription>
+                      </BlockPicture>
+                    )}
 
-  if (desserts === 4) {
-    return (
-      <Block>
-        {fourDesserts && (
-          <BlockPicture>
-            <BlockPictureImg src={fourDesserts.thumb} alt="zdjecie" />
-            <BlockPictureDescription>
-              <PictureDescription>{fourDesserts.title}</PictureDescription>
-            </BlockPictureDescription>
-          </BlockPicture>
-        )}
+                    <Button>See all</Button>
+                  </Block>
+                </CategoriesDesktopSection>
 
-        {button && <Button>See all</Button>}
-      </Block>
-    );
-  }
+                <CategoryBlock1>
+                  <CategoryTitle>Miscellaneous</CategoryTitle>
+                </CategoryBlock1>
 
-  return <></>;
+                <CategoriesDesktopSection>
+                  <Block>
+                    {firstMiscellaneous && (
+                      <BlockPicture>
+                        <BlockPictureImg
+                          src={firstMiscellaneous.thumb}
+                          alt="zdjecie"
+                        />
+                        <BlockPictureDescription>
+                          <PictureDescription>
+                            {firstMiscellaneous.title}
+                          </PictureDescription>
+                        </BlockPictureDescription>
+                      </BlockPicture>
+                    )}
+                  </Block>
+
+                  <Block>
+                    {twoMiscellaneous && (
+                      <BlockPicture>
+                        <BlockPictureImg
+                          src={twoMiscellaneous.thumb}
+                          alt="zdjecie"
+                        />
+                        <BlockPictureDescription>
+                          <PictureDescription>
+                            {twoMiscellaneous.title}
+                          </PictureDescription>
+                        </BlockPictureDescription>
+                      </BlockPicture>
+                    )}
+                  </Block>
+
+                  <Block>
+                    {threeMiscellaneous && (
+                      <BlockPicture>
+                        <BlockPictureImg
+                          src={threeMiscellaneous.thumb}
+                          alt="zdjecie"
+                        />
+                        <BlockPictureDescription>
+                          <PictureDescription>
+                            {threeMiscellaneous.title}
+                          </PictureDescription>
+                        </BlockPictureDescription>
+                      </BlockPicture>
+                    )}
+                  </Block>
+
+                  <Block>
+                    {fourMiscellaneous && (
+                      <BlockPicture>
+                        <BlockPictureImg
+                          src={fourMiscellaneous.thumb}
+                          alt="zdjecie"
+                        />
+                        <BlockPictureDescription>
+                          <PictureDescription>
+                            {fourMiscellaneous.title}
+                          </PictureDescription>
+                        </BlockPictureDescription>
+                      </BlockPicture>
+                    )}
+
+                    <Button>See all</Button>
+                  </Block>
+                </CategoriesDesktopSection>
+
+                <CategoryBlock1>
+                  <CategoryTitle>Chicken</CategoryTitle>
+                </CategoryBlock1>
+
+                <CategoriesDesktopSection>
+                  <Block>
+                    {firstChicken && (
+                      <BlockPicture>
+                        <BlockPictureImg
+                          src={firstChicken.thumb}
+                          alt="zdjecie"
+                        />
+                        <BlockPictureDescription>
+                          <PictureDescription>
+                            {firstChicken.title}
+                          </PictureDescription>
+                        </BlockPictureDescription>
+                      </BlockPicture>
+                    )}
+                  </Block>
+
+                  <Block>
+                    {twoChicken && (
+                      <BlockPicture>
+                        <BlockPictureImg src={twoChicken.thumb} alt="zdjecie" />
+                        <BlockPictureDescription>
+                          <PictureDescription>
+                            {twoChicken.title}
+                          </PictureDescription>
+                        </BlockPictureDescription>
+                      </BlockPicture>
+                    )}
+                  </Block>
+
+                  <Block>
+                    {threeChicken && (
+                      <BlockPicture>
+                        <BlockPictureImg
+                          src={threeChicken.thumb}
+                          alt="zdjecie"
+                        />
+                        <BlockPictureDescription>
+                          <PictureDescription>
+                            {threeChicken.title}
+                          </PictureDescription>
+                        </BlockPictureDescription>
+                      </BlockPicture>
+                    )}
+                  </Block>
+
+                  <Block>
+                    {fourChicken && (
+                      <BlockPicture>
+                        <BlockPictureImg
+                          src={fourChicken.thumb}
+                          alt="zdjecie"
+                        />
+                        <BlockPictureDescription>
+                          <PictureDescription>
+                            {fourChicken.title}
+                          </PictureDescription>
+                        </BlockPictureDescription>
+                      </BlockPicture>
+                    )}
+
+                    <Button>See all</Button>
+                  </Block>
+                </CategoriesDesktopSection>
+
+                <CategoryBlock1>
+                  <CategoryTitle>desserts</CategoryTitle>
+                </CategoryBlock1>
+                <CategoriesDesktopSection>
+                  <Block>
+                    {firstDesserts && (
+                      <BlockPicture>
+                        <BlockPictureImg
+                          src={firstDesserts.thumb}
+                          alt="zdjecie"
+                        />
+                        <BlockPictureDescription>
+                          <PictureDescription>
+                            {firstDesserts.title}
+                          </PictureDescription>
+                        </BlockPictureDescription>
+                      </BlockPicture>
+                    )}
+                  </Block>
+
+                  <Block>
+                    {twoDesserts && (
+                      <BlockPicture>
+                        <BlockPictureImg
+                          src={twoDesserts.thumb}
+                          alt="zdjecie"
+                        />
+                        <BlockPictureDescription>
+                          <PictureDescription>
+                            {twoDesserts.title}
+                          </PictureDescription>
+                        </BlockPictureDescription>
+                      </BlockPicture>
+                    )}
+                  </Block>
+
+                  <Block>
+                    {threeDesserts && (
+                      <BlockPicture>
+                        <BlockPictureImg
+                          src={threeDesserts.thumb}
+                          alt="zdjecie"
+                        />
+                        <BlockPictureDescription>
+                          <PictureDescription>
+                            {threeDesserts.title}
+                          </PictureDescription>
+                        </BlockPictureDescription>
+                      </BlockPicture>
+                    )}
+                  </Block>
+
+                  <Block>
+                    {fourDesserts && (
+                      <BlockPicture>
+                        <BlockPictureImg
+                          src={fourDesserts.thumb}
+                          alt="zdjecie"
+                        />
+                        <BlockPictureDescription>
+                          <PictureDescription>
+                            {fourDesserts.title}
+                          </PictureDescription>
+                        </BlockPictureDescription>
+                      </BlockPicture>
+                    )}
+
+                    <Button>See all</Button>
+                  </Block>
+                </CategoriesDesktopSection>
+              </CategoryBlock2>
+            </CategoryElement>
+          </CategoriesListContainer>
+        </>
+      )}
+    </>
+  );
 };
 
 export default PreviewCategories;

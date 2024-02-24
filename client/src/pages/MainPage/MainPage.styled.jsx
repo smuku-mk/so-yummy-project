@@ -202,10 +202,7 @@ export const CategoriesTabletSection = styled.div`
   display: none;
 
   @media (min-width: 768px) {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin-top: 32px;
+    display: block;
   }
 
   @media (min-width: 1440px) {
@@ -252,10 +249,7 @@ export const CategoriesDesktopSection = styled.div`
   display: none;
 
   @media (min-width: 1440px) {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    margin-top: 50px;
+    display: block;
   }
 `;
 

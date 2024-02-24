@@ -15,9 +15,6 @@ import {
   OtherCategoriesButton,
   CategoriesTabletSection,
   CategoriesMobileSection,
-  CategoryTitle,
-  CategoryBlock1,
-  CategoryBlock2,
   DesktopMainSection,
   CategoriesDesktopSection,
   BackgroundImage1Mobile,
@@ -72,188 +69,17 @@ const MainPage = () => {
       <CategoriesSection>
         <CategoriesListContainer>
           <CategoryListItem>
-            <CategoryBlock1>
-              <CategoryTitle>Breakfast</CategoryTitle>
-            </CategoryBlock1>
-            <CategoryBlock2>
-              <CategoriesMobileSection>
-                <PreviewCategories
-                  pictureDescription={"Banana Pancakes"}
-                  button={true}
-                  breakfast={1}
-                ></PreviewCategories>
-              </CategoriesMobileSection>
+            <CategoriesMobileSection>
+              <PreviewCategories mobile={true}></PreviewCategories>
+            </CategoriesMobileSection>
 
-              <CategoriesTabletSection>
-                <PreviewCategories
-                  pictureDescription={"Banana Pancakes"}
-                  breakfast={1}
-                ></PreviewCategories>
-                <PreviewCategories
-                  pictureDescription={"Ham hock colcannon"}
-                  breakfast={2}
-                  button={true}
-                ></PreviewCategories>
-              </CategoriesTabletSection>
+            <CategoriesTabletSection>
+              <PreviewCategories tablet={true}></PreviewCategories>
+            </CategoriesTabletSection>
 
-              <CategoriesDesktopSection>
-                <PreviewCategories
-                  pictureDescription={"Banana Pancakes"}
-                  breakfast={1}
-                ></PreviewCategories>
-                <PreviewCategories
-                  pictureDescription={"Ham hock colcannon"}
-                  breakfast={2}
-                ></PreviewCategories>
-                <PreviewCategories
-                  pictureDescription={"Polish Pancakes"}
-                  breakfast={3}
-                ></PreviewCategories>
-                <PreviewCategories
-                  pictureDescription={"Boxty Breakfast"}
-                  breakfast={4}
-                  button={true}
-                ></PreviewCategories>
-              </CategoriesDesktopSection>
-            </CategoryBlock2>
-          </CategoryListItem>
-          <CategoryListItem>
-            <CategoryBlock1>
-              <CategoryTitle>Miscellaneous</CategoryTitle>
-            </CategoryBlock1>
-            <CategoryBlock2>
-              <CategoriesMobileSection>
-                <PreviewCategories
-                  pictureDescription={"Banana Pancakes"}
-                  button={true}
-                  miscellaneous={1}
-                ></PreviewCategories>
-              </CategoriesMobileSection>
-
-              <CategoriesTabletSection>
-                <PreviewCategories
-                  pictureDescription={"Banana Pancakes"}
-                  miscellaneous={1}
-                ></PreviewCategories>
-                <PreviewCategories
-                  pictureDescription={"Ham hock colcannon"}
-                  miscellaneous={2}
-                  button={true}
-                ></PreviewCategories>
-              </CategoriesTabletSection>
-
-              <CategoriesDesktopSection>
-                <PreviewCategories
-                  pictureDescription={"Banana Pancakes"}
-                  miscellaneous={1}
-                ></PreviewCategories>
-                <PreviewCategories
-                  pictureDescription={"Ham hock colcannon"}
-                  miscellaneous={2}
-                ></PreviewCategories>
-                <PreviewCategories
-                  pictureDescription={"Polish Pancakes"}
-                  miscellaneous={3}
-                ></PreviewCategories>
-                <PreviewCategories
-                  pictureDescription={"Boxty Breakfast"}
-                  miscellaneous={4}
-                  button={true}
-                ></PreviewCategories>
-              </CategoriesDesktopSection>
-            </CategoryBlock2>
-          </CategoryListItem>
-          <CategoryListItem>
-            <CategoryBlock1>
-              <CategoryTitle>Chicken</CategoryTitle>
-            </CategoryBlock1>
-            <CategoryBlock2>
-              <CategoriesMobileSection>
-                <PreviewCategories
-                  pictureDescription={"Banana Pancakes"}
-                  button={true}
-                  chicken={1}
-                ></PreviewCategories>
-              </CategoriesMobileSection>
-
-              <CategoriesTabletSection>
-                <PreviewCategories
-                  pictureDescription={"Banana Pancakes"}
-                  chicken={1}
-                ></PreviewCategories>
-                <PreviewCategories
-                  pictureDescription={"Ham hock colcannon"}
-                  chicken={2}
-                  button={true}
-                ></PreviewCategories>
-              </CategoriesTabletSection>
-
-              <CategoriesDesktopSection>
-                <PreviewCategories
-                  pictureDescription={"Banana Pancakes"}
-                  chicken={1}
-                ></PreviewCategories>
-                <PreviewCategories
-                  pictureDescription={"Ham hock colcannon"}
-                  chicken={2}
-                ></PreviewCategories>
-                <PreviewCategories
-                  pictureDescription={"Polish Pancakes"}
-                  chicken={3}
-                ></PreviewCategories>
-                <PreviewCategories
-                  pictureDescription={"Boxty Breakfast"}
-                  chicken={4}
-                  button={true}
-                ></PreviewCategories>
-              </CategoriesDesktopSection>
-            </CategoryBlock2>
-          </CategoryListItem>
-          <CategoryListItem>
-            <CategoryBlock1>
-              <CategoryTitle>Desserts</CategoryTitle>
-            </CategoryBlock1>
-            <CategoryBlock2>
-              <CategoriesMobileSection>
-                <PreviewCategories
-                  pictureDescription={"Banana Pancakes"}
-                  button={true}
-                  desserts={1}
-                ></PreviewCategories>
-              </CategoriesMobileSection>
-
-              <CategoriesTabletSection>
-                <PreviewCategories
-                  pictureDescription={"Banana Pancakes"}
-                  desserts={1}
-                ></PreviewCategories>
-                <PreviewCategories
-                  pictureDescription={"Ham hock colcannon"}
-                  desserts={2}
-                  button={true}
-                ></PreviewCategories>
-              </CategoriesTabletSection>
-
-              <CategoriesDesktopSection>
-                <PreviewCategories
-                  pictureDescription={"Banana Pancakes"}
-                  desserts={1}
-                ></PreviewCategories>
-                <PreviewCategories
-                  pictureDescription={"Ham hock colcannon"}
-                  desserts={2}
-                ></PreviewCategories>
-                <PreviewCategories
-                  pictureDescription={"Polish Pancakes"}
-                  desserts={3}
-                ></PreviewCategories>
-                <PreviewCategories
-                  pictureDescription={"Boxty Breakfast"}
-                  desserts={4}
-                  button={true}
-                ></PreviewCategories>
-              </CategoriesDesktopSection>
-            </CategoryBlock2>
+            <CategoriesDesktopSection>
+              <PreviewCategories desktop={true}></PreviewCategories>
+            </CategoriesDesktopSection>
           </CategoryListItem>
         </CategoriesListContainer>
         <BackgroundImage2Mobile

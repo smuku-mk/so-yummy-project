@@ -84,3 +84,85 @@ export const Button = styled.button`
     margin-top: 50px;
   }
 `;
+
+export const CategoryBlock1 = styled.div``;
+
+export const CategoryBlock2 = styled.div``;
+
+export const CategoryTitle = styled.h2`
+  font-weight: 600;
+  font-size: 28px;
+  letter-spacing: -0.02em;
+  color: ${(props) => props.theme.headers};
+  font-family: "Poppins", sans-serif;
+
+  &:hover {
+    color: ${(props) => props.theme.currentLink};
+  }
+
+  @media (min-width: 768px) {
+    font-size: 44px;
+  }
+`;
+
+export const CategoriesTabletSection = styled.div`
+  display: none;
+
+  @media (min-width: 768px) {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 32px;
+    width: 704px;
+  }
+
+  @media (min-width: 1440px) {
+    display: none;
+  }
+`;
+
+export const CategoriesListContainer = styled.ul`
+  margin-top: 64px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  @media (min-width: 768px) {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+`;
+
+export const CategoryElement = styled.li`
+  @media (min-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+`;
+
+export const CategoriesMobileSection = styled.div`
+  @media (min-width: 768px) {
+    display: none;
+  }
+`;
+
+export const CategoriesSection = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+`;
+
+export const CategoriesDesktopSection = styled.div`
+  display: none;
+
+  @media (min-width: 1440px) {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 50px;
+  }
+`;
