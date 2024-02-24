@@ -9,7 +9,6 @@ import {
 import { useState, useEffect } from "react";
 
 const PreviewCategories = ({
-  pictureDescription,
   button,
   breakfast,
   miscellaneous,

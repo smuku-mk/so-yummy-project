@@ -19,12 +19,12 @@ export const Block = styled.div`
   }
 `;
 
-export const Text = styled.h2`
-  font-weight: 600;
-  font-size: 28px;
-  letter-spacing: -0.02em;
-  color: #001833;
-`;
+// export const Text = styled.h2`
+//   font-weight: 600;
+//   font-size: 28px;
+//   letter-spacing: -0.02em;
+//   color: #001833;
+// `;
 
 export const BlockPicture = styled.div`
   width: 343px;
@@ -48,13 +48,17 @@ export const BlockPictureDescription = styled.div`
   padding: 16px;
   margin-top: 245px;
   position: absolute;
+  font-weight: 600;
+  font-size: 28px;
+  letter-spacing: -0.02em;
+  color: ${(props) => props.theme.headers};
 `;
 
 export const PictureDescription = styled.p`
   font-weight: 500;
   font-size: 16px;
   letter-spacing: -0.01em;
-  color: #3e4462;
+  color: ${(props) => props.theme.recTitle};
   font-family: "Poppins", sans-serif;
 `;
 
@@ -66,7 +70,7 @@ export const Button = styled.button`
   font-weight: 400;
   font-size: 14px;
   text-align: center;
-  color: #fafafa;
+  color: ${(props) => props.theme.mainBg};
   margin-top: 24px;
   margin-left: 249px;
   border: 0;

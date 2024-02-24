@@ -70,7 +70,7 @@ export const MainTitle = styled.h1`
   line-height: 1;
   letter-spacing: -0.01em;
   text-align: center;
-  color: #22252a;
+  color: ${(props) => props.theme.currentUser};
   margin-left: 36px;
   margin-right: 36px;
 
@@ -90,7 +90,7 @@ export const MainTitle = styled.h1`
 `;
 
 export const SoText = styled.span`
-  color: #8baa36;
+  color: ${(props) => props.theme.currentLink};
 `;
 
 export const MainDescription = styled.p`
@@ -103,7 +103,7 @@ export const MainDescription = styled.p`
   margin-left: 64px;
   margin-right: 63px;
   margin-top: 14px;
-  color: #23262a;
+  color: ${(props) => props.theme.text};
   width: 248px;
   height: 72px;
 
@@ -185,7 +185,7 @@ export const OtherCategoriesButton = styled.a`
     height: 46px;
     font-weight: 400;
     font-size: 14px;
-    color: #22252a;
+    color: ${(props) => props.theme.currentUser};
     border: 1px solid #8BAA36;
     display: flex;
     justify-content: center;
@@ -199,9 +199,7 @@ export const OtherCategoriesButton = styled.a`
 `;
 
 export const CategoriesTabletSection = styled.div`
-  @media (min-width: 320px) {
-    display: none;
-  }
+  display: none;
 
   @media (min-width: 768px) {
     display: flex;
@@ -216,7 +214,7 @@ export const CategoriesTabletSection = styled.div`
 `;
 
 export const CategoriesMobileSection = styled.div`
-  @media (min-width: 767px) {
+  @media (min-width: 768px) {
     display: none;
   }
 `;
@@ -225,11 +223,11 @@ export const CategoryTitle = styled.h2`
   font-weight: 600;
   font-size: 28px;
   letter-spacing: -0.02em;
-  color: #001833;
+  color: ${(props) => props.theme.headers};
   font-family: "Poppins", sans-serif;
 
   &:hover {
-    color: #8baa36;
+    color: ${(props) => props.theme.currentLink};
   }
 
   @media (min-width: 768px) {
@@ -251,9 +249,7 @@ export const DesktopMainSection = styled.div`
 `;
 
 export const CategoriesDesktopSection = styled.div`
-  @media (max-width: 1439px) {
-    display: none;
-  }
+  display: none;
 
   @media (min-width: 1440px) {
     display: flex;
@@ -273,17 +269,16 @@ export const BackgroundImage1Mobile = styled.img`
   transform: rotate(-65deg);
   filter: blur(5px);
 
-  @media (min-width: 767px) {
+  @media (min-width: 768px) {
     display: none;
   }
 `;
 
 export const BackgroundImage1Tablet = styled.img`
-  @media (max-width: 767px) {
-    display: none;
-  }
+  display: none;
 
   @media (min-width: 768px) {
+    display: block;
     width: 292px;
     height: 315px;
     object-fit: cover;
@@ -294,17 +289,16 @@ export const BackgroundImage1Tablet = styled.img`
     filter: blur(5px);
   }
 
-  @media (min-width: 1439px) {
+  @media (min-width: 1440px) {
     display: none;
   }
 `;
 
 export const BackgroundImage1Desktop = styled.img`
-  @media (max-width: 1439px) {
-    display: none;
-  }
+  display: none;
 
   @media (min-width: 1440px) {
+    display: block;
     width: 438px;
     height: 474px;
     object-fit: cover;
@@ -326,17 +320,16 @@ export const BackgroundImage2Mobile = styled.img`
   transform: rotate(80deg);
   filter: blur(5px);
 
-  @media (min-width: 767px) {
+  @media (min-width: 768px) {
     display: none;
   }
 `;
 
 export const BackgroundImage2Tablet = styled.img`
-  @media (max-width: 767px) {
-    display: none;
-  }
+  display: none;
 
   @media (min-width: 768px) {
+    display: block;
     width: 423px;
     height: 646px;
     object-fit: cover;
@@ -347,17 +340,16 @@ export const BackgroundImage2Tablet = styled.img`
     filter: blur(5px);
   }
 
-  @media (min-width: 1439px) {
+  @media (min-width: 1440px) {
     display: none;
   }
 `;
 
 export const BackgroundImage2Desktop = styled.img`
-  @media (max-width: 1439px) {
-    display: none;
-  }
+  display: none;
 
   @media (min-width: 1440px) {
+    display: block;
     width: 568px;
     height: 852px;
     object-fit: cover;
@@ -380,17 +372,16 @@ export const BackgroundImage3Mobile = styled.img`
   filter: blur(5px);
   transform: rotate(-90deg);
 
-  @media (min-width: 767px) {
+  @media (min-width: 768px) {
     display: none;
   }
 `;
 
 export const BackgroundImage3Tablet = styled.img`
-  @media (max-width: 767px) {
-    display: none;
-  }
+  display: none;
 
   @media (min-width: 768px) {
+    display: block;
     width: 290px;
     height: 313px;
     object-fit: cover;
@@ -402,17 +393,16 @@ export const BackgroundImage3Tablet = styled.img`
     transform: rotate(-90deg);
   }
 
-  @media (min-width: 1439px) {
+  @media (min-width: 1440px) {
     display: none;
   }
 `;
 
 export const BackgroundImage3Desktop = styled.img`
-  @media (max-width: 1439px) {
-    display: none;
-  }
+  display: none;
 
   @media (min-width: 1440px) {
+    display: block;
     width: 438px;
     height: 474px;
     object-fit: cover;
