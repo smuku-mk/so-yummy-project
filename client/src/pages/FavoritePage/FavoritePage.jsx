@@ -1,16 +1,16 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 // import { useLocation } from 'react-router-dom';
 // import { MainContainer } from 'locationof/MainContainer';
 // import FavoriteList from '../../components/FavoriteList/FavoriteList';
 // import { MainPageTitle } from 'locationof/MainPageTitle';
 // import { Children } from 'react';
-import queryBackEnd from '../../components/Request/queryBackEnd';
-import { Container, Pagination, Stack } from '@mui/material';
-import { PaginationWrapper } from './FavoritePage.styled';
-import instanceBackEnd from '../../components/Request/RequestBackEnd';
+import queryBackEnd from "../../components/Request/queryBackEnd";
+import { Container, Pagination, Stack } from "@mui/material";
+import { PaginationWrapper } from "./FavoritePage.styled";
+import instanceBackEnd from "../../components/Request/RequestBackEnd";
 // import imgIngradients from 'locationof/ingradients.png';
 
-const FavoritePage = () => {
+export const FavoritePage = () => {
   // const location = useLocation();
   const [, setRecipes] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
@@ -20,13 +20,13 @@ const FavoritePage = () => {
   useEffect(() => {
     const data = queryBackEnd.queryAllFavorite();
     data
-      .then(results => {
+      .then((results) => {
         setRecipes(results.result.data.list);
         setAllItem(results.result.data.totalItem);
         const pageQty = Math.ceil(results.result.data.totalItem / 4);
         setAllPage(pageQty);
       })
-      .catch(error => {
+      .catch((error) => {
         console.log(error.message);
       });
   }, []);
@@ -35,8 +35,8 @@ const FavoritePage = () => {
     setCurrentPage(num);
     instanceBackEnd
       .get(`/favorite?page=${num}`)
-      .then(response => setRecipes(response.data.result.data.list))
-      .catch(error => console.log(error.message));
+      .then((response) => setRecipes(response.data.result.data.list))
+      .catch((error) => console.log(error.message));
   };
 
   // const removeFavorite = recipeId => {
@@ -77,23 +77,21 @@ const FavoritePage = () => {
     //       <ImgTitle>The list is empty</ImgTitle>
     //     </ImgWrapper>
     //   )}
-      <PaginationWrapper>
-        <Container>
-          <Stack spacing={2}>
-            {allPage > 1 && (
-              <Pagination
-                count={allPage}
-                page={currentPage}
-                onChange={changeNum}
-                siblingCount={1}
-                sx={{ marginY: 3, marginX: 'auto' }}
-              />
-            )}
-          </Stack>
-        </Container>
-      </PaginationWrapper>
+    <PaginationWrapper>
+      <Container>
+        <Stack spacing={2}>
+          {allPage > 1 && (
+            <Pagination
+              count={allPage}
+              page={currentPage}
+              onChange={changeNum}
+              siblingCount={1}
+              sx={{ marginY: 3, marginX: "auto" }}
+            />
+          )}
+        </Stack>
+      </Container>
+    </PaginationWrapper>
     // </MainContainer>
   );
 };
-
-export default FavoritePage;
