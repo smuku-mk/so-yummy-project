@@ -12,6 +12,7 @@ import { authMiddleware } from "../auth/auth.middlewares.js";
 
 export const usersRouter = express.Router();
 
+
 usersRouter.post(
   "/signup",
   userValidationMiddleware,
