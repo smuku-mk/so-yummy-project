@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-// import MainPageTitle from "./MainPageTitle";
+import { MainPageTitle } from "../../components/IngredientsShoppingList/IngredientsShoppingList.styled";
 import { IngredientsShoppingList } from "../../components/IngredientsShoppingList/IngredientsShoppingList";
 import { fetchShoppingList } from "../../redux/shopping-list/shoppingListActions";
 import { useSelector, useDispatch } from "react-redux";
@@ -16,7 +16,7 @@ export const ShoppingListPage = () => {
 
   return (
     <div>
-      {/* <MainPageTitle title="Shopping List" /> */}
+      <MainPageTitle>Shopping List</MainPageTitle>
       <IngredientsShoppingList />
     </div>
   );
