@@ -1,7 +1,7 @@
 import axios from "axios";
 import { createAsyncThunk } from "@reduxjs/toolkit";
 
-axios.defaults.baseURL = "https://localhost:5000";
+axios.defaults.baseURL = "http://localhost:5000";
 
 const setAuthHeader = (token) => {
   axios.defaults.headers.common.Authorization = `Bearer ${token}`;
@@ -29,7 +29,7 @@ export const logIn = createAsyncThunk(
     try {
       // const state = thunkAPI.getState();
       // const auth = state.auth;
-      const response = await axios.post("/auth/login", credentials);
+      const response = await axios.post("/users/login", credentials);
       setAuthHeader(response.data.user.token);
       return response.data;
     } catch (error) {
@@ -48,7 +48,7 @@ export const currentUser = createAsyncThunk(
     }
     setAuthHeader(token);
     try {
-      const response = await axios.get("/auth/current");
+      const response = await axios.get("/users/current");
       return response.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);

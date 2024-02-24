@@ -1,6 +1,8 @@
 import nodemailer from "nodemailer";
 import "dotenv/config";
 
+const PORT = process.env.PORT || 5000;
+
 const sendMail = async (email, verificationToken, name) => {
   const transporter = nodemailer.createTransport({
     host: "smtp.sendgrid.net",
@@ -16,7 +18,7 @@ const sendMail = async (email, verificationToken, name) => {
     from: process.env.GMAIL_USER,
     to: email,
     subject: "Welcome to Our Newsletter! Verify Your Email",
-    text: `Hello! Please verify your account by visiting http://localhost:3000/users/verify/${verificationToken}`,
+    text: `Hello! Please verify your account by visiting http://localhost:${PORT}/users/verify/${verificationToken}`,
     html: `
       <div>
         <h2>Dear ${name}</h2>
@@ -27,7 +29,7 @@ const sendMail = async (email, verificationToken, name) => {
         <p>
           To ensure that you receive our latest updates and exclusive
           offers, please verify your email address by clicking the link below:
-          <a href="http://localhost:3000/users/verify/${verificationToken}">
+          <a href="http://localhost:${PORT}/users/verify/${verificationToken}">
             here
           </a>
         </p>
