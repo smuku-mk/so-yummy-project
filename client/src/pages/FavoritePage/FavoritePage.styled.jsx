@@ -76,7 +76,7 @@ export const Title = styled.h2`
 
   font-size: 28px;
   line-height: 28px;
-  color: ${(props) => props.theme.bannerBg};
+  color: ${(props) => props.theme.searchColor};
 
   @media screen and (min-width: 768px) {
    

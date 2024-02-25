@@ -10,7 +10,7 @@ import empty_mobile from '../../images/mobile_img/searchfor_mobile.png';
 import empty_tablet from '../../images/tablet_img/searchfor_tablet.png';
 import { MainContainer } from '../../components/MainContainer/MainContainer';
 
-const FavoritePage = () => {
+export const FavoritePage = () => {
   const location = useLocation();
   const [recipes, setRecipes] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
@@ -107,5 +107,3 @@ const FavoritePage = () => {
     </MainContainer>
   );
 };
-
-export default FavoritePage;

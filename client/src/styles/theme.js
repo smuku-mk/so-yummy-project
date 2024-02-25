@@ -104,9 +104,6 @@ export const lightTheme = {
   black: "#000000",
   closeX: "1f242e",
   borderItem: "#E0E0E0",
-  h3: "#3E4462",
-  p: "#23262A",
-  delete: "#EBF3D4",
 };
 
 export const darkTheme = {

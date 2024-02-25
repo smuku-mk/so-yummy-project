@@ -10,7 +10,7 @@ import empty_mobile from '../../images/mobile_img/searchfor_mobile.png';
 import empty_tablet from '../../images/tablet_img/searchfor_tablet.png';
 import { MainContainer } from "../../components/MainContainer/MainContainer";
 
-const MyRecipesPage = () => {
+export const MyRecipesPage = () => {
   const location = useLocation();
   const [recipes, setRecipes] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
@@ -78,10 +78,19 @@ const MyRecipesPage = () => {
         </MyRecipesList>
       ) : (
         <ImgWrapper>
-          <img src={empty_mobile} alt={"Empty list"} />
-          <img src={empty_tablet} alt={"Empty list"} />
+                <picture>
+          <img
+            src={empty_mobile}
+            srcSet={`${empty_mobile}`}
+            alt="Empty list"
+          />
+          <source
+            media="(min-width: 768px)"
+            srcSet={`${empty_tablet}`}
+          />
+        </picture>
           <ImgTitle>The list is empty</ImgTitle>
-          </ImgWrapper>
+        </ImgWrapper>
       )}
       <PaginationWrapper>
         <Container>
@@ -101,5 +110,3 @@ const MyRecipesPage = () => {
     </MainContainer>
   );
 };
-
-export default MyRecipesPage;
