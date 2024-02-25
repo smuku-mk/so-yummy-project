@@ -57,7 +57,7 @@ export const Input = styled.input`
   height: 45px;
   background-color: ${(props) => props.theme.border};
   color: ${(props) => props.theme.border};
-  border: 1px solid #fff";
+  border: 1px solid "#fff";
   padding-left: 40px;
   margin-left: 28px;
   font-size: 14px;

@@ -49,6 +49,7 @@ export const TextBox = styled.div`
 
 export const Title = styled.h3`
   font-size: 24px;
+  line-height: 24px;
   letter-spacing: -0.02em;
   color: ${(props) => props.theme.mainBg};
   font-weight: 600;
@@ -62,6 +63,8 @@ export const Title = styled.h3`
 
 export const Text = styled.p`
   font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
   letter-spacing: -0.02em;
   color: ${(props) => props.theme.mainBg};
   text-align: center;

@@ -7,7 +7,7 @@ export const Header = () => {
     <Container>
       <Logo />
       <Wrapper>
-        <Nav />
+        {/* <Nav /> */}
         <UserLogo />
         <Hamburger />
         <ThemeToggler />
