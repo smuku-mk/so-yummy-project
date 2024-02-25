@@ -1,8 +1,8 @@
+import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { register } from "../../redux/auth/operations";
 import { selectIsLoggedIn } from "../../redux/auth/selectors";
 import { useNavigate } from "react-router-dom";
-import React, { useState } from "react";
 import {
   Form,
   Title,
@@ -12,6 +12,9 @@ import {
   Icon,
   RedIcon,
   GreenIcon,
+  OrangeIcon,
+  WarningMsg,
+  SuccessMsg,
 } from "./RegisterForm.styled";
 import sprites from "../../images/sprites.svg";
 
@@ -50,8 +53,12 @@ export const RegisterForm = () => {
   };
 
   const validateName = (value) => {
-    const validCharacters = /[a-zA-Z0-9]/;
+    const validCharacters = /^[a-zA-Z0-9]*$/;
     return !validCharacters.test(value);
+  };
+
+  const validatePassword = (value) => {
+    return value.length < 6;
   };
 
   return (
@@ -64,32 +71,23 @@ export const RegisterForm = () => {
             type="text"
             name="name"
             placeholder="Name"
-            autocomplete="off"
+            autoComplete="off"
             validation={validation.name}
             onChange={inputChange}
-            valid={validateName(validation.name)}
+            valid={!validateName(validation.name)}
           />
-
-          {validation.name && (
-            <Icon
-              validation={validateName(validation.name) ? "success" : "error"}
-            >
-              <use
-                xlinkHref={`${sprites}#icon-success${
-                  validateName(validation.name) ? "check" : "error"
-                }`}
-              />
-            </Icon>
-          )}
-          {!validateName(validation.name) && (
+          <Icon>
+            <use xlinkHref={`${sprites}#icon-user`} />
+          </Icon>
+          {validation.name && validateName(validation.name) ? (
+            <GreenIcon>
+              <use xlinkHref={`${sprites}#icon-success`} />
+            </GreenIcon>
+          ) : (
             <RedIcon>
               <use xlinkHref={`${sprites}#icon-error`} />
             </RedIcon>
           )}
-
-          <Icon>
-            <use xlinkHref={`${sprites}#icon-user`} />
-          </Icon>
         </Label>
         <Label>
           <Input
@@ -97,7 +95,7 @@ export const RegisterForm = () => {
             type="email"
             name="email"
             placeholder="Email"
-            autocomplete="off"
+            autoComplete="off"
             validation={validation.email}
             onChange={inputChange}
           />
@@ -111,14 +109,30 @@ export const RegisterForm = () => {
             type="password"
             name="password"
             placeholder="Password"
-            autocomplete="off"
+            autoComplete="off"
             validation={validation.password}
             onChange={inputChange}
+            valid={!validatePassword(validation.password)}
           />
           <Icon>
             <use xlinkHref={`${sprites}#icon-password`} />
           </Icon>
+          {validation.password && validatePassword(validation.password) ? (
+            <OrangeIcon>
+              <use xlinkHref={`${sprites}#icon-warning`} />
+            </OrangeIcon>
+          ) : (
+            <GreenIcon>
+              <use xlinkHref={`${sprites}#icon-success`} />
+            </GreenIcon>
+          )}
+          {validation.password && validatePassword(validation.password) ? (
+            <WarningMsg>Password is not secure</WarningMsg>
+          ) : (
+            <SuccessMsg>Password is secure</SuccessMsg>
+          )}
         </Label>
+
         <Submit type="submit">Sign up</Submit>
       </Form>
     </div>

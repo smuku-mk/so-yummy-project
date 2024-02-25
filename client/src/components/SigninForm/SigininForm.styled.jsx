@@ -55,9 +55,9 @@ export const Label = styled.label`
 export const Input = styled.input`
   width: 279px;
   height: 45px;
-  background-color: ${(props) => props.theme.loginBg};
-  color: ${(props) => props.theme.mainBg};
-  border: 1px solid;
+  background-color: ${(props) => props.theme.border};
+  color: ${(props) => props.theme.border};
+  border: 1px solid #fff";
   padding-left: 40px;
   margin-left: 28px;
   font-size: 14px;
@@ -68,6 +68,7 @@ export const Input = styled.input`
   &::focus,
   ::hover,
   ::active {
+    opacity: 1;
     outline: none;
   }
 
@@ -78,43 +79,17 @@ export const Input = styled.input`
     padding-left: 50px;
     margin-left: 50px;
   }
-
-  border-color: ${(props) => {
-    switch (props.validation) {
-      case "success":
-        return "#3CBC81";
-      case "warning":
-        return "#F6C23E";
-      case "error":
-        return "#E74A3B";
-      default:
-        return "#fafafa";
-    }
-  }};
 `;
 
 export const Icon = styled.svg`
   width: 12px;
   height: 13.5px;
-  fill: ${(props) => props.theme.mainBg};
-  stroke: ${(props) => props.theme.mainBg};
+  fill: ${(props) => props.theme.border};
+  stroke: ${(props) => props.theme.border};
   position: absolute;
   top: 16px;
   left: 46px;
   opacity: 0.8;
-
-  stroke: ${(props) => {
-    switch (props.validation) {
-      case "success":
-        return "#3cbc81";
-      case "warning":
-        return "#f6c23e";
-      case "error":
-        return "#e74a3b";
-      default:
-        return "#fafafa";
-    }
-  }};
 
   @media (min-width: 768px) {
     width: 16px;
@@ -151,39 +126,3 @@ export const Submit = styled.button`
     margin-bottom: 44px;
   }
 `;
-
-// export const RedIcon = styled(ErrorIcon)`
-//   position: absolute;
-//   top: 13px;
-//   right: 25px;
-// `;
-
-// export const GreenIcon = styled(SuccessIcon)`
-//   position: absolute;
-//   top: 13px;
-//   right: 25px;
-// `;
-
-// export const OrangeIcon = styled(WarningIcon)`
-//   position: absolute;
-//   top: 13px;
-//   right: 25px;
-// `;
-
-// export const ErrorMgs = styled.span`
-// margin-left: 17px;
-// font-size: 14px'
-// color: ${(props) => props.theme.error};
-// `;
-
-// export const WarningMsg = styled.span`
-// margin-left: 17px;
-// font-size: 14px'
-// color: ${(props) => props.theme.warning};
-// `;
-
-// export const SuccessMsg = styled.span`
-// margin-left: 17px;
-// font-size: 14px'
-// color: ${(props) => props.theme.success};
-// `;

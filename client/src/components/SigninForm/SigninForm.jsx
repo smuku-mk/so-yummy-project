@@ -1,4 +1,4 @@
-import { useDispatch} from "react-redux";
+import { useDispatch } from "react-redux";
 import { logIn } from "../../redux/auth/operations";
 import { useNavigate } from "react-router-dom";
 import { Form, Title, Label, Input, Submit, Icon } from "./SigininForm.styled";

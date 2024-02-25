@@ -57,7 +57,8 @@ export const Input = styled.input`
   height: 45px;
   background-color: ${(props) => props.theme.border};
   color: ${(props) => props.theme.border};
-  border: 1px solid;
+  border: 1px solid
+    ${(props) => (props.valid ? props.theme.error : props.theme.border)};
   padding-left: 40px;
   margin-left: 28px;
   font-size: 14px;
@@ -72,12 +73,6 @@ export const Input = styled.input`
     outline: none;
   }
 
-  ${({ valid }) =>
-    valid === false &&
-    css`
-      border-color: ${(props) => props.theme.error};
-    `}
-
   @media (min-width: 768px) {
     width: 400px;
     height: 59px;
@@ -90,8 +85,8 @@ export const Input = styled.input`
 export const Icon = styled.svg`
   width: 12px;
   height: 13.5px;
-  fill: ${(props) => props.theme.mainBg};
-  stroke: ${(props) => props.theme.mainBg};
+  fill: ${(props) => props.theme.border};
+  stroke: ${(props) => props.theme.border};
   position: absolute;
   top: 16px;
   left: 46px;
@@ -104,9 +99,9 @@ export const Icon = styled.svg`
       case "warning":
         return "#f6c23e";
       case "error":
-        return `${(props) => props.theme.error}`;
+        return "#e74a3b";
       default:
-        return `${(props) => props.theme.border}`;
+        return "#fff";
     }
   }};
 
@@ -147,37 +142,64 @@ export const Submit = styled.button`
 `;
 
 export const RedIcon = styled.svg`
+  width: 20px;
+  height: 20px;
+  fill: ${(props) => props.theme.border};
+  stroke: ${(props) => props.theme.border};
   position: absolute;
-  top: 13px;
-  right: 25px;
+  top: 20px;
+  right: 19px;
+  opacity: ${(props) => (props.validation === "error" ? 1 : 0)};
+  pointer-events: none;
+
+  stroke: ${(props) =>
+    props.validation === "error" ? props.theme.error : "transparent"};
 `;
 
 export const GreenIcon = styled.svg`
+  width: 20px;
+  height: 20px;
+  fill: ${(props) => props.theme.border};
+  stroke: ${(props) => props.theme.border};
   position: absolute;
-  top: 13px;
-  right: 25px;
+  top: 20px;
+  right: 19px;
+  opacity: ${(props) => (props.validation === "error" ? 1 : 0)};
+  pointer-events: none;
+
+  stroke: ${(props) =>
+    props.validation === "success" ? props.theme.success : "transparent"};
 `;
 
-// export const OrangeIcon = styled(WarningIcon)`
-//   position: absolute;
-//   top: 13px;
-//   right: 25px;
-// `;
+export const OrangeIcon = styled.svg`
+  width: 20px;
+  height: 20px;
+  fill: ${(props) => props.theme.border};
+  stroke: ${(props) => props.theme.border};
+  position: absolute;
+  top: 20px;
+  right: 19px;
+  opacity: ${(props) => (props.validation === "error" ? 1 : 0)};
+  pointer-events: none;
+
+  stroke: ${(props) =>
+    props.validation === "warning" ? props.theme.warning : "transparent"};
+`;
 
 // export const ErrorMgs = styled.span`
-// margin-left: 17px;
+// padding-top: 8px;
 // font-size: 14px'
 // color: ${(props) => props.theme.error};
 // `;
 
-// export const WarningMsg = styled.span`
-// margin-left: 17px;
-// font-size: 14px'
-// color: ${(props) => props.theme.warning};
-// `;
+export const WarningMsg = styled.span`
+padding-top: 8px;
+font-size: 14px'
+color: ${(props) => props.theme.warning};
+`;
 
-// export const SuccessMsg = styled.span`
-// margin-left: 17px;
-// font-size: 14px'
-// color: ${(props) => props.theme.success};
-// `;
+export const SuccessMsg = styled.span`
+padding-top: 8px;
+font-size: 14px'
+color: ${(props) => props.theme.success};
+`;
