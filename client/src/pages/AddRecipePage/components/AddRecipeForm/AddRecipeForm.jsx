@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { toast } from "react-toastify";
 import { addRecipe } from "../../../../redux/recipe/actions.js";
-import { selectRecipeImage } from "../../../../redux/recipe/selectors.js";
+// import { selectRecipeImage } from "../../../../redux/recipe/selectors.js";
 import { resetRecipeImage } from "../../../../redux/recipe/slice.js";
 import { RecipeDescriptionFields } from "../RecipeDescriptionFields/RecipeDescriptionFields.jsx";
 import { RecipeIngredientsFields } from "../RecipeIngredientsFields/RecipeIngredientsFields.jsx";
