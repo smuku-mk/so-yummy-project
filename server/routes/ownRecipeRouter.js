@@ -1,9 +1,7 @@
 import express from "express";
-import {
-  addRecipe,
-  deleteRecipeById,
-  getUserRecipes,
-} from "../controllers/ownRecipes";
+import { addRecipe } from "../controllers/ownRecipes/addRecipe.js";
+import { deleteRecipeById } from "../controllers/ownRecipes/deleteRecipeById.js";
+import { getUserRecipes } from "../controllers/ownRecipes/getUserRecipes.js";
 
 const ownRecipesRouter = express.Router();
 
