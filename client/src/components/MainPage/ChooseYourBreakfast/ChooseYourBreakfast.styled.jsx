@@ -51,6 +51,9 @@ export const Button = styled.a`
   margin-left: 136px;
   line-height: 1.2;
   color: ${(props) => props.theme.oddTxt};
+  display: flex;
+  flex-direction: row;
+  stroke: black;
 
   @media (min-width: 768px) {
     margin-left: 164px;
@@ -58,5 +61,14 @@ export const Button = styled.a`
 
   @media (min-width: 1440px) {
     margin-left: 200px;
+  }
+`;
+
+export const IconArrow = styled.svg`
+  width: 15px;
+  height: 12px;
+
+  @media (min-width: 768px) {
+    width: 14px;
   }
 `;

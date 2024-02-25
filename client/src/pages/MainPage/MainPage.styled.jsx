@@ -102,14 +102,12 @@ export const MainDescription = styled.p`
   text-align: center;
   margin-left: 64px;
   margin-right: 63px;
-  margin-top: 14px;
   color: ${(props) => props.theme.text};
   width: 248px;
   height: 72px;
 
   @media (min-width: 768px) {
     text-align: left;
-    margin-top: 24px;
     margin-right: 0;
     margin-left: 0;
     width: 362px;
@@ -120,7 +118,6 @@ export const MainDescription = styled.p`
     font-size: 18px;
     margin-bottom: 50px;
     text-align: left;
-    margin-top: 0;
   }
 `;
 
