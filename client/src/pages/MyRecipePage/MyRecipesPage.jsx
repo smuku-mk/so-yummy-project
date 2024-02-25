@@ -12,10 +12,10 @@ import empty_tablet from '../../images/tablet_img/searchfor_tablet.png';
 
 const MyRecipesPage = () => {
   const location = useLocation();
-  const [, setRecipes] = useState([]);
+  const [recipes, setRecipes] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [allPage, setAllPage] = useState();
-  const [, setAllItem] = useState();
+  const [allItem, setAllItem] = useState();
 
   useEffect(() => {
     setRecipes([]);
@@ -65,7 +65,7 @@ const MyRecipesPage = () => {
   };
   return (
     <MainPage>
-      <MainTitle title={"My recipes"} />
+      {/* <MainTitle title={"My recipes"} /> */}
       {recipes.length !== 0 ? (
         <MyRecipesList recipes={recipes} location={location} removeOwnRecipe={removeOwnRecipe}>
           {Children}

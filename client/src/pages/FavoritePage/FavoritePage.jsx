@@ -12,10 +12,10 @@ import empty_tablet from '../../images/tablet_img/searchfor_tablet.png';
 
 const FavoritePage = () => {
   const location = useLocation();
-  const [, setRecipes] = useState([]);
+  const [recipes, setRecipes] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [allPage, setAllPage] = useState();
-  const [, setAllItem] = useState();
+  const [allItem, setAllItem] = useState();
 
   useEffect(() => {
     const data = queryBackEnd.queryAllFavorite();
@@ -61,7 +61,7 @@ const FavoritePage = () => {
   };
   return (
     <MainPage>
-      <MainTitle title={'Favorite'} />
+      {/* <MainTitle title={'Favorite'} /> */}
       {recipes.length !== 0 ? (
         <FavoriteList
           recipes={recipes}
