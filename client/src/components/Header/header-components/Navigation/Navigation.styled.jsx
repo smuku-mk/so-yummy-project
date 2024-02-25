@@ -14,4 +14,8 @@ export const Btn = styled.button`
   background-color: transparent;
   border: none;
   cursor: pointer;
+
+  @media screen and (min-width: 1440px) {
+    display: none;
+  }
 `;
