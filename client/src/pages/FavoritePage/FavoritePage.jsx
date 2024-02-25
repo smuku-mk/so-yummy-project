@@ -1,14 +1,14 @@
-import React, { useState, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
-import FavoriteList from '../../components/FavoriteList/FavoriteList';
-import { Children } from 'react';
-import queryBackEnd from '../../components/Request/queryBackEnd';
-import { Container, Pagination, Stack } from '@mui/material';
-import { PaginationWrapper, ImgWrapper, ImgTitle, Title, ContainerTitle } from './FavoritePage.styled';
-import instanceBackEnd from '../../components/Request/RequestBackEnd';
-import empty_mobile from '../../images/mobile_img/searchfor_mobile.png';
-import empty_tablet from '../../images/tablet_img/searchfor_tablet.png';
-import { MainContainer } from '../../components/MainContainer/MainContainer';
+import React, { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
+import FavoriteList from "../../components/FavoriteList/FavoriteList";
+import { Children } from "react";
+import queryBackEnd from "../../components/Request/queryBackEnd";
+import { Container, Pagination, Stack } from "@mui/material";
+import { PaginationWrapper, ImgWrapper, ImgTitle, Title, ContainerTitle } from "./FavoritePage.styled";
+import instanceBackEnd from "../../components/Request/RequestBackEnd";
+import empty_mobile from "../../images/mobile_img/searchfor_mobile.png";
+import empty_tablet from "../../images/tablet_img/searchfor_tablet.png";
+import { MainContainer } from "../../components/MainContainer/MainContainer";
 
 export const FavoritePage = () => {
   const location = useLocation();
@@ -39,7 +39,7 @@ export const FavoritePage = () => {
       .catch((error) => console.log(error.message));
   };
 
-  const removeFavorite = recipeId => {
+  const removeFavorite = (recipeId) => {
     const lastItem = allItem % 4;
     let pageBack;
     if (currentPage !== 1 || lastItem === 1) {
@@ -47,7 +47,7 @@ export const FavoritePage = () => {
     } else pageBack = currentPage;
     instanceBackEnd
       .patch(`/favorite/remove?page=${pageBack}`, { recipe: `${recipeId}` })
-      .then(res => {
+      .then((res) => {
         const list = res.data.result.data.list;
         setRecipes(list);
         const totalItem = res.data.result.data.totalItem;
@@ -55,42 +55,30 @@ export const FavoritePage = () => {
         const quantity = Math.ceil(totalItem / 4);
         setAllPage(quantity);
       })
-      .catch(error => {
+      .catch((error) => {
         console.log(error.message);
       });
   };
   return (
     <MainContainer>
-        <ContainerTitle>
-    <Title>Favorite</Title>
-  </ContainerTitle>
+      <ContainerTitle>
+        <Title>Favorite</Title>
+      </ContainerTitle>
       {recipes.length !== 0 ? (
-        <FavoriteList
-          recipes={recipes}
-          allItem={allItem}
-          location={location}
-          removeFavorite={removeFavorite}
-        >
+        <FavoriteList recipes={recipes} allItem={allItem} location={location} removeFavorite={removeFavorite}>
           {Children}
         </FavoriteList>
       ) : (
         <ImgWrapper>
-                <picture>
-          <img
-            src={empty_mobile}
-            srcSet={`${empty_mobile}`}
-            alt="Empty list"
-          />
-          <source
-            media="(min-width: 768px)"
-            srcSet={`${empty_tablet}`}
-          />
-        </picture>
+          <picture>
+            <img src={empty_mobile} srcSet={`${empty_mobile}`} alt="Empty list" />
+            <source media="(min-width: 768px)" srcSet={`${empty_tablet}`} />
+          </picture>
           <ImgTitle>The list is empty</ImgTitle>
         </ImgWrapper>
       )}
       <PaginationWrapper>
-      <Container>
+        <Container>
           <Stack spacing={2}>
             {allPage > 1 && (
               <Pagination
@@ -98,7 +86,7 @@ export const FavoritePage = () => {
                 page={currentPage}
                 onChange={changeNum}
                 siblingCount={1}
-                sx={{ marginY: 3, marginX: 'auto' }}
+                sx={{ marginY: 3, marginX: "auto" }}
               />
             )}
           </Stack>

@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const PaginationWrapper = styled.div`
   display: flex;
@@ -30,7 +30,11 @@ export const ImgWrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 50px;
+  padding-bottom: 100px;
+
+  @media (min-width: 768px) {
+    padding-bottom: 200px;
+  }
 `;
 
 export const ImgTitle = styled.p`
@@ -39,15 +43,10 @@ export const ImgTitle = styled.p`
   font-size: 24px;
   line-height: 24px;
   letter-spacing: -0.02em;
-  font-feature-settings: 'liga' off;
-  color: ${(props) => props.theme.mainTxt};
+  font-feature-settings: "liga" off;
+  color: ${(props) => props.theme.black};
   opacity: 0.5;
-  @media (min-width: 768px) {
-    margin-bottom: 200px;
-  }
-;
-`
-
+`;
 
 export const ContainerTitle = styled.div`
   width: 100%;
@@ -63,7 +62,6 @@ export const Title = styled.h2`
   color: ${(props) => props.theme.searchColor};
 
   @media screen and (min-width: 768px) {
-   
     padding-bottom: 72px;
     font-size: 32px;
     line-height: 32px;
@@ -72,6 +70,5 @@ export const Title = styled.h2`
     padding-top: 136px;
     font-size: 44px;
     line-height: 44px;
-  } ;
+  }
 `;
-
