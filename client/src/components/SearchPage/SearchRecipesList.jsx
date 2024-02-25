@@ -1,21 +1,16 @@
-import React, { useEffect, useState } from "react";
-
+import React from 'react';
+import { useSelector } from 'react-redux';
 
 export const SearchRecipesList = () => {
-  const location = useLocation();
-  
-  
 
-  
-
-  
+  const recipes = useSelector((state) => state.search.recipes);
 
   return (
     <div>
-      {recipes.length > 0 ? (
+      {recipes && recipes.length > 0 ? (
         <ul>
-          {recipes.map((recipe) => (
-            <li key={recipe.id}>{recipe.name}</li>
+          {recipes.map((recipe, index) => (
+            <li key={index}>{recipe.title}</li>
           ))}
         </ul>
       ) : (

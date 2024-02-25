@@ -1,6 +1,7 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { selectSearchType, setSearchType } from "../../redux/search/searchSlice";
+import { selectSearchType } from "../../redux/search/selectors.js";
+import { setSearchType } from "../../redux/search/searchSlice";
 import {
   SearchBy,
   SearchByLabel,
