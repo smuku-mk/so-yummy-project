@@ -8,7 +8,7 @@ export const CardWrapper = styled.div`
   border-radius: 8px;
   box-shadow: 5px 4px 8px 0px rgba(34, 60, 80, 0.2);
   border: 1px solid rgba(34, 60, 80, 0.2);
-  background: #FFFFFF;
+  background: ${(props) => props.theme.bannerBg};
 
   @media screen and (min-width: 768px) {
     position: relative;
@@ -69,7 +69,7 @@ export const CardTitle = styled.h3`
   font-size: 14px;
   line-height: 14px;
   letter-spacing: -0.24px;
-  color: #3E4462;
+  color: ${(props) => props.theme.mainTxt};
 
   @media screen and (min-width: 768px) {
     font-size: 24px;
@@ -89,7 +89,7 @@ export const CardDescription = styled.p`
   font-size: 8px;
   line-height: 10px;
   letter-spacing: -0.02em;
-  color: #23262A;
+  color: ${(props) => props.theme.p};
   ;
 
   @media screen and (min-width: 768px) {
@@ -113,7 +113,7 @@ export const CardTime = styled.p`
   font-size: 10px;
   line-height: 14px;
   letter-spacing: -0.24px;
-  color: #3e4462;
+  color: ${(props) => props.theme.p};
   ;
 
   @media screen and (min-width: 768px) {
@@ -146,14 +146,14 @@ export const CardButtonSee = styled.div`
     font-size: 14px;
     line-height: 21px;
     cursor: pointer;
-    color: #fafafa;
+    color: ${(props) => props.theme.lightTxt};
     border-radius: 24px 44px;
     border: 1px solid rgb(250, 250, 250);
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
       border 250ms cubic-bezier(0.4, 0, 0.2, 1),
       color 250ms cubic-bezier(0.4, 0, 0.2, 1);
     &:hover {
-    background: #8BAA36;
+    background: ${(props) => props.theme.green};
     }
   }
 
@@ -168,7 +168,7 @@ export const CardButtonSee = styled.div`
     height: 54px;
     font-size: 16px;
     line-height: 24px;
-    color: #fafafa;
+    color: ${(props) => props.theme.lightTxt};
     border-radius: 24px 44px;
   }
 `;
@@ -180,14 +180,14 @@ export const CardButtonDelete = styled.button`
   height: 24px;
   right: 14px;
   bottom: 14px;
-  background: #EBF3D4;
+  background: ${(props) => props.theme.iconBg};
   border-radius: 4px;
   cursor: pointer;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
     border 250ms cubic-bezier(0.4, 0, 0.2, 1),
     color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   &:hover {
-    background: #8BAA36;
+    background: ${(props) => props.theme.green};
   }
 
   @media screen and (min-width: 768px) {
@@ -213,14 +213,14 @@ export const CardIcon = styled.div`
   align-items: center;
   width: 24px;
   height: 24px;
-  fill: #EBF3D4;
-  stroke: #22252A;
+  fill: ${(props) => props.theme.iconBg};
+  stroke: ${(props) => props.theme.currentPage};
   ;
   transition: stroke 250ms cubic-bezier(0.4, 0, 0.2, 1),
     fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
   &:hover {
-    fill: #22252A};
-    stroke: #EBF3D4;;
+    fill: ${(props) => props.theme.iconBg};
+    stroke: ${(props) => props.theme.currentPage};
   }
   svg {
     width: 10px;
