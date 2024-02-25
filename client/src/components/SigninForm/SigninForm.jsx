@@ -26,13 +26,13 @@ export const SigninForm = () => {
       <Form onSubmit={handleSubmit}>
         <Title>Sign In</Title>
         <Label>
-          <Input id="email" type="email" name="email" placeholder="Email" autocomplete="off" />
+          <Input id="email" type="email" name="email" placeholder="Email" autoComplete="off" />
           <Icon>
             <use xlinkHref={`${sprites}#icon-email`} />
           </Icon>
         </Label>
         <Label>
-          <Input id="password" type="password" name="password" placeholder="Password" autocomplete="off" />
+          <Input id="password" type="password" name="password" placeholder="Password" autoComplete="off" />
           <Icon>
             <use xlinkHref={`${sprites}#icon-password`} />
           </Icon>
