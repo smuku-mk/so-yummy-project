@@ -10,7 +10,6 @@ export const SocialsList = styled.ul`
   text-align: center;
   justify-content: center;
   align-items: center;
-  margin: 0;
   padding: 44px 0 0 0;
 
   @media screen and (min-width: 768px) {
@@ -28,7 +27,10 @@ export const SocialMedia = styled.li``;
 export const SocialIcon = styled.svg`
   width: 20px;
   height: 20px;
+  cursor: pointer;
   fill: ${props => props.theme.social};
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  
   &:hover {
     fill: ${props => props.theme.socialHover};
   }

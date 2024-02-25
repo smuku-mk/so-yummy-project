@@ -20,9 +20,9 @@ export const Subscription = styled.div`
 
 export const Subscribe = styled.p`
   display: none;
+  
   @media screen and (min-width: 1440px) {
     display: block;
-    margin: 0;
     font-weight: 700;
     font-size: 18px;
   }
@@ -33,7 +33,6 @@ export const Newsletter = styled.p`
 
   @media screen and (min-width: 1440px) {
     padding: 14px 0 28px 0;
-    margin: 0;
     font-weight: 400;
     font-size: 14px;
     line-height: 129%;
@@ -78,7 +77,7 @@ export const Icon = styled.svg`
   }
 
   @media screen and (min-width: 1440px) {
-    margin-left: 40px;
+    margin-left: 20px;
     margin-top: 20px;
   }
 `;
@@ -88,27 +87,36 @@ export const Email = styled.input`
   color: inherit;
   border: 1px solid rgba(250, 250, 250, 0.2);
   border-radius: 6px;
-  padding: 11px 0 11px 0;
+  padding: 11px 0 11px 42px;
   font-weight: 400;
   font-size: 10px;
   letter-spacing: -0.02em;
-  text-align: center;
+  text-align: left;
   width: 204px;
 
+  &::placeholder {
+    color: ${props => props.theme.footerTxt};
+    opacity: 1;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
   @media screen and (min-width: 768px) {
-    padding: 15px 0 15px 0;
+    padding: 15px 0 15px 51px;
     font-size: 14px;
     width: 259px;
   }
   @media screen and (min-width: 1440px) {
-    padding: 17.5px 0 17.5px 0;
+    padding: 17.5px 0 17.5px 51.5px;
     font-size: 18px;
     width: 339px;
   }
 `;
 
 export const Button = styled.button`
-  background-color: ${props => props.theme.footerBg};
+  background-color: ${props => props.theme.social};
   color: inherit;
   border: none;
   border-radius: 6px;
@@ -119,6 +127,7 @@ export const Button = styled.button`
   text-align: center;
   cursor: pointer;
   width: 204px;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
 
   @media screen and (min-width: 768px) {
     padding: 16px 0 16px 0;

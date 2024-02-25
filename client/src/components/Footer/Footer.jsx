@@ -11,7 +11,7 @@ export const Footer = () => {
         <Information>
           <Title>
             <Logo>
-              <use xlinkHref={`${sprites}#icon-logo`} />
+              <use xlinkHref={`${sprites}#icon-logo-footer`} />
             </Logo>
             So Yummy
           </Title>

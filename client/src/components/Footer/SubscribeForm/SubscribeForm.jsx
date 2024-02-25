@@ -1,5 +1,5 @@
 import React from 'react';
-import sprites from "../../../images/sprites.svg";
+import sprites from '../../../images/sprites.svg';
 import {
   Subscription,
   Subscribe,
@@ -23,9 +23,8 @@ export const SubscribeForm = () => {
           <Icon>
             <use xlinkHref={`${sprites}#icon-email`} />
           </Icon>
-          <Email type="text" value="Enter your email address" />
+          <Email type="email" name="email" placeholder="Enter your email address" />
         </FormContainer>
-
         <Button type="submit">Subscribe</Button>
       </Form>
     </Subscription>
