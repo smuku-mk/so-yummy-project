@@ -4,7 +4,7 @@ import { Container } from "./SharedLayout.styled";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { currentUser } from "../../redux/auth/operations";
-// import { Header } from "../Header";
+import { Header } from "../Header";
 import { Footer } from "../Footer";
 import { selectIsLoggedIn } from "../../redux/auth/selectors";
 
@@ -15,10 +15,10 @@ export const SharedLayout = () => {
   useEffect(() => {
     dispatch(currentUser());
   }, [dispatch]);
-console.log('isLoggedIn', isLoggedIn)
+  console.log("isLoggedIn", isLoggedIn);
   return (
     <Container>
-      {/* <Header /> */}
+      <Header />
       <Suspense fallback={<div>Loading...</div>}>
         <Outlet />
       </Suspense>
