@@ -24,16 +24,14 @@ const authSlice = createSlice({
         state.token = action.payload.token;
         state.avatarURL = action.payload.avatarURL;
         state.isLoggedIn = true;
-        
       })
       .addCase(register.rejected, (state, action) => {
         state.error = action.payload.message;
       })
       .addCase(logIn.rejected, (state, action) => {
         state.error = action.payload.message;
-      })
-},
+      });
+  },
 });
-
 
 export const authReducer = authSlice.reducer;
