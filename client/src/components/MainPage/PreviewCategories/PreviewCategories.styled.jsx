@@ -5,6 +5,7 @@ export const Block = styled.div`
   height: 445px;
   display: flex;
   flex-direction: column;
+  margin-top: 0;
 
   @media (min-width: 768px) {
     &:not(:last-child) {
@@ -19,19 +20,11 @@ export const Block = styled.div`
   }
 `;
 
-// export const Text = styled.h2`
-//   font-weight: 600;
-//   font-size: 28px;
-//   letter-spacing: -0.02em;
-//   color: #001833;
-// `;
-
 export const BlockPicture = styled.div`
   width: 343px;
   height: 323px;
   display: flex;
   justify-content: center;
-  background-color: red;
 `;
 
 export const BlockPictureImg = styled.img`

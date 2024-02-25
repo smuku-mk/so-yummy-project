@@ -58,13 +58,13 @@ const MainPage = () => {
               cookbook. You can add your own recipes to save them for the
               future.
             </MainDescription>
-            <Search></Search>
           </TabletSectionMain>
         </DesktopMainSection>
 
         <PictureBlockContainer>
           <ChooseYourBreakfast></ChooseYourBreakfast>
         </PictureBlockContainer>
+        <Search></Search>
       </MainSection>
       <CategoriesSection>
         <CategoriesListContainer>
