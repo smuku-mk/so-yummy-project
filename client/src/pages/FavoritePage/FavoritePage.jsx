@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import { MainPage } from '../MainPage/MainPage';
 import FavoriteList from '../../components/FavoriteList/FavoriteList';
 import { Children } from 'react';
 import queryBackEnd from '../../components/Request/queryBackEnd';
 import { Container, Pagination, Stack } from '@mui/material';
-import { PaginationWrapper, ImgWrapper, ImgTitle } from './FavoritePage.styled';
+import { PaginationWrapper, ImgWrapper, ImgTitle, Title, ContainerTitle } from './FavoritePage.styled';
 import instanceBackEnd from '../../components/Request/RequestBackEnd';
 import empty_mobile from '../../images/mobile_img/searchfor_mobile.png';
 import empty_tablet from '../../images/tablet_img/searchfor_tablet.png';
+import { MainContainer } from '../../components/MainContainer/MainContainer';
 
 const FavoritePage = () => {
   const location = useLocation();
@@ -60,8 +60,10 @@ const FavoritePage = () => {
       });
   };
   return (
-    <MainPage>
-      {/* <MainTitle title={'Favorite'} /> */}
+    <MainContainer>
+        <ContainerTitle>
+    <Title>favorite</Title>
+  </ContainerTitle>
       {recipes.length !== 0 ? (
         <FavoriteList
           recipes={recipes}
@@ -73,13 +75,22 @@ const FavoritePage = () => {
         </FavoriteList>
       ) : (
         <ImgWrapper>
-          <img src={empty_mobile} alt={"Empty list"} />
-          <img src={empty_tablet} alt={"Empty list"} />
+                <picture>
+          <img
+            src={empty_mobile}
+            srcSet={`${empty_mobile}`}
+            alt="Empty list"
+          />
+          <source
+            media="(min-width: 768px)"
+            srcSet={`${empty_tablet}`}
+          />
+        </picture>
           <ImgTitle>The list is empty</ImgTitle>
         </ImgWrapper>
       )}
       <PaginationWrapper>
-        <Container>
+      <Container>
           <Stack spacing={2}>
             {allPage > 1 && (
               <Pagination
@@ -93,7 +104,7 @@ const FavoritePage = () => {
           </Stack>
         </Container>
       </PaginationWrapper>
-    // </MainPage>
+    </MainContainer>
   );
 };
 

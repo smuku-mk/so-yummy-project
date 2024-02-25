@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
-import { MainPage }  from '../MainPage/MainPage';
 import MyRecipesList from "../../components/MyRecipeList/MyRecipesList";
 import { Children } from "react";
 import  queryBackEnd  from "../../components/Request/queryBackEnd";
 import { Container, Pagination, Stack } from "@mui/material";
-import { PaginationWrapper, ImgWrapper, ImgTitle } from "../MyRecipePage/MyRecipesPage.styled";
+import { PaginationWrapper, ImgWrapper, ImgTitle, Title, ContainerTitle } from "../MyRecipePage/MyRecipesPage.styled";
 import instanceBackEnd from '../../components/Request/RequestBackEnd';
 import empty_mobile from '../../images/mobile_img/searchfor_mobile.png';
 import empty_tablet from '../../images/tablet_img/searchfor_tablet.png';
+import { MainContainer } from "../../components/MainContainer/MainContainer";
 
 const MyRecipesPage = () => {
   const location = useLocation();
@@ -64,10 +64,16 @@ const MyRecipesPage = () => {
       });
   };
   return (
-    <MainPage>
-      {/* <MainTitle title={"My recipes"} /> */}
+    <MainContainer>
+        <ContainerTitle>
+    <Title>My recipes</Title>
+  </ContainerTitle>
       {recipes.length !== 0 ? (
-        <MyRecipesList recipes={recipes} location={location} removeOwnRecipe={removeOwnRecipe}>
+        <MyRecipesList
+          recipes={recipes}
+          location={location}
+          removeOwnRecipe={removeOwnRecipe}
+        >
           {Children}
         </MyRecipesList>
       ) : (
@@ -75,7 +81,7 @@ const MyRecipesPage = () => {
           <img src={empty_mobile} alt={"Empty list"} />
           <img src={empty_tablet} alt={"Empty list"} />
           <ImgTitle>The list is empty</ImgTitle>
-        </ImgWrapper>
+          </ImgWrapper>
       )}
       <PaginationWrapper>
         <Container>
@@ -86,13 +92,14 @@ const MyRecipesPage = () => {
                 page={currentPage}
                 onChange={changeNum}
                 siblingCount={1}
-                sx={{ marginY: 3, marginX: "auto" }}
+                sx={{ marginY: 3, marginX: 'auto' }}
               />
             )}
           </Stack>
         </Container>
       </PaginationWrapper>
-    // </MainPage>
+    </MainContainer>
   );
 };
+
 export default MyRecipesPage;

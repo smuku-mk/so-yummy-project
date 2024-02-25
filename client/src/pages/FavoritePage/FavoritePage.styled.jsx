@@ -65,4 +65,28 @@ export const EmptyTabDesk = styled.img`
   }
 `;
 
+export const ContainerTitle = styled.div`
+  width: 100%;
+  position: relative;
+`;
 
+export const Title = styled.h2`
+  padding-top: 114px;
+  padding-bottom: 50px;
+
+  font-size: 28px;
+  line-height: 28px;
+  color: ${(props) => props.theme.bannerBg};
+
+  @media screen and (min-width: 768px) {
+   
+    padding-bottom: 72px;
+    font-size: 32px;
+    line-height: 32px;
+  }
+  @media screen and (min-width: 1440px) {
+    padding-top: 136px;
+    font-size: 44px;
+    line-height: 44px;
+  } ;
+`;
