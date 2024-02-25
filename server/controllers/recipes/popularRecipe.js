@@ -1,5 +1,5 @@
-import Recipe from "../database/models/recipesSchema.js";
-import RequestError from "../helpers/error.js";
+import Recipe from "../../database/models/recipesSchema.js";
+import RequestError from "../../helpers/error.js";
 
 const getPopularRecipesHandler = async (req, res) => {
   try {

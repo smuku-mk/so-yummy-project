@@ -16,6 +16,7 @@ export const SharedLayout = () => {
     dispatch(currentUser());
   }, [dispatch]);
 console.log('isLoggedIn', isLoggedIn)
+
   return (
     <Container>
       {/* <Header /> */}

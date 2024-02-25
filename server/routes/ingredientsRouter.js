@@ -1,7 +1,7 @@
 import express from "express";
 import { listIngredients } from "../controllers/ingredients/listIngredients.js";
 import { searchIngredient } from "../controllers/ingredients/searchIngredient.js";
-import { getRecipesByIngredient } from "../controllers/getRecipesByIngredient.js";
+import { getRecipesByIngredient } from "../controllers/recipes/getRecipesByIngredient.js";
 
 const ingredientsRouter = express.Router();
 

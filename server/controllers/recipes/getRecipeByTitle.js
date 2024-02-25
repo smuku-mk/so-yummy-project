@@ -1,4 +1,4 @@
-import Recipe from "../database/models/recipesSchema.js ";
+import Recipe from "../../database/models/recipesSchema.js";
 
 export const getRecipeByTitle = async (req, res) => {
   const { title } = req.query;
