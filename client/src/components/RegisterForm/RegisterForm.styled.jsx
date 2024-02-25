@@ -189,13 +189,13 @@ export const OrangeIcon = styled.svg`
 // `;
 
 export const WarningMsg = styled.span`
-padding-top: 8px;
-font-size: 14px'
-color: ${(props) => props.theme.warning};
+  padding-top: 8px;
+  font-size: 14px;
+  color: ${(props) => props.theme.warning};
 `;
 
 export const SuccessMsg = styled.span`
-padding-top: 8px;
-font-size: 14px'
-color: ${(props) => props.theme.success};
+  padding-top: 8px;
+  font-size: 14px;
+  color: ${(props) => props.theme.success};
 `;
