@@ -21,13 +21,13 @@ const FavoritePage = () => {
   useEffect(() => {
     const data = queryBackEnd.queryAllFavorite();
     data
-      .then(results => {
+      .then((results) => {
         setRecipes(results.result.data.list);
         setAllItem(results.result.data.totalItem);
         const pageQty = Math.ceil(results.result.data.totalItem / 4);
         setAllPage(pageQty);
       })
-      .catch(error => {
+      .catch((error) => {
         console.log(error.message);
       });
   }, []);
@@ -36,8 +36,8 @@ const FavoritePage = () => {
     setCurrentPage(num);
     instanceBackEnd
       .get(`/favorite?page=${num}`)
-      .then(response => setRecipes(response.data.result.data.list))
-      .catch(error => console.log(error.message));
+      .then((response) => setRecipes(response.data.result.data.list))
+      .catch((error) => console.log(error.message));
   };
 
   const removeFavorite = recipeId => {
@@ -98,5 +98,3 @@ const FavoritePage = () => {
     // </MainSection>
   );
 };
-
-export default FavoritePage;

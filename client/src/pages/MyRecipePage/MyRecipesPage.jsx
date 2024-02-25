@@ -98,5 +98,3 @@ const MyRecipesPage = () => {
     // </MainContainer>
   );
 };
-
-export default MyRecipesPage;

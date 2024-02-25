@@ -32,6 +32,8 @@ export const lightTheme = {
 
   //MainPage
   switch: "#efefef", //aka dzyndzel
+  switchBall1: '#FFFFFF',
+  switchBall2: '#E8EAEA',
   navLinks: "#23262a",
   currentLink: "#8baa36",
   currentUser: "#22252a",
@@ -120,6 +122,8 @@ export const darkTheme = {
 
   //MainPage
   switch: "#8baa36",
+  switchBall1: "#FFFFFF",
+  switchBall2: "#E8EAEA",
   navLinks: "#fafafa",
   currentLink: "#8baa36",
   currentUser: "#22252a",
