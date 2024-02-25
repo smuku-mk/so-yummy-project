@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Hamburger = styled.svg`
+export const Burger = styled.svg`
   width: 28px;
   height: 28px;
 

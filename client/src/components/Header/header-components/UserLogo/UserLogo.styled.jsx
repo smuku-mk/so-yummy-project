@@ -9,10 +9,13 @@ export const Avatar = styled.img`
   }
 `;
 
-export const Container = styled.div`
+export const Container = styled.button`
   display: flex;
   align-items: center;
   gap: 14px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
 `;
 
 export const Name = styled.span`
