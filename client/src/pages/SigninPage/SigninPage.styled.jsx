@@ -26,7 +26,7 @@ export const SigninPageStyled = styled.section`
 `;
 
 export const StyledLink = styled(Link)`
-  color: ${(props) => props.theme.mainBg}
+  color: ${(props) => props.theme.mainBg};
   font-size: 14px;
   position: absolute;
   top: 642px;
@@ -34,17 +34,17 @@ export const StyledLink = styled(Link)`
   transform: translate(-50%, -50%);
   text-decoration: underline;
   &:visited {
-  color: ${(props) => props.theme.mainBg}
+    color: ${(props) => props.theme.mainBg};
   }
   &:hover {
-    color: ${(props) => props.theme.brandGreen}
+    color: ${(props) => props.theme.brandGreen};
   }
   @media (min-width: 768px) {
-  font-size: 16px;
-  top: 881px;
+    font-size: 16px;
+    top: 881px;
   }
   @media (min-width: 1440px) {
-  top: 592px;
-  left: 75%;
+    top: 592px;
+    left: 75%;
   }
 `;

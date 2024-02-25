@@ -33,6 +33,7 @@ export const Logo = styled.svg`
   @media (min-width: 768px) {
     width: 68px;
     height: 68px;
+  }
 `;
 
 export const TextBox = styled.div`
