@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router-dom";
-import { SharedLayout, SharedLayoutTest } from "./SharedLayout";
+import { SharedLayoutPrivate, SharedLayoutRestricted } from "./SharedLayout";
 import { lazy } from "react";
 import { useSelector } from "react-redux";
 import { selectIsLoggedIn } from "../redux/auth/selectors";
@@ -18,13 +18,13 @@ export const App = () => {
   return (
     <Routes>
       {!isAuthorized ? (
-        <Route path="/" element={<SharedLayoutTest />}>
+        <Route path="/" element={<SharedLayoutRestricted />}>
           <Route index element={<WelcomePage />} />
           <Route path="/signin" element={<SigninPage />} />
           <Route path="/register" element={<RegisterPage />} />
         </Route>
       ) : (
-        <Route path="/" element={<SharedLayout />}>
+        <Route path="/" element={<SharedLayoutPrivate />}>
           <Route index element={<MainPage />} />
           <Route path="/favorite" element={<FavoritePage />} />
           <Route path="/my" element={<MyRecipesPage />} />

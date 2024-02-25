@@ -1,6 +1,5 @@
 import { Suspense } from "react";
 import { Outlet } from "react-router-dom";
-import { Container } from "./SharedLayout.styled";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { currentUser } from "../../redux/auth/operations";
@@ -8,7 +7,7 @@ import { Header } from "../Header";
 import { Footer } from "../Footer";
 import { selectIsLoggedIn } from "../../redux/auth/selectors";
 
-export const SharedLayout = () => {
+export const SharedLayoutPrivate = () => {
   const isLoggedIn = useSelector(selectIsLoggedIn);
   const dispatch = useDispatch();
 
@@ -19,17 +18,17 @@ export const SharedLayout = () => {
   console.log("isLoggedIn", isLoggedIn);
 
   return (
-    <Container>
+    <>
       <Header />
       <Suspense fallback={<div>Loading...</div>}>
         <Outlet />
       </Suspense>
       <Footer />
-    </Container>
+    </>
   );
 };
 
-export const SharedLayoutTest = () => {
+export const SharedLayoutRestricted = () => {
   return (
     <Suspense fallback={<div>Loading...</div>}>
       <Outlet />
