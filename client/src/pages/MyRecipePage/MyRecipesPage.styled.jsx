@@ -42,27 +42,12 @@ export const ImgTitle = styled.p`
   font-feature-settings: 'liga' off;
   color: ${(props) => props.theme.mainTxt};
   opacity: 0.5;
-`;
-
-export const EmptyMobile = styled.img`
-  width: 208px;
-  height: 133px;
-  object-fit: cover;
-
   @media (min-width: 768px) {
-    display: none;
+    margin-bottom: 200px;
   }
-`;
+;
+`
 
-export const EmptyTabDesk = styled.img`
-  width: 350px;
-  height: 225px;
-  object-fit: cover;
-
-  @media (max-width: 767px) {
-    display: none;
-  }
-`;
 
 export const ContainerTitle = styled.div`
   width: 100%;
