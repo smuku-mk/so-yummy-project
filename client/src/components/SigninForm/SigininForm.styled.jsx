@@ -57,18 +57,17 @@ export const Input = styled.input`
   height: 45px;
   background-color: ${(props) => props.theme.border};
   color: ${(props) => props.theme.border};
-  border: 1px solid "#fff";
+  border: 1px solid rgba(${(props) => props.theme.border}, 0.8);
   padding-left: 40px;
   margin-left: 28px;
   font-size: 14px;
   letter-spacing: -0.02em;
   border-radius: 6px;
-  opacity: 0.8;
 
   &::focus,
   ::hover,
   ::active {
-    opacity: 1;
+    border: 1px solid rgba(${(props) => props.theme.border};
     outline: none;
   }
 

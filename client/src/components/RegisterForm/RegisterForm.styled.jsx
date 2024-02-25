@@ -56,19 +56,20 @@ export const Input = styled.input`
   width: 279px;
   height: 45px;
   background-color: ${(props) => props.theme.border};
-  color: ${(props) => props.theme.border};
-  border: 1px solid ${(props) => (props.valid ? props.theme.error : props.theme.border)};
+  border: 1px solid
+    ${(props) =>
+      props.valid ? props.theme.error : `rgba(${props.theme.border}, 0.8)`};
+  padding-left: 40px;
   padding-left: 40px;
   margin-left: 28px;
   font-size: 14px;
   letter-spacing: -0.02em;
   border-radius: 6px;
-  opacity: 0.8;
 
   &::focus,
   ::hover,
   ::active {
-    opacity: 1;
+    border: 1px solid rgba(${(props) => props.theme.border}
     outline: none;
   }
 
@@ -151,7 +152,8 @@ export const RedIcon = styled.svg`
   opacity: ${(props) => (props.validation === "error" ? 1 : 0)};
   pointer-events: none;
 
-  stroke: ${(props) => (props.validation === "error" ? props.theme.error : "transparent")};
+  stroke: ${(props) =>
+    props.validation === "error" ? props.theme.error : "transparent"};
 `;
 
 export const GreenIcon = styled.svg`
@@ -165,7 +167,8 @@ export const GreenIcon = styled.svg`
   opacity: ${(props) => (props.validation === "error" ? 1 : 0)};
   pointer-events: none;
 
-  stroke: ${(props) => (props.validation === "success" ? props.theme.success : "transparent")};
+  stroke: ${(props) =>
+    props.validation === "success" ? props.theme.success : "transparent"};
 `;
 
 export const OrangeIcon = styled.svg`
@@ -179,7 +182,8 @@ export const OrangeIcon = styled.svg`
   opacity: ${(props) => (props.validation === "error" ? 1 : 0)};
   pointer-events: none;
 
-  stroke: ${(props) => (props.validation === "warning" ? props.theme.warning : "transparent")};
+  stroke: ${(props) =>
+    props.validation === "warning" ? props.theme.warning : "transparent"};
 `;
 
 // export const ErrorMgs = styled.span`
