@@ -1,17 +1,19 @@
 import React, { useState, useEffect } from "react";
-// import { useLocation } from "react-router-dom";
-// import { MainPageTitle } from 'locationMainPageTitle';
-// import { MainContainer } from 'location/MainContainer';
-// import MyRecipesList from "../../components/MyRecipeList/MyRecipesList";
-// import { Children } from "react";
+import { useLocation } from "react-router-dom";
+import { MainTitle } from '../MainPage/MainPage';
+import { MainContainer } from 'location/MainContainer';
+import MyRecipesList from "../../components/MyRecipeList/MyRecipesList";
+import { Children } from "react";
 import  queryBackEnd  from "../../components/Request/queryBackEnd";
 import { Container, Pagination, Stack } from "@mui/material";
 import { PaginationWrapper } from "../MyRecipePage/MyRecipesPage.styled";
 import instanceBackEnd from '../../components/Request/RequestBackEnd';
-// import imgIngradients from 'locationOfingradients.png';
+import empty_mobile from '../../images/mobile_img/searchfor_mobile.png';
+import empty_tablet from '../../images/tablet_img/searchfor_tablet.png';
+import empty_desktop from '../../images/desktop_img/searchfor_desktop.png';
 
 const MyRecipesPage = () => {
-  // const location = useLocation();
+  const location = useLocation();
   const [, setRecipes] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [allPage, setAllPage] = useState();
@@ -42,40 +44,42 @@ const MyRecipesPage = () => {
       });
   };
 
-  // const removeOwnRecipe = (recipeId) => {
-  //   const lastItem = allItem % 4;
-  //   let pageBack;
-  //   if (currentPage !== 1 || lastItem === 1) {
-  //     pageBack = currentPage - 1;
-  //   } else pageBack = currentPage;
-  //   instanceBackEnd
-  //     .delete(`/ownRecipes/${recipeId}?page=${pageBack}`)
-  //     .then((res) => {
-  //       const list = res.data.result.list;
-  //       setRecipes(list);
-  //       const totalItem = res.data.result.totalItem;
-  //       setAllItem(totalItem);
-  //       const quantity = Math.ceil(totalItem / 4);
-  //       setAllPage(quantity);
-  //     })
-  //     .catch((error) => {
-  //       console.log(error.message);
-  //       setRecipes([]);
-  //     });
-  // };
+  const removeOwnRecipe = (recipeId) => {
+    const lastItem = allItem % 4;
+    let pageBack;
+    if (currentPage !== 1 || lastItem === 1) {
+      pageBack = currentPage - 1;
+    } else pageBack = currentPage;
+    instanceBackEnd
+      .delete(`/ownRecipes/${recipeId}?page=${pageBack}`)
+      .then((res) => {
+        const list = res.data.result.list;
+        setRecipes(list);
+        const totalItem = res.data.result.totalItem;
+        setAllItem(totalItem);
+        const quantity = Math.ceil(totalItem / 4);
+        setAllPage(quantity);
+      })
+      .catch((error) => {
+        console.log(error.message);
+        setRecipes([]);
+      });
+  };
   return (
-    // <MainContainer>
-    //   <MainPageTitle title={"My recipes"} />
-    //   {recipes.length !== 0 ? (
-    //     <MyRecipesList recipes={recipes} location={location} removeOwnRecipe={removeOwnRecipe}>
-    //       {Children}
-    //     </MyRecipesList>
-    //   ) : (
-    //     <ImgWrapper>
-    //       <img src={imgIngradients} alt={"Empty list"} />
-    //       <ImgTitle>The list is empty</ImgTitle>
-    //     </ImgWrapper>
-    //   )}
+    <MainContainer>
+      <MainTitle title={"My recipes"} />
+      {recipes.length !== 0 ? (
+        <MyRecipesList recipes={recipes} location={location} removeOwnRecipe={removeOwnRecipe}>
+          {Children}
+        </MyRecipesList>
+      ) : (
+        <ImgWrapper>
+          <img src={empty_mobile} alt={"Empty list"} />
+          <img src={empty_tablet} alt={"Empty list"} />
+          <img src={empty_desktop} alt={"Empty list"} />
+          <ImgTitle>The list is empty</ImgTitle>
+        </ImgWrapper>
+      )}
       <PaginationWrapper>
         <Container>
           <Stack spacing={2}>

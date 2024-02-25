@@ -1,17 +1,18 @@
 import React, { useState, useEffect } from 'react';
-// import { useLocation } from 'react-router-dom';
-// import { MainContainer } from 'locationof/MainContainer';
-// import FavoriteList from '../../components/FavoriteList/FavoriteList';
-// import { MainPageTitle } from 'locationof/MainPageTitle';
-// import { Children } from 'react';
+import { useLocation } from 'react-router-dom';
+import { MainSection } from '../MainPage/MainPage';
+import FavoriteList from '../../components/FavoriteList/FavoriteList';
+import { MainTitle } from '../MainPage/MainPage';
+import { Children } from 'react';
 import queryBackEnd from '../../components/Request/queryBackEnd';
 import { Container, Pagination, Stack } from '@mui/material';
-import { PaginationWrapper } from './FavoritePage.styled';
+import { PaginationWrapper, EmptyMobile, EmptyTabDesk } from './FavoritePage.styled';
 import instanceBackEnd from '../../components/Request/RequestBackEnd';
-// import imgIngradients from 'locationof/ingradients.png';
+import empty_mobile from '../../images/mobile_img/searchfor_mobile.png';
+import empty_tablet from '../../images/tablet_img/searchfor_tablet.png';
 
 const FavoritePage = () => {
-  // const location = useLocation();
+  const location = useLocation();
   const [, setRecipes] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [allPage, setAllPage] = useState();
@@ -39,44 +40,46 @@ const FavoritePage = () => {
       .catch(error => console.log(error.message));
   };
 
-  // const removeFavorite = recipeId => {
-  //   const lastItem = allItem % 4;
-  //   let pageBack;
-  //   if (currentPage !== 1 || lastItem === 1) {
-  //     pageBack = currentPage - 1;
-  //   } else pageBack = currentPage;
-  //   instanceBackEnd
-  //     .patch(`/favorite/remove?page=${pageBack}`, { recipe: `${recipeId}` })
-  //     .then(res => {
-  //       const list = res.data.result.data.list;
-  //       setRecipes(list);
-  //       const totalItem = res.data.result.data.totalItem;
-  //       setAllItem(totalItem);
-  //       const quantity = Math.ceil(totalItem / 4);
-  //       setAllPage(quantity);
-  //     })
-  //     .catch(error => {
-  //       console.log(error.message);
-  //     });
-  // };
+  const removeFavorite = recipeId => {
+    const lastItem = allItem % 4;
+    let pageBack;
+    if (currentPage !== 1 || lastItem === 1) {
+      pageBack = currentPage - 1;
+    } else pageBack = currentPage;
+    instanceBackEnd
+      .patch(`/favorite/remove?page=${pageBack}`, { recipe: `${recipeId}` })
+      .then(res => {
+        const list = res.data.result.data.list;
+        setRecipes(list);
+        const totalItem = res.data.result.data.totalItem;
+        setAllItem(totalItem);
+        const quantity = Math.ceil(totalItem / 4);
+        setAllPage(quantity);
+      })
+      .catch(error => {
+        console.log(error.message);
+      });
+  };
   return (
-    // <MainContainer>
-    //   <MainPageTitle title={'Favorite'} />
-    //   {recipes.length !== 0 ? (
-    //     <FavoriteList
-    //       recipes={recipes}
-    //       allItem={allItem}
-    //       location={location}
-    //       removeFavorite={removeFavorite}
-    //     >
-    //       {Children}
-    //     </FavoriteList>
-    //   ) : (
-    //     <ImgWrapper>
-    //       <img src={imgIngradients} alt={'Empty list'} />
-    //       <ImgTitle>The list is empty</ImgTitle>
-    //     </ImgWrapper>
-    //   )}
+    <MainSection>
+      <MainTitle title={'Favorite'} />
+      {recipes.length !== 0 ? (
+        <FavoriteList
+          recipes={recipes}
+          allItem={allItem}
+          location={location}
+          removeFavorite={removeFavorite}
+        >
+          {Children}
+        </FavoriteList>
+      ) : (
+        <ImgWrapper>
+          <img src={empty_mobile} alt={"Empty list"} />
+          <img src={empty_tablet} alt={"Empty list"} />
+          <img src={empty_desktop} alt={"Empty list"} />
+          <ImgTitle>The list is empty</ImgTitle>
+        </ImgWrapper>
+      )}
       <PaginationWrapper>
         <Container>
           <Stack spacing={2}>
@@ -92,7 +95,7 @@ const FavoritePage = () => {
           </Stack>
         </Container>
       </PaginationWrapper>
-    // </MainContainer>
+    // </MainSection>
   );
 };
 
