@@ -1,6 +1,6 @@
 import { StyledDiv } from "./RecipeList.styled";
 
-const RecipeList = ({ recipes }) => {
+export const RecipeList = ({ recipes }) => {
   return (
     <StyledDiv>
       <ul>
@@ -11,5 +11,3 @@ const RecipeList = ({ recipes }) => {
     </StyledDiv>
   );
 };
-
-export default RecipeList;

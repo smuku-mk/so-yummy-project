@@ -1,12 +1,10 @@
-import { CategoriesList } from "../../components/CategoriesList/";
+import { CategoriesList } from "../../components/CategoriesList";
 import { CategoriesPageStyled } from "./CategoriesPage.styled";
 
-const CategoriesList = () => {
+export const CategoriesPage = () => {
   return (
     <CategoriesPageStyled>
       <CategoriesList />
     </CategoriesPageStyled>
   );
 };
-
-export default CategoriesList;

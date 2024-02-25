@@ -4,8 +4,7 @@ import { lazy } from "react";
 import { useSelector } from "react-redux";
 import { selectIsLoggedIn } from "../redux/auth/selectors";
 
-const lazyLoad = (page) =>
-  lazy(() => import("../pages").then((module) => ({ default: module[page] })));
+const lazyLoad = (page) => lazy(() => import("../pages").then((module) => ({ default: module[page] })));
 const WelcomePage = lazyLoad("WelcomePage");
 const SigninPage = lazyLoad("SigninPage");
 const RegisterPage = lazyLoad("RegisterPage");
@@ -24,7 +23,6 @@ export const App = () => {
           <Route index element={<WelcomePage />} />
           <Route path="/signin" element={<SigninPage />} />
           <Route path="/register" element={<RegisterPage />} />
-          <Route path="/categories" element={<CategoriesPage />} />
         </Route>
       ) : (
         <Route path="/" element={<SharedLayout />}>

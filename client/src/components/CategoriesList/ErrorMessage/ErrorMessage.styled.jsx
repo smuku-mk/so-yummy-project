@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const ErrorMessage = styled.div`
+export const ErrorMess = styled.div`
   color: #ff0000;
   font-size: 18px;
   font-weight: bold;

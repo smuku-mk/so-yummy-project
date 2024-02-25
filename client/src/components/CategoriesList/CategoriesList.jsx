@@ -1,5 +1,6 @@
+import { useState, useEffect } from "react";
 import { getCategoryPage } from "../api";
-import RecipeList from "./RecipeList";
+import { RecipeList } from "./RecipeList";
 import {
   TabsContainer,
   ScrollButton,
@@ -9,9 +10,9 @@ import {
   CategoryItem,
   Header,
 } from "./CategoriesList.styled";
-import ErrorMessage from "./ErrorMessage";
+import { ErrorMessage } from "./ErrorMessage";
 
-const CategoriesList = () => {
+export const CategoriesList = () => {
   const [category, setCategory] = useState("Beef");
   const [recipes, setRecipes] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -24,11 +25,7 @@ const CategoriesList = () => {
   const fetchData = async () => {
     setLoading(true);
     try {
-      const { recipes: fetchedRecipes, totalCount } = await getCategoryPage(
-        category,
-        0,
-        8
-      );
+      const { recipes: fetchedRecipes, totalCount } = await getCategoryPage(category, 0, 8);
       setRecipes(fetchedRecipes);
       setError(null);
     } catch (error) {
@@ -69,10 +66,7 @@ const CategoriesList = () => {
             "Vegan",
             "Vegetarian",
           ].map((category) => (
-            <CategoryItem
-              key={category}
-              onClick={() => handleCategoryChange(category)}
-            >
+            <CategoryItem key={category} onClick={() => handleCategoryChange(category)}>
               {category}
             </CategoryItem>
           ))}
@@ -94,5 +88,3 @@ const CategoriesList = () => {
     </div>
   );
 };
-
-export default CategoriesList;

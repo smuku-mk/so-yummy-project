@@ -63,7 +63,6 @@ export const CategoryList = styled.div`
 `;
 
 export const CategoryItem = styled.li`
-  font-family: Poppins;
   font-style: normal;
   font-weight: 400;
   font-size: 18px;
@@ -102,6 +101,5 @@ export const Header = styled.h2`
   font-size: 32px;
   line-height: 32px;
   padding-top: 114px;
-  font-family: Poppins;
   color: rgb(0, 24, 51);
 `;
