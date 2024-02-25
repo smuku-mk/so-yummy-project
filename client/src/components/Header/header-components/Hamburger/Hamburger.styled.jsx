@@ -8,6 +8,10 @@ export const Burger = styled.svg`
     width: 32px;
     height: 32px;
   }
+
+  @media screen and (min-width: 1440px) {
+    display: none;
+  }
 `;
 
 export const Btn = styled.button`
