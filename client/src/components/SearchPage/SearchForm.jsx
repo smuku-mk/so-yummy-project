@@ -1,13 +1,20 @@
+import React, { useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { fetchRecipes } from "../../redux/search/operations.js";
+import { selectSearchType } from '../../redux/search/selectors.js';
+
 import { Form, ButtonWrapper, Button, Input } from "./SearchPage.styled";
-import { useState } from "react";
 
-export const SearchForm = ({ fetchRecipes }) => {
-  const [searchValue, setSearchValue] = useState("");
-  const [searchType, setSearchType] = useState("title");
+export const SearchForm = () => {
+  const dispatch = useDispatch();
+  const [searchValue, setSearchValue] = useState('');
+  const searchType = useSelector(selectSearchType);
 
-  const handleSearch = () => {
+  const handleSearch = async () => {
     if (searchValue && searchType) {
-      fetchRecipes();
+      dispatch( fetchRecipes( { searchValue, searchType }));
+     
+    
     } else {
       alert("Wprowadz wartosc do pola wyszukiwania");
     }
@@ -17,7 +24,7 @@ export const SearchForm = ({ fetchRecipes }) => {
       <Input
         placeholder="Enter the text"
         type="text"
-        defaultValue={searchValue}
+        value={searchValue}
         onChange={(e) => setSearchValue(e.target.value)}
       />
       <ButtonWrapper>

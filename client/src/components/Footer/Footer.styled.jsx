@@ -1,13 +1,12 @@
 import styled from "styled-components";
 
 export const AllFooter = styled.footer`
-  color: ${props => props.theme.mainBg};
-  background-color: ${props => props.theme.currentUser};
+  color: ${(props) => props.theme.mainBg};
+  background-color: ${(props) => props.theme.currentUser};
   width: 100%;
   text-align: center;
   padding: 35px 0 18px 0;
-  margin: 0 auto;
-  font-family: 'Poppins', sans-serif;
+
   @media screen and (min-width: 768px) {
     padding: 50px 0 24px 0;
     text-align: left;
@@ -22,6 +21,7 @@ export const Container = styled.div`
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
+
   @media screen and (min-width: 768px) {
     margin: 0 auto;
     flex-direction: row;
@@ -37,13 +37,31 @@ export const Container = styled.div`
 export const Information = styled.div``;
 
 export const Title = styled.p`
-  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-weight: 700;
   font-size: 18px;
   line-height: 100%;
   letter-spacing: 0.01em;
+
   @media screen and (min-width: 768px) {
+    justify-content: left;
     font-size: 28px;
+  }
+`;
+
+export const Logo = styled.svg`
+  width: 32px;
+  height: 32px;
+  padding-right: 8px;
+  fill: ${(props) => props.theme.iconBg};
+  stroke: ${(props) => props.theme.iconBg};
+
+  @media screen and (min-width: 768px) {
+    width: 44px;
+    height: 44px;
+    padding-right: 12px;
   }
 `;
 
@@ -51,13 +69,13 @@ export const List = styled.ul`
   display: none;
 
   @media screen and (min-width: 768px) {
+    list-style-type: disc;
     display: block;
-    margin: 0;
     font-weight: 400;
     font-size: 14px;
     line-height: 129%;
     letter-spacing: -0.02em;
-    padding: 24px 0 0 0;
+    padding: 24px 0 0 22px;
   }
 
   @media screen and (min-width: 1440px) {
@@ -69,7 +87,8 @@ export const List = styled.ul`
 
 export const Features = styled.li`
   &:not(:last-child) {
-  padding-bottom: 10px;
+    padding-bottom: 10px;
+  }
 
   @media screen and (min-width: 1440px) {
     padding-bottom: 12px;

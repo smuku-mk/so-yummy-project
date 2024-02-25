@@ -1,6 +1,7 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
-
+import React from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { selectSearchType } from "../../redux/search/selectors.js";
+import { setSearchType } from "../../redux/search/searchSlice";
 import {
   SearchBy,
   SearchByLabel,
@@ -8,13 +9,13 @@ import {
   SearchBySelect,
 } from "./SearchPage.styled";
 
-export const SearchTypeSelector = () => {
-  const [searchType, setSearchType] = useState("title");
-  const navigate = useNavigate();
 
+export const SearchTypeSelector = () => {
+  const dispatch = useDispatch();
+  const searchType = useSelector(selectSearchType);
+ 
   const handleTypeChange = (type) => {
-    setSearchType(type);
-    navigate(`/search?type=${type}`);
+    dispatch(setSearchType(type))
   };
 
   return (

@@ -1,5 +1,5 @@
-import Ingredient from "../database/models/ingredientsSchema.js";
-import Recipe from "../database/models/recipesSchema.js";
+import Ingredient from "../../database/models/ingredientsSchema.js";
+import Recipe from "../../database/models/recipesSchema.js";
 
 export const getRecipesByIngredient = async (req, res) => {
   const name = req.query.name;
