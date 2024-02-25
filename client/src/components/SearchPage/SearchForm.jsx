@@ -1,14 +1,13 @@
 import { Form, ButtonWrapper, Button, Input } from "./SearchPage.styled";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 
-const Search = () => {
+export const SearchForm = ({ fetchRecipes }) => {
   const [searchValue, setSearchValue] = useState("");
-  const navigate = useNavigate();
+  const [searchType, setSearchType] = useState("title");
 
   const handleSearch = () => {
-    if (searchValue) {
-      navigate(`/search?query=${searchValue}`);
+    if (searchValue && searchType) {
+      fetchRecipes();
     } else {
       alert("Wprowadz wartosc do pola wyszukiwania");
     }
@@ -18,7 +17,7 @@ const Search = () => {
       <Input
         placeholder="Enter the text"
         type="text"
-        value={searchValue}
+        defaultValue={searchValue}
         onChange={(e) => setSearchValue(e.target.value)}
       />
       <ButtonWrapper>
@@ -27,5 +26,3 @@ const Search = () => {
     </Form>
   );
 };
-
-export default Search;

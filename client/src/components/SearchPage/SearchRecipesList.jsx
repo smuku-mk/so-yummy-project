@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-import { SearchPageWrapper } from "./SearchPage.styled";
 
 export const SearchRecipesList = () => {
   const location = useLocation();
@@ -12,12 +11,17 @@ export const SearchRecipesList = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    // Fetch recipes based on searchValue and searchType
-    const fetchRecipes = async () => {
+    const fetchRecipes = async ({ title, ingredient_name }) => {
       try {
-        const response = await fetch(
-          `/api/recipes?search=${searchValue}&type=${searchType}`
-        );
+        let response;
+        if (searchType === "title") {
+          response = await fetch(`http://localhost:5000/search?title=${title}`);
+        } else if (searchType === "ingredient") {
+          response = await fetch(
+            `http://localhost:5000/ingredient?name=${ingredient_name}`
+          );
+        }
+
         const data = await response.json();
         setRecipes(data);
         setError(null);
@@ -36,8 +40,7 @@ export const SearchRecipesList = () => {
   }, [searchValue, searchType]);
 
   return (
-    <SearchPageWrapper>
-      {error && <p>{error}</p>}
+    <div>
       {recipes.length > 0 ? (
         <ul>
           {recipes.map((recipe) => (
@@ -47,6 +50,6 @@ export const SearchRecipesList = () => {
       ) : (
         <p>Try looking for something else..</p>
       )}
-    </SearchPageWrapper>
+    </div>
   );
 };

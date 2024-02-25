@@ -7,7 +7,6 @@ import recipesRouter from "./routes/recipesRouter.js";
 
 import shoppingListRouter from "./routes/shoppingListRouter.js";
 
-
 import popularRouter from "./routes/popularRouter.js";
 import searchRouter from "./routes/searchRouter.js";
 
@@ -29,7 +28,6 @@ app.use("/recipes", recipesRouter);
 app.use("/shopping-list", shoppingListRouter);
 
 app.use("/popular-recipes", popularRouter);
-
 
 app.use("/users", usersRouter);
 app.use("/search", searchRouter);
