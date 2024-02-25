@@ -1,5 +1,5 @@
 import { getCategoryPage } from "../api";
-import RecipeList from "./RecipeList/RecipeList";
+import RecipeList from "./RecipeList";
 import {
   TabsContainer,
   ScrollButton,
@@ -8,10 +8,10 @@ import {
   CategoryList,
   CategoryItem,
   Header,
-} from "./CategoriesPage.styled";
-import ErrorMessage from "./ErrorMessage/ErrorMessage";
+} from "./CategoriesList.styled";
+import ErrorMessage from "./ErrorMessage";
 
-const CategoriesPage = () => {
+const CategoriesList = () => {
   const [category, setCategory] = useState("Beef");
   const [recipes, setRecipes] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -95,4 +95,4 @@ const CategoriesPage = () => {
   );
 };
 
-export default CategoriesPage;
+export default CategoriesList;

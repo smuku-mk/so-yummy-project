@@ -4,7 +4,8 @@ import { lazy } from "react";
 import { useSelector } from "react-redux";
 import { selectIsLoggedIn } from "../redux/auth/selectors";
 
-const lazyLoad = (page) => lazy(() => import("../pages").then((module) => ({ default: module[page] })));
+const lazyLoad = (page) =>
+  lazy(() => import("../pages").then((module) => ({ default: module[page] })));
 const WelcomePage = lazyLoad("WelcomePage");
 const SigninPage = lazyLoad("SigninPage");
 const RegisterPage = lazyLoad("RegisterPage");
@@ -12,6 +13,7 @@ const NotFoundPage = lazyLoad("NotFoundPage");
 const MainPage = lazyLoad("MainPage");
 const FavoritePage = lazyLoad("FavoritePage");
 const MyRecipePage = lazyLoad("MyRecipePage");
+const CategoriesPage = lazyLoad("CategoriesPage");
 
 export const App = () => {
   const isAuthorized = useSelector(selectIsLoggedIn);
@@ -22,6 +24,7 @@ export const App = () => {
           <Route index element={<WelcomePage />} />
           <Route path="/signin" element={<SigninPage />} />
           <Route path="/register" element={<RegisterPage />} />
+          <Route path="/categories" element={<CategoriesPage />} />
         </Route>
       ) : (
         <Route path="/" element={<SharedLayout />}>
@@ -29,6 +32,7 @@ export const App = () => {
           <Route path="/favorite" element={<FavoritePage />} />
           <Route path="/my" element={<MyRecipePage />} />
           <Route path="/404" element={<NotFoundPage />} />
+          <Route path="/categories" element={<CategoriesPage />} />
         </Route>
       )}
     </Routes>
