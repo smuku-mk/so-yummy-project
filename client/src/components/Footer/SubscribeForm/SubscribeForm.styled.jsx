@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const Subscription = styled.div`
   display: flex;
@@ -20,7 +20,7 @@ export const Subscription = styled.div`
 
 export const Subscribe = styled.p`
   display: none;
-  
+
   @media screen and (min-width: 1440px) {
     display: block;
     font-weight: 700;
@@ -67,7 +67,7 @@ export const Icon = styled.svg`
   height: 12px;
   margin-left: 14px;
   margin-top: 11px;
-  fill: ${props => props.theme.footerTxt};
+  fill: ${(props) => props.theme.footerTxt};
 
   @media screen and (min-width: 768px) {
     width: 20px;
@@ -95,7 +95,7 @@ export const Email = styled.input`
   width: 204px;
 
   &::placeholder {
-    color: ${props => props.theme.footerTxt};
+    color: ${(props) => props.theme.footerTxt};
     opacity: 1;
   }
 
@@ -116,7 +116,7 @@ export const Email = styled.input`
 `;
 
 export const Button = styled.button`
-  background-color: ${props => props.theme.social};
+  background-color: ${(props) => props.theme.social};
   color: inherit;
   border: none;
   border-radius: 6px;
