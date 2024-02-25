@@ -1,12 +1,12 @@
 import sprite from "../../../../images/sprites.svg";
-import { Btn, Hamburger } from "./Nav.styled";
+import { Btn, Burger } from "./Hamburger.styled";
 
-export const Nav = () => {
+export const Hamburger = () => {
   return (
     <Btn type="button">
-      <Hamburger>
+      <Burger>
         <use xlinkHref={`${sprite}#icon-hamburger`}></use>
-      </Hamburger>
+      </Burger>
     </Btn>
   );
 };
