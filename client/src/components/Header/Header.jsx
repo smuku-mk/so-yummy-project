@@ -1,16 +1,23 @@
+import { useState } from "react";
 import { Container, Wrapper } from "./Header.styled";
-import { Logo, UserLogo, Nav, Hamburger } from "./header-components";
+import { Logo, UserLogo, Navi, Hamburger } from "./header-components";
 import { ThemeToggler } from "./header-components/ThemeToggler/ThemeToggler";
 
 export const Header = () => {
+  const [isOpen, setIsOpen] = useState(true);
+
+  const toggleMenu = () => {
+    setIsOpen((open) => !open);
+  };
+
   return (
     <Container>
       <Logo />
+      {isOpen ? <Navi /> : ""}
       <Wrapper>
-        {/* <Nav /> */}
         <UserLogo />
-        <Hamburger />
-        <ThemeToggler />
+        <Hamburger onClick={toggleMenu} />
+        {isOpen ? <ThemeToggler /> : ""}
       </Wrapper>
     </Container>
   );
