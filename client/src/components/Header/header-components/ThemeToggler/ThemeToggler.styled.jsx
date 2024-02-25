@@ -12,7 +12,6 @@ export const Label = styled.label`
   border-radius: 200px;
   background-color: ${(props) => props.theme.switch};
   cursor: pointer;
-  
 
   ::before {
     position: absolute;
