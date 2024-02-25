@@ -6,7 +6,7 @@ export const Nav = () => {
       <Navigation>
         <LinksStyled to="/search">Ingredients</LinksStyled>
         <LinksStyled to="/add">Add recipes</LinksStyled>
-        <LinksStyled to="/ownRecipes">My recipes</LinksStyled>
+        <LinksStyled to="/my">My recipes</LinksStyled>
         <LinksStyled to="/favorite">Favorite</LinksStyled>
         <LinksStyled to="/shopping-list">Shopping list</LinksStyled>
       </Navigation>

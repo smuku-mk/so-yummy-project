@@ -42,12 +42,13 @@ export const Title = styled.p`
   align-items: center;
   font-weight: 700;
   font-size: 18px;
-  line-height: 100%;
+  line-height: 18px;
   letter-spacing: 0.01em;
 
   @media screen and (min-width: 768px) {
     justify-content: left;
     font-size: 28px;
+    line-height: 28px;
   }
 `;
 
