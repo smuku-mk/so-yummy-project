@@ -1,34 +1,38 @@
-import AddRecipeForm from 'components/AddRecipeForm/AddRecipeForm';
-import { Container } from 'components/common/Container.styled';
-import PopularRecipes from 'components/PopularRecipes/PopularRecipes';
-import { FlexContainer, MainTitle, Section } from './AddRecipePage.styled';
-import SocialMedia from 'components/SocialMedia/SocialMedia';
-import { useMediaQuery } from 'react-responsive';
-import { Subtitle } from 'components/AddRecipeForm/AddRecipeForm.styled';
-import { useScrollToTop } from 'hooks/useScrollToTop';
+import { useEffect, useState } from "react";
+import { AddRecipeForm } from "./components/AddRecipeForm/AddRecipeForm";
+import { FollowUs } from "./components/FollowUs/FollowUs";
+import { PopularRecipe } from "./components/PopularRecipe/PopularRecipe";
 
-export default function AddRecipePage() {
-  useScrollToTop();
-  const isDesctop = useMediaQuery({
-    query: '(min-width: 1440px)',
-  });
+import css from "./AddRecipePage.module.css";
+
+export const AddRecipePage = () => {
+  const [showFollowUs, setShowFollowUs] = useState(false);
+
+  useEffect(() => {
+    const updateDimension = () => {
+      setShowFollowUs(window.innerWidth >= 1440);
+    };
+    window.addEventListener("resize", updateDimension);
+
+    updateDimension();
+
+    return () => {
+      window.removeEventListener("resize", updateDimension);
+    };
+  }, []);
+
   return (
-    <Section>
-      <Container>
-        <MainTitle>Add recipe</MainTitle>
-        <FlexContainer>
+    <section className={css.section}>
+      <div className={css.container}>
+        <h2 className={css.title}>Add Recipe</h2>
+        <div className={css.page_container}>
           <AddRecipeForm />
-          <div>
-            {isDesctop && (
-              <div>
-                <Subtitle>Follow us</Subtitle>
-                <SocialMedia variant="greenToBlack" mt="40px" />
-              </div>
-            )}
-            <PopularRecipes />
+          <div className={css.common_container}>
+            {showFollowUs && <FollowUs />}
+            <PopularRecipe />
           </div>
-        </FlexContainer>
-      </Container>
-    </Section>
+        </div>
+      </div>
+    </section>
   );
-}
+};

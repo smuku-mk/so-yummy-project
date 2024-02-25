@@ -1,0 +1,119 @@
+.container {
+  margin-top: 72px;
+  width: 343px;
+}
+
+.title {
+  color: #3e4462;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.popular_recipes {
+  margin-top: 32px;
+}
+
+.popular_recipe:not(:last-child) {
+  margin-bottom: 24px;
+}
+
+.popular_recipe {
+  border-bottom: 1px solid #e0e0e0;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 13px 13px 0;
+}
+.image_container {
+  cursor: pointer;
+}
+
+.image_container,
+.image {
+  height: 85px;
+  width: 104px;
+  border-radius: 8px;
+}
+
+.info_container {
+  height: 56px;
+  width: 213px;
+}
+
+.dish_title {
+  color: #3e4462;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.2;
+  margin-bottom: 2px;
+}
+
+.dish_description {
+  color: #969595;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1;
+  width: 213px;
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    margin-top: 100px;
+    width: 704px;
+  }
+
+  .popular_recipes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+    margin-top: 40px;
+    width: 704px;
+  }
+
+  .popular_recipe:not(:last-child) {
+    margin-bottom: 0;
+  }
+
+  .popular_recipe {
+    height: 98px;
+    width: 336px;
+    padding: 0 13px 13px 0;
+  }
+
+  .image_container,
+  .image {
+    width: 102px;
+  }
+
+  .info_container {
+    width: 208px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .container {
+    width: 319px;
+  }
+
+  .popular_recipes {
+    display: block;
+    width: 319px;
+  }
+
+  .popular_recipe {
+    width: 319px;
+  }
+
+  .popular_recipe:not(:last-child) {
+    margin-bottom: 24px;
+  }
+
+  .image_container,
+  .image {
+    width: 97px;
+  }
+
+  .info_container {
+    width: 198px;
+  }
+}

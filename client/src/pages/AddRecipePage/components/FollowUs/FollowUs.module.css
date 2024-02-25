@@ -1,0 +1,38 @@
+.container {
+  margin-top: 100px;
+  width: 163px;
+}
+
+.title {
+  color: #3e4462;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.items_list {
+  display: flex;
+  gap: 18px;
+  justify-content: space-between;
+  height: 26px;
+  list-style: none;
+  margin-top: 40px;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+}
+
+.link {
+  text-decoration: none;
+  fill: #8baa36;
+}
+
+.link:hover,
+.link:active,
+.link:focus {
+  fill: #1e1f28;
+  transition-duration: 300ms;
+  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
