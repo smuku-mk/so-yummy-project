@@ -2,13 +2,28 @@ import { useDispatch, useSelector } from "react-redux";
 import { register } from "../../redux/auth/operations";
 import { selectIsLoggedIn } from "../../redux/auth/selectors";
 import { useNavigate } from "react-router-dom";
-import { Form, Title, Label, Input, Submit, Icon } from "./RegisterForm.styled";
+import React, { useState } from "react";
+import {
+  Form,
+  Title,
+  Label,
+  Input,
+  Submit,
+  Icon,
+  RedIcon,
+  GreenIcon,
+} from "./RegisterForm.styled";
 import sprites from "../../images/sprites.svg";
 
 export const RegisterForm = () => {
   const dispatch = useDispatch();
   const logged = useSelector(selectIsLoggedIn);
   const navigate = useNavigate();
+  const [validation, setValidation] = useState({
+    name: "",
+    email: "",
+    password: "",
+  });
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -26,6 +41,19 @@ export const RegisterForm = () => {
     navigate("/");
   };
 
+  const inputChange = (event) => {
+    const { name, value } = event.target;
+    setValidation({
+      ...validation,
+      [name]: value,
+    });
+  };
+
+  const validateName = (value) => {
+    const validCharacters = /[a-zA-Z0-9]/;
+    return !validCharacters.test(value);
+  };
+
   return (
     <div>
       <Form onSubmit={handleSubmit}>
@@ -37,7 +65,28 @@ export const RegisterForm = () => {
             name="name"
             placeholder="Name"
             autocomplete="off"
+            validation={validation.name}
+            onChange={inputChange}
+            valid={validateName(validation.name)}
           />
+
+          {validation.name && (
+            <Icon
+              validation={validateName(validation.name) ? "success" : "error"}
+            >
+              <use
+                xlinkHref={`${sprites}#icon-success${
+                  validateName(validation.name) ? "check" : "error"
+                }`}
+              />
+            </Icon>
+          )}
+          {!validateName(validation.name) && (
+            <RedIcon>
+              <use xlinkHref={`${sprites}#icon-error`} />
+            </RedIcon>
+          )}
+
           <Icon>
             <use xlinkHref={`${sprites}#icon-user`} />
           </Icon>
@@ -49,6 +98,8 @@ export const RegisterForm = () => {
             name="email"
             placeholder="Email"
             autocomplete="off"
+            validation={validation.email}
+            onChange={inputChange}
           />
           <Icon>
             <use xlinkHref={`${sprites}#icon-email`} />
@@ -61,6 +112,8 @@ export const RegisterForm = () => {
             name="password"
             placeholder="Password"
             autocomplete="off"
+            validation={validation.password}
+            onChange={inputChange}
           />
           <Icon>
             <use xlinkHref={`${sprites}#icon-password`} />

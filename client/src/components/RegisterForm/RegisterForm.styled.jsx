@@ -55,8 +55,8 @@ export const Label = styled.label`
 export const Input = styled.input`
   width: 279px;
   height: 45px;
-  background-color: ${(props) => props.theme.loginBg};
-  color: ${(props) => props.theme.mainBg};
+  background-color: ${(props) => props.theme.border};
+  color: ${(props) => props.theme.border};
   border: 1px solid;
   padding-left: 40px;
   margin-left: 28px;
@@ -68,8 +68,15 @@ export const Input = styled.input`
   &::focus,
   ::hover,
   ::active {
+    opacity: 1;
     outline: none;
   }
+
+  ${({ valid }) =>
+    valid === false &&
+    css`
+      border-color: ${(props) => props.theme.error};
+    `}
 
   @media (min-width: 768px) {
     width: 400px;
@@ -78,19 +85,6 @@ export const Input = styled.input`
     padding-left: 50px;
     margin-left: 50px;
   }
-
-  border-color: ${(props) => {
-    switch (props.validation) {
-      case "success":
-        return "#3CBC81";
-      case "warning":
-        return "#F6C23E";
-      case "error":
-        return "#E74A3B";
-      default:
-        return "#fafafa";
-    }
-  }};
 `;
 
 export const Icon = styled.svg`
@@ -110,9 +104,9 @@ export const Icon = styled.svg`
       case "warning":
         return "#f6c23e";
       case "error":
-        return "#e74a3b";
+        return `${(props) => props.theme.error}`;
       default:
-        return "#fafafa";
+        return `${(props) => props.theme.border}`;
     }
   }};
 
@@ -152,17 +146,17 @@ export const Submit = styled.button`
   }
 `;
 
-// export const RedIcon = styled(ErrorIcon)`
-//   position: absolute;
-//   top: 13px;
-//   right: 25px;
-// `;
+export const RedIcon = styled.svg`
+  position: absolute;
+  top: 13px;
+  right: 25px;
+`;
 
-// export const GreenIcon = styled(SuccessIcon)`
-//   position: absolute;
-//   top: 13px;
-//   right: 25px;
-// `;
+export const GreenIcon = styled.svg`
+  position: absolute;
+  top: 13px;
+  right: 25px;
+`;
 
 // export const OrangeIcon = styled(WarningIcon)`
 //   position: absolute;
