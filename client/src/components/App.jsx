@@ -12,7 +12,7 @@ const NotFoundPage = lazyLoad("NotFoundPage");
 const MainPage = lazyLoad("MainPage");
 const FavoritePage = lazyLoad("FavoritePage");
 const MyRecipePage = lazyLoad("MyRecipePage");
-const AddPage = lazyLoad("AddPage");
+const AddRecipePage = lazyLoad("AddRecipePage");
 
 export const App = () => {
   const isAuthorized = useSelector(selectIsLoggedIn);
@@ -27,7 +27,7 @@ export const App = () => {
       ) : (
         <Route path="/" element={<SharedLayout />}>
           <Route index element={<MainPage />} />
-          <Route path="/add" element={<AddPage />} />
+          <Route path="/add" element={<AddRecipePage />} />
           <Route path="/favorite" element={<FavoritePage />} />
           <Route path="/my" element={<MyRecipePage />} />
           <Route path="/404" element={<NotFoundPage />} />
