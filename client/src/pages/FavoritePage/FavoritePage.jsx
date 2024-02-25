@@ -62,7 +62,7 @@ export const FavoritePage = () => {
   return (
     <MainContainer>
         <ContainerTitle>
-    <Title>favorite</Title>
+    <Title>Favorite</Title>
   </ContainerTitle>
       {recipes.length !== 0 ? (
         <FavoriteList
