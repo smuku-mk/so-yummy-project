@@ -1,7 +1,7 @@
 import sprite from "../../../../images/sprites.svg";
-import { Btn, Hamburger } from "./Navigation.styled";
+import { Btn, Hamburger } from "./Nav.styled";
 
-export const Navigation = () => {
+export const Nav = () => {
   return (
     <Btn type="button">
       <Hamburger>

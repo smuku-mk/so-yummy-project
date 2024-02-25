@@ -12,7 +12,6 @@ export const Label = styled.label`
   background-color: ${(props) => props.theme.switch};
   cursor: pointer;
   position: relative;
-  transition: 0.2s;
 
   ::before {
     position: absolute;
@@ -21,16 +20,15 @@ export const Label = styled.label`
     width: 21px;
     border-radius: 50%;
     background: linear-gradient(${(props) => props.theme.switchBall1}, ${(props) => props.theme.switchBall2});
-    box-shadow: 0px 6px 8px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 6px 8px 3px rgba(0, 0, 0, 0.1);
     margin: 3px;
     cursor: pointer;
-    transition: 0.2s;
     top: 0px;
     left: 0px;
   }
 
   ${Input}:checked {
     transform: translateX(34px);
-    transition: 0.2s;
+    transition: 0.2s ease-in-out;
   }
 `;
