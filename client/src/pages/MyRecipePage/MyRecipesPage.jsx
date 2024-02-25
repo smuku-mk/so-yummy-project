@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
-import { MainTitle } from '../MainPage/MainPage';
-import { MainSection } from '../MainPage/MainPage';;
+import { MainPage }  from '../MainPage/MainPage';
 import MyRecipesList from "../../components/MyRecipeList/MyRecipesList";
 import { Children } from "react";
 import  queryBackEnd  from "../../components/Request/queryBackEnd";
 import { Container, Pagination, Stack } from "@mui/material";
-import { PaginationWrapper } from "../MyRecipePage/MyRecipesPage.styled";
+import { PaginationWrapper, ImgWrapper, ImgTitle } from "../MyRecipePage/MyRecipesPage.styled";
 import instanceBackEnd from '../../components/Request/RequestBackEnd';
 import empty_mobile from '../../images/mobile_img/searchfor_mobile.png';
 import empty_tablet from '../../images/tablet_img/searchfor_tablet.png';
@@ -65,7 +64,7 @@ const MyRecipesPage = () => {
       });
   };
   return (
-    <MainSection>
+    <MainPage>
       <MainTitle title={"My recipes"} />
       {recipes.length !== 0 ? (
         <MyRecipesList recipes={recipes} location={location} removeOwnRecipe={removeOwnRecipe}>
@@ -75,7 +74,6 @@ const MyRecipesPage = () => {
         <ImgWrapper>
           <img src={empty_mobile} alt={"Empty list"} />
           <img src={empty_tablet} alt={"Empty list"} />
-          <img src={empty_desktop} alt={"Empty list"} />
           <ImgTitle>The list is empty</ImgTitle>
         </ImgWrapper>
       )}
@@ -94,6 +92,7 @@ const MyRecipesPage = () => {
           </Stack>
         </Container>
       </PaginationWrapper>
-    // </MainSection>
+    // </MainPage>
   );
 };
+export default MyRecipesPage;

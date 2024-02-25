@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import { MainSection } from '../MainPage/MainPage';
+import { MainPage } from '../MainPage/MainPage';
 import FavoriteList from '../../components/FavoriteList/FavoriteList';
-import { MainTitle } from '../MainPage/MainPage';
 import { Children } from 'react';
 import queryBackEnd from '../../components/Request/queryBackEnd';
 import { Container, Pagination, Stack } from '@mui/material';
-import { PaginationWrapper, EmptyMobile, EmptyTabDesk } from './FavoritePage.styled';
+import { PaginationWrapper, ImgWrapper, ImgTitle } from './FavoritePage.styled';
 import instanceBackEnd from '../../components/Request/RequestBackEnd';
 import empty_mobile from '../../images/mobile_img/searchfor_mobile.png';
 import empty_tablet from '../../images/tablet_img/searchfor_tablet.png';
@@ -61,7 +60,7 @@ const FavoritePage = () => {
       });
   };
   return (
-    <MainSection>
+    <MainPage>
       <MainTitle title={'Favorite'} />
       {recipes.length !== 0 ? (
         <FavoriteList
@@ -76,7 +75,6 @@ const FavoritePage = () => {
         <ImgWrapper>
           <img src={empty_mobile} alt={"Empty list"} />
           <img src={empty_tablet} alt={"Empty list"} />
-          <img src={empty_desktop} alt={"Empty list"} />
           <ImgTitle>The list is empty</ImgTitle>
         </ImgWrapper>
       )}
@@ -95,6 +93,8 @@ const FavoritePage = () => {
           </Stack>
         </Container>
       </PaginationWrapper>
-    // </MainSection>
+    // </MainPage>
   );
 };
+
+export default FavoritePage;
