@@ -12,5 +12,6 @@ flex-direction: column;
 @media screen and (min-width: 1440px) {
 display: flex;
 flex-direction: column;
+}
 `;
 
