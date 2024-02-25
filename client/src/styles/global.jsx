@@ -8,6 +8,7 @@ export const GlobalStyles = createGlobalStyle`
     font-family: -apple-system, BlinkMacSystemFont, 'Poppins', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    background-color: ${(props) => props.theme.mainBg}
   }
   code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
