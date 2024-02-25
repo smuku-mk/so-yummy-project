@@ -9,7 +9,7 @@ export const Form = styled.form`
   left: 50%;
   transform: translate(-50%, 0);
   border-radius: 30px;
-  background-color: ${(props) => props.theme.loginBg};
+  background-color: #2a2c36;
   z-index: 2;
 
   @media (min-width: 768px) {
@@ -25,7 +25,7 @@ export const Form = styled.form`
 export const Title = styled.h4`
   font-size: 24px;
   font-weight: 600;
-  color: ${(props) => props.theme.mainBg};
+  color: #fff;
   line-height: 1.17;
   letter-spacing: -0.02em;
   padding: 32px 28px 40px;
@@ -55,19 +55,19 @@ export const Label = styled.label`
 export const Input = styled.input`
   width: 279px;
   height: 45px;
-  background-color: ${(props) => props.theme.border};
-  color: ${(props) => props.theme.border};
-  border: 1px solid rgba(${(props) => props.theme.border}, 0.8);
+  background-color: #2a2c36;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.8);
   padding-left: 40px;
   margin-left: 28px;
   font-size: 14px;
   letter-spacing: -0.02em;
   border-radius: 6px;
 
-  &::focus,
-  ::hover,
-  ::active {
-    border: 1px solid rgba(${(props) => props.theme.border};
+  &:focus,
+  :hover,
+  :active {
+    border: 1px solid #fff;
     outline: none;
   }
 
@@ -83,12 +83,17 @@ export const Input = styled.input`
 export const Icon = styled.svg`
   width: 12px;
   height: 13.5px;
-  fill: ${(props) => props.theme.border};
-  stroke: ${(props) => props.theme.border};
+  fill: #fff;
+  stroke: #fff;
   position: absolute;
   top: 16px;
   left: 46px;
   opacity: 0.8;
+
+  &:hover,
+  :active {
+    opacity: 1;
+  }
 
   @media (min-width: 768px) {
     width: 16px;
@@ -101,10 +106,10 @@ export const Icon = styled.svg`
 export const Submit = styled.button`
   width: 279px;
   height: 45px;
-  background-color: ${(props) => props.theme.brandGreen};
+  background-color: #8baa36;
   border-radius: 6px;
   margin: 0 auto;
-  color: ${(props) => props.theme.mainBg};
+  color: #fafafa;
   font-size: 16px;
   border: none;
   margin-top: 16px;
@@ -114,7 +119,7 @@ export const Submit = styled.button`
 
   &:hover,
   &:focus {
-    color: ${(props) => props.theme.currentUser};
+    color: #fafafa;
     opacity: 0.8;
   }
 

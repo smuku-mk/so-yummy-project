@@ -5,7 +5,7 @@ export const SigninPage = () => {
   return (
     <SigninPageStyled>
       <SigninForm />
-      <StyledLink to="/signin">Registration</StyledLink>
+      <StyledLink to="/register">Registration</StyledLink>
     </SigninPageStyled>
   );
 };

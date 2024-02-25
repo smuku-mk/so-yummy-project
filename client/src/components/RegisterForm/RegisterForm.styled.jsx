@@ -9,7 +9,7 @@ export const Form = styled.form`
   left: 50%;
   transform: translate(-50%, 0);
   border-radius: 30px;
-  background-color: ${(props) => props.theme.loginBg};
+  background-color: #2a2c36;
   z-index: 2;
 
   @media (min-width: 768px) {
@@ -25,7 +25,7 @@ export const Form = styled.form`
 export const Title = styled.h4`
   font-size: 24px;
   font-weight: 600;
-  color: ${(props) => props.theme.mainBg};
+  color: #fff;
   line-height: 1.17;
   letter-spacing: -0.02em;
   padding: 32px 28px 18px;
@@ -55,10 +55,9 @@ export const Label = styled.label`
 export const Input = styled.input`
   width: 279px;
   height: 45px;
-  background-color: ${(props) => props.theme.border};
-  border: 1px solid
-    ${(props) =>
-      props.valid ? props.theme.error : `rgba(${props.theme.border}, 0.8)`};
+  background-color: #2a2c36;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.8);
   padding-left: 40px;
   padding-left: 40px;
   margin-left: 28px;
@@ -66,10 +65,10 @@ export const Input = styled.input`
   letter-spacing: -0.02em;
   border-radius: 6px;
 
-  &::focus,
-  ::hover,
-  ::active {
-    border: 1px solid rgba(${(props) => props.theme.border}
+  &:focus,
+  :hover,
+  :active {
+    border: 1px solid #fff;
     outline: none;
   }
 
@@ -85,25 +84,16 @@ export const Input = styled.input`
 export const Icon = styled.svg`
   width: 12px;
   height: 13.5px;
-  fill: ${(props) => props.theme.border};
-  stroke: ${(props) => props.theme.border};
+  fill: #fff;
   position: absolute;
   top: 16px;
   left: 46px;
   opacity: 0.8;
 
-  stroke: ${(props) => {
-    switch (props.validation) {
-      case "success":
-        return "#3cbc81";
-      case "warning":
-        return "#f6c23e";
-      case "error":
-        return "#e74a3b";
-      default:
-        return "#fff";
-    }
-  }};
+  &:hover,
+  :active {
+    opacity: 1;
+  }
 
   @media (min-width: 768px) {
     width: 16px;
@@ -116,10 +106,10 @@ export const Icon = styled.svg`
 export const Submit = styled.button`
   width: 279px;
   height: 45px;
-  background-color: ${(props) => props.theme.brandGreen};
+  background-color: #8baa36;
   border-radius: 6px;
   margin: 0 auto;
-  color: ${(props) => props.theme.mainBg};
+  color: #fafafa;
   font-size: 16px;
   border: none;
   margin-top: 16px;
@@ -129,7 +119,7 @@ export const Submit = styled.button`
 
   &:hover,
   &:focus {
-    color: ${(props) => props.theme.currentUser};
+    color: #fafafa;
     opacity: 0.8;
   }
 
@@ -141,65 +131,64 @@ export const Submit = styled.button`
   }
 `;
 
-export const RedIcon = styled.svg`
+export const OtherIcon = styled.svg`
   width: 20px;
   height: 20px;
-  fill: ${(props) => props.theme.border};
-  stroke: ${(props) => props.theme.border};
+  top: 14px;
+  right: 36px;
   position: absolute;
-  top: 20px;
-  right: 19px;
-  opacity: ${(props) => (props.validation === "error" ? 1 : 0)};
-  pointer-events: none;
 
-  stroke: ${(props) =>
-    props.validation === "error" ? props.theme.error : "transparent"};
+  @media (min-width: 768px) {
+    right: 60px;
+    top: 19px;
+  }
+
+  @media (min-width: 1440px) {
+    right: 62px;
+  }
 `;
 
-export const GreenIcon = styled.svg`
-  width: 20px;
-  height: 20px;
-  fill: ${(props) => props.theme.border};
-  stroke: ${(props) => props.theme.border};
-  position: absolute;
-  top: 20px;
-  right: 19px;
-  opacity: ${(props) => (props.validation === "error" ? 1 : 0)};
-  pointer-events: none;
-
-  stroke: ${(props) =>
-    props.validation === "success" ? props.theme.success : "transparent"};
+export const RedIcon = styled(OtherIcon)`
+  fill: #e74a3b;
 `;
 
-export const OrangeIcon = styled.svg`
-  width: 20px;
-  height: 20px;
-  fill: ${(props) => props.theme.border};
-  stroke: ${(props) => props.theme.border};
-  position: absolute;
-  top: 20px;
-  right: 19px;
-  opacity: ${(props) => (props.validation === "error" ? 1 : 0)};
-  pointer-events: none;
-
-  stroke: ${(props) =>
-    props.validation === "warning" ? props.theme.warning : "transparent"};
+export const GreenIcon = styled(OtherIcon)`
+  fill: #3cbc81;
 `;
 
-// export const ErrorMgs = styled.span`
-// padding-top: 8px;
-// font-size: 14px'
-// color: ${(props) => props.theme.error};
-// `;
+export const OrangeIcon = styled(OtherIcon)`
+  fill: #f6c23e;
+`;
 
 export const WarningMsg = styled.span`
   padding-top: 8px;
   font-size: 14px;
-  color: ${(props) => props.theme.warning};
+  color: #f6c23e;
+  padding-left: 28px;
+
+  @media (min-width: 768px) {
+    padding-left: 50px;
+  }
 `;
 
 export const SuccessMsg = styled.span`
   padding-top: 8px;
   font-size: 14px;
-  color: ${(props) => props.theme.success};
+  color: #3cbc81;
+  padding-left: 28px;
+
+  @media (min-width: 768px) {
+    padding-left: 50px;
+  }
+`;
+
+export const ErrorMsg = styled.span`
+  padding-top: 8px;
+  font-size: 14px;
+  color: #e74a3b;
+  padding-left: 28px;
+
+  @media (min-width: 768px) {
+    padding-left: 50px;
+  }
 `;

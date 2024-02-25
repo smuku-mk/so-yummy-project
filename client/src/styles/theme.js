@@ -32,8 +32,8 @@ export const lightTheme = {
 
   //MainPage
   switch: "#efefef", //aka dzyndzel
-  switchBall1: '#FFFFFF',
-  switchBall2: '#E8EAEA',
+  switchBall1: "#FFFFFF",
+  switchBall2: "#E8EAEA",
   navLinks: "#23262a",
   currentLink: "#8baa36",
   currentUser: "#22252a",

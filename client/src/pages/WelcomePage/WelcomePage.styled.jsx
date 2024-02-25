@@ -33,6 +33,7 @@ export const Logo = styled.svg`
   @media (min-width: 768px) {
     width: 68px;
     height: 68px;
+  }
 `;
 
 export const TextBox = styled.div`
@@ -51,7 +52,7 @@ export const Title = styled.h3`
   font-size: 24px;
   line-height: 24px;
   letter-spacing: -0.02em;
-  color: ${(props) => props.theme.mainBg};
+  color: #fafafa;
   font-weight: 600;
   text-align: center;
   margin-bottom: 14px;
@@ -66,7 +67,7 @@ export const Text = styled.p`
   font-weight: 400;
   line-height: 18px;
   letter-spacing: -0.02em;
-  color: ${(props) => props.theme.mainBg};
+  color: #fafafa;
   text-align: center;
 
   @media (min-width: 768px) {
@@ -75,9 +76,9 @@ export const Text = styled.p`
 `;
 
 export const Register = styled(Link)`
-  color: ${(props) => props.theme.mainBg};
+  color: #fafafa;
   padding: 12px 24px;
-  background-color: ${(props) => props.theme.brandGreen};
+  background-color: #8baa36;
   font-size: 14px;
   border-radius: 24px 44px;
   margin-right: 12px;
@@ -87,7 +88,7 @@ export const Register = styled(Link)`
   &:hover,
   :focus {
     background-color: transparent;
-    border: 2px solid ${(props) => props.theme.mainBg};
+    border: 2px solid #fafafa;
   }
 
   @media (min-width: 768px) {
@@ -98,17 +99,17 @@ export const Register = styled(Link)`
 `;
 
 export const Signin = styled(Link)`
-  color: ${(props) => props.theme.mainBg};
+  color: #fafafa;
   padding: 12px 24px;
   background-color: transparent;
   font-size: 14px;
   border-radius: 24px 44px;
-  border: 2px solid ${(props) => props.theme.mainBg};
+  border: 2px solid #fafafa;
   transition: background-color 0.3s ease;
 
   &:hover,
   :focus {
-    background-color: ${(props) => props.theme.brandGreen};
+    background-color: #8baa36;
     border: 2px solid transparent;
   }
 

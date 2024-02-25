@@ -13,11 +13,13 @@ export const SigninPageStyled = styled.section`
   background-repeat: no-repeat;
   background-position: top 87px center, bottom 0 center;
   background-size: 258px 250px, 100% 58%;
+
   @media (min-width: 768px) {
     background-image: url(${login_tablet}), url(${rectangle_tablet});
     background-position: top 100px center, bottom 0 center;
     background-size: 409px 359px, 100% 59%;
   }
+
   @media (min-width: 1440px) {
     background-image: url(${login_desktop}), url(${rectangle_desktop});
     background-position: top 115px left 113px, bottom 0 center;
@@ -26,25 +28,29 @@ export const SigninPageStyled = styled.section`
 `;
 
 export const StyledLink = styled(Link)`
-  color: ${(props) => props.theme.mainBg}
+  color: #fafafa;
   font-size: 14px;
   position: absolute;
-  top: 642px;
+  top: 673px;
   left: 50%;
   transform: translate(-50%, -50%);
   text-decoration: underline;
+
   &:visited {
-  color: ${(props) => props.theme.mainBg}
+    color: #fafafa;
   }
+
   &:hover {
-    color: ${(props) => props.theme.brandGreen}
+    color: #8baa36;
   }
+
   @media (min-width: 768px) {
-  font-size: 16px;
-  top: 881px;
+    font-size: 16px;
+    top: 881px;
   }
+
   @media (min-width: 1440px) {
-  top: 592px;
-  left: 75%;
+    top: 592px;
+    left: 75%;
   }
 `;

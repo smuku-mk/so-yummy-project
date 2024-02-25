@@ -10,11 +10,10 @@ import {
   Input,
   Submit,
   Icon,
-  RedIcon,
-  GreenIcon,
-  OrangeIcon,
+  OtherIcon,
   WarningMsg,
   SuccessMsg,
+  ErrorMsg,
 } from "./RegisterForm.styled";
 import sprites from "../../images/sprites.svg";
 
@@ -27,6 +26,53 @@ export const RegisterForm = () => {
     email: "",
     password: "",
   });
+
+  const getBorderColor = (inputName) => {
+    switch (inputName) {
+      case "name":
+        return validation.name
+          ? validateName(validation.name)
+            ? "#3cbc81"
+            : "#e74a3b"
+          : "rgba(255, 255, 255, 0.8)";
+      case "password":
+        return validation.password
+          ? validatePassword(validation.password)
+            ? "#3cbc81"
+            : "#f6c23e"
+          : "rgba(255, 255, 255, 0.8)";
+      default:
+        return "rgba(255, 255, 255, 0.8)";
+    }
+  };
+
+  const getIconName = (inputName) => {
+    switch (inputName) {
+      case "name":
+        return validation.name
+          ? validateName(validation.name)
+            ? "icon-success"
+            : "icon-error"
+          : "";
+      case "password":
+        return validation.password
+          ? validatePassword(validation.password)
+            ? "icon-success"
+            : "icon-warning"
+          : "";
+      default:
+        return "rgba(255, 255, 255, 0.8)";
+    }
+  };
+
+  const validateName = (value) => {
+    const validCharacters = /^[a-zA-Z0-9]*$/;
+    return validCharacters.test(value);
+  };
+
+  const validatePassword = (value) => {
+    return value.length >= 6;
+  };
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -52,15 +98,6 @@ export const RegisterForm = () => {
     });
   };
 
-  const validateName = (value) => {
-    const validCharacters = /^[a-zA-Z0-9]*$/;
-    return !validCharacters.test(value);
-  };
-
-  const validatePassword = (value) => {
-    return value.length < 6;
-  };
-
   return (
     <div>
       <Form onSubmit={handleSubmit}>
@@ -74,19 +111,16 @@ export const RegisterForm = () => {
             autoComplete="off"
             validation={validation.name}
             onChange={inputChange}
-            valid={!validateName(validation.name)}
+            style={{ borderColor: getBorderColor("name") }}
           />
-          <Icon>
+          <Icon style={{ borderColor: getBorderColor("name") }}>
             <use xlinkHref={`${sprites}#icon-user`} />
           </Icon>
-          {validation.name && validateName(validation.name) ? (
-            <GreenIcon>
-              <use xlinkHref={`${sprites}#icon-success`} />
-            </GreenIcon>
-          ) : (
-            <RedIcon>
-              <use xlinkHref={`${sprites}#icon-error`} />
-            </RedIcon>
+          <OtherIcon>
+            <use xlinkHref={`${sprites}#${getIconName("name")}`} />
+          </OtherIcon>
+          {validation.name && !validateName(validation.name) && (
+            <ErrorMsg>Invalid characters</ErrorMsg>
           )}
         </Label>
         <Label>
@@ -96,8 +130,6 @@ export const RegisterForm = () => {
             name="email"
             placeholder="Email"
             autoComplete="off"
-            validation={validation.email}
-            onChange={inputChange}
           />
           <Icon>
             <use xlinkHref={`${sprites}#icon-email`} />
@@ -112,27 +144,21 @@ export const RegisterForm = () => {
             autoComplete="off"
             validation={validation.password}
             onChange={inputChange}
-            valid={!validatePassword(validation.password)}
+            style={{ borderColor: getBorderColor("password") }}
           />
           <Icon>
             <use xlinkHref={`${sprites}#icon-password`} />
           </Icon>
-          {validation.password && validatePassword(validation.password) ? (
-            <OrangeIcon>
-              <use xlinkHref={`${sprites}#icon-warning`} />
-            </OrangeIcon>
-          ) : (
-            <GreenIcon>
-              <use xlinkHref={`${sprites}#icon-success`} />
-            </GreenIcon>
+          <OtherIcon>
+            <use xlinkHref={`${sprites}#${getIconName("password")}`} />
+          </OtherIcon>
+          {validation.password && !validatePassword(validation.password) && (
+            <WarningMsg>Your password is little secure</WarningMsg>
           )}
-          {validation.password && validatePassword(validation.password) ? (
-            <WarningMsg>Password is not secure</WarningMsg>
-          ) : (
+          {validation.password && validatePassword(validation.password) && (
             <SuccessMsg>Password is secure</SuccessMsg>
           )}
         </Label>
-
         <Submit type="submit">Sign up</Submit>
       </Form>
     </div>
