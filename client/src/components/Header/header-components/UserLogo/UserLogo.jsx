@@ -1,11 +1,17 @@
+import { useSelector } from "react-redux";
+import { selectAvatarURL, selectUserName } from "../../../../redux/auth/selectors";
 import { Avatar, Container, Name } from "./UserLogo.styled";
-import photo from "./photo.jpeg";
+
 
 export const UserLogo = () => {
+
+ const avatarURL = useSelector(selectAvatarURL);
+  const userName = useSelector(selectUserName);
+
   return (
     <Container>
-      <Avatar src={`${photo}`} alt="avatar"></Avatar>
-      <Name>Olena</Name>
+      <Avatar src={`${avatarURL}`} alt="avatar"></Avatar>
+      <Name>{userName}</Name>
     </Container>
   );
 };
