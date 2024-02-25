@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const SocialsContainer = styled.div``;
 
@@ -28,10 +28,10 @@ export const SocialIcon = styled.svg`
   width: 20px;
   height: 20px;
   cursor: pointer;
-  fill: ${props => props.theme.social};
+  fill: ${(props) => props.theme.social};
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  
+
   &:hover {
-    fill: ${props => props.theme.socialHover};
+    fill: ${(props) => props.theme.socialHover};
   }
 `;

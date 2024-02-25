@@ -1,8 +1,8 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const AllFooter = styled.footer`
-  color: ${props => props.theme.mainBg};
-  background-color: ${props => props.theme.currentUser};
+  color: ${(props) => props.theme.mainBg};
+  background-color: ${(props) => props.theme.currentUser};
   width: 100%;
   text-align: center;
   padding: 35px 0 18px 0;
@@ -55,9 +55,9 @@ export const Logo = styled.svg`
   width: 32px;
   height: 32px;
   padding-right: 8px;
-  fill: ${props => props.theme.iconBg};
-  stroke: ${props => props.theme.iconBg};
-  
+  fill: ${(props) => props.theme.iconBg};
+  stroke: ${(props) => props.theme.iconBg};
+
   @media screen and (min-width: 768px) {
     width: 44px;
     height: 44px;
@@ -87,7 +87,8 @@ export const List = styled.ul`
 
 export const Features = styled.li`
   &:not(:last-child) {
-  padding-bottom: 10px;
+    padding-bottom: 10px;
+  }
 
   @media screen and (min-width: 1440px) {
     padding-bottom: 12px;
