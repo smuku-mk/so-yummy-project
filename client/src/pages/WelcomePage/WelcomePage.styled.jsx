@@ -78,11 +78,13 @@ export const Register = styled(Link)`
   font-size: 14px;
   border-radius: 24px 44px;
   margin-right: 12px;
+  border: 2px solid transparent;
+  transition: background-color 0.3s ease;
 
-  & :hover,
+  &:hover,
   :focus {
-    background-color: rgba(255, 255, 255, 0.1);
-    border: 1px soild ${(props) => props.theme.mainBg};
+    background-color: transparent;
+    border: 2px solid ${(props) => props.theme.mainBg};
   }
 
   @media (min-width: 768px) {
@@ -95,14 +97,16 @@ export const Register = styled(Link)`
 export const Signin = styled(Link)`
   color: ${(props) => props.theme.mainBg};
   padding: 12px 24px;
-  background-color: rgba(255, 255, 255, 0);
+  background-color: transparent;
   font-size: 14px;
   border-radius: 24px 44px;
-  border: 1px soild ${(props) => props.theme.mainBg};
+  border: 2px solid ${(props) => props.theme.mainBg};
+  transition: background-color 0.3s ease;
 
-  &:focus,
-  :hover {
+  &:hover,
+  :focus {
     background-color: ${(props) => props.theme.brandGreen};
+    border: 2px solid transparent;
   }
 
   @media (min-width: 768px) {
