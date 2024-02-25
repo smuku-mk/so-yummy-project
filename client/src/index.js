@@ -1,26 +1,35 @@
-import React, { useState } from "react";
-import ReactDOM from "react-dom/client";
-import { Provider } from "react-redux";
+import React from "react";
+import ReactDOM from "react-dom";
+import { Provider, useSelector } from "react-redux";
 import { ThemeProvider } from "styled-components";
-import { GlobalStyles } from "./styles";
-import { lightTheme, darkTheme } from "./styles";
+import { lightTheme, darkTheme, GlobalStyles } from "./styles";
 import { App } from "./components";
+import { BrowserRouter } from "react-router-dom";
+import { PersistGate } from 'redux-persist/integration/react';
+import { persistor } from './redux/store';
+import { toggleTheme } from "./redux/theme/themeSlice";
 import store from "./redux/store";
 
+const Main = () => {
+  const darkMode = useSelector(state => state.theme.darkMode);
+
+  return (
+    <PersistGate loading={null} persistor={persistor}>
+      <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
+        <GlobalStyles />
+        <BrowserRouter basename="/">
+          <App toggleTheme={toggleTheme} />
+        </BrowserRouter>
+      </ThemeProvider>
+    </PersistGate>
+  );
+};
+
 const Root = () => {
-  const [theme, setTheme] = useState("light");
-
-  const toggleTheme = () => {
-    setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
-  };
-
   return (
     <React.StrictMode>
       <Provider store={store}>
-        <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
-          <GlobalStyles />
-          <App toggleTheme={toggleTheme} />
-        </ThemeProvider>
+        <Main />
       </Provider>
     </React.StrictMode>
   );

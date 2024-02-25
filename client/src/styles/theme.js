@@ -30,10 +30,15 @@ export const lightTheme = {
   cancelBtn: "#d9d9d9",
   cancelTxt: "#23262a",
 
-  //MainPage
+  //Header
   switch: "#efefef", //aka dzyndzel
-  navLinks: "#23262a",
+  switchBall1: "#FFFFFF",
+  switchBall2: "#E8EAEA",
+  navLinks: "#22252A",
+  navLinksDesktop: "#23262A",
   currentLink: "#8baa36",
+
+  //MainPage
   currentUser: "#22252a",
   searchTxt: "#bdbdbd", //+ part of hero title
   editProfile: "#fafafa",
@@ -115,10 +120,15 @@ export const darkTheme = {
   cancelBtn: "#d9d9d9",
   cancelTxt: "#23262a",
 
-  //MainPage
+  //Header
   switch: "#8baa36",
+  switchBall1: "#FFFFFF",
+  switchBall2: "#E8EAEA",
   navLinks: "#fafafa",
+  navLinksDesktop: "#fafafa",
   currentLink: "#8baa36",
+
+  //MainPage
   currentUser: "#22252a",
   searchTxt: "#fafafa", //+ part of hero title
   editProfile: "#fafafa",

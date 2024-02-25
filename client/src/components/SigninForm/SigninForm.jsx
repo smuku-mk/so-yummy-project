@@ -1,12 +1,11 @@
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { logIn } from "../../redux/auth/operations";
-import { selectIsLoggedIn } from "../../redux/auth/selectors";
 import { useNavigate } from "react-router-dom";
-import { Form, Title, Label, InputContainer, Icon, Input, Submit, StyledLink } from "./SigininForm.styled";
+import { Form, Title, Label, Input, Submit, Icon } from "./SigininForm.styled";
+import sprites from "../../images/sprites.svg";
 
 export const SigninForm = () => {
   const dispatch = useDispatch();
-  const logged = useSelector(selectIsLoggedIn);
   const navigate = useNavigate();
 
   const handleSubmit = (event) => {
@@ -18,29 +17,28 @@ export const SigninForm = () => {
         password: form.elements.password.value,
       })
     );
-    console.log(logged);
     form.reset();
     navigate("/");
   };
 
   return (
     <div>
-      <Form onSubmit={handleSubmit} autoComplete="off">
+      <Form onSubmit={handleSubmit}>
         <Title>Sign In</Title>
-        <InputContainer>
-          <Label>
-            <Input type="email" name="email" placeholder="Email" />
-          </Label>
-        </InputContainer>
-        <InputContainer>
-          <Label>
-            <Icon></Icon>
-            <Input type="password" name="password" placeholder="Password" />
-          </Label>
-        </InputContainer>
+        <Label>
+          <Input id="email" type="email" name="email" placeholder="Email" autoComplete="off" />
+          <Icon>
+            <use xlinkHref={`${sprites}#icon-email`} />
+          </Icon>
+        </Label>
+        <Label>
+          <Input id="password" type="password" name="password" placeholder="Password" autoComplete="off" />
+          <Icon>
+            <use xlinkHref={`${sprites}#icon-password`} />
+          </Icon>
+        </Label>
         <Submit type="submit">Log In</Submit>
       </Form>
-      <StyledLink to="/register">Registration</StyledLink>
     </div>
   );
 };

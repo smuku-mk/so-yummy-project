@@ -4,13 +4,13 @@ import React, { useState, useEffect } from "react";
 // import { MainContainer } from 'location/MainContainer';
 // import MyRecipesList from "../../components/MyRecipeList/MyRecipesList";
 // import { Children } from "react";
-import  queryBackEnd  from "../../components/Request/queryBackEnd";
+import queryBackEnd from "../../components/Request/queryBackEnd";
 import { Container, Pagination, Stack } from "@mui/material";
 import { PaginationWrapper } from "../MyRecipePage/MyRecipesPage.styled";
-import instanceBackEnd from '../../components/Request/RequestBackEnd';
+import instanceBackEnd from "../../components/Request/RequestBackEnd";
 // import imgIngradients from 'locationOfingradients.png';
 
-const MyRecipesPage = () => {
+export const MyRecipesPage = () => {
   // const location = useLocation();
   const [, setRecipes] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
@@ -76,23 +76,21 @@ const MyRecipesPage = () => {
     //       <ImgTitle>The list is empty</ImgTitle>
     //     </ImgWrapper>
     //   )}
-      <PaginationWrapper>
-        <Container>
-          <Stack spacing={2}>
-            {allPage > 1 && (
-              <Pagination
-                count={allPage}
-                page={currentPage}
-                onChange={changeNum}
-                siblingCount={1}
-                sx={{ marginY: 3, marginX: "auto" }}
-              />
-            )}
-          </Stack>
-        </Container>
-      </PaginationWrapper>
+    <PaginationWrapper>
+      <Container>
+        <Stack spacing={2}>
+          {allPage > 1 && (
+            <Pagination
+              count={allPage}
+              page={currentPage}
+              onChange={changeNum}
+              siblingCount={1}
+              sx={{ marginY: 3, marginX: "auto" }}
+            />
+          )}
+        </Stack>
+      </Container>
+    </PaginationWrapper>
     // </MainContainer>
   );
 };
-
-export default MyRecipesPage;

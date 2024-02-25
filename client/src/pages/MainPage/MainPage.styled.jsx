@@ -191,7 +191,7 @@ export const OtherCategoriesButton = styled.a`
 
     @media (min-width: 768px) {
         width: 239px;
-        height 61px;
+        height: 61px;
     }
 `;
 

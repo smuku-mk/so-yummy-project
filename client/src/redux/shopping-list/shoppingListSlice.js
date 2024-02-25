@@ -49,4 +49,4 @@ export const shoppingListSlice = createSlice({
   },
 });
 
-export default shoppingListSlice.reducer;
+export const shoppingListReducer = shoppingListSlice.reducer;

@@ -131,7 +131,7 @@ export const verifyHandler = async (req, res, next) => {
       return res.status(400).send({ message: "User is already verified." });
     }
 
-    await updateUser(user.email, {
+    await ctrlUser.updateUser(user.email, {
       verified: true,
       verificationToken: null,
     });

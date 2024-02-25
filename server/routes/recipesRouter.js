@@ -1,5 +1,5 @@
 import express from "express";
-import { getRecipeById } from "../controllers/getRecipeById.js";
+import { getRecipeById } from "../controllers/recipes/getRecipeById.js";
 import {
   getCategoryHandler,
   getCategoryPageHandler,

@@ -31,22 +31,13 @@ import leaves_mobile from "../../images/mobile_img/leaves@1x_mobile.png";
 import leaves_tablet from "../../images/tablet_img/leaves@1x_tablet.png";
 import leaves_desktop from "../../images/desktop_img/leaves@1x_desktop.png";
 
-const MainPage = () => {
+export const MainPage = () => {
   return (
     <>
       <MainSection>
-        <BackgroundImage1Mobile
-          src={leaves_mobile}
-          alt="leaves"
-        ></BackgroundImage1Mobile>
-        <BackgroundImage1Tablet
-          src={leaves_tablet}
-          alt="leaves"
-        ></BackgroundImage1Tablet>
-        <BackgroundImage1Desktop
-          src={leaves_desktop}
-          alt="leaves"
-        ></BackgroundImage1Desktop>
+        <BackgroundImage1Mobile src={leaves_mobile} alt="leaves"></BackgroundImage1Mobile>
+        <BackgroundImage1Tablet src={leaves_tablet} alt="leaves"></BackgroundImage1Tablet>
+        <BackgroundImage1Desktop src={leaves_desktop} alt="leaves"></BackgroundImage1Desktop>
 
         <DesktopMainSection>
           <TabletSectionMain>
@@ -54,9 +45,8 @@ const MainPage = () => {
               <SoText>So</SoText>Yummy
             </MainTitle>
             <MainDescription>
-              "What to cook?" is not only a recipe app, it is, in fact, your
-              cookbook. You can add your own recipes to save them for the
-              future.
+              "What to cook?" is not only a recipe app, it is, in fact, your cookbook. You can add your own recipes to
+              save them for the future.
             </MainDescription>
           </TabletSectionMain>
         </DesktopMainSection>
@@ -82,43 +72,21 @@ const MainPage = () => {
             </CategoriesDesktopSection>
           </CategoryListItem>
         </CategoriesListContainer>
-        <BackgroundImage2Mobile
-          src={leaves_mobile}
-          alt="leaves"
-        ></BackgroundImage2Mobile>
+        <BackgroundImage2Mobile src={leaves_mobile} alt="leaves"></BackgroundImage2Mobile>
 
-        <BackgroundImage2Tablet
-          src={leaves_tablet}
-          alt="leaves"
-        ></BackgroundImage2Tablet>
+        <BackgroundImage2Tablet src={leaves_tablet} alt="leaves"></BackgroundImage2Tablet>
 
-        <BackgroundImage2Desktop
-          src={leaves_desktop}
-          alt="leaves"
-        ></BackgroundImage2Desktop>
+        <BackgroundImage2Desktop src={leaves_desktop} alt="leaves"></BackgroundImage2Desktop>
 
-        <BackgroundImage3Mobile
-          src={leaves_mobile}
-          alt="leaves"
-        ></BackgroundImage3Mobile>
+        <BackgroundImage3Mobile src={leaves_mobile} alt="leaves"></BackgroundImage3Mobile>
 
-        <BackgroundImage3Tablet
-          src={leaves_tablet}
-          alt="leaves"
-        ></BackgroundImage3Tablet>
+        <BackgroundImage3Tablet src={leaves_tablet} alt="leaves"></BackgroundImage3Tablet>
 
-        <BackgroundImage3Desktop
-          src={leaves_desktop}
-          alt="leaves"
-        ></BackgroundImage3Desktop>
+        <BackgroundImage3Desktop src={leaves_desktop} alt="leaves"></BackgroundImage3Desktop>
       </CategoriesSection>
       <OtherCategoriesSection>
-        <OtherCategoriesButton href="/categories">
-          Other categories
-        </OtherCategoriesButton>
+        <OtherCategoriesButton href="/categories">Other categories</OtherCategoriesButton>
       </OtherCategoriesSection>
     </>
   );
 };
-
-export default MainPage;
