@@ -94,7 +94,6 @@ export const SoText = styled.span`
 `;
 
 export const MainDescription = styled.p`
-  font-family: "Poppins", sans-serif;
   font-weight: 400;
   font-size: 14px;
   line-height: 1.28571;
