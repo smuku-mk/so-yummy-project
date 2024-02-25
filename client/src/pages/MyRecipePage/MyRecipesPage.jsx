@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { MainTitle } from '../MainPage/MainPage';
-import { MainContainer } from 'location/MainContainer';
+import { MainSection } from '../MainPage/MainPage';;
 import MyRecipesList from "../../components/MyRecipeList/MyRecipesList";
 import { Children } from "react";
 import  queryBackEnd  from "../../components/Request/queryBackEnd";
@@ -10,7 +10,6 @@ import { PaginationWrapper } from "../MyRecipePage/MyRecipesPage.styled";
 import instanceBackEnd from '../../components/Request/RequestBackEnd';
 import empty_mobile from '../../images/mobile_img/searchfor_mobile.png';
 import empty_tablet from '../../images/tablet_img/searchfor_tablet.png';
-import empty_desktop from '../../images/desktop_img/searchfor_desktop.png';
 
 const MyRecipesPage = () => {
   const location = useLocation();
@@ -66,7 +65,7 @@ const MyRecipesPage = () => {
       });
   };
   return (
-    <MainContainer>
+    <MainSection>
       <MainTitle title={"My recipes"} />
       {recipes.length !== 0 ? (
         <MyRecipesList recipes={recipes} location={location} removeOwnRecipe={removeOwnRecipe}>
@@ -95,6 +94,6 @@ const MyRecipesPage = () => {
           </Stack>
         </Container>
       </PaginationWrapper>
-    // </MainContainer>
+    // </MainSection>
   );
 };
