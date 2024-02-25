@@ -1,36 +1,32 @@
-import React from 'react';
-import { SocialsContainer, Socials } from './FollowUs.styled';
-// import svg from '../../images/sprites.svg';
+import React from "react";
+import sprites from "../../../images/sprites.svg";
+import { SocialsContainer, SocialsList, SocialMedia, SocialIcon } from "./FollowUs.styled";
 
 export const FollowUs = () => {
   return (
     <SocialsContainer>
-      <Socials>
-        <li>
-          {/*    <svg>
-        <use xlinkHref={${svg}#icon-facebook} />
-      </svg> */}
-          FB
-        </li>
-        <li>
-          {/*    <svg>
-        <use xlinkHref={${svg}#icon-youtube} />
-      </svg> */}
-          YT
-        </li>
-        <li>
-          {/*    <svg>
-        <use xlinkHref={${svg}#icon-x} />
-      </svg> */}
-          X
-        </li>
-        <li>
-          {/*    <svg>
-        <use xlinkHref={${svg}#icon-instagram} />
-      </svg> */}
-          Instagram
-        </li>
-      </Socials>
+      <SocialsList>
+        <SocialMedia>
+          <SocialIcon>
+            <use xlinkHref={`${sprites}#icon-facebook`} />
+          </SocialIcon>
+        </SocialMedia>
+        <SocialMedia>
+          <SocialIcon>
+            <use xlinkHref={`${sprites}#icon-youtube`} />
+          </SocialIcon>
+        </SocialMedia>
+        <SocialMedia>
+          <SocialIcon>
+            <use xlinkHref={`${sprites}#icon-twitter`} />
+          </SocialIcon>
+        </SocialMedia>
+        <SocialMedia>
+          <SocialIcon>
+            <use xlinkHref={`${sprites}#icon-instagram`} />
+          </SocialIcon>
+        </SocialMedia>
+      </SocialsList>
     </SocialsContainer>
   );
 };
