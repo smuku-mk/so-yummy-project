@@ -8,7 +8,7 @@ export const Header = () => {
       <Logo />
       <Wrapper>
         <UserLogo />
-        <Navigation />
+        {/* <Navigation /> */}
         <ThemeToggler />
       </Wrapper>
     </Container>
