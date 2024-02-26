@@ -6,3 +6,4 @@ export * from "./MainPage";
 export * from "./FavoritePage";
 export * from "./MyRecipePage";
 export * from "./SearchPage";
+export * from "./AddRecipePage";
