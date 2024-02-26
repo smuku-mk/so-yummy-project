@@ -85,7 +85,6 @@ export const RegisterForm = () => {
         password: form.elements.password.value,
       })
     );
-    console.log(logged);
     form.reset();
     navigate("/");
   };
