@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const PaginationWrapper = styled.div`
   display: flex;
@@ -8,19 +8,19 @@ export const PaginationWrapper = styled.div`
     box-shadow: 5px 4px 8px 0px rgba(34, 60, 80, 0.2);
     border: 1px solid rgba(34, 60, 80, 0.2);
     border-radius: 30px;
-    background: #FFFFFF;
+    background: ${(props) => props.theme.bannerBg};
   }
   button {
-    color: #22252A;
+    color: ${(props) => props.theme.currentPage};
     &:hover {
-      background-color: #8BAA36;
-      color: #22252A;
+      background-color: ${(props) => props.theme.green};
+      color: ${(props) => props.theme.currentPage};
     }
   }
   button.Mui-selected {
-    background-color: #EBF3D4;
+    background-color: ${(props) => props.theme.iconBg};
     &:hover {
-      background-color: #22252A;
+      background-color: ${(props) => props.theme.currentPage};
     }
   }
 `;
@@ -30,7 +30,11 @@ export const ImgWrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 50px;
+  padding-bottom: 100px;
+
+  @media (min-width: 768px) {
+    padding-bottom: 200px;
+  }
 `;
 
 export const ImgTitle = styled.p`
@@ -39,7 +43,32 @@ export const ImgTitle = styled.p`
   font-size: 24px;
   line-height: 24px;
   letter-spacing: -0.02em;
-  font-feature-settings: 'liga' off;
-  color: #3E4462;
+  font-feature-settings: "liga" off;
+  color: ${(props) => props.theme.black};
   opacity: 0.5;
+`;
+
+export const ContainerTitle = styled.div`
+  width: 100%;
+  position: relative;
+`;
+
+export const Title = styled.h2`
+  padding-top: 114px;
+  padding-bottom: 50px;
+
+  font-size: 28px;
+  line-height: 28px;
+  color: ${(props) => props.theme.searchColor};
+
+  @media screen and (min-width: 768px) {
+    padding-bottom: 72px;
+    font-size: 32px;
+    line-height: 32px;
+  }
+  @media screen and (min-width: 1440px) {
+    padding-top: 136px;
+    font-size: 44px;
+    line-height: 44px;
+  }
 `;

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import svg from '../../images/sprites.svg'
 
 import {
   CardWrapper,
@@ -34,7 +35,9 @@ const MyRecipesItem = ({ recipe, location, removeOwnRecipe }) => {
         }}
       >
         <CardIcon>
-          {/* <UseSvg id="icon-trash" /> */}
+          <svg>
+          <use xlinkHref={`${svg}#icon-trash`} />
+          </svg>
         </CardIcon>
       </CardButtonDelete>
     </CardWrapper>
