@@ -174,24 +174,24 @@ export const CategoryListItem = styled.li`
 `;
 
 export const OtherCategoriesButton = styled.a`
-    border-radius: 15px 50px;
-    background-color: transparent;
-    margin-top: 40px;
-    width: 195px;
-    height: 46px;
-    font-weight: 400;
-    font-size: 14px;
-    color: ${(props) => props.theme.currentUser};
-    border: 1px solid #8BAA36;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: "Poppins", sans-serif;
+  border-radius: 15px 50px;
+  background-color: transparent;
+  margin-top: 40px;
+  width: 195px;
+  height: 46px;
+  font-weight: 400;
+  font-size: 14px;
+  color: ${(props) => props.theme.currentUser};
+  border: 1px solid #8baa36;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Poppins", sans-serif;
 
-    @media (min-width: 768px) {
-        width: 239px;
-        height: 61px;
-    }
+  @media (min-width: 768px) {
+    width: 239px;
+    height: 61px;
+  }
 `;
 
 export const CategoriesTabletSection = styled.div`

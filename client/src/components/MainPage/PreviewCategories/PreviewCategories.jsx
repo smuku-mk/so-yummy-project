@@ -71,7 +71,7 @@ const PreviewCategories = ({ mobile, tablet, desktop }) => {
                 <CategoryBlock2>
                   <Block>
                     {firstBreakfast && (
-                      <BlockPicture>
+                      <BlockPicture href={`/categories/${firstBreakfast._id}`}>
                         <BlockPictureImg
                           src={firstBreakfast.thumb}
                           alt="zdjecie"
@@ -84,7 +84,7 @@ const PreviewCategories = ({ mobile, tablet, desktop }) => {
                       </BlockPicture>
                     )}
 
-                    <Button>See all</Button>
+                    <Button href="/categories/breakfast">See all</Button>
                   </Block>
 
                   <CategoryBlock1>
@@ -93,7 +93,9 @@ const PreviewCategories = ({ mobile, tablet, desktop }) => {
 
                   <Block>
                     {firstMiscellaneous && (
-                      <BlockPicture>
+                      <BlockPicture
+                        href={`/categories/${firstMiscellaneous._id}`}
+                      >
                         <BlockPictureImg
                           src={firstMiscellaneous.thumb}
                           alt="zdjecie"
@@ -106,7 +108,7 @@ const PreviewCategories = ({ mobile, tablet, desktop }) => {
                       </BlockPicture>
                     )}
 
-                    <Button>See all</Button>
+                    <Button href="/categories/miscellaneous">See all</Button>
                   </Block>
 
                   <CategoryBlock1>
@@ -115,7 +117,7 @@ const PreviewCategories = ({ mobile, tablet, desktop }) => {
 
                   <Block>
                     {firstChicken && (
-                      <BlockPicture>
+                      <BlockPicture href={`/categories/${firstChicken._id}`}>
                         <BlockPictureImg
                           src={firstChicken.thumb}
                           alt="zdjecie"
@@ -128,7 +130,7 @@ const PreviewCategories = ({ mobile, tablet, desktop }) => {
                       </BlockPicture>
                     )}
 
-                    <Button>See all</Button>
+                    <Button href="/categories/chicken">See all</Button>
                   </Block>
 
                   <CategoryBlock1>
@@ -137,7 +139,7 @@ const PreviewCategories = ({ mobile, tablet, desktop }) => {
 
                   <Block>
                     {firstDesserts && (
-                      <BlockPicture>
+                      <BlockPicture href={`/categories/${firstDesserts._id}`}>
                         <BlockPictureImg
                           src={firstDesserts.thumb}
                           alt="zdjecie"
@@ -150,7 +152,7 @@ const PreviewCategories = ({ mobile, tablet, desktop }) => {
                       </BlockPicture>
                     )}
 
-                    <Button>See all</Button>
+                    <Button href="/categories/desserts">See all</Button>
                   </Block>
                 </CategoryBlock2>
               </CategoriesMobileSection>
@@ -170,7 +172,7 @@ const PreviewCategories = ({ mobile, tablet, desktop }) => {
                 <CategoriesTabletSection>
                   <Block>
                     {firstBreakfast && (
-                      <BlockPicture>
+                      <BlockPicture href={`/categories/${firstBreakfast._id}`}>
                         <BlockPictureImg
                           src={firstBreakfast.thumb}
                           alt="zdjecie"
@@ -186,7 +188,7 @@ const PreviewCategories = ({ mobile, tablet, desktop }) => {
 
                   <Block>
                     {twoBreakfast && (
-                      <BlockPicture>
+                      <BlockPicture href={`/categories/${twoBreakfast._id}`}>
                         <BlockPictureImg
                           src={twoBreakfast.thumb}
                           alt="zdjecie"
@@ -199,7 +201,7 @@ const PreviewCategories = ({ mobile, tablet, desktop }) => {
                       </BlockPicture>
                     )}
 
-                    <Button>See all</Button>
+                    <Button href="/categories/breakfast">See all</Button>
                   </Block>
                 </CategoriesTabletSection>
 
@@ -210,7 +212,9 @@ const PreviewCategories = ({ mobile, tablet, desktop }) => {
                 <CategoriesTabletSection>
                   <Block>
                     {firstMiscellaneous && (
-                      <BlockPicture>
+                      <BlockPicture
+                        href={`/categories/${firstMiscellaneous._id}`}
+                      >
                         <BlockPictureImg
                           src={firstMiscellaneous.thumb}
                           alt="zdjecie"
@@ -226,7 +230,9 @@ const PreviewCategories = ({ mobile, tablet, desktop }) => {
 
                   <Block>
                     {twoMiscellaneous && (
-                      <BlockPicture>
+                      <BlockPicture
+                        href={`/categories/${twoMiscellaneous._id}`}
+                      >
                         <BlockPictureImg
                           src={twoMiscellaneous.thumb}
                           alt="zdjecie"
@@ -239,7 +245,7 @@ const PreviewCategories = ({ mobile, tablet, desktop }) => {
                       </BlockPicture>
                     )}
 
-                    <Button>See all</Button>
+                    <Button href="/categories/miscellaneous">See all</Button>
                   </Block>
                 </CategoriesTabletSection>
 
@@ -250,7 +256,7 @@ const PreviewCategories = ({ mobile, tablet, desktop }) => {
                 <CategoriesTabletSection>
                   <Block>
                     {firstChicken && (
-                      <BlockPicture>
+                      <BlockPicture href={`/categories/${firstChicken._id}`}>
                         <BlockPictureImg
                           src={firstChicken.thumb}
                           alt="zdjecie"
@@ -266,7 +272,7 @@ const PreviewCategories = ({ mobile, tablet, desktop }) => {
 
                   <Block>
                     {twoChicken && (
-                      <BlockPicture>
+                      <BlockPicture href={`/categories/${twoChicken._id}`}>
                         <BlockPictureImg src={twoChicken.thumb} alt="zdjecie" />
                         <BlockPictureDescription>
                           <PictureDescription>
@@ -276,7 +282,7 @@ const PreviewCategories = ({ mobile, tablet, desktop }) => {
                       </BlockPicture>
                     )}
 
-                    <Button>See all</Button>
+                    <Button href="/categories/chicken">See all</Button>
                   </Block>
                 </CategoriesTabletSection>
 
@@ -287,7 +293,7 @@ const PreviewCategories = ({ mobile, tablet, desktop }) => {
                 <CategoriesTabletSection>
                   <Block>
                     {firstDesserts && (
-                      <BlockPicture>
+                      <BlockPicture href={`/categories/${firstDesserts._id}`}>
                         <BlockPictureImg
                           src={firstDesserts.thumb}
                           alt="zdjecie"
@@ -303,7 +309,7 @@ const PreviewCategories = ({ mobile, tablet, desktop }) => {
 
                   <Block>
                     {twoDesserts && (
-                      <BlockPicture>
+                      <BlockPicture href={`/categories/${twoDesserts._id}`}>
                         <BlockPictureImg
                           src={twoDesserts.thumb}
                           alt="zdjecie"
@@ -316,7 +322,7 @@ const PreviewCategories = ({ mobile, tablet, desktop }) => {
                       </BlockPicture>
                     )}
 
-                    <Button>See all</Button>
+                    <Button href="/categories/desserts">See all</Button>
                   </Block>
                 </CategoriesTabletSection>
               </CategoryBlock2>
@@ -336,7 +342,7 @@ const PreviewCategories = ({ mobile, tablet, desktop }) => {
                 <CategoriesDesktopSection>
                   <Block>
                     {firstBreakfast && (
-                      <BlockPicture>
+                      <BlockPicture href={`/categories/${firstBreakfast._id}`}>
                         <BlockPictureImg
                           src={firstBreakfast.thumb}
                           alt="zdjecie"
@@ -352,7 +358,7 @@ const PreviewCategories = ({ mobile, tablet, desktop }) => {
 
                   <Block>
                     {twoBreakfast && (
-                      <BlockPicture>
+                      <BlockPicture href={`/categories/${twoBreakfast._id}`}>
                         <BlockPictureImg
                           src={twoBreakfast.thumb}
                           alt="zdjecie"
@@ -368,7 +374,7 @@ const PreviewCategories = ({ mobile, tablet, desktop }) => {
 
                   <Block>
                     {threeBreakfast && (
-                      <BlockPicture>
+                      <BlockPicture href={`/categories/${threeBreakfast._id}`}>
                         <BlockPictureImg
                           src={threeBreakfast.thumb}
                           alt="zdjecie"
@@ -384,7 +390,7 @@ const PreviewCategories = ({ mobile, tablet, desktop }) => {
 
                   <Block>
                     {fourBreakfast && (
-                      <BlockPicture>
+                      <BlockPicture href={`/categories/${fourBreakfast._id}`}>
                         <BlockPictureImg
                           src={fourBreakfast.thumb}
                           alt="zdjecie"
@@ -397,7 +403,7 @@ const PreviewCategories = ({ mobile, tablet, desktop }) => {
                       </BlockPicture>
                     )}
 
-                    <Button>See all</Button>
+                    <Button href="/categories/breakfast">See all</Button>
                   </Block>
                 </CategoriesDesktopSection>
 
@@ -408,7 +414,9 @@ const PreviewCategories = ({ mobile, tablet, desktop }) => {
                 <CategoriesDesktopSection>
                   <Block>
                     {firstMiscellaneous && (
-                      <BlockPicture>
+                      <BlockPicture
+                        href={`/categories/${firstMiscellaneous._id}`}
+                      >
                         <BlockPictureImg
                           src={firstMiscellaneous.thumb}
                           alt="zdjecie"
@@ -424,7 +432,9 @@ const PreviewCategories = ({ mobile, tablet, desktop }) => {
 
                   <Block>
                     {twoMiscellaneous && (
-                      <BlockPicture>
+                      <BlockPicture
+                        href={`/categories/${twoMiscellaneous._id}`}
+                      >
                         <BlockPictureImg
                           src={twoMiscellaneous.thumb}
                           alt="zdjecie"
@@ -440,7 +450,9 @@ const PreviewCategories = ({ mobile, tablet, desktop }) => {
 
                   <Block>
                     {threeMiscellaneous && (
-                      <BlockPicture>
+                      <BlockPicture
+                        href={`/categories/${threeMiscellaneous._id}`}
+                      >
                         <BlockPictureImg
                           src={threeMiscellaneous.thumb}
                           alt="zdjecie"
@@ -456,7 +468,9 @@ const PreviewCategories = ({ mobile, tablet, desktop }) => {
 
                   <Block>
                     {fourMiscellaneous && (
-                      <BlockPicture>
+                      <BlockPicture
+                        href={`/categories/${fourMiscellaneous._id}`}
+                      >
                         <BlockPictureImg
                           src={fourMiscellaneous.thumb}
                           alt="zdjecie"
@@ -469,7 +483,7 @@ const PreviewCategories = ({ mobile, tablet, desktop }) => {
                       </BlockPicture>
                     )}
 
-                    <Button>See all</Button>
+                    <Button href="/categories/miscellaneous">See all</Button>
                   </Block>
                 </CategoriesDesktopSection>
 
@@ -480,7 +494,7 @@ const PreviewCategories = ({ mobile, tablet, desktop }) => {
                 <CategoriesDesktopSection>
                   <Block>
                     {firstChicken && (
-                      <BlockPicture>
+                      <BlockPicture href={`/categories/${firstChicken._id}`}>
                         <BlockPictureImg
                           src={firstChicken.thumb}
                           alt="zdjecie"
@@ -496,7 +510,7 @@ const PreviewCategories = ({ mobile, tablet, desktop }) => {
 
                   <Block>
                     {twoChicken && (
-                      <BlockPicture>
+                      <BlockPicture href={`/categories/${twoChicken._id}`}>
                         <BlockPictureImg src={twoChicken.thumb} alt="zdjecie" />
                         <BlockPictureDescription>
                           <PictureDescription>
@@ -509,7 +523,7 @@ const PreviewCategories = ({ mobile, tablet, desktop }) => {
 
                   <Block>
                     {threeChicken && (
-                      <BlockPicture>
+                      <BlockPicture href={`/categories/${threeChicken._id}`}>
                         <BlockPictureImg
                           src={threeChicken.thumb}
                           alt="zdjecie"
@@ -525,7 +539,7 @@ const PreviewCategories = ({ mobile, tablet, desktop }) => {
 
                   <Block>
                     {fourChicken && (
-                      <BlockPicture>
+                      <BlockPicture href={`/categories/${fourChicken._id}`}>
                         <BlockPictureImg
                           src={fourChicken.thumb}
                           alt="zdjecie"
@@ -538,7 +552,7 @@ const PreviewCategories = ({ mobile, tablet, desktop }) => {
                       </BlockPicture>
                     )}
 
-                    <Button>See all</Button>
+                    <Button href="/categories/chicken">See all</Button>
                   </Block>
                 </CategoriesDesktopSection>
 
@@ -548,7 +562,7 @@ const PreviewCategories = ({ mobile, tablet, desktop }) => {
                 <CategoriesDesktopSection>
                   <Block>
                     {firstDesserts && (
-                      <BlockPicture>
+                      <BlockPicture href={`/categories/${firstDesserts._id}`}>
                         <BlockPictureImg
                           src={firstDesserts.thumb}
                           alt="zdjecie"
@@ -564,7 +578,7 @@ const PreviewCategories = ({ mobile, tablet, desktop }) => {
 
                   <Block>
                     {twoDesserts && (
-                      <BlockPicture>
+                      <BlockPicture href={`/categories/${twoDesserts._id}`}>
                         <BlockPictureImg
                           src={twoDesserts.thumb}
                           alt="zdjecie"
@@ -580,7 +594,7 @@ const PreviewCategories = ({ mobile, tablet, desktop }) => {
 
                   <Block>
                     {threeDesserts && (
-                      <BlockPicture>
+                      <BlockPicture href={`/categories/${threeDesserts._id}`}>
                         <BlockPictureImg
                           src={threeDesserts.thumb}
                           alt="zdjecie"
@@ -596,7 +610,7 @@ const PreviewCategories = ({ mobile, tablet, desktop }) => {
 
                   <Block>
                     {fourDesserts && (
-                      <BlockPicture>
+                      <BlockPicture href={`/categories/${fourDesserts._id}`}>
                         <BlockPictureImg
                           src={fourDesserts.thumb}
                           alt="zdjecie"
@@ -609,7 +623,7 @@ const PreviewCategories = ({ mobile, tablet, desktop }) => {
                       </BlockPicture>
                     )}
 
-                    <Button>See all</Button>
+                    <Button href="/categories/desserts">See all</Button>
                   </Block>
                 </CategoriesDesktopSection>
               </CategoryBlock2>

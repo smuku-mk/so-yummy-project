@@ -20,7 +20,7 @@ export const Block = styled.div`
   }
 `;
 
-export const BlockPicture = styled.div`
+export const BlockPicture = styled.a`
   width: 343px;
   height: 323px;
   display: flex;
@@ -55,7 +55,7 @@ export const PictureDescription = styled.p`
   font-family: "Poppins", sans-serif;
 `;
 
-export const Button = styled.button`
+export const Button = styled.a`
   background-color: #8aa936;
   border-radius: 6px;
   width: 94px;
@@ -68,6 +68,9 @@ export const Button = styled.button`
   margin-left: 249px;
   border: 0;
   font-family: "Poppins", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   @media (min-width: 768px) {
     margin-top: 40px;
