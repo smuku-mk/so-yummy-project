@@ -11,7 +11,7 @@ export const SearchRecipesList = () => {
         <RecipesListContainer>
           {recipes.map((recipe, index) => (
             <RecipesElement key={index}>
-              <Block>
+              <Block> 
                 <BlockPicture>
                   <BlockPictureImg src={recipe.thumb} alt={recipe.title} />
                   <BlockPictureDescription>
