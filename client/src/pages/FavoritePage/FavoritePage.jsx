@@ -77,7 +77,7 @@ export const FavoritePage = () => {
           <ImgTitle>The list is empty</ImgTitle>
         </ImgWrapper>
       )}
-      <PaginationWrapper>
+      {/* <PaginationWrapper>
         <Container>
           <Stack spacing={2}>
             {allPage > 1 && (
@@ -91,7 +91,7 @@ export const FavoritePage = () => {
             )}
           </Stack>
         </Container>
-      </PaginationWrapper>
+      </PaginationWrapper> */}
     </MainContainer>
   );
 };

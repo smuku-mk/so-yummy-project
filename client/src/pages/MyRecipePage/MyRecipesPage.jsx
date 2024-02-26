@@ -83,7 +83,7 @@ export const MyRecipesPage = () => {
             <ImgTitle>The list is empty</ImgTitle>
           </ImgWrapper>
         )}
-        <PaginationWrapper>
+        {/* <PaginationWrapper>
           <Container>
             <Stack spacing={2}>
               {allPage > 1 && (
@@ -97,7 +97,7 @@ export const MyRecipesPage = () => {
               )}
             </Stack>
           </Container>
-        </PaginationWrapper>
+        </PaginationWrapper> */}
       </GlobalContainer>
     </MainContainer>
   );
