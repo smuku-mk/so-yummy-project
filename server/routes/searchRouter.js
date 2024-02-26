@@ -1,8 +1,8 @@
 import express from "express";
-import { getRecipeByTitle } from "../controllers/getRecipeByTitle.js";
+import { getRecipeByTitle } from "../controllers/recipes/getRecipeByTitle.js";
 
 const searchRouter = express.Router();
 
-searchRouter.get('/', getRecipeByTitle);
+searchRouter.get("/", getRecipeByTitle);
 
 export default searchRouter;

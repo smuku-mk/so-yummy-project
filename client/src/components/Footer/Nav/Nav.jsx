@@ -1,15 +1,14 @@
-import React from 'react';
-import { NavContainer, Navigation, Links } from './Nav.styled';
+import { NavContainer, Navigation, LinksStyled } from './Nav.styled';
 
 export const Nav = () => {
   return (
     <NavContainer>
       <Navigation>
-        <Links>Ingredients</Links>
-        <Links>Add recipes</Links>
-        <Links>My recipes</Links>
-        <Links>Favorite</Links>
-        <Links>Shopping list</Links>
+        <LinksStyled to="/search">Ingredients</LinksStyled>
+        <LinksStyled to="/add">Add recipes</LinksStyled>
+        <LinksStyled to="/ownRecipes">My recipes</LinksStyled>
+        <LinksStyled to="/favorite">Favorite</LinksStyled>
+        <LinksStyled to="/shopping-list">Shopping list</LinksStyled>
       </Navigation>
     </NavContainer>
   );

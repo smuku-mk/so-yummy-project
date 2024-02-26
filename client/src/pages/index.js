@@ -1,4 +1,9 @@
+export * from "./RegisterPage";
+export * from "./SigninPage";
 export * from "./WelcomePage";
+export * from "./NotFoundPage";
+export * from "./MainPage";
+export * from "./FavoritePage";
+export * from "./MyRecipePage";
+export * from "./SearchPage";
 export * from "./AddRecipePage";
-// export * from "./RegisterPage";
-// export * from "./SigninPage";
