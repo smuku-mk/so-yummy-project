@@ -1,5 +1,5 @@
 import css from "./PopularRecipe.module.css";
-import defaultImage from "../../../../images/addRecipe/defaultImageSmall.jpg";
+import defaultImage from "../../../images/addRecipe/defaultImageSmall.jpg";
 
 const popularRecipes = [
   {

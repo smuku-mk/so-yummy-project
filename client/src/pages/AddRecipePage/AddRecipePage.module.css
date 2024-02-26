@@ -1,21 +1,19 @@
 .container {
   display: block;
-  width: 343px;
-  margin-top: 50px;
-  margin-bottom: 100px;
+  width: 100%;
+  margin: 50px auto;
 }
 .title {
   width: 250px;
   height: 44px;
-  top: 164px;
-  left: 100px;
   font-weight: 600;
   font-size: 44px;
-  /* font-family: "Poppins"; */
+  margin: 0 auto;
 }
 .section {
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 @media screen and (min-width: 768px) {

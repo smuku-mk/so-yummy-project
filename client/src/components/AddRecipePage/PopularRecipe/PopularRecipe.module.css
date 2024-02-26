@@ -1,6 +1,6 @@
 .container {
-  margin-top: 72px;
-  width: 343px;
+  margin: 36px auto;
+  width: 100%;
 }
 
 .title {
@@ -8,10 +8,13 @@
   font-size: 24px;
   font-weight: 700;
   line-height: 1;
+  margin: 0 auto;
 }
 
 .popular_recipes {
+  display: block;
   margin-top: 32px;
+  margin-bottom: 32px;
 }
 
 .popular_recipe:not(:last-child) {
@@ -22,7 +25,10 @@
   border-bottom: 1px solid #e0e0e0;
   display: flex;
   justify-content: space-between;
-  padding: 0 13px 13px 0;
+  padding: 0 0px 13px 0;
+  margin: 0 auto;
+  width: 100%;
+  gap: 10px;
 }
 .image_container {
   cursor: pointer;
@@ -30,14 +36,14 @@
 
 .image_container,
 .image {
-  height: 85px;
-  width: 104px;
-  border-radius: 8px;
+  width: 100%;
+  height: auto;
+  border-radius: 0;
 }
 
 .info_container {
   height: 56px;
-  width: 213px;
+  width: 100%;
 }
 
 .dish_title {

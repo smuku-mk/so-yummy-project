@@ -1,8 +1,8 @@
 .container {
   display: block;
-  width: 343px;
+  width: 100%;
   height: 555px;
-  margin-bottom: 44px;
+  margin: 100px auto;
 }
 
 .photo_container {
@@ -10,7 +10,7 @@
   display: block;
   width: 279px;
   height: 268px;
-  margin: 0px auto 32px;
+  margin: 0 auto 32px;
   background-color: #8baa36;
   border-radius: 8px;
   cursor: pointer;
@@ -56,8 +56,8 @@
 }
 
 .labels_container {
-  margin-top: 32px;
-  width: 343px;
+  width: 100%;
+  margin: 16px auto;
 }
 
 .recipe_input {
@@ -68,9 +68,11 @@
   font-size: 14px;
   font-weight: 400;
   line-height: 1;
-  margin-bottom: 24px;
-  padding-bottom: 17px;
+  padding-top: 5px;
+  padding-bottom: 12px;
+  padding-left: 5px;
   width: 100%;
+  margin: 0 auto;
 }
 
 .recipe_input:focus,
@@ -86,9 +88,11 @@
   font-weight: 400;
   line-height: 1;
   padding-bottom: 13px;
+  padding-left: 5px;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 24px;
+  /* margin-bottom: 24px; */
+  margin: 16px auto;
 }
 
 .label_container {
@@ -104,7 +108,6 @@
   font-size: 12px;
   font-weight: 400;
   padding-block: 4px;
-  /* width: 85px; */
 }
 .select_box:focus,
 .select_box:hover {

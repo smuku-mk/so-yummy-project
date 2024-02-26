@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import { AddRecipeForm } from "./components/AddRecipeForm/AddRecipeForm";
-import { FollowUs } from "./components/FollowUs/FollowUs";
-import { PopularRecipe } from "./components/PopularRecipe/PopularRecipe";
+import { AddRecipeForm } from "../../components/AddRecipePage/AddRecipeForm/AddRecipeForm.jsx";
+import { FollowUs } from "../../../src/components/AddRecipePage/FollowUs/FollowUs.jsx";
+import { PopularRecipe } from "../../../src/components/AddRecipePage/PopularRecipe/PopularRecipe.jsx";
 
 import css from "./AddRecipePage.module.css";
 

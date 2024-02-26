@@ -1,8 +1,8 @@
 import { throttle } from "throttle-debounce";
 import PropTypes from "prop-types";
-import { fetchIngredients } from "../../../../redux/recipe/actions.js";
+import { fetchIngredients } from "../../../redux/recipe/actions.js";
 
-import icons from "../../../../images/sprites.svg";
+import icons from "../../../images/sprites.svg";
 
 import css from "./RecipeIngredientsFields.module.css";
 
@@ -147,7 +147,7 @@ export const RecipeIngredientsFields = ({
               </label>
 
               <div className={css.amount_select_box_container}>
-                <label htmlFor="amountType" >
+                <label htmlFor="amountType">
                   <select
                     className={css.amount_select_box}
                     id="amountType"
@@ -177,7 +177,7 @@ export const RecipeIngredientsFields = ({
               onClick={() => handleIngredientRemoval(index)}
             >
               <svg className={css.icon_cross}>
-                <use href={`${icons}#icon-close`} />
+                <use href={`${icons}#icon-x`} />
               </svg>
             </button>
           </li>

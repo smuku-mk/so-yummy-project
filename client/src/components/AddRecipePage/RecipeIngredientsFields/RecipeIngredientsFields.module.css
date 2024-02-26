@@ -1,5 +1,5 @@
 .container {
-  width: 343px;
+  width: 100%;
   margin-bottom: 44px;
 }
 
@@ -8,6 +8,7 @@
   font-size: 24px;
   font-weight: 700;
   line-height: 1;
+  padding-left: 5px;
 }
 
 .title_container {
@@ -24,6 +25,7 @@
   align-items: center;
   height: 28px;
   width: 92px;
+  margin-right: 5px;
 }
 
 .decrease_button {
@@ -64,7 +66,9 @@
 .ingredient {
   display: flex;
   height: 53px;
-  width: 343px;
+  width: 100%;
+  justify-content: space-between;
+  margin: 0 auto;
 }
 
 .ingredient:not(:last-child) {
@@ -84,9 +88,9 @@
   font-size: 14px;
   font-weight: 400;
   line-height: 1;
-  margin-right: 14px;
+  margin-right: 10px;
   padding: 16px;
-  width: 194px;
+  width: 180px;
 }
 
 .ingredient_input:focus,
@@ -109,7 +113,7 @@
 }
 
 .amount_select_box_container {
-  width: 37px;
+  width: 30px;
 }
 
 .amount_container {
@@ -122,8 +126,6 @@
   font-size: 14px;
   font-weight: 400;
   line-height: 1;
-  padding: 16px 5px;
-  /* position: relative; */
   width: 84px;
 }
 .amount_select_box_container {
@@ -197,8 +199,8 @@
   background-color: transparent;
   border: none;
   height: 18px;
-  margin-left: 33px;
   margin-top: 16px;
+  margin-left: 5px;
   padding: 0;
   width: 18px;
 }
@@ -208,6 +210,8 @@
   width: 18px;
   height: 18px;
   cursor: pointer;
+  fill: #333333;
+  stroke: #8baa36;
 }
 
 @media screen and (min-width: 768px) {
@@ -218,6 +222,8 @@
 
   .title_container {
     margin-bottom: 32px;
+    width: 704px;
+    justify-content: space-between;
   }
 
   .count_container {
@@ -251,7 +257,7 @@
 
   .ingredient {
     height: 59px;
-    width: 398px;
+    width: 704px;
   }
 
   .ingredient:not(:last-child) {
@@ -271,7 +277,7 @@
 
   .amount_container {
     align-items: center;
-    padding: 16px 18px;
+    padding: 12px 18px;
     width: 97px;
   }
 
@@ -301,7 +307,7 @@
 
   .cross_button {
     height: 20px;
-    margin-left: 157px;
+    /* margin-left: 15px; */
     width: 18px;
   }
 
@@ -315,7 +321,9 @@
   .container {
     width: 609px;
   }
-
+  .title_container {
+    width: 609px;
+  }
   .ingredient_container {
     margin-right: 32px;
     width: 398px;

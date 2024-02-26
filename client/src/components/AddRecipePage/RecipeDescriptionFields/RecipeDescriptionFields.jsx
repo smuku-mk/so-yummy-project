@@ -1,6 +1,6 @@
 import { useDispatch } from "react-redux";
-import icons from "../../../../images/sprites.svg";
-import { updateRecipePicture } from "../../../../redux/recipe/actions.js";
+import icons from "../../../images/sprites.svg";
+import { updateRecipePicture } from "../../../redux/recipe/actions.js";
 import css from "./RecipeDescriptionFields.module.css";
 
 export const RecipeDescriptionFields = ({ recipeImage }) => {

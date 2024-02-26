@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-import icons from "../../../../images/sprites.svg";
+import icons from "../../../images/sprites.svg";
 import css from "./FollowUs.module.css";
 
 export const FollowUs = () => {

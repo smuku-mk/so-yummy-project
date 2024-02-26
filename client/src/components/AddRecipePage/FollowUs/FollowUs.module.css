@@ -1,6 +1,6 @@
 .container {
   margin-top: 100px;
-  width: 163px;
+  width: auto;
 }
 
 .title {
@@ -13,10 +13,10 @@
 .items_list {
   display: flex;
   gap: 18px;
-  justify-content: space-between;
   height: 26px;
   list-style: none;
-  margin-top: 40px;
+  justify-content: flex-start;
+  margin-top: 20px;
 }
 
 .item {
