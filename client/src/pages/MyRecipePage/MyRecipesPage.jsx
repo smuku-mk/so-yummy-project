@@ -2,13 +2,14 @@ import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import MyRecipesList from "../../components/MyRecipeList/MyRecipesList";
 import { Children } from "react";
-import  queryBackEnd  from "../../components/Request/queryBackEnd";
+import queryBackEnd from "../../components/Request/queryBackEnd";
 import { Container, Pagination, Stack } from "@mui/material";
 import { PaginationWrapper, ImgWrapper, ImgTitle, Title, ContainerTitle } from "../MyRecipePage/MyRecipesPage.styled";
-import instanceBackEnd from '../../components/Request/RequestBackEnd';
-import empty_mobile from '../../images/mobile_img/searchfor_mobile.png';
-import empty_tablet from '../../images/tablet_img/searchfor_tablet.png';
+import instanceBackEnd from "../../components/Request/RequestBackEnd";
+import empty_mobile from "../../images/mobile_img/searchfor_mobile.png";
+import empty_tablet from "../../images/tablet_img/searchfor_tablet.png";
 import { MainContainer } from "../../components/MainContainer/MainContainer";
+import { GlobalContainer } from "../../styles";
 
 export const MyRecipesPage = () => {
   const location = useLocation();
@@ -65,48 +66,39 @@ export const MyRecipesPage = () => {
   };
   return (
     <MainContainer>
+      <GlobalContainer>
         <ContainerTitle>
-    <Title>My recipes</Title>
-  </ContainerTitle>
-      {recipes.length !== 0 ? (
-        <MyRecipesList
-          recipes={recipes}
-          location={location}
-          removeOwnRecipe={removeOwnRecipe}
-        >
-          {Children}
-        </MyRecipesList>
-      ) : (
-        <ImgWrapper>
-                <picture>
-          <img
-            src={empty_mobile}
-            srcSet={`${empty_mobile}`}
-            alt="Empty list"
-          />
-          <source
-            media="(min-width: 768px)"
-            srcSet={`${empty_tablet}`}
-          />
-        </picture>
-          <ImgTitle>The list is empty</ImgTitle>
-        </ImgWrapper>
-      )}
-      <PaginationWrapper>
-        <Container>
-          <Stack spacing={2}>
-            {allPage > 1 && (
-              <Pagination
-                count={allPage}
-                page={currentPage}
-                onChange={changeNum}
-                siblingCount={1}
-                sx={{ marginY: 3, marginX: 'auto' }}
-              />
-            )}
-          </Stack>
-        </Container>
-      </PaginationWrapper>
+          <Title>My recipes</Title>
+        </ContainerTitle>
+        {recipes.length !== 0 ? (
+          <MyRecipesList recipes={recipes} location={location} removeOwnRecipe={removeOwnRecipe}>
+            {Children}
+          </MyRecipesList>
+        ) : (
+          <ImgWrapper>
+            <picture>
+              <img src={empty_mobile} srcSet={`${empty_mobile}`} alt="Empty list" />
+              <source media="(min-width: 768px)" srcSet={`${empty_tablet}`} />
+            </picture>
+            <ImgTitle>The list is empty</ImgTitle>
+          </ImgWrapper>
+        )}
+        <PaginationWrapper>
+          <Container>
+            <Stack spacing={2}>
+              {allPage > 1 && (
+                <Pagination
+                  count={allPage}
+                  page={currentPage}
+                  onChange={changeNum}
+                  siblingCount={1}
+                  sx={{ marginY: 3, marginX: "auto" }}
+                />
+              )}
+            </Stack>
+          </Container>
+        </PaginationWrapper>
+      </GlobalContainer>
     </MainContainer>
   );
 };

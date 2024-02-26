@@ -42,54 +42,56 @@ export const MainPage = () => {
             <BackgroundImage1Mobile src={leaves_mobile} alt="leaves"></BackgroundImage1Mobile>
             <BackgroundImage1Tablet src={leaves_tablet} alt="leaves"></BackgroundImage1Tablet>
             <BackgroundImage1Desktop src={leaves_desktop} alt="leaves"></BackgroundImage1Desktop>
-  
+
             <DesktopMainSection>
               <TabletSectionMain>
                 <MainTitle>
                   <SoText>So</SoText>Yummy
                 </MainTitle>
                 <MainDescription>
-                  "What to cook?" is not only a recipe app, it is, in fact, your cookbook. You can add your own recipes to
-                  save them for the future.
+                  "What to cook?" is not only a recipe app, it is, in fact, your cookbook. You can add your own recipes
+                  to save them for the future.
                 </MainDescription>
                 <Search></Search>
               </TabletSectionMain>
             </DesktopMainSection>
-  
+
             <PictureBlockContainer>
               <ChooseYourBreakfast></ChooseYourBreakfast>
             </PictureBlockContainer>
           </MainSectionContainer>
         </GlobalContainer>
       </MainSection>
-      <CategoriesSection>
-        <CategoriesListContainer>
-          <CategoryListItem>
-            <CategoriesMobileSection>
-              <PreviewCategories mobile={true}></PreviewCategories>
-            </CategoriesMobileSection>
+      <GlobalContainer>
+        <CategoriesSection>
+          <CategoriesListContainer>
+            <CategoryListItem>
+              <CategoriesMobileSection>
+                <PreviewCategories mobile={true}></PreviewCategories>
+              </CategoriesMobileSection>
 
-            <CategoriesTabletSection>
-              <PreviewCategories tablet={true}></PreviewCategories>
-            </CategoriesTabletSection>
+              <CategoriesTabletSection>
+                <PreviewCategories tablet={true}></PreviewCategories>
+              </CategoriesTabletSection>
 
-            <CategoriesDesktopSection>
-              <PreviewCategories desktop={true}></PreviewCategories>
-            </CategoriesDesktopSection>
-          </CategoryListItem>
-        </CategoriesListContainer>
-        <BackgroundImage2Mobile src={leaves_mobile} alt="leaves"></BackgroundImage2Mobile>
+              <CategoriesDesktopSection>
+                <PreviewCategories desktop={true}></PreviewCategories>
+              </CategoriesDesktopSection>
+            </CategoryListItem>
+          </CategoriesListContainer>
+          <BackgroundImage2Mobile src={leaves_mobile} alt="leaves"></BackgroundImage2Mobile>
 
-        <BackgroundImage2Tablet src={leaves_tablet} alt="leaves"></BackgroundImage2Tablet>
+          <BackgroundImage2Tablet src={leaves_tablet} alt="leaves"></BackgroundImage2Tablet>
 
-        <BackgroundImage2Desktop src={leaves_desktop} alt="leaves"></BackgroundImage2Desktop>
+          <BackgroundImage2Desktop src={leaves_desktop} alt="leaves"></BackgroundImage2Desktop>
 
-        <BackgroundImage3Mobile src={leaves_mobile} alt="leaves"></BackgroundImage3Mobile>
+          <BackgroundImage3Mobile src={leaves_mobile} alt="leaves"></BackgroundImage3Mobile>
 
-        <BackgroundImage3Tablet src={leaves_tablet} alt="leaves"></BackgroundImage3Tablet>
+          <BackgroundImage3Tablet src={leaves_tablet} alt="leaves"></BackgroundImage3Tablet>
 
-        <BackgroundImage3Desktop src={leaves_desktop} alt="leaves"></BackgroundImage3Desktop>
-      </CategoriesSection>
+          <BackgroundImage3Desktop src={leaves_desktop} alt="leaves"></BackgroundImage3Desktop>
+        </CategoriesSection>
+      </GlobalContainer>
       <OtherCategoriesSection>
         <OtherCategoriesButton href="/categories">Other categories</OtherCategoriesButton>
       </OtherCategoriesSection>
