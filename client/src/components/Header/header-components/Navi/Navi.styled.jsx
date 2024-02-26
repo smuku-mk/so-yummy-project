@@ -27,7 +27,7 @@ export const StyledLink = styled(NavLink)`
 `;
 
 export const MainNav = styled.ul`
-  display: flex;
+  display: none;
   gap: 32px;
   flex-direction: column;
 
@@ -36,6 +36,7 @@ export const MainNav = styled.ul`
   }
 
   @media screen and (min-width: 1440px) {
+    display: flex;
     flex-direction: row;
     gap: 30px;
   }
