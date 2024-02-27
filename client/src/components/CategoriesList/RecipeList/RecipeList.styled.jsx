@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const StyledDiv = styled.div`
+export const StyledDiv = styled.div`
   padding-top: 32px;
   margin-bottom: 100px;
   display: flex;

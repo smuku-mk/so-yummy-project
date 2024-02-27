@@ -1,11 +1,9 @@
-import { ErrorMessage } from "./ErrorMessage.styled";
+import { ErrorMess } from "./ErrorMessage.styled";
 
-const ErrorMessage = ({ message }) => {
+export const ErrorMessage = ({ message }) => {
   return (
-    <div style={{ color: "red" }}>
+    <ErrorMess style={{ color: "red" }}>
       <p>Error: {message}</p>
-    </div>
+    </ErrorMess>
   );
 };
-
-export default ErrorMessage;
