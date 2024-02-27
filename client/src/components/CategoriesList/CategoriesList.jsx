@@ -1,4 +1,3 @@
-import { getCategoryPage } from "../api";
 import RecipeList from "./RecipeList";
 import {
   TabsContainer,
@@ -21,23 +20,6 @@ const CategoriesList = () => {
     fetchData();
   }, [category]);
 
-  const fetchData = async () => {
-    setLoading(true);
-    try {
-      const { recipes: fetchedRecipes, totalCount } = await getCategoryPage(
-        category,
-        0,
-        8
-      );
-      setRecipes(fetchedRecipes);
-      setError(null);
-    } catch (error) {
-      setError(error.message);
-      setRecipes([]);
-    }
-    setLoading(false);
-  };
-
   const handleCategoryChange = (newCategory) => {
     setCategory(newCategory);
   };
@@ -48,7 +30,7 @@ const CategoriesList = () => {
       <TabsContainer>
         <ScrollButton disabled>
           <StyledSvg focusable="false" aria-hidden="true" viewBox="0 0 24 24">
-            <CustomPath d="M15.41 16.09l-4.58-4.59 4.58-4.59L14 5.5l-6 6 6 6z" />
+            <path d="M15.41 16.09l-4.58-4.59 4.58-4.59L14 5.5l-6 6 6 6z" />
           </StyledSvg>
           <StyledSpan></StyledSpan>
         </ScrollButton>
