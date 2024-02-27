@@ -1,19 +1,6 @@
 import styled from "styled-components";
 import searchfor_mobile from "../../images/mobile_img/searchfor_mobile.png";
 
-export const MainPageTitle = styled.h2`
-  font-size: 28px;
-  color: ${(props) => props.theme.black};
-
-  @media (min-width: 768px) {
-    font-size: 32px;
-  }
-
-  @media (min-width: 1440px) {
-    font-size: 44px;
-  }
-`;
-
 export const Form = styled.div`
   display: flex;
   justify-content: center;
