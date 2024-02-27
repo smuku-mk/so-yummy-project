@@ -10,6 +10,7 @@ export const Label = styled.label`
   height: 27px;
   border-radius: 200px;
   background-color: ${(props) => props.theme.switch};
+  box-shadow: 0px 6px 8px 3px rgba(0, 0, 0, 0.1);
   cursor: pointer;
   position: relative;
 
@@ -20,15 +21,14 @@ export const Label = styled.label`
     width: 21px;
     border-radius: 50%;
     background: linear-gradient(${(props) => props.theme.switchBall1}, ${(props) => props.theme.switchBall2});
-    box-shadow: 0px 6px 8px 3px rgba(0, 0, 0, 0.1);
-    margin: 3px;
+    box-shadow: 2px 1px 6px 0px rgba(0, 0, 0, 0.25);
     cursor: pointer;
     top: 0px;
     left: 0px;
   }
 
   ${Input}:checked {
-    transform: translateX(34px);
-    transition: 0.2s ease-in-out;
+    transform: translateX(31px);
+    transition: 0.3s ease-in-out;
   }
 `;

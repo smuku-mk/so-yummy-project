@@ -5,17 +5,17 @@ import React, { useState, useEffect } from "react";
 // import { MainPageTitle } from 'locationof/MainPageTitle';
 // import { Children } from 'react';
 import queryBackEnd from "../../components/Request/queryBackEnd";
-import { Container, Pagination, Stack } from "@mui/material";
-import { PaginationWrapper } from "./FavoritePage.styled";
+// import { Container, Pagination, Stack } from "@mui/material";
+import { PaginationWrapper, ImgWrapper, ImgTitle, Title, ContainerTitle } from "./FavoritePage.styled"; // STYLED NO USE
 import instanceBackEnd from "../../components/Request/RequestBackEnd";
 // import imgIngradients from 'locationof/ingradients.png';
 
 export const FavoritePage = () => {
-  // const location = useLocation();
-  const [, setRecipes] = useState([]);
-  const [currentPage, setCurrentPage] = useState(1);
-  const [allPage, setAllPage] = useState();
-  const [, setAllItem] = useState();
+  const location = useLocation();
+  const [recipes, setRecipes] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1); // FUNCTION NO USE
+  const [allPage, setAllPage] = useState(); // VARIABLE NO USE
+  const [allItem, setAllItem] = useState();
 
   useEffect(() => {
     const data = queryBackEnd.queryAllFavorite();
@@ -31,13 +31,13 @@ export const FavoritePage = () => {
       });
   }, []);
 
-  const changeNum = (_, num) => {
-    setCurrentPage(num);
-    instanceBackEnd
-      .get(`/favorite?page=${num}`)
-      .then((response) => setRecipes(response.data.result.data.list))
-      .catch((error) => console.log(error.message));
-  };
+  // const changeNum = (_, num) => {
+  //   setCurrentPage(num);
+  //   instanceBackEnd
+  //     .get(`/favorite?page=${num}`)
+  //     .then((response) => setRecipes(response.data.result.data.list))
+  //     .catch((error) => console.log(error.message));
+  // };
 
   // const removeFavorite = recipeId => {
   //   const lastItem = allItem % 4;

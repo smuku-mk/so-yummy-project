@@ -13,13 +13,17 @@ const MainPage = lazyLoad("MainPage");
 const FavoritePage = lazyLoad("FavoritePage");
 const MyRecipePage = lazyLoad("MyRecipePage");
 const CategoriesPage = lazyLoad("CategoriesPage");
+const MyRecipesPage = lazyLoad("MyRecipesPage");
+const SearchPage = lazyLoad("SearchPage");
+const AddRecipePage = lazyLoad("AddRecipePage");
+// const ShoppingListPage = lazyLoad("ShoppingListPage");
 
 export const App = () => {
   const isAuthorized = useSelector(selectIsLoggedIn);
   return (
     <Routes>
       {!isAuthorized ? (
-        <Route path="/" element={<SharedLayoutTest />}>
+        <Route path="/" element={<SharedLayoutRestricted />}>
           <Route index element={<WelcomePage />} />
           <Route path="/signin" element={<SigninPage />} />
           <Route path="/register" element={<RegisterPage />} />
@@ -31,6 +35,9 @@ export const App = () => {
           <Route path="/my" element={<MyRecipePage />} />
           <Route path="/404" element={<NotFoundPage />} />
           <Route path="/categories" element={<CategoriesPage />} />
+          <Route path="/search" element={<SearchPage />} />
+          <Route path="/add" element={<AddRecipePage />} />
+          {/* <Route path="/shopping-list" element={<ShoppingListPage />} /> */}
         </Route>
       )}
     </Routes>
