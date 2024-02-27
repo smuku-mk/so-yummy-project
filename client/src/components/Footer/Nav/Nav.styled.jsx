@@ -24,7 +24,7 @@ export const Navigation = styled.ul`
 `;
 
 export const LinksStyled = styled(NavLink)`
-  color: ${(props) => props.theme.footerTxt};
+  color: inherit;
   font-weight: 500;
   font-size: 14px;
   line-height: 129%;
