@@ -1,5 +1,16 @@
-import css from "./PopularRecipe.module.css";
 import defaultImage from "../../../images/addRecipe/defaultImageSmall.jpg";
+import {
+  Container,
+  PopularRecipesList,
+  PopularRecipeItem,
+  Title,
+  ImageContainer,
+  Image,
+  InfoContainer,
+  DishTitle,
+  RecipeLink,
+  DishDescription,
+} from "./PopularRecipe.styled.jsx";
 
 const popularRecipes = [
   {
@@ -41,29 +52,29 @@ const popularRecipes = [
 
 export const PopularRecipe = () => {
   return (
-    <div className={css.container}>
-      <h3 className={css.title}>Popular recipes</h3>
-      <ul className={css.popular_recipes}>
+    <Container>
+      <Title>Popular recipes</Title>
+      <PopularRecipesList>
         {popularRecipes.map((popularRecipe, index) => (
-          <li className={css.popular_recipe} key={index}>
-            <div className={css.image_container}>
-              <img
-                src={popularRecipe.thumb || defaultImage}
-                className={css.image}
-                alt="a dish"
-              ></img>
-            </div>
-            <div className={css.info_container}>
-              <h3 className={css.dish_title}>{popularRecipe.title}</h3>
-              <p className={css.dish_description}>
+          <PopularRecipeItem key={index}>
+            <ImageContainer>
+              <Image src={popularRecipe.thumb || defaultImage} alt="a dish" />
+            </ImageContainer>
+            <InfoContainer>
+              <DishTitle>
+                <RecipeLink href={`/recipe/${popularRecipe._id.$oid}`}>
+                  {popularRecipe.title}
+                </RecipeLink>
+              </DishTitle>
+              <DishDescription>
                 {popularRecipe.description.length < 90
                   ? popularRecipe.description
                   : popularRecipe.description.substring(0, 90) + "..."}
-              </p>
-            </div>
-          </li>
+              </DishDescription>
+            </InfoContainer>
+          </PopularRecipeItem>
         ))}
-      </ul>
-    </div>
+      </PopularRecipesList>
+    </Container>
   );
 };

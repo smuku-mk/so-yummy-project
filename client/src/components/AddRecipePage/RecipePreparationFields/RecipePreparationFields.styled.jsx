@@ -1,13 +1,19 @@
-.title {
+import styled from "styled-components";
+
+export const Container = styled.div`
+  width: 100%;
+  margin-bottom: 44px;
+`;
+export const Title = styled.h3`
   color: #3e4462;
   font-size: 24px;
   font-weight: 700;
   line-height: 1;
   width: 100%;
   padding-left: 5px;
-}
+`;
 
-.text_area {
+export const TextArea = styled.textarea`
   background-color: #d9d9d9;
   border: none;
   border-radius: 6px;
@@ -24,34 +30,30 @@
   width: 100%;
   min-height: 154px;
   max-height: 600px;
-}
 
-.text_area:focus,
-.text_area:hover {
-  outline: none;
-}
+  &:focus,
+  &:hover {
+    outline: none;
+  }
 
-.text_area::placeholder {
-  color: #333333;
-  font-size: 14px;
-}
+  &::placeholder {
+    color: #333333;
+    font-size: 14px;
+  }
 
-@media screen and (min-width: 768px) {
-  .text_area {
+  @media screen and (min-width: 768px) {
     height: 224px;
     padding: 22px;
     margin-bottom: 32px;
     margin-top: 32px;
     width: 505px;
+
+    &::placeholder {
+      font-size: 18px;
+    }
   }
 
-  .text_area::placeholder {
-    font-size: 18px;
-  }
-}
-
-@media screen and (min-width: 1440px) {
-  .text_area {
+  @media screen and (min-width: 1440px) {
     height: 280px;
   }
-}
+`;

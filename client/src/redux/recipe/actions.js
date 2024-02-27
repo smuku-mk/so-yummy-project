@@ -25,13 +25,14 @@ export const fetchRecipeById = createAsyncThunk(
   }
 );
 
-// The query bellow is used in the AddIngredient form, which uses local state instead of Redux
-export const fetchIngredients = async query => {
+export const fetchIngredients = async (query) => {
   try {
-    const res = await axios.get(`/ingredients?query=${query}`);
+    console.log("Fetching ingredients with query:", query);
+    const res = await axios.get(`/ingredients/test?name=${query}`);
+    console.log("Received response:", res.data);
     return res.data;
   } catch (e) {
-    console.error(e.message);
+    console.error("Error fetching ingredients:", e.message);
     throw e;
   }
 };
@@ -54,3 +55,14 @@ export const updateRecipePicture = createAsyncThunk(
     }
   }
 );
+
+// export async function fetchSuggestionsFromDatabase() {
+//   try {
+//     const response = await axios.get("/ingredients/list");
+//     const ingredients = response.data.map((ingredient) => ingredient.ttl);
+//     return ingredients;
+//   } catch (error) {
+//     console.error("Wystąpił błąd podczas pobierania listy składników:", error);
+//     return [];
+//   }
+// }

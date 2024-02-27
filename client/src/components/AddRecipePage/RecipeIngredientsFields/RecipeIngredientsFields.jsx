@@ -1,10 +1,30 @@
+import React from "react";
 import { throttle } from "throttle-debounce";
 import PropTypes from "prop-types";
 import { fetchIngredients } from "../../../redux/recipe/actions.js";
-
 import icons from "../../../images/sprites.svg";
-
-import css from "./RecipeIngredientsFields.module.css";
+import {
+  Container,
+  Title,
+  TitleContainer,
+  CountContainer,
+  DecreaseButton,
+  IconMinus,
+  Count,
+  IncreaseButton,
+  IconPlus,
+  IngredientsContainer,
+  Ingredient,
+  IngredientContainer,
+  IngredientInput,
+  IngredientDropDown,
+  AmountContainer,
+  AmountInput,
+  AmountSelectBoxContainer,
+  AmountSelectBox,
+  CrossButton,
+  IconCross,
+} from "./RecipeIngredientsFields.styled";
 
 export const RecipeIngredientsFields = ({
   ingredients,
@@ -76,38 +96,29 @@ export const RecipeIngredientsFields = ({
   };
 
   return (
-    <div className={css.container}>
-      <div className={css.title_container}>
-        <h3 className={css.title}>Ingredients</h3>
-        <div className={css.count_container}>
-          <button
-            className={css.decrease_button}
-            onClick={handleDeletionOflIngredient}
-            type="button"
-          >
-            <svg className={css.icon_minus}>
-              <use href={`${icons}#icon-ingredients-minus`} />
-            </svg>
-          </button>
-          <span className={css.count}>{ingredients.length}</span>
-          <button
-            className={css.increase_button}
-            onClick={handleAdditionalIngredient}
-            type="button"
-          >
-            <svg className={css.icon_plus}>
-              <use href={`${icons}#icon-ingredients-plus`} />
-            </svg>
-          </button>
-        </div>
-      </div>
-      <ul className={css.ingredients_container}>
+    <Container>
+      <TitleContainer>
+        <Title>Ingredients</Title>
+        <CountContainer>
+          <DecreaseButton onClick={handleDeletionOflIngredient} type="button">
+            <IconMinus>
+              <use xlinkHref={`${icons}#icon-ingredients-minus`}></use>
+            </IconMinus>
+          </DecreaseButton>
+          <Count>{ingredients.length}</Count>
+          <IncreaseButton onClick={handleAdditionalIngredient} type="button">
+            <IconPlus>
+              <use xlinkHref={`${icons}#icon-ingredients-plus`}></use>
+            </IconPlus>
+          </IncreaseButton>
+        </CountContainer>
+      </TitleContainer>
+      <IngredientsContainer>
         {ingredients.map((ingredient, index) => (
-          <li className={css.ingredient} key={index}>
-            <div className={css.ingredient_container}>
+          <Ingredient key={index}>
+            <IngredientContainer>
               <label>
-                <input
-                  className={css.ingredient_input}
+                <IngredientInput
                   placeholder="Ingredient"
                   type="text"
                   name="ingredient-name"
@@ -119,7 +130,7 @@ export const RecipeIngredientsFields = ({
                 />
               </label>
               {ingredient.expanded && ingredient.suggestions.length > 0 && (
-                <div className={css.ingredient_drop_down}>
+                <IngredientDropDown>
                   {ingredient.suggestions.map((suggestion) => (
                     <p
                       onMouseDown={() => chooseIngredient(suggestion, index)}
@@ -128,14 +139,13 @@ export const RecipeIngredientsFields = ({
                       {suggestion.ttl}
                     </p>
                   ))}
-                </div>
+                </IngredientDropDown>
               )}
-            </div>
+            </IngredientContainer>
 
-            <div className={css.amount_container}>
+            <AmountContainer>
               <label htmlFor="amount">
-                <input
-                  className={css.amount_input}
+                <AmountInput
                   type="text"
                   name="amount"
                   value={ingredient.amount}
@@ -146,10 +156,9 @@ export const RecipeIngredientsFields = ({
                 />
               </label>
 
-              <div className={css.amount_select_box_container}>
+              <AmountSelectBoxContainer>
                 <label htmlFor="amountType">
-                  <select
-                    className={css.amount_select_box}
+                  <AmountSelectBox
                     id="amountType"
                     name="amountType"
                     value={ingredient.amountType}
@@ -159,31 +168,26 @@ export const RecipeIngredientsFields = ({
                     }
                   >
                     {amounts.map((amount) => (
-                      <option
-                        className={css.amount}
-                        value={amount}
-                        key={amount}
-                      >
+                      <option value={amount} key={amount}>
                         {amount}
                       </option>
                     ))}
-                  </select>
+                  </AmountSelectBox>
                 </label>
-              </div>
-            </div>
-            <button
-              className={css.cross_button}
+              </AmountSelectBoxContainer>
+            </AmountContainer>
+            <CrossButton
               type="button"
               onClick={() => handleIngredientRemoval(index)}
             >
-              <svg className={css.icon_cross}>
-                <use href={`${icons}#icon-x`} />
-              </svg>
-            </button>
-          </li>
+              <IconCross>
+                <use xlinkHref={`${icons}#icon-x`}></use>
+              </IconCross>
+            </CrossButton>
+          </Ingredient>
         ))}
-      </ul>
-    </div>
+      </IngredientsContainer>
+    </Container>
   );
 };
 
