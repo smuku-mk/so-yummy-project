@@ -1,4 +1,4 @@
-import RecipeList from "./RecipeList";
+import { RecipeList } from "./RecipeList";
 import {
   TabsContainer,
   ScrollButton,
@@ -8,9 +8,9 @@ import {
   CategoryItem,
   Header,
 } from "./CategoriesList.styled";
-import ErrorMessage from "./ErrorMessage";
+import { ErrorMessage } from "./ErrorMessage";
 
-const CategoriesList = () => {
+export const CategoriesList = () => {
   const [category, setCategory] = useState("Beef");
   const [recipes, setRecipes] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -19,6 +19,18 @@ const CategoriesList = () => {
   useEffect(() => {
     fetchData();
   }, [category]);
+
+  const fetchData = async () => {
+    setLoading(true);
+    try {
+      setRecipes([]);
+      setError(null);
+    } catch (error) {
+      setError(error.message);
+      setRecipes([]);
+    }
+    setLoading(false);
+  };
 
   const handleCategoryChange = (newCategory) => {
     setCategory(newCategory);
@@ -43,6 +55,7 @@ const CategoriesList = () => {
             "Goat",
             "Lamb",
             "Miscellaneous",
+
             "Pasta",
             "Pork",
             "Seafood",
@@ -76,5 +89,3 @@ const CategoriesList = () => {
     </div>
   );
 };
-
-export default CategoriesList;
