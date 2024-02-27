@@ -1,4 +1,5 @@
 import { RecipeList } from "./RecipeList";
+import { ErrorMessage } from "./ErrorMessage";
 import {
   TabsContainer,
   ScrollButton,
@@ -8,7 +9,6 @@ import {
   CategoryItem,
   Header,
 } from "./CategoriesList.styled";
-import { ErrorMessage } from "./ErrorMessage";
 
 export const CategoriesList = () => {
   const [category, setCategory] = useState("Beef");
