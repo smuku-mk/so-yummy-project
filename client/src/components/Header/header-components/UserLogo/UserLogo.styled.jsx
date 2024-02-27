@@ -22,7 +22,7 @@ export const Name = styled.span`
   line-height: 20.4px;
   font-size: 12px;
   font-weight: 600;
-  color: ${(props) => props.theme.currentUser};
+  color: ${props => props.theme.navUser};
 
   @media screen and (min-width: 768px) {
     line-height: 23.8px;

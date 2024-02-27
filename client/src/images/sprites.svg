@@ -44,8 +44,8 @@
 <path fill="none" stroke="#fafafa" style="stroke: var(--color1, #fafafa)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M5 12h14"></path>
 </symbol>
 <symbol id="icon-search" viewBox="0 0 24 24">
-<path fill="none" stroke="#000" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2" d="M11 19c4.418 0 8-3.582 8-8s-3.582-8-8-8c-4.418 0-8 3.582-8 8s3.582 8 8 8z"></path>
-<path fill="none" stroke="#000" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2" d="M21 21l-4.35-4.35"></path>
+<path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2" d="M11 19c4.418 0 8-3.582 8-8s-3.582-8-8-8c-4.418 0-8 3.582-8 8s3.582 8 8 8z"></path>
+<path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2" d="M21 21l-4.35-4.35"></path>
 </symbol>
 <symbol id="icon-trash" viewBox="0 0 22 24">
 <path fill="none" stroke="#000" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.1818" d="M15.273 5.455v-0.873c0-1.222 0-1.833-0.238-2.3-0.209-0.411-0.543-0.744-0.953-0.953-0.467-0.238-1.078-0.238-2.3-0.238h-1.745c-1.222 0-1.833 0-2.3 0.238-0.411 0.209-0.744 0.543-0.953 0.953-0.238 0.467-0.238 1.078-0.238 2.3v0.873M8.727 11.455v5.455M13.091 11.455v5.455M1.091 5.455h19.636M18.545 5.455v12.218c0 1.833 0 2.749-0.357 3.449-0.314 0.616-0.814 1.116-1.43 1.43-0.7 0.357-1.617 0.357-3.449 0.357h-4.8c-1.833 0-2.749 0-3.449-0.357-0.616-0.314-1.116-0.814-1.43-1.43-0.357-0.7-0.357-1.617-0.357-3.449v-12.218"></path>
