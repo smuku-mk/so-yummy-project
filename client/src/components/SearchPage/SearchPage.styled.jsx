@@ -4,6 +4,7 @@ import searchfor_mobile from "../../images/mobile_img/searchfor_mobile.png";
 export const MainPageTitle = styled.h2`
   font-size: 28px;
   color: ${(props) => props.theme.black};
+  margin-top: 3rem;
 
   @media (min-width: 768px) {
     font-size: 32px;
@@ -83,6 +84,7 @@ export const Button = styled.button`
 
   &:hover {
     background-color: ${(props) => props.theme.addBtn};
+    ease-in-out 0.3s;
   }
 `;
 
@@ -139,4 +141,51 @@ export const SearchForElse = styled.img`
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+`;
+
+export const SearchRecipesWrapper = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+`;
+
+export const SearchRecipesLi = styled.li`
+  display: flex;
+  margin-bottom: 2rem;
+  flex-basis: 100%;
+
+  @media (min-width: 768px) {
+    flex-basis: calc(50% - 1rem);
+  }
+
+  @media (min-width: 1440px) {
+    flex-basis: calc(25% - 1rem);
+  }
+`;
+
+export const SearchImgWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  position: relative;
+`;
+
+export const SearchImg = styled.img`
+  width: 100%;
+  max-height: 350px;
+  border-radius: 10px;
+  object-fit: cover;
+`;
+
+export const SearchRecipesTitle = styled.h4`
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: ${(props) => props.theme.mainBg};
+  width: 300px;
+  height: 50px;
+  font-size: 16px;
+  font-weight: 400;
+  border-radius: 5px;
 `;
