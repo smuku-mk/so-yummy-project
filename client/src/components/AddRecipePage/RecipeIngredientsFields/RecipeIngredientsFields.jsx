@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { throttle } from "throttle-debounce";
 import PropTypes from "prop-types";
 import { fetchIngredients } from "../../../redux/recipe/actions.js";
 import icons from "../../../images/sprites.svg";
+import { fetchIngredientsTTL } from "../../../redux/recipe/actions.js";
 import {
   Container,
   Title,
@@ -16,8 +17,7 @@ import {
   IngredientsContainer,
   Ingredient,
   IngredientContainer,
-  IngredientInput,
-  IngredientDropDown,
+  IngredientSelect,
   AmountContainer,
   AmountInput,
   AmountSelectBoxContainer,
@@ -32,6 +32,20 @@ export const RecipeIngredientsFields = ({
   defaultValues,
 }) => {
   const amounts = ["tbs", "tsp", "kg", "g", "pcs", "ml"];
+
+  const [ingredientsTTL, setIngredientsTTL] = useState([]);
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const ingredients = await fetchIngredientsTTL();
+        setIngredientsTTL(ingredients);
+      } catch (error) {
+        console.error("Error fetching ingredients TTL:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
 
   const hideIngredientDropDown = (index) => {
     ingredients[index].expanded = false;
@@ -89,12 +103,6 @@ export const RecipeIngredientsFields = ({
     setIngredients(ingredients);
   };
 
-  const chooseIngredient = (suggestion, index) => {
-    ingredients[index].name = suggestion.ttl;
-    ingredients[index].id = suggestion._id;
-    setIngredients(ingredients);
-  };
-
   return (
     <Container>
       <TitleContainer>
@@ -118,29 +126,22 @@ export const RecipeIngredientsFields = ({
           <Ingredient key={index}>
             <IngredientContainer>
               <label>
-                <IngredientInput
-                  placeholder="Ingredient"
-                  type="text"
+                <IngredientSelect
                   name="ingredient-name"
+                  value={ingredient.name}
                   onBlur={() => hideIngredientDropDown(index)}
                   onFocus={(evt) => showIngredientDropDown(evt, index)}
-                  value={ingredient.name}
-                  required
                   onChange={(event) => handleIngredientNameChange(event, index)}
-                />
-              </label>
-              {ingredient.expanded && ingredient.suggestions.length > 0 && (
-                <IngredientDropDown>
-                  {ingredient.suggestions.map((suggestion) => (
-                    <p
-                      onMouseDown={() => chooseIngredient(suggestion, index)}
-                      key={suggestion._id}
-                    >
-                      {suggestion.ttl}
-                    </p>
+                  required
+                >
+                  <option value="">Select Ingredient</option>
+                  {ingredientsTTL.map((ingredient, index) => (
+                    <option key={index} value={ingredient}>
+                      {ingredient}
+                    </option>
                   ))}
-                </IngredientDropDown>
-              )}
+                </IngredientSelect>
+              </label>
             </IngredientContainer>
 
             <AmountContainer>
@@ -155,17 +156,16 @@ export const RecipeIngredientsFields = ({
                   }
                 />
               </label>
-
               <AmountSelectBoxContainer>
                 <label htmlFor="amountType">
                   <AmountSelectBox
                     id="amountType"
                     name="amountType"
                     value={ingredient.amountType}
-                    required
                     onChange={(event) =>
                       handleIngredientFieldChange("amountType", event, index)
                     }
+                    required
                   >
                     {amounts.map((amount) => (
                       <option value={amount} key={amount}>

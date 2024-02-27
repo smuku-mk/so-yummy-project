@@ -118,7 +118,7 @@ export const IngredientContainer = styled.div`
   position: relative;
 `;
 
-export const IngredientInput = styled.input`
+export const IngredientSelect = styled.select`
   background-color: #d9d9d9;
   border: none;
   border-radius: 8px;
@@ -207,10 +207,6 @@ export const AmountSelectBox = styled.select`
   &:focus,
   &:hover {
     outline: none;
-  }
-
-  &:last-child {
-    appearance: none;
   }
 
   option {

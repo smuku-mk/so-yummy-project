@@ -56,13 +56,13 @@ export const updateRecipePicture = createAsyncThunk(
   }
 );
 
-// export async function fetchSuggestionsFromDatabase() {
-//   try {
-//     const response = await axios.get("/ingredients/list");
-//     const ingredients = response.data.map((ingredient) => ingredient.ttl);
-//     return ingredients;
-//   } catch (error) {
-//     console.error("Wystąpił błąd podczas pobierania listy składników:", error);
-//     return [];
-//   }
-// }
+export const fetchIngredientsTTL = async () => {
+  try {
+    const response = await axios.get("/ingredients/list");
+    const ingredientsTTL = response.data.map((ingredient) => ingredient.ttl);
+    return ingredientsTTL;
+  } catch (error) {
+    console.error("Error fetching ingredients TTL:", error);
+    return [];
+  }
+};
