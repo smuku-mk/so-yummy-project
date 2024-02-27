@@ -1,24 +1,3 @@
-// export const basic = {
-//   black: "#000000",
-//   white: "#ffffff",
-//   brand: "#8baa36",
-//   fontLight: "#fafafa",
-//   fontDark: "#3e4462",
-//   accentDark: "#22252a",
-//   highlightDark: "#1e1f28",
-//   transparent: "#d9d9d9",
-//   accentLight: "#efefef",
-//   borderLight: "#f0f0f0",
-//   borderDark: "#23262a",
-//   inputText: "#bdbdbd",
-//   error: "#e74a3b",
-//   warning: "#f6c23e",
-//   success: "#3cbc81",
-//   mediaBg: "#ebf3d4",
-//   darkBg: "#1e1f28",
-//   formDark: "#2a2c36",
-// };
-
 export const lightTheme = {
   mainBg: "#fafafa",
 
@@ -30,12 +9,15 @@ export const lightTheme = {
   cancelBtn: "#d9d9d9",
   cancelTxt: "#23262a",
 
-  //MainPage
+  //Header
   switch: "#efefef", //aka dzyndzel
-  switchBall1: '#FFFFFF',
-  switchBall2: '#E8EAEA',
-  navLinks: "#23262a",
+  switchBall1: "#FFFFFF",
+  switchBall2: "#E8EAEA",
+  navLinks: "#22252A",
+  navLinksDesktop: "#23262A",
   currentLink: "#8baa36",
+
+  //MainPage
   currentUser: "#22252a",
   searchTxt: "#bdbdbd", //+ part of hero title
   editProfile: "#fafafa",
@@ -117,12 +99,15 @@ export const darkTheme = {
   cancelBtn: "#d9d9d9",
   cancelTxt: "#23262a",
 
-  //MainPage
+  //Header
   switch: "#8baa36",
   switchBall1: "#FFFFFF",
   switchBall2: "#E8EAEA",
   navLinks: "#fafafa",
+  navLinksDesktop: "#fafafa",
   currentLink: "#8baa36",
+
+  //MainPage
   currentUser: "#22252a",
   searchTxt: "#fafafa", //+ part of hero title
   editProfile: "#fafafa",

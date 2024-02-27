@@ -1,14 +1,18 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import { unauthorizedUser } from "../../styles";
 import start_mobile from "../../images/mobile_img/start_mobile.jpg";
 import start_tablet from "../../images/tablet_img/start_tablet.jpg";
 import start_desktop from "../../images/desktop_img/start_desktop.jpg";
 
 export const Container = styled.div`
-  background-color: black;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 20px;
   background-image: url(${start_mobile});
   background-size: cover;
   background-position: center center;
@@ -25,32 +29,31 @@ export const Container = styled.div`
 `;
 
 export const Logo = styled.svg`
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
   width: 54px;
   height: 54px;
 
   @media (min-width: 768px) {
     width: 68px;
     height: 68px;
+  }
 `;
 
 export const TextBox = styled.div`
-  padding: 28px 35px 44px 35px;
+  margin-bottom: 44px;
+  margin-top: 28px;
 
   @media (min-width: 768px) {
-    padding: 44px 134px 40px 134px;
-  }
-
-  @media (min-width: 1440px) {
-    padding: 44px 400px 40px 400px;
+    margin-top: 44px;
+    margin-bottom: 40px;
   }
 `;
 
 export const Title = styled.h3`
   font-size: 24px;
+  line-height: 24px;
   letter-spacing: -0.02em;
-  color: ${(props) => props.theme.mainBg};
+  color: ${unauthorizedUser.titleAndText};
   font-weight: 600;
   text-align: center;
   margin-bottom: 14px;
@@ -62,8 +65,10 @@ export const Title = styled.h3`
 
 export const Text = styled.p`
   font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
   letter-spacing: -0.02em;
-  color: ${(props) => props.theme.mainBg};
+  color: #fafafa;
   text-align: center;
 
   @media (min-width: 768px) {
@@ -72,17 +77,19 @@ export const Text = styled.p`
 `;
 
 export const Register = styled(Link)`
-  color: ${(props) => props.theme.mainBg};
+  color: #fafafa;
   padding: 12px 24px;
-  background-color: ${(props) => props.theme.brandGreen};
+  background-color: #8baa36;
   font-size: 14px;
   border-radius: 24px 44px;
   margin-right: 12px;
+  border: 2px solid transparent;
+  transition: background-color 0.3s ease;
 
-  & :hover,
+  &:hover,
   :focus {
-    background-color: rgba(255, 255, 255, 0.1);
-    border: 1px soild ${(props) => props.theme.mainBg};
+    background-color: transparent;
+    border: 2px solid #fafafa;
   }
 
   @media (min-width: 768px) {
@@ -93,16 +100,18 @@ export const Register = styled(Link)`
 `;
 
 export const Signin = styled(Link)`
-  color: ${(props) => props.theme.mainBg};
+  color: #fafafa;
   padding: 12px 24px;
-  background-color: rgba(255, 255, 255, 0);
+  background-color: transparent;
   font-size: 14px;
   border-radius: 24px 44px;
-  border: 1px soild ${(props) => props.theme.mainBg};
+  border: 2px solid #fafafa;
+  transition: background-color 0.3s ease;
 
-  &:focus,
-  :hover {
-    background-color: ${(props) => props.theme.brandGreen};
+  &:hover,
+  :focus {
+    background-color: #8baa36;
+    border: 2px solid transparent;
   }
 
   @media (min-width: 768px) {

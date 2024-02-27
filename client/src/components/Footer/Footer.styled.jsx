@@ -23,14 +23,8 @@ export const Container = styled.div`
   flex-direction: column;
 
   @media screen and (min-width: 768px) {
-    margin: 0 auto;
     flex-direction: row;
     justify-content: space-around;
-    max-width: 768px;
-  }
-
-  @media screen and (min-width: 1440px) {
-    max-width: 1240px;
   }
 `;
 

@@ -1,32 +1,38 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import {
-  SearchRecipesWrapper,
-  SearchImgWrapper,
-  SearchImg,
-  SearchRecipesTitle,
-  SearchRecipesLi,
-} from "./SearchPage.styled";
+  Block,
+  BlockPicture,
+  BlockPictureImg,
+  BlockPictureDescription,
+  PictureDescription,
+  RecipesListContainer,
+  RecipesElement,
+} from "./SearchRecipesList.styled.jsx";
 
 export const SearchRecipesList = () => {
   const recipes = useSelector((state) => state.search.recipes);
 
   return (
-    <SearchRecipesWrapper>
+    <>
       {recipes && recipes.length > 0 ? (
-        <ul>
+        <RecipesListContainer>
           {recipes.map((recipe, index) => (
-            <SearchRecipesLi key={index}>
-              <SearchImgWrapper>
-                <SearchImg src={recipe.thumb} alt={recipe.description} />
-                <SearchRecipesTitle>{recipe.title}</SearchRecipesTitle>
-              </SearchImgWrapper>
-            </SearchRecipesLi>
+            <RecipesElement key={index}>
+              <Block>
+                <BlockPicture>
+                  <BlockPictureImg src={recipe.thumb} alt={recipe.title} />
+                  <BlockPictureDescription>
+                    <PictureDescription>{recipe.title}</PictureDescription>
+                  </BlockPictureDescription>
+                </BlockPicture>
+              </Block>
+            </RecipesElement>
           ))}
-        </ul>
+        </RecipesListContainer>
       ) : (
         <p>Try looking for something else..</p>
       )}
-    </SearchRecipesWrapper>
+    </>
   );
 };

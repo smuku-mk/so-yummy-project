@@ -43,7 +43,7 @@ export const createUser = async ({
 
 export const getUser = async (filter) => {
   try {
-    console.log("Filter:", filter); // Dodajemy log
+    console.log("Filter:", filter); 
 
     const user = await User.findOne(filter);
     if (!user) {
@@ -65,7 +65,7 @@ export const updateUser = async (email, userData) => {
       throw new Error("User not found");
     }
 
-    console.log("User updated successfully:", updatedUser); // Dodajemy log
+    console.log("User updated successfully:", updatedUser); 
 
     return updatedUser;
   } catch (error) {
