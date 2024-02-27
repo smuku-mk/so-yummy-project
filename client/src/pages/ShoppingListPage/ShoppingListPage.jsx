@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { MainPageTitle } from "../../components/IngredientsShoppingList/IngredientsShoppingList.styled";
 import { IngredientsShoppingList } from "../../components/IngredientsShoppingList/IngredientsShoppingList";
 import { fetchShoppingList } from "../../redux/shopping-list/shoppingListActions";

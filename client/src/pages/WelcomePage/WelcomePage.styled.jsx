@@ -1,14 +1,18 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import { unauthorizedUser } from "../../styles";
 import start_mobile from "../../images/mobile_img/start_mobile.jpg";
 import start_tablet from "../../images/tablet_img/start_tablet.jpg";
 import start_desktop from "../../images/desktop_img/start_desktop.jpg";
 
 export const Container = styled.div`
-  background-color: black;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 20px;
   background-image: url(${start_mobile});
   background-size: cover;
   background-position: center center;
@@ -25,8 +29,7 @@ export const Container = styled.div`
 `;
 
 export const Logo = styled.svg`
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
   width: 54px;
   height: 54px;
 
@@ -37,14 +40,12 @@ export const Logo = styled.svg`
 `;
 
 export const TextBox = styled.div`
-  padding: 28px 35px 44px 35px;
+  margin-bottom: 44px;
+  margin-top: 28px;
 
   @media (min-width: 768px) {
-    padding: 44px 134px 40px 134px;
-  }
-
-  @media (min-width: 1440px) {
-    padding: 44px 400px 40px 400px;
+    margin-top: 44px;
+    margin-bottom: 40px;
   }
 `;
 
@@ -52,7 +53,7 @@ export const Title = styled.h3`
   font-size: 24px;
   line-height: 24px;
   letter-spacing: -0.02em;
-  color: #fafafa;
+  color: ${unauthorizedUser.titleAndText};
   font-weight: 600;
   text-align: center;
   margin-bottom: 14px;

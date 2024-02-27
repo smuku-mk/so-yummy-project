@@ -3,8 +3,8 @@ import { useLocation } from "react-router-dom";
 import MyRecipesList from "../../components/MyRecipeList/MyRecipesList";
 import { Children } from "react";
 import queryBackEnd from "../../components/Request/queryBackEnd";
-import { Container, Pagination, Stack } from "@mui/material";
-import { PaginationWrapper, ImgWrapper, ImgTitle, Title, ContainerTitle } from "../MyRecipePage/MyRecipesPage.styled";
+// import { Container, Pagination, Stack } from "@mui/material";
+import { PaginationWrapper, ImgWrapper, ImgTitle, Title, ContainerTitle } from "../MyRecipePage/MyRecipesPage.styled"; // STYLED NO USE
 import instanceBackEnd from "../../components/Request/RequestBackEnd";
 import empty_mobile from "../../images/mobile_img/searchfor_mobile.png";
 import empty_tablet from "../../images/tablet_img/searchfor_tablet.png";
@@ -14,8 +14,8 @@ import { GlobalContainer } from "../../styles";
 export const MyRecipesPage = () => {
   const location = useLocation();
   const [recipes, setRecipes] = useState([]);
-  const [currentPage, setCurrentPage] = useState(1);
-  const [allPage, setAllPage] = useState();
+  const [currentPage, setCurrentPage] = useState(1); // FUNCTION NO USE
+  const [allPage, setAllPage] = useState(); // VARIABLE NO USE
   const [allItem, setAllItem] = useState();
 
   useEffect(() => {
@@ -33,15 +33,15 @@ export const MyRecipesPage = () => {
       });
   }, []);
 
-  const changeNum = (_, num) => {
-    setCurrentPage(num);
-    instanceBackEnd
-      .get(`/ownRecipes?page=${num}`)
-      .then((response) => setRecipes(response.data.result.data.list))
-      .catch((error) => {
-        console.log(error.message);
-      });
-  };
+  // const changeNum = (_, num) => {
+  //   setCurrentPage(num);
+  //   instanceBackEnd
+  //     .get(`/ownRecipes?page=${num}`)
+  //     .then((response) => setRecipes(response.data.result.data.list))
+  //     .catch((error) => {
+  //       console.log(error.message);
+  //     });
+  // };
 
   const removeOwnRecipe = (recipeId) => {
     const lastItem = allItem % 4;
