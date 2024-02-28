@@ -8,14 +8,7 @@ import { userValidator } from "../middlewares/user/validators/userValidator.js";
 import { loginValidator } from "../middlewares/user/validators/loginValidator.js";
 import { nameValidator } from "../middlewares/user/validators/nameValidator.js";
 
-import { signUp } from "../controllers/users/signUp.js";
-import { logIn } from "../controllers/users/logIn.js";
-import { resendMail } from "../controllers/users/resendMail.js";
-import { verifyUser } from "../controllers/users/verifyUser.js";
-import { currentUser } from "../controllers/users/currentUser.js";
-import { logOut } from "../controllers/users/logOut.js";
-import { updateAvatar } from "../controllers/users/updateAvatar.js";
-import { updateUserName } from "../controllers/users/updateUserName.js";
+import { signUp, logIn, resendMail, verifyUser, currentUser, logOut, updateAvatar, updateUserName } from "../controllers/users/index.js";
 
 export const usersRouter = express.Router();
 

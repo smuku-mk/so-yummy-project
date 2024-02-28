@@ -30,7 +30,6 @@ app.use("/users", usersRouter);
 app.use("/search", searchRouter);
 app.use("/ownRecipes", ownRecipesRouter)
 app.use("/favorite", favRouter);
-
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 
 app.use((req, res, next) => {
