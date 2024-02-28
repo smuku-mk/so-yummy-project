@@ -41,6 +41,7 @@ const PreviewCategories = ({ mobile, tablet, desktop }) => {
         });
       })
       .catch((error) => console.error(`Error fetching data:`, error));
+      console.log('fetch');
       // eslint-disable-next-line
   }, []);
 
