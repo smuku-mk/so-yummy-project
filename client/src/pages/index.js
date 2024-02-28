@@ -1,4 +1,5 @@
 export * from "./AddRecipePage";
+export * from "./CategoriesPage";
 export * from "./FavoritePage";
 export * from "./MainPage";
 export * from "./MyRecipePage";
