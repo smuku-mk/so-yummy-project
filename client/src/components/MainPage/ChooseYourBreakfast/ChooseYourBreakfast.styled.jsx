@@ -26,6 +26,7 @@ export const Text = styled.p`
   letter-spacing: -0.02em;
   padding-top: 8px;
   padding-left: 8px;
+  font-family: "Poppins", sans-serif;
 
   @media (min-width: 768px) {
     line-height: 129%;
@@ -51,6 +52,11 @@ export const Button = styled.a`
   margin-left: 136px;
   line-height: 1.2;
   color: ${(props) => props.theme.oddTxt};
+  display: flex;
+  flex-direction: row;
+  stroke: black;
+  font-family: "Poppins", sans-serif;
+  margin-top: 20px;
 
   @media (min-width: 768px) {
     margin-left: 164px;
@@ -58,5 +64,16 @@ export const Button = styled.a`
 
   @media (min-width: 1440px) {
     margin-left: 200px;
+  }
+`;
+
+export const IconArrow = styled.svg`
+  width: 15px;
+  height: 12px;
+  stroke: black;
+  stroke-width: 1.5px;
+
+  @media (min-width: 768px) {
+    width: 14px;
   }
 `;

@@ -5,6 +5,7 @@ export const Block = styled.div`
   height: 445px;
   display: flex;
   flex-direction: column;
+  margin-top: 0;
 
   @media (min-width: 768px) {
     &:not(:last-child) {
@@ -19,19 +20,11 @@ export const Block = styled.div`
   }
 `;
 
-// export const Text = styled.h2`
-//   font-weight: 600;
-//   font-size: 28px;
-//   letter-spacing: -0.02em;
-//   color: #001833;
-// `;
-
-export const BlockPicture = styled.div`
+export const BlockPicture = styled.a`
   width: 343px;
   height: 323px;
   display: flex;
   justify-content: center;
-  background-color: red;
 `;
 
 export const BlockPictureImg = styled.img`
@@ -41,7 +34,7 @@ export const BlockPictureImg = styled.img`
 `;
 
 export const BlockPictureDescription = styled.div`
-  background-color: #fff;
+  background-color: ${(props) => props.theme.label};
   border-radius: 8px;
   width: 307px;
   height: 52px;
@@ -62,7 +55,7 @@ export const PictureDescription = styled.p`
   font-family: "Poppins", sans-serif;
 `;
 
-export const Button = styled.button`
+export const Button = styled.a`
   background-color: #8aa936;
   border-radius: 6px;
   width: 94px;
@@ -70,11 +63,14 @@ export const Button = styled.button`
   font-weight: 400;
   font-size: 14px;
   text-align: center;
-  color: ${(props) => props.theme.mainBg};
+  color: ${(props) => props.theme.fontLight};
   margin-top: 24px;
   margin-left: 249px;
   border: 0;
   font-family: "Poppins", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   @media (min-width: 768px) {
     margin-top: 40px;

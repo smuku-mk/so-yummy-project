@@ -76,7 +76,7 @@ export const OtherCategoriesSection = styled.div`
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  margin-bottom: 646px;
+  margin-bottom: 100px;
 `;
 
 export const MainTitle = styled.h1`
@@ -85,7 +85,7 @@ export const MainTitle = styled.h1`
   line-height: 1;
   letter-spacing: -0.01em;
   text-align: center;
-  color: ${(props) => props.theme.currentUser};
+  color: ${(props) => props.theme.navLinks};
   margin-left: 36px;
   margin-right: 36px;
 
@@ -109,7 +109,6 @@ export const SoText = styled.span`
 `;
 
 export const MainDescription = styled.p`
-  font-family: "Poppins", sans-serif;
   font-weight: 400;
   font-size: 14px;
   line-height: 1.28571;
@@ -117,14 +116,12 @@ export const MainDescription = styled.p`
   text-align: center;
   margin-left: 64px;
   margin-right: 63px;
-  margin-top: 14px;
   color: ${(props) => props.theme.text};
   width: 248px;
   height: 72px;
 
   @media (min-width: 768px) {
     text-align: left;
-    margin-top: 24px;
     margin-right: 0;
     margin-left: 0;
     width: 362px;
@@ -135,7 +132,6 @@ export const MainDescription = styled.p`
     font-size: 18px;
     margin-bottom: 50px;
     text-align: left;
-    margin-top: 0;
   }
 `;
 
@@ -193,24 +189,24 @@ export const CategoryListItem = styled.li`
 `;
 
 export const OtherCategoriesButton = styled.a`
-    border-radius: 15px 50px;
-    background-color: transparent;
-    margin-top: 40px;
-    width: 195px;
-    height: 46px;
-    font-weight: 400;
-    font-size: 14px;
-    color: ${(props) => props.theme.currentUser};
-    border: 1px solid #8BAA36;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: "Poppins", sans-serif;
+  border-radius: 15px 50px;
+  background-color: transparent;
+  margin-top: 40px;
+  width: 195px;
+  height: 46px;
+  font-weight: 400;
+  font-size: 14px;
+  color: ${(props) => props.theme.terms};
+  border: 1px solid #8baa36;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Poppins", sans-serif;
 
-    @media (min-width: 768px) {
-        width: 239px;
-        height: 61px;
-    }
+  @media (min-width: 768px) {
+    width: 239px;
+    height: 61px;
+  }
 `;
 
 export const CategoriesTabletSection = styled.div`
@@ -328,6 +324,7 @@ export const BackgroundImage2Mobile = styled.img`
   left: -50px;
   transform: rotate(80deg);
   filter: blur(5px);
+  z-index: -100;
 
   @media (min-width: 768px) {
     display: none;
@@ -336,6 +333,7 @@ export const BackgroundImage2Mobile = styled.img`
 
 export const BackgroundImage2Tablet = styled.img`
   display: none;
+  z-index: -100;
 
   @media (min-width: 768px) {
     display: block;
@@ -356,6 +354,7 @@ export const BackgroundImage2Tablet = styled.img`
 
 export const BackgroundImage2Desktop = styled.img`
   display: none;
+  z-index: -100;
 
   @media (min-width: 1440px) {
     display: block;
@@ -375,11 +374,12 @@ export const BackgroundImage3Mobile = styled.img`
   height: 172px;
   object-fit: cover;
   position: absolute;
-  top: 2650px;
+  top: 2600px;
   right: 0;
   transform: rotate(80deg);
   filter: blur(5px);
   transform: rotate(-90deg);
+  z-index: -100;
 
   @media (min-width: 768px) {
     display: none;
@@ -388,6 +388,7 @@ export const BackgroundImage3Mobile = styled.img`
 
 export const BackgroundImage3Tablet = styled.img`
   display: none;
+  z-index: -100;
 
   @media (min-width: 768px) {
     display: block;
@@ -395,7 +396,7 @@ export const BackgroundImage3Tablet = styled.img`
     height: 313px;
     object-fit: cover;
     position: absolute;
-    top: 2750px;
+    top: 2680px;
     right: 0px;
     transform: rotate(80deg);
     filter: blur(5px);
@@ -409,6 +410,7 @@ export const BackgroundImage3Tablet = styled.img`
 
 export const BackgroundImage3Desktop = styled.img`
   display: none;
+  z-index: -100;
 
   @media (min-width: 1440px) {
     display: block;
@@ -416,7 +418,7 @@ export const BackgroundImage3Desktop = styled.img`
     height: 474px;
     object-fit: cover;
     position: absolute;
-    top: 2750px;
+    top: 2600px;
     right: 20px;
     transform: rotate(80deg);
     filter: blur(5px);

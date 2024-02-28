@@ -21,17 +21,18 @@ export const lightTheme = {
   searchIconHover: '#8BAA36',
 
   //MainPage
-  currentUser: '#22252a',
-  searchTxt: '#bdbdbd', //+ part of hero title
-  editProfile: '#fafafa',
-  logoutBtn: '#8baa36',
-  text: '#23262a',
-  oddTxt: '#3e4462',
-  headers: '#001833', //all main headers on all pages
-  recTitle: '#3e4462',
-  label: '#ffffff',
-  fontLight: '#fafafa',
-  btns: '#8baa36',
+  currentUser: "#22252a",
+  searchTxt: "#bdbdbd", //+ part of hero title
+  editProfile: "#fafafa",
+  logoutBtn: "#8baa36",
+  text: "#23262a",
+  oddTxt: "#3e4462",
+  headers: "#001833", //all main headers on all pages
+  recTitle: "#3e4462",
+  label: "#ffffff",
+  fontLight: "#fafafa",
+  btns: "#8baa36",
+  searchBtn: "#8BAA36",
 
   //Footer
   footerBg: '#22252a',
@@ -117,17 +118,18 @@ export const darkTheme = {
   searchIconHover: '#8BAA36',
 
   //MainPage
-  currentUser: '#22252a',
-  searchTxt: '#fafafa', //+ part of hero title
-  editProfile: '#fafafa',
-  logoutBtn: '#8baa36',
-  text: '#fafafa',
-  oddTxt: '#fafafa',
-  headers: '#fafafa',
-  recTitle: '#fafafa',
-  label: '#2a2c36',
-  fontLight: '#fafafa',
-  btns: '#8baa36',
+  currentUser: "#22252a",
+  searchTxt: "#fafafa", //+ part of hero title
+  editProfile: "#fafafa",
+  logoutBtn: "#8baa36",
+  text: "#fafafa",
+  oddTxt: "#fafafa",
+  headers: "#fafafa",
+  recTitle: "#fafafa",
+  label: "#2a2c36",
+  fontLight: "#fafafa",
+  btns: "#8baa36",
+  searchBtn: "#22252A",
 
   //Footer
   footerBg: '#8baa36',
