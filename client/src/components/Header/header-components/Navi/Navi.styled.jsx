@@ -8,9 +8,9 @@ export const StyledLink = styled(NavLink)`
   display: flex;
   align-items: center;
   justify-content: center;
-  color: ${(props) => props.theme.navLinks};
+  color: ${props => props.theme.navLinks};
   &.active {
-    color: ${(props) => props.theme.currentLink};
+    color: ${props => props.theme.currentLink};
     font-weight: 600;
   }
 
@@ -22,7 +22,7 @@ export const StyledLink = styled(NavLink)`
   @media screen and (min-width: 1440px) {
     font-size: 14px;
     line-height: 22.4px;
-    color: ${(props) => props.theme.navLinksDesktop};
+    color: ${props => props.theme.navLinksDesktop};
   }
 `;
 
@@ -49,6 +49,12 @@ export const MainNav = styled.ul`
 export const SearchIcon = styled.svg`
   width: 20px;
   height: 20px;
+  stroke: ${props => props.theme.searchIcon};
+  transition: stroke 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover {
+    stroke: ${props => props.theme.searchIconHover};
+  }
 `;
 
 export const SearchText = styled.span`

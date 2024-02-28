@@ -15,7 +15,10 @@ export const lightTheme = {
   switchBall2: '#E8EAEA',
   navLinks: '#22252A',
   navLinksDesktop: '#23262A',
+  navUser: '#22252A',
   currentLink: '#8baa36',
+  searchIcon: '#22252A',
+  searchIconHover: '#8BAA36',
 
   //MainPage
   currentUser: '#22252a',
@@ -108,7 +111,10 @@ export const darkTheme = {
   switchBall2: '#E8EAEA',
   navLinks: '#fafafa',
   navLinksDesktop: '#fafafa',
+  navUser: '#FAFAFA',
   currentLink: '#8baa36',
+  searchIcon: '#fafafa',
+  searchIconHover: '#8BAA36',
 
   //MainPage
   currentUser: '#22252a',
