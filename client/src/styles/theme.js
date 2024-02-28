@@ -36,8 +36,11 @@ export const lightTheme = {
   //Footer
   footerBg: '#22252a',
   footerTxt: '#fafafa',
+  footerBtn: '#8BAA36',
+  footerEmail: '#fafafa',
+  footerLogo: '#EBF3D4',
   social: '#8baa36',
-  socialHover: '#ffffff',
+  socialHover: '#fafafa',
   terms: '#22252a',
 
   //Inputs
@@ -129,6 +132,9 @@ export const darkTheme = {
   //Footer
   footerBg: '#8baa36',
   footerTxt: '#fafafa',
+  footerBtn: '#1E1F28',
+  footerEmail: '#fafafa',
+  footerLogo: '#EBF3D4',
   social: '#fafafa',
   socialHover: '#1e1f28',
   terms: '#fafafa',
