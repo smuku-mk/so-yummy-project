@@ -1,30 +1,10 @@
 import express from "express";
-import { getRecipeById } from "../controllers/recipes/getRecipeById.js";
-import {
-  getCategoryHandler,
-  getCategoryPageHandler,
-  getRecipesHandler,
-} from "../recipes/recipes.controller.js";
-import asyncWrapper from "../helpers/asyncWrapper.js";
-// import { authMiddleware } from "../auth/auth.middlewares.js";d
+import { getRecipeById, getRecipesByCategory, getCategoryList } from "../controllers/recipes/index.js";
+import { catchErr}  from "../middlewares/catchErr.js";
 
-const recipesRouter = express.Router();
+export const recipesRouter = express.Router();
 
-recipesRouter.get(
-  "/main-page",
-  // authMiddleware,
-  asyncWrapper(getRecipesHandler)
-);
-recipesRouter.get(
-  "/category-list",
-  // authMiddleware,
-  asyncWrapper(getCategoryHandler)
-);
-recipesRouter.get(
-  "/:category",
-  // authMiddleware,
-  asyncWrapper(getCategoryPageHandler)
-);
-recipesRouter.get("/:id", getRecipeById);
-
-export default recipesRouter;
+recipesRouter.get("/main-page", catchErr(getRecipesByCategory)); // pobiera z limitem, default 8
+recipesRouter.get("/category-list", catchErr(getCategoryList));
+recipesRouter.get("/:category", catchErr(getRecipesByCategory)); // pobiera z limitem, default 8
+recipesRouter.get("/:id", catchErr(getRecipeById));

@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components";
+import styled, { createGlobalStyle } from "styled-components";
 import { normalize } from "styled-normalize";
 
 export const GlobalStyles = createGlobalStyle`
@@ -21,6 +21,10 @@ export const GlobalStyles = createGlobalStyle`
     padding: 0;
     margin: 0;
   }
+  h1 {
+    padding: 0;
+    margin: 0;
+  }
   ul {
     list-style-type: none;
   }
@@ -31,5 +35,20 @@ export const GlobalStyles = createGlobalStyle`
     display: block;
     max-width: 100%;
     height: auto;
+  }
+`;
+
+export const GlobalContainer = styled.div`
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 16px;
+
+  @media screen and (min-width: 768px) {
+    padding: 0 32px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    padding: 0 100px;
   }
 `;

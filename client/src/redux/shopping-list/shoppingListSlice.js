@@ -5,7 +5,7 @@ import {
   removeIngredient,
 } from "./shoppingListActions";
 
-export const shoppingListSlice = createSlice({
+const shoppingListSlice = createSlice({
   name: "shoppingList",
   initialState: {
     ingredients: [],

@@ -1,0 +1,15 @@
+.form_container {
+  margin-top: 82px;
+}
+
+@media screen and (min-width: 768px) {
+  .form_container {
+    margin-top: 100px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .form_container {
+    width: 800px;
+  }
+}

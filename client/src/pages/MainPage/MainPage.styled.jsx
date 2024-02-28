@@ -16,27 +16,43 @@ export const MainSection = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 132px;
+  padding-top: 68px;
   background-image: url(${leaves1x_mobile}), url(${background_mobile});
   background-size: cover;
   background-repeat: no-repeat;
   background-position: -10px 70px, 60px center;
 
   @media (min-width: 768px) {
+    background-image: url(${leaves1x_tablet}), url(${background_tablet});
+    background-position: 300px 70px, 500px center;
+  }
+
+  @media (min-width: 1440px) {
+    background-image: url(${leaves1x_desktop}), url(${background_desktop});
+    background-position: 1200px 40px, 1000px center;
+    background-size: 976px 944px;
+  }
+`;
+
+export const MainSectionContainer = styled.div`
+  position: relative;
+  height: 777px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* padding-top: 68px; */
+
+  @media (min-width: 768px) {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    background-image: url(${leaves1x_tablet}), url(${background_tablet});
-    background-position: 300px 70px, 500px center;
   }
 
   @media (min-width: 1440px) {
     padding-left: 100px;
     padding-right: 184px;
     padding-top: 126px;
-    background-image: url(${leaves1x_desktop}), url(${background_desktop});
-    background-position: 1200px 40px, 1000px center;
-    background-size: 976px 944px;
     height: 800px;
   }
 `;
@@ -64,7 +80,6 @@ export const OtherCategoriesSection = styled.div`
 `;
 
 export const MainTitle = styled.h1`
-  font-family: "Poppins", sans-serif;
   font-weight: 400;
   font-size: 60px;
   line-height: 1;

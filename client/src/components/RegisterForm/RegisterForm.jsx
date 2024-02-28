@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { register } from "../../redux/auth/operations";
-import { selectIsLoggedIn } from "../../redux/auth/selectors";
+// import { selectIsLoggedIn } from "../../redux/auth/selectors";
 import { useNavigate } from "react-router-dom";
 import {
   Form,
@@ -19,7 +19,7 @@ import sprites from "../../images/sprites.svg";
 
 export const RegisterForm = () => {
   const dispatch = useDispatch();
-  const logged = useSelector(selectIsLoggedIn);
+  // const logged = useSelector(selectIsLoggedIn);
   const navigate = useNavigate();
   const [validation, setValidation] = useState({
     name: "",
@@ -74,20 +74,25 @@ export const RegisterForm = () => {
     return value.length >= 6;
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
     const form = event.currentTarget;
-
-    dispatch(
-      register({
-        name: form.elements.name.value,
-        email: form.elements.email.value,
-        password: form.elements.password.value,
-      })
-    );
-    console.log(logged);
-    form.reset();
-    navigate("/");
+  
+    try {
+      console.log('Próba rejestracji...');
+      await dispatch(
+        register({
+          name: form.elements.name.value,
+          email: form.elements.email.value,
+          password: form.elements.password.value,
+        })
+      );
+      console.log('zarejestrowano!');
+      form.reset();
+      navigate("/");
+    } catch (error) {
+      console.error('Error:', error);
+    }
   };
 
   const inputChange = (event) => {
