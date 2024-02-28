@@ -22,6 +22,30 @@ const PreviewCategories = ({ mobile, tablet, desktop }) => {
   const [chickenData, setChickenData] = useState([]);
   const [dessertsData, setDessertsData] = useState([]);
 
+  const setState = {
+    'Breakfast': setBreakfastData,
+    'Miscellaneous': setMiscellaneousData,
+    'Chicken': setChickenData,
+    'Dessert': setDessertsData,
+  };
+  
+  useEffect(() => {
+    const categories = ['Breakfast', 'Miscellaneous', 'Chicken', 'Dessert'];
+    const limit = 4;
+  
+    fetch(`http://localhost:5000/recipes/main-page?categories=${categories.join(',')}&limit=${limit}`)
+      .then((response) => response.json())
+      .then((data) => {
+        categories.forEach(category => {
+          setState[category](data[category]);
+        });
+      })
+      .catch((error) => console.error(`Error fetching data:`, error));
+      // eslint-disable-next-line
+  }, []);
+
+
+/* stary kod
   useEffect(() => {
     fetch("http://localhost:5000/recipes/main-page")
       .then((response) => response.json())
@@ -33,8 +57,14 @@ const PreviewCategories = ({ mobile, tablet, desktop }) => {
       })
       .catch((error) => console.error("Błąd pobierania danych:", error));
   }, []);
-
-  const firstBreakfast = breakfastData.length > 0 ? breakfastData[0] : null;
+ */
+  const [firstBreakfast, twoBreakfast, threeBreakfast, fourBreakfast] = breakfastData.slice(0, 4);
+  const [firstMiscellaneous, twoMiscellaneous, threeMiscellaneous, fourMiscellaneous] = miscellaneousData.slice(0, 4);
+  const [firstChicken, twoChicken, threeChicken, fourChicken] = chickenData.slice(0, 4);
+  const [firstDesserts, twoDesserts, threeDesserts, fourDesserts] = dessertsData.slice(0, 4);
+  
+ /* stary kod
+   const firstBreakfast = breakfastData.length > 0 ? breakfastData[0] : null;
   const twoBreakfast = breakfastData.length > 0 ? breakfastData[1] : null;
   const threeBreakfast = breakfastData.length > 0 ? breakfastData[2] : null;
   const fourBreakfast = breakfastData.length > 0 ? breakfastData[3] : null;
@@ -56,7 +86,7 @@ const PreviewCategories = ({ mobile, tablet, desktop }) => {
   const firstDesserts = dessertsData.length > 0 ? dessertsData[0] : null;
   const twoDesserts = dessertsData.length > 0 ? dessertsData[1] : null;
   const threeDesserts = dessertsData.length > 0 ? dessertsData[2] : null;
-  const fourDesserts = dessertsData.length > 0 ? dessertsData[3] : null;
+  const fourDesserts = dessertsData.length > 0 ? dessertsData[3] : null; */
 
   return (
     <>
