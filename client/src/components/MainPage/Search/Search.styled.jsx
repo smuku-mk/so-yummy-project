@@ -25,8 +25,9 @@ export const Input = styled.input`
   padding: 17px;
   padding-left: 40px;
   outline: none;
-  border: 1px solid #f0f0f0;
+  border: 1px solid #fafafa;
   font-family: "Poppins", sans-serif;
+  background-color: ${(props) => props.theme.label};
 
   @media (min-width: 768px) {
     width: 362px;
@@ -47,12 +48,12 @@ export const Input = styled.input`
 export const Button = styled.button`
   width: 113px;
   height: 52px;
-  color: ${(props) => props.theme.mainBg};
+  color: ${(props) => props.theme.editProfile};
   border-radius: 15px 50px;
   position: absolute;
   right: 0;
-  background-color: ${(props) => props.theme.currentUser};
-  border: 1px solid #000000;
+  background-color: ${(props) => props.theme.footerBg};
+  border: 0;
   font-weight: 400;
   font-size: 14px;
   font-family: "Poppins", sans-serif;
@@ -69,6 +70,7 @@ export const Button = styled.button`
   }
 
   &:hover {
-    background-color: ${(props) => props.theme.currentLink};
+    background-color: ${(props) => props.theme.searchBtn};
+    border: 1px solid #000000;
   }
 `;

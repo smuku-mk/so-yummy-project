@@ -50,6 +50,7 @@ export const lightTheme = {
   label: "#ffffff",
   fontLight: "#fafafa",
   btns: "#8baa36",
+  searchBtn: "#8BAA36",
 
   //Footer
   footerBg: "#22252a",
@@ -140,6 +141,7 @@ export const darkTheme = {
   label: "#2a2c36",
   fontLight: "#fafafa",
   btns: "#8baa36",
+  searchBtn: "#22252A",
 
   //Footer
   footerBg: "#8baa36",

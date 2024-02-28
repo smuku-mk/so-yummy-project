@@ -26,12 +26,10 @@ import {
   BackgroundImage3Mobile,
   BackgroundImage3Tablet,
   BackgroundImage3Desktop,
-  IconLineArrow,
 } from "./MainPage.styled";
 import leaves_mobile from "../../images/mobile_img/leaves@1x_mobile.png";
 import leaves_tablet from "../../images/tablet_img/leaves@1x_tablet.png";
 import leaves_desktop from "../../images/desktop_img/leaves@1x_desktop.png";
-import svg from "../../images/sprites.svg";
 
 export const MainPage = () => {
   return (

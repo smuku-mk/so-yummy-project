@@ -1,8 +1,8 @@
 <svg aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <defs>
 <symbol id="icon-arrow-right" viewBox="0 0 23 24">
-<path fill="none" stroke="#fafafa" style="stroke: var(--color1, #fafafa)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="1.6421" d="M3.474 12h12.632"></path>
-<path fill="none" stroke="#fafafa" style="stroke: var(--color1, #fafafa)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="1.6421" d="M11.368 5.368l6.632 6.632-6.632 6.632"></path>
+<path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="1.6421" d="M3.474 12h12.632"></path>
+<path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="1.6421" d="M11.368 5.368l6.632 6.632-6.632 6.632"></path>
 </symbol>
 <symbol id="icon-edit" viewBox="0 0 24 24">
 <path fill="none" stroke="#000" d="M2.843 18.409c0.058-0.522 0.087-0.784 0.166-1.028 0.070-0.217 0.169-0.423 0.294-0.613 0.141-0.214 0.327-0.4 0.699-0.772l12.997-12.997c1.105-1.105 2.895-1.105 4 0v0c1.105 1.105 1.105 2.895 0 4l-12.997 12.997c-0.372 0.371-0.557 0.557-0.772 0.699-0.19 0.125-0.396 0.224-0.613 0.294-0.244 0.079-0.505 0.108-1.028 0.166l-3.091 0.343 0.343-3.091z"></path>

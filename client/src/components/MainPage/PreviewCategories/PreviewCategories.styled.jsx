@@ -34,7 +34,7 @@ export const BlockPictureImg = styled.img`
 `;
 
 export const BlockPictureDescription = styled.div`
-  background-color: #fff;
+  background-color: ${(props) => props.theme.label};
   border-radius: 8px;
   width: 307px;
   height: 52px;
@@ -63,7 +63,7 @@ export const Button = styled.a`
   font-weight: 400;
   font-size: 14px;
   text-align: center;
-  color: ${(props) => props.theme.mainBg};
+  color: ${(props) => props.theme.fontLight};
   margin-top: 24px;
   margin-left: 249px;
   border: 0;
