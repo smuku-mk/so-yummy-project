@@ -1,8 +1,8 @@
 import express from "express";
 import { getRecipeByTitle } from "../controllers/recipes/getRecipeByTitle.js";
+import { catchErr}  from "../middlewares/catchErr.js";
 
-const searchRouter = express.Router();
+export const searchRouter = express.Router();
 
-searchRouter.get("/", getRecipeByTitle);
+searchRouter.get("/", catchErr(getRecipeByTitle));
 
-export default searchRouter;

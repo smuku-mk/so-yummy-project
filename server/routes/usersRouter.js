@@ -1,53 +1,30 @@
 import express from "express";
-import * as ctrlUser from "./user.controller.js";
-import asyncWrapper from "../helpers/asyncWrapper.js";
-import {
-  userValidationMiddleware,
-  userNameValidator,
-  userLoginValidator,
-} from "./user.validators.js";
-import { upload, updateAvatar } from "./user.avatar.js";
 
-import { authMiddleware } from "../auth/auth.middlewares.js";
+import { auth } from "../middlewares/user/auth.js";
+import { catchErr } from "../middlewares/catchErr.js";
+import { upload } from "../services/multer/config.js";
+
+import { userValidator } from "../middlewares/user/validators/userValidator.js";
+import { loginValidator } from "../middlewares/user/validators/loginValidator.js";
+import { nameValidator } from "../middlewares/user/validators/nameValidator.js";
+
+import { signUp } from "../controllers/users/signUp.js";
+import { logIn } from "../controllers/users/logIn.js";
+import { resendMail } from "../controllers/users/resendMail.js";
+import { verifyUser } from "../controllers/users/verifyUser.js";
+import { currentUser } from "../controllers/users/currentUser.js";
+import { logOut } from "../controllers/users/logOut.js";
+import { updateAvatar } from "../controllers/users/updateAvatar.js";
+import { updateUserName } from "../controllers/users/updateUserName.js";
 
 export const usersRouter = express.Router();
 
+usersRouter.post("/signup", userValidator, catchErr(signUp));
+usersRouter.post("/login", loginValidator, catchErr(logIn));
+usersRouter.post("/verify", catchErr(resendMail));
+usersRouter.get("/verify/:verificationToken", catchErr(verifyUser));
 
-usersRouter.post(
-  "/signup",
-  userValidationMiddleware,
-  asyncWrapper(ctrlUser.signupHandler)
-);
-usersRouter.post(
-  "/login",
-  userLoginValidator,
-  asyncWrapper(ctrlUser.loginHandler)
-);
-usersRouter.post(
-  "/logout",
-  authMiddleware,
-  asyncWrapper(ctrlUser.logoutHandler)
-);
-usersRouter.get(
-  "/current",
-  authMiddleware,
-  asyncWrapper(ctrlUser.currentHandler)
-);
-usersRouter.get(
-  "/verify/:verificationToken",
-  asyncWrapper(ctrlUser.verifyHandler)
-);
-usersRouter.post("/verify", asyncWrapper(ctrlUser.resendVerificationHandler));
-usersRouter.patch(
-  "/",
-  authMiddleware,
-  userNameValidator,
-  asyncWrapper(ctrlUser.updateUserNameHandler)
-);
-
-usersRouter.post(
-  "/upload",
-  authMiddleware,
-  upload.single("image"),
-  asyncWrapper(updateAvatar)
-);
+usersRouter.get("/current", auth, catchErr(currentUser));
+usersRouter.post("/logout", auth, catchErr(logOut));
+usersRouter.post("/upload", auth, upload.single("image"), catchErr(updateAvatar));
+usersRouter.patch("/", auth, nameValidator, catchErr(updateUserName));

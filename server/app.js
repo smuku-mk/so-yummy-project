@@ -1,24 +1,23 @@
 import express from "express";
 import cors from "cors";
 import logger from "morgan";
+import swaggerUi from "swagger-ui-express";
 import "dotenv/config";
 
-import ingredientsRouter from "./routes/ingredientsRouter.js";
-import recipesRouter from "./routes/recipesRouter.js";
-import shoppingListRouter from "./routes/shoppingListRouter.js";
+import { ingredientsRouter } from "./routes/ingredientsRouter.js";
+import { recipesRouter } from "./routes/recipesRouter.js";
+import { shoppingListRouter } from "./routes/shoppingListRouter.js";
+import { popularRouter } from "./routes/popularRouter.js";
+import { searchRouter } from "./routes/searchRouter.js";
+import { ownRecipesRouter } from "./routes/ownRecipeRouter.js";
+import { favRouter } from "./routes/favorite.js";
+import { usersRouter } from "./routes/usersRouter.js";
 
-import popularRouter from "./routes/popularRouter.js";
-import searchRouter from "./routes/searchRouter.js";
-import ownRecipesRouter from "./routes/ownRecipeRouter.js";
-import favRouter from "./routes/favorite.js";
-import { usersRouter } from "./users/user.router.js";
-import swaggerUi from "swagger-ui-express";
 import { swaggerDocs } from "./swagger.js";
 
 const app = express();
 const formatsLogger = app.get("env") === "development" ? "dev" : "short";
 
-//app.use(middleware);
 app.use(cors());
 app.use(express.json());
 app.use(logger(formatsLogger));

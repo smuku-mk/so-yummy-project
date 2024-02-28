@@ -1,5 +1,5 @@
 import Recipe from "../database/models/recipesSchema.js";
-import ingredientsSchema from "../database/models/ingredientsSchema";
+import ingredientsSchema from "../database/models/ingredientsSchema.js";
 
 export const getQueryParams = async (params) => {
   if (typeof params.title === "string") {
