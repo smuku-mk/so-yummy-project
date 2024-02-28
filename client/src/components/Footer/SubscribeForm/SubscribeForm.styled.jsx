@@ -67,7 +67,7 @@ export const Icon = styled.svg`
   height: 12px;
   margin-left: 14px;
   margin-top: 11px;
-  fill: ${(props) => props.theme.footerTxt};
+  fill: ${props => props.theme.footerEmail};
 
   @media screen and (min-width: 768px) {
     width: 20px;
@@ -95,7 +95,7 @@ export const Email = styled.input`
   width: 204px;
 
   &::placeholder {
-    color: ${(props) => props.theme.footerTxt};
+    color: inherit;
     opacity: 1;
   }
 
@@ -116,7 +116,7 @@ export const Email = styled.input`
 `;
 
 export const Button = styled.button`
-  background-color: ${(props) => props.theme.social};
+  background-color: ${props => props.theme.footerBtn};
   color: inherit;
   border: none;
   border-radius: 6px;

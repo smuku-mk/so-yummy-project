@@ -1,0 +1,1 @@
+export const currentUser = async (req, res) => res.status(200).send({ user: req.user }); //upewnić się czy może przesyłąć całe req.user

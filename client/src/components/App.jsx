@@ -15,6 +15,7 @@ const FavoritePage = lazyLoad("FavoritePage");
 const MyRecipesPage = lazyLoad("MyRecipesPage");
 const SearchPage = lazyLoad("SearchPage");
 const AddRecipePage = lazyLoad("AddRecipePage");
+const CategoriesPage = lazyLoad("CategoriesPage");
 const ShoppingListPage = lazyLoad("ShoppingListPage");
 
 export const App = () => {
@@ -36,6 +37,7 @@ export const App = () => {
           <Route path="/404" element={<NotFoundPage />} />
           <Route path="/search" element={<SearchPage />} />
           <Route path="/add" element={<AddRecipePage />} />
+          <Route path="/categories" element={<CategoriesPage />} />
           <Route path="/shopping-list" element={<ShoppingListPage />} />
         </Route>
       )}
