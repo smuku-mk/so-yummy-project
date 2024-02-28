@@ -17,10 +17,11 @@ import {
   ListSpanRemove,
   ListSpanNumber,
   ListNav,
+  ListEmpty,
 } from "./IngredientsShoppingList.styled";
 
 export const IngredientsShoppingList = () => {
-  const ingredients = useSelector((state) => state.ingredients.ingredients);
+  const ingredients = useSelector((state) => state.shoppingList.ingredients);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -42,18 +43,22 @@ export const IngredientsShoppingList = () => {
       </ListNav>
       <ul>
         {ingredients &&
+          ingredients.length > 0 &&
           ingredients.map((ingredient) => (
-            <ListItem key={ingredient.id}>
+            <ListItem key={ingredient._id}>
               <ListImage src={ingredient.thb} alt={ingredient.ttl} />
               <ListTitle>{ingredient.ttl}</ListTitle>
               <div>
                 <ListAmount>
-                  {ingredient.amount} {ingredient.unit}
+                  {ingredient.amount || ingredient.unit
+                    ? `${ingredient.amount} ${ingredient.unit}`
+                    : "undefined"}
                 </ListAmount>
               </div>
               <div>
                 <ListRemoveButton
-                  onClick={() => handleRemoveIngredient(ingredient.id)}>
+                  type="button"
+                  onClick={() => handleRemoveIngredient(ingredient._id)}>
                   <svg width={14} height={14}>
                     <use xlinkHref={`${svg}#icon-x`} />
                   </svg>
@@ -61,6 +66,9 @@ export const IngredientsShoppingList = () => {
               </div>
             </ListItem>
           ))}
+        : (
+        <ListEmpty />
+        <p>Your shopping list is empty</p>)
       </ul>
     </ListWrapper>
   );

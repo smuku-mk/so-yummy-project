@@ -39,8 +39,9 @@ const shoppingListSlice = createSlice({
       })
       .addCase(removeIngredient.fulfilled, (state, action) => {
         state.status = "success";
+        const removedIngredientId = action.payload._id;
         state.ingredients = state.ingredients.filter(
-          (ingredient) => ingredient.id !== action.payload
+          (ingredient) => ingredient._id !== removedIngredientId
         );
       })
       .addCase(removeIngredient.rejected, (state, action) => {

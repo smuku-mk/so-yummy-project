@@ -5,7 +5,7 @@ import { fetchShoppingList } from "../../redux/shopping-list/shoppingListActions
 import { useSelector, useDispatch } from "react-redux";
 
 export const ShoppingListPage = () => {
-  const ingredients = useSelector((state) => state.ingredients.ingredients);
+  const ingredients = useSelector((state) => state.shoppingList.ingredients);
   const dispatch = useDispatch();
 
   useEffect(() => {
