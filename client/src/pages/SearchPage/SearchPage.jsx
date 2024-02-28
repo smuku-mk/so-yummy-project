@@ -1,7 +1,6 @@
-import React from "react";
 import { SearchBar } from "../../components/SearchPage/SearchBar";
 import { SearchRecipesList } from "../../components/SearchPage/SearchRecipesList";
-import { MainPageTitle } from "../../components/SearchPage/SearchPage.styled";
+import { MainPageTitle } from "./SearchPage.styled";
 
 export const SearchPage = () => {
   return (
