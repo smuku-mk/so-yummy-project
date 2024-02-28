@@ -74,19 +74,25 @@ export const RegisterForm = () => {
     return value.length >= 6;
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
     const form = event.currentTarget;
-
-    dispatch(
-      register({
-        name: form.elements.name.value,
-        email: form.elements.email.value,
-        password: form.elements.password.value,
-      })
-    );
-    form.reset();
-    navigate("/");
+  
+    try {
+      console.log('Próba rejestracji...');
+      await dispatch(
+        register({
+          name: form.elements.name.value,
+          email: form.elements.email.value,
+          password: form.elements.password.value,
+        })
+      );
+      console.log('zarejestrowano!');
+      form.reset();
+      navigate("/");
+    } catch (error) {
+      console.error('Error:', error);
+    }
   };
 
   const inputChange = (event) => {
