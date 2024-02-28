@@ -37,4 +37,20 @@ export const LinkWrapper = styled.a`
     transition-duration: 300ms;
     animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   }
+  &:visited {
+    fill: #8baa36;
+  }
+`;
+export const LinkIcon = styled.svg`
+  fill: #8baa36;
+  &:hover,
+  &:active,
+  &:focus {
+    fill: #1e1f28;
+    transition-duration: 300ms;
+    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  &:visited {
+    fill: #8baa36;
+  }
 `;

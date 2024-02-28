@@ -6,7 +6,6 @@ import { resetRecipeImage } from "../../../redux/recipe/slice.js";
 import { RecipeDescriptionFields } from "../RecipeDescriptionFields/RecipeDescriptionFields.jsx";
 import { RecipeIngredientsFields } from "../RecipeIngredientsFields/RecipeIngredientsFields.jsx";
 import { RecipePreparationFields } from "../RecipePreparationFields/RecipePreparationFields.jsx";
-// import Button from "../../Button/index.jsx";
 import { FormContainer } from "./AddRecipeForm.styled.jsx";
 import { SimpleButton } from "../../Button/index.jsx";
 
@@ -54,6 +53,7 @@ export const AddRecipeForm = () => {
         })),
       instructions: preparation.value,
     };
+
     dispatch(addRecipe(payload)).then(() => {
       toast.success("Your recipe has been created.");
     });

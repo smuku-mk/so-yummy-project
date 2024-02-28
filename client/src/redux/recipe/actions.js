@@ -5,7 +5,7 @@ export const addRecipe = createAsyncThunk(
   "recipe/addRecipe",
   async (payload, thunkAPI) => {
     try {
-      const res = await axios.post(`/recipes/`, payload);
+      const res = await axios.post(`/ownRecipes/`, payload);
       return res.data;
     } catch (e) {
       return thunkAPI.rejectWithValue(e.message);
