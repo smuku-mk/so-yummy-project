@@ -7,6 +7,6 @@ import { catchErr } from "../middlewares/catchErr.js";
 
 export const favRouter = express.Router();
 
-favRouter.post("/:userId/favorites", auth, catchErr(addToFav));
-favRouter.delete("/:userId/favorites", auth,  catchErr(removeFromFav));
-favRouter.get("/:userId/favorites", auth, catchErr(getUserFavs));
+favRouter.post("/:userId", auth, catchErr(addToFav));
+favRouter.delete("/:userId", auth,  catchErr(removeFromFav));
+favRouter.get("/:userId", auth, catchErr(getUserFavs));
