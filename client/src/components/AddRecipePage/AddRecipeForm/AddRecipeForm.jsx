@@ -89,7 +89,9 @@ export const AddRecipeForm = () => {
         defaultValues={defaultValues}
       />
       <RecipePreparationFields />
-      <SimpleButton>Add</SimpleButton>
+      <SimpleButton onClick={handleSubmit} type="submit">
+        Add
+      </SimpleButton>
     </FormContainer>
   );
 };
