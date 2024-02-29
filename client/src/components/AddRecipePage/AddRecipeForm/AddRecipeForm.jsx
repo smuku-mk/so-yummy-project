@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { toast } from "react-toastify";
-// import { addRecipe } from "../../../redux/recipe/actions.js";
+import { addRecipe } from "../../../redux/recipe/actions.js";
 import { resetRecipeImage } from "../../../redux/recipe/slice.js";
 import { RecipeDescriptionFields } from "../RecipeDescriptionFields/RecipeDescriptionFields.jsx";
 import { RecipeIngredientsFields } from "../RecipeIngredientsFields/RecipeIngredientsFields.jsx";
@@ -27,7 +27,7 @@ export const AddRecipeForm = () => {
   };
   const [ingredients, setIngredients] = useState([defaultValues]);
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     const {
       title,
@@ -54,26 +54,11 @@ export const AddRecipeForm = () => {
       instructions: preparation.value,
     };
 
-    try {
-      const response = await fetch("/ownRecipes/", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(payload),
-      });
-
-      if (response.ok) {
-        toast.success("Your recipe has been created.");
-        e.currentTarget.reset();
-        setIngredients([defaultValues]);
-      } else {
-        throw new Error("Failed to add recipe");
-      }
-    } catch (error) {
-      console.error("Error:", error);
-      toast.error("Failed to add recipe.");
-    }
+    dispatch(addRecipe(payload)).then(() => {
+      toast.success("Your recipe has been created.");
+    });
+    e.currentTarget.reset();
+    setIngredients([defaultValues]);
   };
 
   return (
@@ -89,9 +74,7 @@ export const AddRecipeForm = () => {
         defaultValues={defaultValues}
       />
       <RecipePreparationFields />
-      <SimpleButton onClick={handleSubmit} type="submit">
-        Add
-      </SimpleButton>
+      <SimpleButton>Add</SimpleButton>
     </FormContainer>
   );
 };
