@@ -8,28 +8,22 @@ export const ListWrapper = styled.div`
 `;
 
 export const MainPageTitle = styled.h2`
-  width: 90%;
   display: flex;
   align-items: center;
   font-size: 28px;
   color: ${(props) => props.theme.black};
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-  margin-left: 2rem;
+  margin: 3rem 0;
+  padding-top: 6rem;
 
   @media (min-width: 768px) {
     font-size: 32px;
-    margin-top: 3rem;
-    margin-bottom: 3rem;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 3rem auto;
+    padding-top: 8rem;
   }
   @media (min-width: 1440px) {
     font-size: 44px;
-    margin-top: 4rem;
-    margin-bottom: 4rem;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 4rem auto;
+    padding-top: 10rem;
   }
 `;
 
@@ -44,7 +38,7 @@ export const ListHead = styled.h1`
   justify-content: center;
   align-items: center;
   font-size: 10px;
-  width: 90%;
+  width: 100%;
   height: 40px;
   color: ${(props) => props.theme.bannerBg};
   background-color: ${(props) => props.theme.green};
@@ -89,7 +83,7 @@ export const ListSpanRemove = styled.span`
 
 export const ListItem = styled.li`
   position: relative;
-  width: 90%;
+  width: 100%;
   display: flex;
   padding: 1rem;
   border-bottom: 1px solid ${(props) => props.theme.borderItem};
@@ -142,7 +136,6 @@ export const ListAmount = styled.span`
   @media (min-width: 768px) {
     width: 70px;
     height: 35px;
-    font-size: 18px
     margin-right: 12rem;
   }
   @media (min-width: 1440px) {
@@ -158,6 +151,7 @@ export const ListRemoveButton = styled.button`
   border: none;
   cursor: pointer;
   background-color: transparent;
+  stroke: ${(props) => props.theme.black};
 
   &:hover {
     stroke: ${(props) => props.theme.green};

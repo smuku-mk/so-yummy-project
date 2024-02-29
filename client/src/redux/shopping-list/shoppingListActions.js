@@ -5,7 +5,7 @@ export const fetchShoppingList = createAsyncThunk(
   "shoppingList/fetchShoppingList",
   async () => {
     try {
-      const response = await axios.get("/shopping-list");
+      const response = await axios.get("/:userId");
       return response.data;
     } catch (error) {
       console.error("Error fetching shopping list:", error);
@@ -16,9 +16,9 @@ export const fetchShoppingList = createAsyncThunk(
 
 export const addIngredient = createAsyncThunk(
   "shoppingList/addIngredient",
-  async (ingredientId) => {
+  async () => {
     try {
-      const response = await axios.post("/shopping-list/add", { ingredientId });
+      const response = await axios.post("/:userId");
       return response.data;
     } catch (error) {
       console.error("Error adding ingredient:", error);
@@ -29,11 +29,9 @@ export const addIngredient = createAsyncThunk(
 
 export const removeIngredient = createAsyncThunk(
   "shoppingList/removeIngredient",
-  async (ingredientId) => {
+  async () => {
     try {
-      const response = await axios.delete(
-        `/shopping-list/remove/${ingredientId}`
-      );
+      const response = await axios.delete(`/:userId`);
       return response.data;
     } catch (error) {
       console.error("Error removing ingredient:", error);

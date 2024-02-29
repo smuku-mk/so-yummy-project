@@ -22,7 +22,7 @@ export const App = () => {
   const isAuthorized = useSelector(selectIsLoggedIn);
   return (
     <Routes>
-      {!isAuthorized ? (
+      {isAuthorized ? (
         <Route path="/" element={<SharedLayoutRestricted />}>
           <Route index element={<WelcomePage />} />
           <Route path="/signin" element={<SigninPage />} />
