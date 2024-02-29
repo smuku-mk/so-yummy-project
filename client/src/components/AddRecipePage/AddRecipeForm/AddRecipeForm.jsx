@@ -6,8 +6,8 @@ import { resetRecipeImage } from "../../../redux/recipe/slice.js";
 import { RecipeDescriptionFields } from "../RecipeDescriptionFields/RecipeDescriptionFields.jsx";
 import { RecipeIngredientsFields } from "../RecipeIngredientsFields/RecipeIngredientsFields.jsx";
 import { RecipePreparationFields } from "../RecipePreparationFields/RecipePreparationFields.jsx";
-import Button from "../../Button/index.jsx";
-import css from "./AddRecipeForm.module.css";
+import { FormContainer } from "./AddRecipeForm.styled.jsx";
+import { SimpleButton } from "../Button/Button.jsx";
 
 export const AddRecipeForm = () => {
   const dispatch = useDispatch();
@@ -46,13 +46,14 @@ export const AddRecipeForm = () => {
       thumb: thumb.name,
       preview: recipeImage || thumb.name,
       ingredients: ingredients
-        .filter((ingredient) => ingredient.id !== undefined)
+        .filter((ingredient) => ingredient.ingredientId !== undefined)
         .map((ingredient) => ({
-          id: ingredient.id,
+          id: ingredient.ingredientId,
           measure: `${ingredient.amount} ${ingredient.amountType}`,
         })),
       instructions: preparation.value,
     };
+
     dispatch(addRecipe(payload)).then(() => {
       toast.success("Your recipe has been created.");
     });
@@ -61,24 +62,19 @@ export const AddRecipeForm = () => {
   };
 
   return (
-    <form
-      className={css.form_container}
+    <FormContainer
       name="addrecipe_form"
       autoComplete="off"
       onSubmit={handleSubmit}
     >
-      <div className={css.button}>
-        <RecipeDescriptionFields recipeImage={recipeImage} />
-        <RecipeIngredientsFields
-          setIngredients={setIngredients}
-          ingredients={[...ingredients]}
-          defaultValues={defaultValues}
-        />
-        <RecipePreparationFields />
-        <Button size="large" dark type="submit">
-          Add
-        </Button>
-      </div>
-    </form>
+      <RecipeDescriptionFields recipeImage={recipeImage} />
+      <RecipeIngredientsFields
+        setIngredients={setIngredients}
+        ingredients={[...ingredients]}
+        defaultValues={defaultValues}
+      />
+      <RecipePreparationFields />
+      <SimpleButton>Add</SimpleButton>
+    </FormContainer>
   );
 };

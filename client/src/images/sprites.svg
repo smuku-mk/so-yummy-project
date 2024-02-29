@@ -57,8 +57,8 @@
 <path fill="none" stroke="#fff" style="stroke: var(--color3, #fff)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.2857" d="M19.429 22.286c0-1.595 0-2.392-0.197-3.041-0.443-1.461-1.587-2.604-3.048-3.048-0.649-0.197-1.446-0.197-3.041-0.197h-5.714c-1.595 0-2.392 0-3.041 0.197-1.461 0.443-2.604 1.587-3.048 3.048-0.197 0.649-0.197 1.446-0.197 3.041M15.429 6.857c0 2.84-2.303 5.143-5.143 5.143s-5.143-2.303-5.143-5.143c0-2.84 2.303-5.143 5.143-5.143s5.143 2.303 5.143 5.143z"></path>
 </symbol>
 <symbol id="icon-x" viewBox="0 0 24 24">
-<path fill="none" stroke="#000" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2" d="M18.75 5.25l-13.5 13.5"></path>
-<path fill="none" stroke="#000" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2" d="M18.75 18.75l-13.5-13.5"></path>
+<path fill="none"  stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2" d="M18.75 5.25l-13.5 13.5"></path>
+<path fill="none"  stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2" d="M18.75 18.75l-13.5-13.5"></path>
 </symbol>
 <symbol id="icon-youtube" viewBox="0 0 32 24">
 <path d="M31.794 5.299c0-2.812-2.069-5.075-4.626-5.075-3.463-0.162-6.995-0.224-10.604-0.224h-1.125c-3.6 0-7.138 0.063-10.601 0.225-2.55 0-4.619 2.275-4.619 5.087-0.156 2.224-0.223 4.449-0.219 6.674-0.006 2.225 0.065 4.452 0.213 6.681 0 2.812 2.069 5.094 4.619 5.094 3.638 0.169 7.37 0.244 11.164 0.237 3.8 0.012 7.522-0.067 11.164-0.237 2.557 0 4.626-2.281 4.626-5.094 0.15-2.231 0.219-4.456 0.213-6.687 0.014-2.225-0.054-4.452-0.204-6.681zM12.94 18.118v-12.281l9.064 6.137-9.064 6.144z"></path>
