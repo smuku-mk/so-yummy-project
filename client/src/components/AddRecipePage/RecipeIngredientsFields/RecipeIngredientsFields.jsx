@@ -1,10 +1,30 @@
+import React, { useEffect, useState } from "react";
 import { throttle } from "throttle-debounce";
 import PropTypes from "prop-types";
 import { fetchIngredients } from "../../../redux/recipe/actions.js";
-
 import icons from "../../../images/sprites.svg";
-
-import css from "./RecipeIngredientsFields.module.css";
+import { fetchIngredientsTTL } from "../../../redux/recipe/actions.js";
+import {
+  Container,
+  Title,
+  TitleContainer,
+  CountContainer,
+  DecreaseButton,
+  IconMinus,
+  Count,
+  IncreaseButton,
+  IconPlus,
+  IngredientsContainer,
+  Ingredient,
+  IngredientContainer,
+  IngredientInput,
+  AmountContainer,
+  AmountInput,
+  AmountSelectBoxContainer,
+  AmountSelectBox,
+  CrossButton,
+  IconCross,
+} from "./RecipeIngredientsFields.styled";
 
 export const RecipeIngredientsFields = ({
   ingredients,
@@ -12,6 +32,20 @@ export const RecipeIngredientsFields = ({
   defaultValues,
 }) => {
   const amounts = ["tbs", "tsp", "kg", "g", "pcs", "ml"];
+
+  const [ingredientsTTL, setIngredientsTTL] = useState([]);
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const ingredients = await fetchIngredientsTTL();
+        setIngredientsTTL(ingredients);
+      } catch (error) {
+        console.error("Error fetching ingredients TTL:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
 
   const hideIngredientDropDown = (index) => {
     ingredients[index].expanded = false;
@@ -69,73 +103,60 @@ export const RecipeIngredientsFields = ({
     setIngredients(ingredients);
   };
 
-  const chooseIngredient = (suggestion, index) => {
-    ingredients[index].name = suggestion.ttl;
-    ingredients[index].id = suggestion._id;
-    setIngredients(ingredients);
-  };
-
   return (
-    <div className={css.container}>
-      <div className={css.title_container}>
-        <h3 className={css.title}>Ingredients</h3>
-        <div className={css.count_container}>
-          <button
-            className={css.decrease_button}
-            onClick={handleDeletionOflIngredient}
-            type="button"
-          >
-            <svg className={css.icon_minus}>
-              <use href={`${icons}#icon-ingredients-minus`} />
-            </svg>
-          </button>
-          <span className={css.count}>{ingredients.length}</span>
-          <button
-            className={css.increase_button}
-            onClick={handleAdditionalIngredient}
-            type="button"
-          >
-            <svg className={css.icon_plus}>
-              <use href={`${icons}#icon-ingredients-plus`} />
-            </svg>
-          </button>
-        </div>
-      </div>
-      <ul className={css.ingredients_container}>
+    <Container>
+      <TitleContainer>
+        <Title>Ingredients</Title>
+        <CountContainer>
+          <DecreaseButton onClick={handleDeletionOflIngredient} type="button">
+            <IconMinus>
+              <use xlinkHref={`${icons}#icon-ingredients-minus`}></use>
+            </IconMinus>
+          </DecreaseButton>
+          <Count>{ingredients.length}</Count>
+          <IncreaseButton onClick={handleAdditionalIngredient} type="button">
+            <IconPlus>
+              <use xlinkHref={`${icons}#icon-ingredients-plus`}></use>
+            </IconPlus>
+          </IncreaseButton>
+        </CountContainer>
+      </TitleContainer>
+      <IngredientsContainer>
         {ingredients.map((ingredient, index) => (
-          <li className={css.ingredient} key={index}>
-            <div className={css.ingredient_container}>
-              <label>
-                <input
-                  className={css.ingredient_input}
-                  placeholder="Ingredient"
-                  type="text"
-                  name="ingredient-name"
-                  onBlur={() => hideIngredientDropDown(index)}
-                  onFocus={(evt) => showIngredientDropDown(evt, index)}
-                  value={ingredient.name}
-                  required
-                  onChange={(event) => handleIngredientNameChange(event, index)}
-                />
-              </label>
-              {ingredient.expanded && ingredient.suggestions.length > 0 && (
-                <div className={css.ingredient_drop_down}>
-                  {ingredient.suggestions.map((suggestion) => (
-                    <p
-                      onMouseDown={() => chooseIngredient(suggestion, index)}
-                      key={suggestion._id}
-                    >
-                      {suggestion.ttl}
-                    </p>
-                  ))}
-                </div>
-              )}
-            </div>
+          <Ingredient key={index}>
+            <IngredientsContainer>
+              {ingredients.map((ingredient, index) => (
+                <Ingredient key={index}>
+                  <IngredientContainer>
+                    <label>
+                      <IngredientInput
+                        type="text"
+                        name="ingredient-name"
+                        value={ingredient.name}
+                        onBlur={() => hideIngredientDropDown(index)}
+                        onFocus={(evt) => showIngredientDropDown(evt, index)}
+                        onChange={(event) =>
+                          handleIngredientNameChange(event, index)
+                        }
+                        list={`ingredient-list-${index}`}
+                        required
+                      />
+                      <datalist id={`ingredient-list-${index}`}>
+                        {ingredientsTTL.map((ingredient, index) => (
+                          <option key={index} value={ingredient}>
+                            {ingredient}
+                          </option>
+                        ))}
+                      </datalist>
+                    </label>
+                  </IngredientContainer>
+                </Ingredient>
+              ))}
+            </IngredientsContainer>
 
-            <div className={css.amount_container}>
+            <AmountContainer>
               <label htmlFor="amount">
-                <input
-                  className={css.amount_input}
+                <AmountInput
                   type="text"
                   name="amount"
                   value={ingredient.amount}
@@ -145,45 +166,38 @@ export const RecipeIngredientsFields = ({
                   }
                 />
               </label>
-
-              <div className={css.amount_select_box_container}>
+              <AmountSelectBoxContainer>
                 <label htmlFor="amountType">
-                  <select
-                    className={css.amount_select_box}
+                  <AmountSelectBox
                     id="amountType"
                     name="amountType"
                     value={ingredient.amountType}
-                    required
                     onChange={(event) =>
                       handleIngredientFieldChange("amountType", event, index)
                     }
+                    required
                   >
                     {amounts.map((amount) => (
-                      <option
-                        className={css.amount}
-                        value={amount}
-                        key={amount}
-                      >
+                      <option value={amount} key={amount}>
                         {amount}
                       </option>
                     ))}
-                  </select>
+                  </AmountSelectBox>
                 </label>
-              </div>
-            </div>
-            <button
-              className={css.cross_button}
+              </AmountSelectBoxContainer>
+            </AmountContainer>
+            <CrossButton
               type="button"
               onClick={() => handleIngredientRemoval(index)}
             >
-              <svg className={css.icon_cross}>
-                <use href={`${icons}#icon-x`} />
-              </svg>
-            </button>
-          </li>
+              <IconCross>
+                <use xlinkHref={`${icons}#icon-x`}></use>
+              </IconCross>
+            </CrossButton>
+          </Ingredient>
         ))}
-      </ul>
-    </div>
+      </IngredientsContainer>
+    </Container>
   );
 };
 

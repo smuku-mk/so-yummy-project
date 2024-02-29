@@ -1,6 +1,7 @@
 import bcrypt from "bcrypt";
 import mongoose from "mongoose";
 
+<<<<<<< HEAD
 const userSchema = new mongoose.Schema(
   {
     _id: { type: mongoose.Schema.Types.ObjectId, auto: true },
@@ -41,6 +42,13 @@ const userSchema = new mongoose.Schema(
       type: [String],
       default: [],
     },
+=======
+const userSchema = new mongoose.Schema({
+  _id: { type: mongoose.Schema.Types.ObjectId, auto: true },
+  name: {
+    type: String,
+    required: [true, "Name is required"],
+>>>>>>> a5938dcd44d036b63773bdd44c91a124fd62c016
   },
   { versionKey: false, timestamps: false }
 );

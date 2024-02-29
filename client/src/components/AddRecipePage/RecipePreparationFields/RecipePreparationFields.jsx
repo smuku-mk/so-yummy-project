@@ -1,17 +1,16 @@
-import css from "./RecipePreparationFields.module.css";
+import { Title, Container, TextArea } from "./RecipePreparationFields.styled";
 
 export const RecipePreparationFields = () => {
   return (
-    <div className={css.container}>
-      <h3 className={css.title}>Recipe Preparation</h3>
-      <textarea
-        className={css.text_area}
+    <Container>
+      <Title>Recipe Preparation</Title>
+      <TextArea
         name="preparation"
         rows="20"
         placeholder="Enter recipe here..."
         required
         minLength="10"
-      ></textarea>
-    </div>
+      ></TextArea>
+    </Container>
   );
 };

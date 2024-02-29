@@ -5,7 +5,7 @@ export const addRecipe = createAsyncThunk(
   "recipe/addRecipe",
   async (payload, thunkAPI) => {
     try {
-      const res = await axios.post(`/recipes/`, payload);
+      const res = await axios.post(`/ownRecipes/`, payload);
       return res.data;
     } catch (e) {
       return thunkAPI.rejectWithValue(e.message);
@@ -25,13 +25,14 @@ export const fetchRecipeById = createAsyncThunk(
   }
 );
 
-// The query bellow is used in the AddIngredient form, which uses local state instead of Redux
-export const fetchIngredients = async query => {
+export const fetchIngredients = async (query) => {
   try {
-    const res = await axios.get(`/ingredients?query=${query}`);
+    console.log("Fetching ingredients with query:", query);
+    const res = await axios.get(`/ingredients/test?name=${query}`);
+    console.log("Received response:", res.data);
     return res.data;
   } catch (e) {
-    console.error(e.message);
+    console.error("Error fetching ingredients:", e.message);
     throw e;
   }
 };
@@ -54,3 +55,15 @@ export const updateRecipePicture = createAsyncThunk(
     }
   }
 );
+
+export const fetchIngredientsTTL = async () => {
+  try {
+    const response = await axios.get("/ingredients/list");
+    const ingredientsTTL = response.data.map((ingredient) => ingredient.ttl);
+    ingredientsTTL.sort((a, b) => a.localeCompare(b));
+    return ingredientsTTL;
+  } catch (error) {
+    console.error("Error fetching ingredients TTL:", error);
+    return [];
+  }
+};

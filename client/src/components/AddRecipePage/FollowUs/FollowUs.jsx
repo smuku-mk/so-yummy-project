@@ -1,42 +1,47 @@
-import { Link } from "react-router-dom";
-
 import icons from "../../../images/sprites.svg";
-import css from "./FollowUs.module.css";
+import {
+  Container,
+  Title,
+  ItemsList,
+  Item,
+  LinkWrapper,
+  LinkIcon,
+} from "./FollowUs.styled";
 
 export const FollowUs = () => {
   return (
-    <div className={css.container}>
-      <h3 className={css.title}>Follow us</h3>
-      <ul className={css.items_list}>
-        <li className={css.item}>
-          <Link to="#" className={css.link}>
-            <svg className={css.icon} width="26" height="26">
+    <Container>
+      <Title>Follow us</Title>
+      <ItemsList>
+        <Item>
+          <LinkWrapper href="https://www.facebook.com">
+            <LinkIcon width="26" height="26">
               <use href={`${icons}#icon-facebook`} />
-            </svg>
-          </Link>
-        </li>
-        <li className={css.item}>
-          <Link to="#" className={css.link}>
-            <svg className={css.icon} width="28" height="22">
+            </LinkIcon>
+          </LinkWrapper>
+        </Item>
+        <Item>
+          <LinkWrapper href="https://www.youtube.com/">
+            <LinkIcon width="28" height="22">
               <use href={`${icons}#icon-youtube`} />
-            </svg>
-          </Link>
-        </li>
-        <li className={css.item}>
-          <Link to="#" className={css.link}>
-            <svg className={css.icon} width="25" height="22">
+            </LinkIcon>
+          </LinkWrapper>
+        </Item>
+        <Item>
+          <LinkWrapper href="https://twitter.com/">
+            <LinkIcon width="25" height="22">
               <use href={`${icons}#icon-twitter`} />
-            </svg>
-          </Link>
-        </li>
-        <li className={css.item}>
-          <Link to="#" className={css.link}>
-            <svg className={css.icon} width="24" height="24">
+            </LinkIcon>
+          </LinkWrapper>
+        </Item>
+        <Item>
+          <LinkWrapper href="https://www.instagram.com/">
+            <LinkIcon width="24" height="24">
               <use href={`${icons}#icon-instagram`} />
-            </svg>
-          </Link>
-        </li>
-      </ul>
-    </div>
+            </LinkIcon>
+          </LinkWrapper>
+        </Item>
+      </ItemsList>
+    </Container>
   );
 };

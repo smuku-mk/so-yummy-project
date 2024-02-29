@@ -3,7 +3,13 @@ import { AddRecipeForm } from "../../components/AddRecipePage/AddRecipeForm/AddR
 import { FollowUs } from "../../../src/components/AddRecipePage/FollowUs/FollowUs.jsx";
 import { PopularRecipe } from "../../../src/components/AddRecipePage/PopularRecipe/PopularRecipe.jsx";
 
-import css from "./AddRecipePage.module.css";
+import {
+  Section,
+  Container,
+  Title,
+  PageContainer,
+  CommonContainer,
+} from "./AddRecipePage.styled.jsx";
 
 export const AddRecipePage = () => {
   const [showFollowUs, setShowFollowUs] = useState(false);
@@ -22,17 +28,17 @@ export const AddRecipePage = () => {
   }, []);
 
   return (
-    <section className={css.section}>
-      <div className={css.container}>
-        <h2 className={css.title}>Add Recipe</h2>
-        <div className={css.page_container}>
+    <Section>
+      <Container>
+        <Title>Add Recipe</Title>
+        <PageContainer>
           <AddRecipeForm />
-          <div className={css.common_container}>
+          <CommonContainer>
             {showFollowUs && <FollowUs />}
             <PopularRecipe />
-          </div>
-        </div>
-      </div>
-    </section>
+          </CommonContainer>
+        </PageContainer>
+      </Container>
+    </Section>
   );
 };
