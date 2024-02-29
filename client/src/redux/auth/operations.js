@@ -17,8 +17,10 @@ export const register = createAsyncThunk(
     try {
       const response = await axios.post("/users/signup", credentials);
       return response.data;
-    } catch (error) {
+    } catch (error) { 
+      console.log(error);
       return thunkAPI.rejectWithValue(error.message);
+      
     }
   }
 );

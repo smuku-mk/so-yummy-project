@@ -7,5 +7,5 @@ import { auth } from "../middlewares/user/auth.js";
 
 export const ownRecipesRouter = express.Router();
 ownRecipesRouter.post("/", auth, catchErr(addRecipe));
-ownRecipesRouter.delete("/:recipeId", catchErr(deleteRecipeById)); //ten chyba do poprawy
-ownRecipesRouter.get("/:userId/recipes", catchErr(getUserRecipes));
+ownRecipesRouter.delete("/:recipeId", auth, catchErr(deleteRecipeById));
+ownRecipesRouter.get("/:userId", auth, catchErr(getUserRecipes));
