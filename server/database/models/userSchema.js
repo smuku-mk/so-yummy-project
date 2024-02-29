@@ -1,52 +1,55 @@
 import bcrypt from "bcrypt";
-import mongoose from 'mongoose';
+import mongoose from "mongoose";
 
-const userSchema = new mongoose.Schema({
-  _id: { type: mongoose.Schema.Types.ObjectId, auto: true },
-  name: {
-    type: String,
-    required: [true, "Name is required"],
+const userSchema = new mongoose.Schema(
+  {
+    _id: { type: mongoose.Schema.Types.ObjectId, auto: true },
+    name: {
+      type: String,
+      required: [true, "Name is required"],
+    },
+    password: {
+      type: String,
+      required: [true, "Password is required"],
+    },
+    email: {
+      type: String,
+      required: [true, "Email is required"],
+      unique: true,
+    },
+    token: {
+      type: String,
+      default: null,
+    },
+    avatarURL: {
+      type: String,
+      default: null,
+    },
+    verified: {
+      type: Boolean,
+      default: false,
+    },
+    verificationToken: {
+      type: String,
+      default: null,
+    },
+    favorites: {
+      type: [String],
+      default: [],
+    },
+    shoppingList: {
+      type: [String],
+      default: [],
+    },
   },
-  password: {
-    type: String,
-    required: [true, "Password is required"],
-  },
-  email: {
-    type: String,
-    required: [true, "Email is required"],
-    unique: true
-  },
-  token: {
-    type: String,
-    default: null
-  },
-  avatarURL: {
-    type: String,
-    default: null
-  },
-  verified: {
-    type: Boolean,
-    default: false
-  },
-  verificationToken: {
-    type: String,
-    default: null
-  },
-  favorites: {
-    type: [String],
-    default: []
-  },
-  shoppingList: {
-    type: [String],
-    default: []
-  }
-}, { versionKey: false, timestamps: false });
+  { versionKey: false, timestamps: false }
+);
 
-userSchema.pre('save', async function(next) {
+userSchema.pre("save", async function (next) {
   if (!this.password) {
     return;
   }
-  if (this.isModified('password')) {
+  if (this.isModified("password")) {
     this.password = await bcrypt.hash(this.password, 10);
   }
   next();
@@ -56,4 +59,4 @@ userSchema.methods.validatePassword = async function (password) {
   return await bcrypt.compare(password, this.password);
 };
 
-export default mongoose.model('User', userSchema);
+export default mongoose.model("User", userSchema);
