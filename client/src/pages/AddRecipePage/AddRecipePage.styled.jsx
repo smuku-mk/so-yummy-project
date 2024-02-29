@@ -26,6 +26,7 @@ export const Title = styled.h2`
   font-weight: 600;
   font-size: 44px;
   margin: 0 auto 0 0;
+  color: ${(props) => props.theme.mainTitle};
 `;
 
 export const PageContainer = styled.div`

@@ -5,7 +5,7 @@ export const Container = styled.div`
   margin-bottom: 44px;
 `;
 export const Title = styled.h3`
-  color: #3e4462;
+  color: ${(props) => props.theme.popularTitle};
   font-size: 24px;
   font-weight: 700;
   line-height: 1;
@@ -14,8 +14,8 @@ export const Title = styled.h3`
 `;
 
 export const TextArea = styled.textarea`
-  background-color: #d9d9d9;
-  border: none;
+  background-color: ${(props) => props.theme.inputsBg};
+  border: 2px solid ${(props) => props.theme.borderIngred};
   border-radius: 6px;
   cursor: pointer;
   overflow: auto;
@@ -37,8 +37,7 @@ export const TextArea = styled.textarea`
   }
 
   &::placeholder {
-    color: #333333;
-    font-size: 14px;
+    color: ${(props) => props.theme.inputPlaceholder};
   }
 
   @media screen and (min-width: 768px) {

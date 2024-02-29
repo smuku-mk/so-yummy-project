@@ -17,7 +17,7 @@ import {
   IngredientsContainer,
   Ingredient,
   IngredientContainer,
-  IngredientSelect,
+  IngredientInput,
   AmountContainer,
   AmountInput,
   AmountSelectBoxContainer,
@@ -124,25 +124,35 @@ export const RecipeIngredientsFields = ({
       <IngredientsContainer>
         {ingredients.map((ingredient, index) => (
           <Ingredient key={index}>
-            <IngredientContainer>
-              <label>
-                <IngredientSelect
-                  name="ingredient-name"
-                  value={ingredient.name}
-                  onBlur={() => hideIngredientDropDown(index)}
-                  onFocus={(evt) => showIngredientDropDown(evt, index)}
-                  onChange={(event) => handleIngredientNameChange(event, index)}
-                  required
-                >
-                  <option value="">Select Ingredient</option>
-                  {ingredientsTTL.map((ingredient, index) => (
-                    <option key={index} value={ingredient}>
-                      {ingredient}
-                    </option>
-                  ))}
-                </IngredientSelect>
-              </label>
-            </IngredientContainer>
+            <IngredientsContainer>
+              {ingredients.map((ingredient, index) => (
+                <Ingredient key={index}>
+                  <IngredientContainer>
+                    <label>
+                      <IngredientInput
+                        type="text"
+                        name="ingredient-name"
+                        value={ingredient.name}
+                        onBlur={() => hideIngredientDropDown(index)}
+                        onFocus={(evt) => showIngredientDropDown(evt, index)}
+                        onChange={(event) =>
+                          handleIngredientNameChange(event, index)
+                        }
+                        list={`ingredient-list-${index}`}
+                        required
+                      />
+                      <datalist id={`ingredient-list-${index}`}>
+                        {ingredientsTTL.map((ingredient, index) => (
+                          <option key={index} value={ingredient}>
+                            {ingredient}
+                          </option>
+                        ))}
+                      </datalist>
+                    </label>
+                  </IngredientContainer>
+                </Ingredient>
+              ))}
+            </IngredientsContainer>
 
             <AmountContainer>
               <label htmlFor="amount">

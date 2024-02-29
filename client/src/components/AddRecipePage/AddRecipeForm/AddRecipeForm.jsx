@@ -7,7 +7,7 @@ import { RecipeDescriptionFields } from "../RecipeDescriptionFields/RecipeDescri
 import { RecipeIngredientsFields } from "../RecipeIngredientsFields/RecipeIngredientsFields.jsx";
 import { RecipePreparationFields } from "../RecipePreparationFields/RecipePreparationFields.jsx";
 import { FormContainer } from "./AddRecipeForm.styled.jsx";
-import { SimpleButton } from "../../Button/index.jsx";
+import { SimpleButton } from "../Button/Button.jsx";
 
 export const AddRecipeForm = () => {
   const dispatch = useDispatch();

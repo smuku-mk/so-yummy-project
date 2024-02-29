@@ -60,6 +60,7 @@ export const fetchIngredientsTTL = async () => {
   try {
     const response = await axios.get("/ingredients/list");
     const ingredientsTTL = response.data.map((ingredient) => ingredient.ttl);
+    ingredientsTTL.sort((a, b) => a.localeCompare(b));
     return ingredientsTTL;
   } catch (error) {
     console.error("Error fetching ingredients TTL:", error);

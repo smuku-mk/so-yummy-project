@@ -15,7 +15,7 @@ export const Container = styled.div`
 `;
 
 export const Title = styled.h3`
-  color: #3e4462;
+  color: ${(props) => props.theme.popularTitle};
   font-size: 24px;
   font-weight: 700;
   line-height: 1;
@@ -92,7 +92,7 @@ export const InfoContainer = styled.div`
 `;
 
 export const DishTitle = styled.h3`
-  color: #3e4462;
+  color: ${(props) => props.theme.popularTitle};
   font-size: 16px;
   font-weight: 600;
   line-height: 1.2;
@@ -100,11 +100,11 @@ export const DishTitle = styled.h3`
 `;
 
 export const RecipeLink = styled.a`
-  color: #3e4462;
+  color: ${(props) => props.theme.popularTitle};
 `;
 
 export const DishDescription = styled.p`
-  color: #969595;
+  color: ${(props) => props.theme.popularDescription};
   font-size: 12px;
   font-weight: 400;
   line-height: 1;

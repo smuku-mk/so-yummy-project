@@ -15,7 +15,7 @@ export const Container = styled.div`
 `;
 
 export const Title = styled.h3`
-  color: #3e4462;
+  color: ${(props) => props.theme.popularTitle};
   font-size: 24px;
   font-weight: 700;
   line-height: 1;
@@ -64,14 +64,14 @@ export const DecreaseButton = styled.button`
 
 export const IconMinus = styled.svg`
   cursor: pointer;
-  stroke: #969595;
-  fill: #969595;
+  stroke: ${(props) => props.theme.counterBorder};
+  fill: ${(props) => props.theme.counterBorder};
   width: 14px;
   height: 14px;
 `;
 
 export const Count = styled.span`
-  color: #333333;
+  color: ${(props) => props.theme.counterBorder};
   font-size: 14px;
 
   @media screen and (min-width: 768px) {
@@ -89,7 +89,7 @@ export const IncreaseButton = styled.button`
 
 export const IconPlus = styled.svg`
   cursor: pointer;
-  stroke: #8baa36;
+  stroke: ${(props) => props.theme.counterBorder};
   width: 14px;
   height: 14px;
 `;
@@ -118,11 +118,11 @@ export const IngredientContainer = styled.div`
   position: relative;
 `;
 
-export const IngredientSelect = styled.select`
-  background-color: #d9d9d9;
-  border: none;
+export const IngredientInput = styled.input`
+  background-color: ${(props) => props.theme.inputsBg};
+  border: 2px solid ${(props) => props.theme.borderIngred};
   border-radius: 8px;
-  color: #333333;
+  color: ${(props) => props.theme.popularDescription};
   cursor: pointer;
   font-size: 14px;
   font-weight: 400;
@@ -158,8 +158,10 @@ export const IngredientDropDown = styled.div`
 `;
 
 export const AmountContainer = styled.div`
-  background-color: #d9d9d9;
-  border: none;
+  background-color: ${(props) => props.theme.inputsBg};
+  border: 2px solid ${(props) => props.theme.borderIngred};
+  border-radius: 8px;
+  color: ${(props) => props.theme.popularDescription};
   border-radius: 6px;
   display: flex;
   justify-content: center;
@@ -176,9 +178,9 @@ export const AmountContainer = styled.div`
 `;
 
 export const AmountInput = styled.input`
-  background-color: #d9d9d9;
+  background-color: ${(props) => props.theme.inputsBg};
   border: none;
-  color: #333333;
+  color: ${(props) => props.theme.popularDescription};
   font-size: 12px;
   font-weight: 400;
   line-height: 1;
@@ -192,12 +194,15 @@ export const AmountInput = styled.input`
 
 export const AmountSelectBoxContainer = styled.div`
   position: relative;
+  background-color: ${(props) => props.theme.inputsBg};
+  border: none;
+  color: ${(props) => props.theme.popularDescription};
 `;
 
 export const AmountSelectBox = styled.select`
-  background-color: #d9d9d9;
+  background-color: ${(props) => props.theme.inputsBg};
   border: none;
-  color: #333333;
+  color: ${(props) => props.theme.popularDescription};
   cursor: pointer;
   font-size: 12px;
   font-weight: 400;
@@ -225,10 +230,9 @@ export const CrossButton = styled.button`
 `;
 
 export const IconCross = styled.svg`
-  stroke: #fafafa;
   width: 18px;
   height: 18px;
   cursor: pointer;
-  fill: #333333;
-  stroke: #8baa36;
+  fill: ${(props) => props.theme.counterBorder};
+  stroke: ${(props) => props.theme.counterBorder};
 `;

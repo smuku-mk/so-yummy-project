@@ -6,7 +6,7 @@ export const Container = styled.div`
 `;
 
 export const Title = styled.h3`
-  color: #3e4462;
+  color: ${(props) => props.theme.followTitle};
   font-size: 24px;
   font-weight: 700;
   line-height: 1;
@@ -28,29 +28,29 @@ export const Item = styled.li`
 
 export const LinkWrapper = styled.a`
   text-decoration: none;
-  fill: #8baa36;
+  fill: ${(props) => props.theme.socialIcons};
 
   &:hover,
   &:active,
   &:focus {
-    fill: #1e1f28;
+    fill: ${(props) => props.theme.iconHover};
     transition-duration: 300ms;
     animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   }
   &:visited {
-    fill: #8baa36;
+    fill: ${(props) => props.theme.socialIcons};
   }
 `;
 export const LinkIcon = styled.svg`
-  fill: #8baa36;
+  fill: ${(props) => props.theme.socialIcons};
   &:hover,
   &:active,
   &:focus {
-    fill: #1e1f28;
+    fill: ${(props) => props.theme.iconHover};
     transition-duration: 300ms;
     animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   }
   &:visited {
-    fill: #8baa36;
+    fill: ${(props) => props.theme.socialIcons};
   }
 `;

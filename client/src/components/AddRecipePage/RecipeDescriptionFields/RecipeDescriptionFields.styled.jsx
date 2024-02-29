@@ -4,7 +4,7 @@ export const Container = styled.div`
   display: block;
   width: 100%;
   height: 555px;
-  margin: 100px auto;
+  margin: 10px auto;
 
   @media screen and (min-width: 768px) {
     display: flex;
@@ -79,10 +79,9 @@ export const LabelsContainer = styled.div`
 `;
 
 export const RecipeInput = styled.input`
-  background-color: #fafafa;
+  background-color: ${(props) => props.theme.inputBCG};
   border: none;
-
-  color: #333333;
+  color: ${(props) => props.theme.inputPlaceholder};
   font-size: 14px;
   font-weight: 400;
   line-height: 1;
@@ -95,11 +94,14 @@ export const RecipeInput = styled.input`
   @media screen and (min-width: 768px) {
     font-size: 16px;
   }
+  &::placeholder {
+    color: ${(props) => props.theme.inputPlaceholder};
+  }
 `;
 
 export const Label = styled.label`
   border-bottom: 1px solid #e0e0e0;
-  color: #000000;
+  color: ${(props) => props.theme.inputPlaceholder};
   display: flex;
   font-size: 14px;
   font-weight: 400;
@@ -120,7 +122,7 @@ export const SelectBox = styled.select`
   background-color: transparent;
   border: none;
   text-align: center;
-  color: #000000;
+  color: ${(props) => props.theme.inputPlaceholder};
   cursor: pointer;
   font-size: 12px;
   font-weight: 400;
