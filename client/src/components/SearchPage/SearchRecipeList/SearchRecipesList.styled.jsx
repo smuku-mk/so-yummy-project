@@ -5,23 +5,24 @@ export const Block = styled.div`
   height: 323px;
   display: flex;
   flex-direction: column;
-  
 `;
 
 export const RecipesElement = styled.li`
-margin-bottom: 28px;
+  margin-bottom: 28px;
 
-
-@media (min-width: 768px) {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        margin-right: 32px;
-        margin-bottom: 32px;
+  @media (min-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-right: 32px;
+    margin-bottom: 32px;
   }
   @media (min-width: 1440px) {
-      margin-right: 14px;
-      margin-bottom: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-right: 14px;
+    margin-bottom: 100px;
   }
 `;
 
@@ -74,4 +75,3 @@ export const RecipesListContainer = styled.ul`
     flex-wrap: wrap;
   }
 `;
-

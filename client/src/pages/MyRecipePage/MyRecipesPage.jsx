@@ -4,7 +4,13 @@ import MyRecipesList from "../../components/MyRecipeList/MyRecipesList";
 import { Children } from "react";
 import queryBackEnd from "../../components/Request/queryBackEnd";
 // import { Container, Pagination, Stack } from "@mui/material";
-import { PaginationWrapper, ImgWrapper, ImgTitle, Title, ContainerTitle } from "../MyRecipePage/MyRecipesPage.styled"; // STYLED NO USE
+import {
+  PaginationWrapper,
+  ImgWrapper,
+  ImgTitle,
+  Title,
+  ContainerTitle,
+} from "../MyRecipePage/MyRecipesPage.styled"; // STYLED NO USE
 import instanceBackEnd from "../../components/Request/RequestBackEnd";
 import empty_mobile from "../../images/mobile_img/searchfor_mobile.png";
 import empty_tablet from "../../images/tablet_img/searchfor_tablet.png";
@@ -71,13 +77,21 @@ export const MyRecipesPage = () => {
           <Title>My recipes</Title>
         </ContainerTitle>
         {recipes.length !== 0 ? (
-          <MyRecipesList recipes={recipes} location={location} removeOwnRecipe={removeOwnRecipe}>
+          <MyRecipesList
+            recipes={recipes}
+            location={location}
+            removeOwnRecipe={removeOwnRecipe}
+          >
             {Children}
           </MyRecipesList>
         ) : (
           <ImgWrapper>
             <picture>
-              <img src={empty_mobile} srcSet={`${empty_mobile}`} alt="Empty list" />
+              <img
+                src={empty_mobile}
+                srcSet={`${empty_mobile}`}
+                alt="Empty list"
+              />
               <source media="(min-width: 768px)" srcSet={`${empty_tablet}`} />
             </picture>
             <ImgTitle>The list is empty</ImgTitle>
