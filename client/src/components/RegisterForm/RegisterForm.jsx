@@ -77,9 +77,9 @@ export const RegisterForm = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     const form = event.currentTarget;
-  
+
     try {
-      console.log('Próba rejestracji...');
+      console.log("Próba rejestracji...");
       await dispatch(
         register({
           name: form.elements.name.value,
@@ -87,11 +87,11 @@ export const RegisterForm = () => {
           password: form.elements.password.value,
         })
       );
-      console.log('zarejestrowano!');
+      console.log("zarejestrowano!");
       form.reset();
       navigate("/");
     } catch (error) {
-      console.error('Error:', error);
+      console.error("Error:", error);
     }
   };
 

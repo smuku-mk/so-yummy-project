@@ -42,7 +42,6 @@ const sendVerificationMail = async (email, verificationToken, name) => {
   };
 
   await transporter.sendMail(mailOptions);
- 
 };
 
 export default sendVerificationMail;
