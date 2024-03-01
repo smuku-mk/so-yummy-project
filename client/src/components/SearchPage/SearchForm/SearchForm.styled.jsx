@@ -6,6 +6,18 @@ export const Container = styled.div`
   margin: 0 auto;
   justify-content: center;
   align-items: center;
+
+  @media (min-width: 768px) {
+    width: 362px;
+    font-size: 14px;
+    height: 60px;
+  }
+
+  @media (min-width: 1440px) {
+    font-size: 16px;
+    width: 510px;
+    height: 70px;
+  }
 `;
 
 export const Input = styled.input`
@@ -24,7 +36,7 @@ export const Input = styled.input`
   color: ${(props) => props.theme.inputPlaceholder};
 
   @media (min-width: 768px) {
-    width: 40%;
+    width: 362px;
     font-size: 14px;
     height: 60px;
   }

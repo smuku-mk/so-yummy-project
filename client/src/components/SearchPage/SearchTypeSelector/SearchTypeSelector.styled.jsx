@@ -8,6 +8,17 @@ export const SearchBy = styled.div`
   margin-bottom: 1rem;
   width: 223px;
   height: 34px;
+  @media (min-width: 768px) {
+    width: 265px;
+    font-size: 14px;
+    height: 60px;
+  }
+
+  @media (min-width: 1440px) {
+    font-size: 16px;
+    width: 310px;
+    height: 70px;
+  }
 `;
 
 export const SearchByLabel = styled.label`
