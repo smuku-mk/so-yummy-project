@@ -5,13 +5,13 @@ import { ThemeProvider } from "styled-components";
 import { lightTheme, darkTheme, GlobalStyles } from "./styles";
 import { App } from "./components";
 import { BrowserRouter } from "react-router-dom";
-import { PersistGate } from 'redux-persist/integration/react';
-import { persistor } from './redux/store';
+import { PersistGate } from "redux-persist/integration/react";
+import { persistor } from "./redux/store";
 import { toggleTheme } from "./redux/theme/themeSlice";
 import store from "./redux/store";
 
 const Main = () => {
-  const darkMode = useSelector(state => state.theme.darkMode);
+  const darkMode = useSelector((state) => state.theme.darkMode);
 
   return (
     <PersistGate loading={null} persistor={persistor}>

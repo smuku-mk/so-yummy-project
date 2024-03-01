@@ -1,6 +1,14 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
-import { Block, BlockPicture, BlockPictureImg, BlockPictureDescription, PictureDescription, RecipesListContainer, RecipesElement } from './SearchRecipesList.styled.jsx';
+import React from "react";
+import { useSelector } from "react-redux";
+import {
+  Block,
+  BlockPicture,
+  BlockPictureImg,
+  BlockPictureDescription,
+  PictureDescription,
+  RecipesListContainer,
+  RecipesElement,
+} from "./SearchRecipesList.styled.jsx";
 
 export const SearchRecipesList = () => {
   const recipes = useSelector((state) => state.search.recipes);
@@ -11,13 +19,11 @@ export const SearchRecipesList = () => {
         <RecipesListContainer>
           {recipes.map((recipe, index) => (
             <RecipesElement key={index}>
-              <Block> 
+              <Block>
                 <BlockPicture>
                   <BlockPictureImg src={recipe.thumb} alt={recipe.title} />
                   <BlockPictureDescription>
-                    <PictureDescription>
-                      {recipe.title}
-                    </PictureDescription>
+                    <PictureDescription>{recipe.title}</PictureDescription>
                   </BlockPictureDescription>
                 </BlockPicture>
               </Block>
