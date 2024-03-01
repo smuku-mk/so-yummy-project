@@ -1,9 +1,7 @@
-// import sendVerificationMail from "../../services/mail/sendVerificationMail.js";
 import nodemailer from "nodemailer";
 import "dotenv/config";
 
 export const sendSubscribeMail = async (email) => {
-  
   const transporter = nodemailer.createTransport({
     host: "smtp.sendgrid.net",
     port: 587,
@@ -15,6 +13,7 @@ export const sendSubscribeMail = async (email) => {
   });
 
   const mailOptions = {
+    from: process.env.GMAIL_USER,
     to: email,
     subject: "Thank You for Subscribing to SoYummy Newsletter!",
     text: `  SoYummy Newsletter!
