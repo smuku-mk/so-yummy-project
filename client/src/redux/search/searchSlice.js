@@ -1,13 +1,13 @@
-import { createSlice } from '@reduxjs/toolkit';
-import { fetchRecipes } from './operations';
+import { createSlice } from "@reduxjs/toolkit";
+import { fetchRecipes, clearSearchResults } from "./operations";
 
 const searchSlice = createSlice({
-  name: 'search',
+  name: "search",
   initialState: {
-    searchType: 'title',
+    searchType: "title",
     recipes: [],
-    status: 'idle',
-   error: null
+    status: "idle",
+    error: null,
   },
   reducers: {
     setSearchType: (state, action) => {
@@ -16,27 +16,27 @@ const searchSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
-  .addCase(fetchRecipes.pending, (state) => {
-    state.status = 'loading';
-    state.error = null;
-  })
-  .addCase(fetchRecipes.fulfilled, (state, action) => {
-    state.status = 'succeeded';
-    state.recipes = action.payload;
-  })
-  .addCase(fetchRecipes.rejected, (state, action) => {
-    state.status = 'failed';
-    state.recipes = [];
-    state.error = action.error.message;
-  });
+      .addCase(fetchRecipes.pending, (state) => {
+        state.status = "loading";
+        state.error = null;
+      })
+      .addCase(fetchRecipes.fulfilled, (state, action) => {
+        state.status = "succeeded";
+        state.recipes = action.payload;
+      })
+      .addCase(fetchRecipes.rejected, (state, action) => {
+        state.status = "failed";
+        state.recipes = [];
+        state.error = action.error.message;
+      })
+      .addCase(clearSearchResults.fulfilled, (state, action) => {
+        state.status = "idle";
+        state.recipes = action.payload;
+        state.error = null;
+      });
   },
 });
 
-
-
 export const { setSearchType } = searchSlice.actions;
 
-export const searchReducer= searchSlice.reducer;
-
-
-
+export const searchReducer = searchSlice.reducer;

@@ -1,5 +1,5 @@
-import React from "react";
-import { useSelector } from "react-redux";
+import React, { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import {
   Block,
   BlockPicture,
@@ -8,10 +8,20 @@ import {
   PictureDescription,
   RecipesListContainer,
   RecipesElement,
+  RecipesNoResults,
+  RecipesNoImg,
 } from "./SearchRecipesList.styled.jsx";
+import { clearSearchResults } from "../../redux/search/operations.js";
 
 export const SearchRecipesList = () => {
   const recipes = useSelector((state) => state.search.recipes);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    return () => {
+      dispatch(clearSearchResults());
+    };
+  }, [dispatch]);
 
   return (
     <>
@@ -31,7 +41,10 @@ export const SearchRecipesList = () => {
           ))}
         </RecipesListContainer>
       ) : (
-        <p>Try looking for something else..</p>
+        <RecipesNoResults>
+          <RecipesNoImg />
+          <p>Try looking for something else..</p>
+        </RecipesNoResults>
       )}
     </>
   );

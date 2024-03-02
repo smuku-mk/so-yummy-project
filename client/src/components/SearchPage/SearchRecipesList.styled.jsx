@@ -1,27 +1,27 @@
 import styled from "styled-components";
+import searchfor_mobile from "../../images/mobile_img/searchfor_mobile.png";
+import searchfor_tablet from "../../images/tablet_img/searchfor_tablet.png";
 
 export const Block = styled.div`
   width: 343px;
   height: 323px;
   display: flex;
   flex-direction: column;
-  
 `;
 
 export const RecipesElement = styled.li`
-margin-bottom: 28px;
+  margin-bottom: 28px;
 
-
-@media (min-width: 768px) {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        margin-right: 32px;
-        margin-bottom: 32px;
+  @media (min-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-right: 32px;
+    margin-bottom: 32px;
   }
   @media (min-width: 1440px) {
-      margin-right: 14px;
-      margin-bottom: 100px;
+    margin-right: 14px;
+    margin-bottom: 100px;
   }
 `;
 
@@ -62,16 +62,46 @@ export const PictureDescription = styled.p`
 `;
 
 export const RecipesListContainer = styled.ul`
-  margin-top: 64px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr;
   justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 64px;
+  padding: 0 16rem;
 
   @media (min-width: 768px) {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: 1440px) {
+    grid-template-columns: repeat(4, 1fr);
   }
 `;
 
+export const RecipesNoResults = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  font-size: 14px;
+  padding: 3rem 0;
+
+  media (min-width: 768px) {
+    font-size: 24px;
+  }
+`;
+
+export const RecipesNoImg = styled.div`
+background-image: url(${searchfor_mobile});
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+width: 350px;
+height: 225px;
+
+@media (min-width: 768px) { 
+  background-image: url(${searchfor_tablet});
+
+  `;
