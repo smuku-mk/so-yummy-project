@@ -1,21 +1,20 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { selectSearchType } from "../../redux/search/selectors.js";
-import { setSearchType } from "../../redux/search/searchSlice";
+import { selectSearchType } from "../../../redux/search/selectors.js";
+import { setSearchType } from "../../../redux/search/searchSlice";
 import {
   SearchBy,
   SearchByLabel,
   SearchByOption,
   SearchBySelect,
-} from "./SearchPage.styled";
-
+} from "./SearchTypeSelector.styled.jsx";
 
 export const SearchTypeSelector = () => {
   const dispatch = useDispatch();
   const searchType = useSelector(selectSearchType);
- 
+
   const handleTypeChange = (type) => {
-    dispatch(setSearchType(type))
+    dispatch(setSearchType(type));
   };
 
   return (
@@ -24,7 +23,8 @@ export const SearchTypeSelector = () => {
       <SearchBySelect
         id="searchType"
         value={searchType}
-        onChange={(e) => handleTypeChange(e.target.value)}>
+        onChange={(e) => handleTypeChange(e.target.value)}
+      >
         <SearchByOption value="title">Title</SearchByOption>
         <SearchByOption value="ingredient">Ingredients</SearchByOption>
       </SearchBySelect>

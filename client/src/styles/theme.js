@@ -102,6 +102,7 @@ export const lightTheme = {
   black: "#000000",
   closeX: "1f242e",
   borderItem: "#E0E0E0",
+  selectSearch: "#fafafa",
 };
 
 export const darkTheme = {
@@ -205,4 +206,5 @@ export const darkTheme = {
   arrow: "#ffffff",
   black: "#fafafa",
   closeX: "#fafafa",
+  selectSearch: "#8baa36",
 };
