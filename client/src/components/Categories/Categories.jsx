@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { RecipeList, ErrorMessage } from "./categories-components";
 import {
   TabsContainer,
@@ -10,30 +10,23 @@ import {
   Header,
 } from "./Categories.styled";
 
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchCategories } from '../../redux/categories/operations';
+import { setCategory } from "../../redux/categories/categoriesSlice";
+import { categories } from '../../redux/categories/selectors'
+
 export const Categories = () => {
-  const [category, setCategory] = useState("Beef");
-  const [recipes, setRecipes] = useState([]);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(null);
+ 
+  const dispatch = useDispatch();
+  const categoriesList = useSelector(categories);
+
 
   useEffect(() => {
-    fetchData();
-  }, [category]);
-
-  const fetchData = async () => {
-    setLoading(true);
-    try {
-      setRecipes([]);
-      setError(null);
-    } catch (error) {
-      setError(error.message);
-      setRecipes([]);
-    }
-    setLoading(false);
-  };
+    dispatch(fetchCategories());
+  }, [dispatch]);
 
   const handleCategoryChange = (newCategory) => {
-    setCategory(newCategory);
+    dispatch(setCategory(newCategory));
   };
 
   return (
@@ -47,25 +40,9 @@ export const Categories = () => {
           <StyledSpan></StyledSpan>
         </ScrollButton>
         <CategoryList>
-          {[
-            "Beef",
-            "Breakfast",
-            "Chicken",
-            "Dessert",
-            "Goat",
-            "Lamb",
-            "Miscellaneous",
-
-            "Pasta",
-            "Pork",
-            "Seafood",
-            "Side",
-            "Starter",
-            "Vegan",
-            "Vegetarian",
-          ].map((category) => (
-            <CategoryItem key={category} onClick={() => handleCategoryChange(category)}>
-              {category}
+          {categoriesList.map((category) => (
+            <CategoryItem key={category.title} onClick={() => handleCategoryChange(category.title)}>
+              {category.title}
             </CategoryItem>
           ))}
         </CategoryList>
@@ -76,13 +53,16 @@ export const Categories = () => {
           <StyledSpan></StyledSpan>
         </ScrollButton>
       </TabsContainer>
-      {loading ? (
+      <RecipeList/>
+      {/* {loading ? (
         <div>Loading...</div>
       ) : error ? (
         <ErrorMessage>{error}</ErrorMessage>
       ) : (
-        <RecipeList recipes={recipes} />
-      )}
+        <RecipeList/>
+      )} */}
     </div>
   );
 };
+
+export default Categories;
