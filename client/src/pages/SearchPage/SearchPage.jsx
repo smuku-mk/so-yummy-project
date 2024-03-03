@@ -1,16 +1,17 @@
-import { SearchBar } from "../../components/SearchPage/SearchBar";
-import { SearchRecipesList } from "../../components/SearchPage/SearchRecipesList";
-import { GlobalContainer } from "../../styles";
-import { MainPageTitle } from "./SearchPage.styled";
+import { SearchBar } from "../../components/SearchPage/SearchBar/SearchBar.jsx";
+import { SearchRecipesList } from "../../components/SearchPage/SearchRecipeList/SearchRecipesList.jsx";
+import { Title, Container, PageContainer, Section } from "./SearchPage.styled";
 
 export const SearchPage = () => {
   return (
-    <div>
-      <GlobalContainer>
-        <MainPageTitle>Search</MainPageTitle>
-        <SearchBar />
-        <SearchRecipesList />
-      </GlobalContainer>
-    </div>
+    <Section>
+      <Container>
+        <Title>Search</Title>
+        <PageContainer>
+          <SearchBar />
+          <SearchRecipesList />
+        </PageContainer>
+      </Container>
+    </Section>
   );
 };

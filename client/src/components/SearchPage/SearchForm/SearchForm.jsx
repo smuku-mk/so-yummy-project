@@ -1,26 +1,30 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { fetchRecipes } from "../../redux/search/operations.js";
-import { selectSearchType } from '../../redux/search/selectors.js';
+import { fetchRecipes } from "../../../redux/search/operations.js";
+import { selectSearchType } from "../../../redux/search/selectors.js";
 
-import { Form, ButtonWrapper, Button, Input } from "./SearchPage.styled";
+import {
+  ButtonWrapper,
+  Button,
+  Input,
+  Container,
+} from "./SearchForm.styled.jsx";
 
 export const SearchForm = () => {
   const dispatch = useDispatch();
-  const [searchValue, setSearchValue] = useState('');
+  const [searchValue, setSearchValue] = useState("");
   const searchType = useSelector(selectSearchType);
 
   const handleSearch = async () => {
     if (searchValue && searchType) {
-      dispatch( fetchRecipes( { searchValue, searchType }));
-     
-    
+      dispatch(fetchRecipes({ searchValue, searchType }));
     } else {
-      alert("Wprowadz wartosc do pola wyszukiwania");
+      alert("Please enter a value into the search field");
     }
   };
+
   return (
-    <Form>
+    <Container>
       <Input
         placeholder="Enter the text"
         type="text"
@@ -28,8 +32,10 @@ export const SearchForm = () => {
         onChange={(e) => setSearchValue(e.target.value)}
       />
       <ButtonWrapper>
-        <Button onClick={handleSearch}>Search</Button>
+        <Button type="button" onClick={handleSearch}>
+          Search
+        </Button>
       </ButtonWrapper>
-    </Form>
+    </Container>
   );
 };

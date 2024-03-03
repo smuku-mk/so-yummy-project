@@ -29,10 +29,18 @@ const searchSlice = createSlice({
         state.recipes = [];
         state.error = action.error.message;
       })
+      .addCase(clearSearchResults.pending, (state) => {
+        state.status = "loading";
+        state.error = null;
+      })
       .addCase(clearSearchResults.fulfilled, (state, action) => {
         state.status = "idle";
         state.recipes = action.payload;
         state.error = null;
+      })
+      .addCase(clearSearchResults.rejected, (state, action) => {
+        state.status = "failed";
+        state.error = action.error.message;
       });
   },
 });

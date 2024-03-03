@@ -11,7 +11,7 @@ import {
   RecipesNoResults,
   RecipesNoImg,
 } from "./SearchRecipesList.styled.jsx";
-import { clearSearchResults } from "../../redux/search/operations.js";
+import { clearSearchResults } from "../../../redux/search/operations.js";
 
 export const SearchRecipesList = () => {
   const recipes = useSelector((state) => state.search.recipes);
