@@ -13,7 +13,7 @@ export const RecipeList = () => {
 
   useEffect(() => {
     dispatch(fetchRecipes(category));
-  }, [dispatch, category]);
+  }, [category]);
 
   return (
     <StyledDiv>

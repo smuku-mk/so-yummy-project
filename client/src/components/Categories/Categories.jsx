@@ -23,7 +23,7 @@ export const Categories = () => {
 
   useEffect(() => {
     dispatch(fetchCategories());
-  }, [dispatch]);
+  }, []);
 
   const handleCategoryChange = (newCategory) => {
     dispatch(setCategory(newCategory));
