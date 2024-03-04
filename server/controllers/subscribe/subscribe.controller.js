@@ -1,5 +1,5 @@
 import { updateUser } from "../../services/user/updateUser.js";
-import { sendSubscribeMail } from "./subscribe-mailer.service.js";
+import { sendSubscribeMail } from "../../mail/subscribe-mailer.service.js";
 
 export const subscribeHandler = async (req, res) => {
   const { email } = req.body;
