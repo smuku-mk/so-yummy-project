@@ -12,7 +12,7 @@ import { searchRouter } from "./routes/searchRouter.js";
 import { ownRecipesRouter } from "./routes/ownRecipeRouter.js";
 import { favRouter } from "./routes/favorite.js";
 import { usersRouter } from "./routes/usersRouter.js";
-import { subscribeRouter } from "./controllers/subscribe/subscribe.router.js";
+import { subscribeRouter } from "./routes/subscribe.router.js";
 
 import { swaggerDocs } from "./swagger.js";
 
