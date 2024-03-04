@@ -1,10 +1,11 @@
-import { Categories } from "../../components/Categories";
-import { CategoriesPageStyled } from "./CategoriesPage.styled";
+import { Menu } from "../../components/Categories/Menu";
+import { RecipeList } from "../../components/Categories/RecipeList";
 
 export const CategoriesPage = () => {
   return (
-    <CategoriesPageStyled>
-      <Categories />
-    </CategoriesPageStyled>
+    <>
+      <Menu/>
+      <RecipeList/>
+    </>
   );
 };

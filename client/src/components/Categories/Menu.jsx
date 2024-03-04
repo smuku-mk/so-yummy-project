@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-import { RecipeList, ErrorMessage } from "./categories-components";
 import {
   TabsContainer,
   ScrollButton,
@@ -8,18 +7,16 @@ import {
   CategoryList,
   CategoryItem,
   Header,
-} from "./Categories.styled";
+} from "./Menu.styled";
 
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchCategories } from '../../redux/categories/operations';
 import { setCategory } from "../../redux/categories/categoriesSlice";
 import { categories } from '../../redux/categories/selectors'
 
-export const Categories = () => {
- 
+export const Menu = () => {
   const dispatch = useDispatch();
   const categoriesList = useSelector(categories);
-
 
   useEffect(() => {
     dispatch(fetchCategories());
@@ -53,16 +50,6 @@ export const Categories = () => {
           <StyledSpan></StyledSpan>
         </ScrollButton>
       </TabsContainer>
-      <RecipeList/>
-      {/* {loading ? (
-        <div>Loading...</div>
-      ) : error ? (
-        <ErrorMessage>{error}</ErrorMessage>
-      ) : (
-        <RecipeList/>
-      )} */}
     </div>
   );
 };
-
-export default Categories;
