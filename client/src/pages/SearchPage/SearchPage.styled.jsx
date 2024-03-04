@@ -35,7 +35,7 @@ export const PageContainer = styled.div`
 
 export const Title = styled.h2`
   display: flex;
-  justify-contain: flex-start;
+  justify-content: flex-start;
   width: 250px;
   height: 44px;
   font-weight: 600;
