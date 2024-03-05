@@ -44,11 +44,12 @@ export const PictureDiv = styled.div`
 
 export const PictureImg = styled.img`
   border-radius: 8px;
+  width: 100%;
 `;
 
 export const PictureDescription = styled.div`
-  background-color: ${(props) => props.theme.inputBCG};
-  color: ${(props) => props.theme.recTitle};
+  background-color: ${(props) => props.theme.mainBg};
+  color: ${(props) => props.theme.labelTxt};
   position: absolute;
   margin-top: 245px;
   padding: 16px;

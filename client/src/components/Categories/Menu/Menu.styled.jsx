@@ -1,105 +1,73 @@
 import styled from "styled-components";
 
+export const Title = styled.h2`
+  color: ${(props) => props.theme.mainTitle};
+  margin:0px auto 40px 16px;
+  padding-top: 100px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  font-size: 28px;
+  line-height: 28px;
+  @media (min-width: 768px) {
+    font-size: 32px;
+    line-height: 32px;
+    margin-left: 32px;
+  }
+  @media (min-width: 1440px) {
+    font-size: 44px;
+    line-height: 44px;
+    margin-left: 100px;
+  }
+`;
+
 export const TabsContainer = styled.div`
-  width: 100%;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
-  border-top-color: rgba(0, 0, 0, 0.12);
-  border-right-color: rgba(0, 0, 0, 0.12);
-  overflow: hidden;
-  min-height: 48px;
   display: flex;
-`;
-
-export const ScrollButton = styled.div`
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  box-sizing: border-box;
-  background-color: transparent;
-  outline: 0;
-  border: 0;
-  margin: 0;
-  border-radius: 0;
-  padding: 0;
-  cursor: ${({ disabled }) => (disabled ? "default" : "pointer")};
-  user-select: none;
-  vertical-align: middle;
-  appearance: none;
-  text-decoration: none;
-  color: inherit;
-  width: 40px;
-  flex-shrink: 0;
-  opacity: ${({ disabled }) => (disabled ? "0" : "0.8")};
-`;
-
-export const StyledSvg = styled.svg`
-  user-select: none;
-  width: 1em;
-  height: 1em;
-  display: inline-block;
-  fill: currentcolor;
-  flex-shrink: 0;
-  transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
-  font-size: 1.25rem;
-`;
-
-export const StyledSpan = styled.span`
+  border-bottom: 1px solid ${(props) => props.theme.underline};
   overflow: hidden;
-  pointer-events: none;
-  position: absolute;
-  z-index: 0;
-  inset: 0px;
-  border-radius: inherit;
+  min-height: 56px;
+  margin-left: 16px;
+  @media (min-width: 768px) {
+    margin-left: 32px;
+  }
+  @media (min-width: 1440px) {
+   margin-left: 100px;
+  }
 `;
 
 export const CategoryList = styled.div`
-  position: relative;
   display: flex;
-  white-space: nowrap;
   scrollbar-width: none;
   overflow: auto hidden;
-  margin-bottom: 0px;
+  gap: 28px;
+  padding-left: 19px;
+  @media (min-width: 768px) {
+    padding-left: 30px;
+  }
 `;
 
 export const CategoryItem = styled.li`
+  padding-bottom: 10px;
   font-style: normal;
   font-weight: 400;
-  font-size: 18px;
-  line-height: 18px;
-  color: rgb(189, 189, 189);
-  text-transform: capitalize;
-  padding: 0px 22px;
+  color: ${(props) => props.theme.underline};
   display: inline-flex;
-  align-items: center;
   justify-content: center;
-  box-sizing: border-box;
-  background-color: transparent;
-  outline: 0;
-  border: 0;
-  margin: 0;
-  border-radius: 0;
   cursor: pointer;
-  user-select: none;
-  vertical-align: middle;
-  appearance: none;
-  text-decoration: none;
-  letter-spacing: 0.02857em;
-  max-width: 360px;
-  min-width: 90px;
-  position: relative;
-  min-height: 48px;
   flex-shrink: 0;
-  overflow: hidden;
-  white-space: normal;
-  text-align: center;
   flex-direction: column;
+  font-size: 14px;
+  line-height: 14px;
+  @media (min-width: 768px) {
+    font-size: 18px;
+    line-height: 18px;
+  }
+
+  &:hover, &:focus{
+    color: ${(props) => props.theme.brandGreen};
+  }
+  &:focus{
+    border-bottom:${(props) => props.theme.brandGreen} 2px solid;
+  }
 `;
 
-export const Header = styled.h2`
-  padding-bottom: 72px;
-  font-size: 32px;
-  line-height: 32px;
-  padding-top: 114px;
-  color: rgb(0, 24, 51);
-`;
+
