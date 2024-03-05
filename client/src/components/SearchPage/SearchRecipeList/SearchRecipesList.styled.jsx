@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import searchfor_mobile from "../../../images/mobile_img/searchfor_mobile.png";
+import searchfor_tablet from "../../../images/tablet_img/searchfor_tablet.png";
 
 export const RecipesListContainer = styled.ul`
   margin-top: 64px;
@@ -106,3 +108,30 @@ export const PictureDescription = styled.p`
   color: ${(props) => props.theme.recTitle};
   font-family: "Poppins", sans-serif;
 `;
+
+export const RecipesNoResults = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  font-size: 14px;
+  padding: 3rem 0;
+
+  media (min-width: 768px) {
+    font-size: 24px;
+  }
+`;
+
+export const RecipesNoImg = styled.div`
+background-image: url(${searchfor_mobile});
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+width: 350px;
+height: 225px;
+
+@media (min-width: 768px) { 
+  background-image: url(${searchfor_tablet});
+
+  `;

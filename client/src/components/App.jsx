@@ -4,7 +4,8 @@ import { lazy } from "react";
 import { useSelector } from "react-redux";
 import { selectIsLoggedIn } from "../redux/auth/selectors";
 
-const lazyLoad = (page) => lazy(() => import("../pages").then((module) => ({ default: module[page] })));
+const lazyLoad = (page) =>
+  lazy(() => import("../pages").then((module) => ({ default: module[page] })));
 const WelcomePage = lazyLoad("WelcomePage");
 const SigninPage = lazyLoad("SigninPage");
 const RegisterPage = lazyLoad("RegisterPage");

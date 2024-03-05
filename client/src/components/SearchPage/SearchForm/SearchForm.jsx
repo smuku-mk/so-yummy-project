@@ -32,7 +32,9 @@ export const SearchForm = () => {
         onChange={(e) => setSearchValue(e.target.value)}
       />
       <ButtonWrapper>
-        <Button onClick={handleSearch}>Search</Button>
+        <Button type="button" onClick={handleSearch}>
+          Search
+        </Button>
       </ButtonWrapper>
     </Container>
   );
