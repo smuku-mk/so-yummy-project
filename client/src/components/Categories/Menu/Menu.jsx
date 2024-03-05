@@ -10,9 +10,9 @@ import {
 } from "./Menu.styled";
 
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchCategories } from '../../redux/categories/operations';
-import { setCategory } from "../../redux/categories/categoriesSlice";
-import { categories } from '../../redux/categories/selectors'
+import { fetchCategories } from '../../../redux/categories/operations';
+import { setCategory } from "../../../redux/categories/categoriesSlice";
+import { categories } from '../../../redux/categories/selectors'
 
 export const Menu = () => {
   const dispatch = useDispatch();
