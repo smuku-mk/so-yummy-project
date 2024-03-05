@@ -6,7 +6,7 @@ export const categoriesSlice = createSlice({
   name: 'categories',
   initialState: {
     categories: [],
-    currentCategory: "beef",
+    currentCategory: '',
     recipes: []
   },
   reducers: {

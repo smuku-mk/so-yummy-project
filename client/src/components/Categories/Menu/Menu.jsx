@@ -20,7 +20,7 @@ export const Menu = () => {
 
   useEffect(() => {
     dispatch(fetchCategories());
-  }, []);
+  }, [dispatch]);
 
   const handleCategoryChange = (newCategory) => {
     dispatch(setCategory(newCategory));

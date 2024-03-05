@@ -7,7 +7,7 @@ import { Container, RecipesList, PictureDiv, PictureImg, PictureDescription } fr
 export const RecipeList = () => {
   const dispatch = useDispatch();
   const recipesList = useSelector(recipes); 
-  const category = useSelector(currentCategory)
+  const category = useSelector(currentCategory);
 
   useEffect(() => {
     dispatch(fetchRecipes(category));
