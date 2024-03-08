@@ -4,7 +4,7 @@ import "dotenv/config";
 const PORT = process.env.PORT || 5000;
 const BASE_URL = process.env.BASE_URL || `http://localhost:`;
 
-const sendVerificationMail = async (email, verificationToken, name) => {
+export const sendVerificationMail = async (email, verificationToken, name) => {
   const transporter = nodemailer.createTransport({
     host: "smtp.sendgrid.net",
     port: 587,
