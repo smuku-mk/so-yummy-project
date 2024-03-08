@@ -20,7 +20,10 @@ export const Label = styled.label`
     height: 21px;
     width: 21px;
     border-radius: 50%;
-    background: linear-gradient(${(props) => props.theme.switchBall1}, ${(props) => props.theme.switchBall2});
+    background: linear-gradient(
+      ${(props) => props.theme.switchBall1},
+      ${(props) => props.theme.switchBall2}
+    );
     box-shadow: 2px 1px 6px 0px rgba(0, 0, 0, 0.25);
     cursor: pointer;
     top: -3px;
