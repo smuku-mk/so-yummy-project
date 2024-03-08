@@ -1,12 +1,24 @@
 import { useState, useEffect } from "react";
 import { BgContainer, Content, Wrapper } from "./Header.styled";
-import { Logo, UserLogo, Navi, Hamburger } from "./header-components";
+import { Logo, UserLogo, Hamburger, Navi } from "./header-components";
 import { ThemeToggler } from "./header-components/ThemeToggler/ThemeToggler";
 import { GlobalContainer } from "../../styles";
 
 export const Header = () => {
-  const [isOpen, setIsOpen] = useState(true);
   const [nav, setNav] = useState(false);
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -20,20 +32,16 @@ export const Header = () => {
     };
   }, []);
 
-  const toggleMenu = () => {
-    setIsOpen((open) => !open);
-  };
-
   return (
     <BgContainer variant={nav}>
       <GlobalContainer>
         <Content>
           <Logo />
-          {isOpen ? <Navi /> : ""}
+          <Navi />
           <Wrapper>
             <UserLogo />
-            <Hamburger onClick={toggleMenu} />
-            {isOpen ? <ThemeToggler /> : ""}
+            <Hamburger />
+            {windowWidth >= 1440 ? <ThemeToggler /> : null}
           </Wrapper>
         </Content>
       </GlobalContainer>
