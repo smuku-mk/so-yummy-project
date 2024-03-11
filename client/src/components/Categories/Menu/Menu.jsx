@@ -1,15 +1,12 @@
 import { useEffect } from "react";
-import {
-  TabsContainer,
-  CategoryList,
-  CategoryItem,
-  Title,
-} from "./Menu.styled";
+import { TabsContainer, CategoryList, CategoryItem } from "./Menu.styled";
 
-import { useDispatch, useSelector } from 'react-redux';
-import { fetchCategories } from '../../../redux/categories/operations';
+import { useDispatch, useSelector } from "react-redux";
+import { fetchCategories } from "../../../redux/categories/operations";
 import { setCategory } from "../../../redux/categories/categoriesSlice";
-import { categories } from '../../../redux/categories/selectors'
+import { categories } from "../../../redux/categories/selectors";
+import { MainPageTitle } from "../../MainTitlePage/MainTitlePage";
+import { GlobalContainer } from "../../../styles/global";
 
 export const Menu = () => {
   const dispatch = useDispatch();
@@ -24,8 +21,8 @@ export const Menu = () => {
   };
 
   return (
-    <>
-      <Title>Categories</Title>
+    <GlobalContainer>
+      <MainPageTitle title="Categories" />
       <TabsContainer>
         <CategoryList>
           {categoriesList.map((category) => (
@@ -35,6 +32,6 @@ export const Menu = () => {
           ))}
         </CategoryList>
       </TabsContainer>
-      </>
+    </GlobalContainer>
   );
 };

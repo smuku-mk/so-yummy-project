@@ -50,6 +50,9 @@ export const lightTheme = {
   warning: "#f6c23e",
   success: "#3cbc81",
 
+  //MainTitle
+  mainTitle: "#001833",
+
   //Categories
   menu: "#bdbdbd",
   current: "#8baa36",
@@ -75,7 +78,7 @@ export const lightTheme = {
   iconHover: "#1e1f28",
   popularTitle: "#3E4462",
   popularDescription: "#7E7E7E",
-  mainTitle: "#001833",
+  recipeTitle: "#001833",
   inputPlaceholder: "#000000",
   inputBCG: "#fafafa",
   borderIngred: "#d9d9d9",
@@ -157,6 +160,9 @@ export const darkTheme = {
   warning: "#f6c23e",
   success: "#3cbc81",
 
+  //MainTitle
+  mainTitle: "#FAFAFA",
+
   //Categories
   menu: "#fafafa",
   current: "#8baa36",
@@ -182,7 +188,7 @@ export const darkTheme = {
   iconHover: "#8baa36",
   popularTitle: "#fafafa",
   popularDescription: "rgba(250, 250, 250, 0.6)",
-  mainTitle: "#fafafa",
+  recipeTitle: "#fafafa",
   inputPlaceholder: "#fafafa",
   inputBCG: "#2a2c36",
   borderIngred: "rgba(250, 250, 250, 0.2);",
