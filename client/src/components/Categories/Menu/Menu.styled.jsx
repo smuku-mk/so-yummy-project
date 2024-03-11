@@ -1,25 +1,5 @@
 import styled from "styled-components";
 
-export const Title = styled.h2`
-  color: ${(props) => props.theme.mainTitle};
-  margin:0px auto 40px 16px;
-  padding-top: 100px;
-  font-weight: 600;
-  letter-spacing: -0.02em;
-  font-size: 28px;
-  line-height: 28px;
-  @media (min-width: 768px) {
-    font-size: 32px;
-    line-height: 32px;
-    margin-left: 32px;
-  }
-  @media (min-width: 1440px) {
-    font-size: 44px;
-    line-height: 44px;
-    margin-left: 100px;
-  }
-`;
-
 export const TabsContainer = styled.div`
   display: flex;
   border-bottom: 1px solid ${(props) => props.theme.underline};
