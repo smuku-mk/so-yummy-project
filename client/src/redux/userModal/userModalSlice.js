@@ -4,6 +4,8 @@ const modalSlice = createSlice({
   name: 'userModal',
   initialState: {
     isUserModalOpen: false,
+    isProfileModalOpen: false,
+    isLogOutModalOpen: false,
   },
   reducers: {
     toggleUserModal: (state) => {
@@ -12,9 +14,22 @@ const modalSlice = createSlice({
     resetUserModal: (state) => {
         state.isUserModalOpen = false;
       },
+    toggleProfileModal: (state) => {
+      state.isProfileModalOpen = !state.isProfileModalOpen;
+    },
+    resetProfileModal: (state) => {
+        state.isProfileModalOpen = false;
+      },
+    toggleLogOutModal: (state) => { 
+      state.isLogOutModalOpen = !state.isLogOutModalOpen;
+    },
+    resetLogOutModal: (state) => {
+        state.isLogOutModalOpen = false;
+      },
+    
   },
 });
 
-export const { toggleUserModal, resetUserModal } = modalSlice.actions;
+export const { toggleUserModal, resetUserModal, toggleProfileModal, resetProfileModal, toggleLogOutModal, resetLogOutModal } = modalSlice.actions;
 
 export const userModalReducer= modalSlice.reducer;

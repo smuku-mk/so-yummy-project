@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 export const ModalContainer = styled.div`
 position: absolute;
-top: 90%;
+top: 10%;
 right: 10%;
 background-color: white;
 border: 1px solid green;
@@ -24,4 +24,12 @@ color: white;
 font-size: 16px;
 border: none;
 margin-top: 16px;
+`
+export const Overlay = styled.div`
+position: fixed;
+top: 0;
+left: 0;
+width: 100vw;
+height: 100vh;
+background-color: transparent;
 `
