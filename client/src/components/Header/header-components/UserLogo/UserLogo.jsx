@@ -4,7 +4,7 @@ import { selectAvatarURL, selectUserName } from "../../../../redux/auth/selector
 import { Avatar, Container, Name } from "./UserLogo.styled";
 import { UserLogoModal } from "../UserLogoModal";
 import { userModal, profileModal, logOutModal } from "../../../../redux/userModal/selectors";
-import { toggleUserModal, resetUserModal } from "../../../../redux/userModal/userModalSlice";
+import { toggleUserModal, resetModals } from "../../../../redux/userModal/userModalSlice";
 import { UserInfoModal } from "../UserInfoModal";
 import { LogoutBtn } from "../LogoutBtn";
 
@@ -23,7 +23,7 @@ export const UserLogo = () => {
   };
 
   useEffect(() => {
-    dispatch(resetUserModal());
+    dispatch(resetModals());
   }, [dispatch]);
 
   return (

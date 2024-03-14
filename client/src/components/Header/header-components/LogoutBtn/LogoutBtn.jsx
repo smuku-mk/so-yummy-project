@@ -1,11 +1,10 @@
 import { useDispatch } from "react-redux";
-import { useEffect } from "react";
 import { toggleLogOutModal } from "../../../../redux/userModal/userModalSlice";
-import { ModalContainer, Text, Title, Overlay} from "./LogoutBtn.styled";
+import { ModalContainer, Title, Overlay, ButtonsContainer, CancelBtn, LogOutBtn} from "./LogoutBtn.styled";
 
 
 export const LogoutBtn = () => {
-//odświeżanie
+
 //podpiąć backend
   const dispatch = useDispatch();
 
@@ -14,14 +13,19 @@ export const LogoutBtn = () => {
         dispatch(toggleLogOutModal());
       }
     };
-  
+  const handleLogOut = () => { 
+    dispatch(toggleLogOutModal());//placeholder
+  };
 
   return (
     <Overlay onClick={handleCloseModal}>
       <ModalContainer>
-        <Title>logout
+        <Title>Are you sure you want to log out?
         </Title>
-        <Text>albo i nie</Text>
+        <ButtonsContainer>
+          <LogOutBtn onClick={handleLogOut}>Log out</LogOutBtn>
+          <CancelBtn onClick={handleCloseModal}>Cancel</CancelBtn>
+        </ButtonsContainer>
       </ModalContainer>
     </Overlay>
   );
