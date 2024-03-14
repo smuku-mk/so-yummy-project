@@ -1,12 +1,15 @@
 import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import { toggleLogOutModal } from "../../../../redux/userModal/userModalSlice";
 import { ModalContainer, Title, Overlay, ButtonsContainer, CancelBtn, LogOutBtn} from "./LogoutBtn.styled";
+import { logOut } from "../../../../redux/auth/operations";
 
 
 export const LogoutBtn = () => {
 
 //podpiąć backend
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const handleCloseModal = (e) => {  
       if (e.target === e.currentTarget) {
@@ -14,7 +17,8 @@ export const LogoutBtn = () => {
       }
     };
   const handleLogOut = () => { 
-    dispatch(toggleLogOutModal());//placeholder
+    dispatch(logOut());
+    navigate("/");
   };
 
   return (
