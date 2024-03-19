@@ -18,7 +18,7 @@ export const Text = styled.p`
 color: black;
 font-size: 20px;   
 `
-export const LogOutBtn = styled.button`
+export const SaveBtn = styled.button`
 width: 125px;
 height: 45px;
 background-color: #8baa36;
@@ -35,4 +35,13 @@ left: 0;
 width: 100vw;
 height: 100vh;
 background-color: rgba(0, 0, 0, 0.5);
+`
+export const NameInput = styled.input`
+width: 90%;
+color: black;
+background-color: aliceblue;
+height: 45px;
+border-radius: 8px;
+border: 1px solid;
+margin-bottom: 16px;
 `

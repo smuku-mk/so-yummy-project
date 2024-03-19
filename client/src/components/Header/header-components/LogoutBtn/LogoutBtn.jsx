@@ -7,7 +7,6 @@ import { logOut } from "../../../../redux/auth/operations";
 
 export const LogoutBtn = () => {
 
-//podpiąć backend
   const dispatch = useDispatch();
   const navigate = useNavigate();
 

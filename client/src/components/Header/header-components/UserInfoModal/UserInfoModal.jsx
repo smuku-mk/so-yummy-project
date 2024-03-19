@@ -1,9 +1,8 @@
 import { useDispatch } from "react-redux";
 import { toggleProfileModal } from "../../../../redux/userModal/userModalSlice";
-import { ModalContainer, Text, Title, Overlay} from "./UserInfoModal.styled";
+import { ModalContainer, SaveBtn, NameInput, Overlay} from "./UserInfoModal.styled";
 
 export const UserInfoModal = () => {
-
 
 const dispatch = useDispatch();
 
@@ -13,13 +12,17 @@ const handleCloseModal = (e) => {
     }
   };
 
-return (
-    <Overlay onClick={handleCloseModal}>
-    <ModalContainer>
-    <Title>info
-    </Title>
-    <Text>będzie</Text>
-    </ModalContainer>
-    </Overlay>
-    );
+  
+
+    return (
+      <Overlay onClick={handleCloseModal}>
+      <ModalContainer>
+      <NameInput 
+          type="text"
+          placeholder="Enter new username"
+          autoFocus />
+      <SaveBtn>Save changes</SaveBtn>
+      </ModalContainer>
+      </Overlay>
+  );
   }
