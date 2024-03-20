@@ -15,7 +15,8 @@ import { ThemeToggler } from "../ThemeToggler";
 import { GlobalContainer } from "../../../../styles";
 
 export const Hamburger = () => {
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
+  
 
   const toggleMenu = () => {
     setIsOpen((open) => !open);
