@@ -31,7 +31,6 @@ export const UserLogo = () => {
       <Avatar src={`${avatarURL}`} alt="avatar" onClick={handleModalClick}></Avatar>
       <Name>{userName}</Name>
       {isUserModalOpen && <UserLogoModal />}
-      {isProfileModalOpen && < UserInfoModal/>}
       {isLogutModalOpen && <LogoutBtn />}
     </Container>
   );
