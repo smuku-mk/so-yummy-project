@@ -1,28 +1,42 @@
 import { useDispatch } from "react-redux";
+import { useState } from "react";
 import { toggleProfileModal } from "../../../../redux/userModal/userModalSlice";
 import { ModalContainer, SaveBtn, NameInput, Overlay} from "./UserInfoModal.styled";
 
 export const UserInfoModal = () => {
+  const [content, setContent] = useState("");
+  const dispatch = useDispatch();
 
-const dispatch = useDispatch();
-
-const handleCloseModal = (e) => {  
+  const handleCloseModal = (e) => {  
     if (e.target === e.currentTarget) {
       dispatch(toggleProfileModal());
     }
   };
 
-  
+  const handleContentChange = (e) => {
+    setContent(e.target.value);
+  };
 
-    return (
-      <Overlay onClick={handleCloseModal}>
+  const handleSaveChanges = (e) => {
+    e.preventDefault();
+    // dispatch
+  };
+  console.log(content);
+
+  return (
+    <Overlay onClick={handleCloseModal}>
       <ModalContainer>
-      <NameInput 
-          type="text"
-          placeholder="Enter new username"
-          autoFocus />
-      <SaveBtn>Save changes</SaveBtn>
+        <form onSubmit={handleSaveChanges}>
+          <NameInput 
+            type="text"
+            value={content}
+            onChange={handleContentChange}
+            placeholder="Enter new username"
+            autoFocus
+          />
+          <SaveBtn type="submit">Save changes</SaveBtn>
+        </form>
       </ModalContainer>
-      </Overlay>
+    </Overlay>
   );
-  }
+}

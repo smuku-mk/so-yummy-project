@@ -9,6 +9,7 @@ background-color: white;
 border: 1px solid green;
 border-radius: 8px;
 padding: 30px;
+z-index: 1000;
 `
 export const Title = styled.p`
 color: black;
@@ -35,6 +36,7 @@ left: 0;
 width: 100vw;
 height: 100vh;
 background-color: rgba(0, 0, 0, 0.5);
+z-index: 999;
 `
 export const NameInput = styled.input`
 width: 90%;
