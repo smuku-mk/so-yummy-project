@@ -1,7 +1,8 @@
 import { useDispatch } from "react-redux";
 import { useState } from "react";
 import { toggleProfileModal } from "../../../../redux/userModal/userModalSlice";
-import { ModalContainer, SaveBtn, NameInput, Overlay} from "./UserInfoModal.styled";
+import { ModalContainer, SaveBtn, NameInput, InputWrapper, UserIcon, PencilIcon, Overlay, AvatarContainer, AvatarIcon, PlusIcon} from "./UserInfoModal.styled";
+import icons from "../../../../images/icons.svg";
 
 export const UserInfoModal = () => {
   const [content, setContent] = useState("");
@@ -14,28 +15,40 @@ export const UserInfoModal = () => {
   };
 
   const handleContentChange = (e) => {
-    setContent(e.target.value);
+   setContent(e.target.value);
   };
 
   const handleSaveChanges = (e) => {
     e.preventDefault();
-    // dispatch
+    // dispatch save avatar and name
   };
   console.log(content);
 
   return (
     <Overlay onClick={handleCloseModal}>
       <ModalContainer>
-        <form onSubmit={handleSaveChanges}>
-          <NameInput 
+          <AvatarContainer> {/* onclick */}
+            <AvatarIcon>
+              <use href={icons + "#icon-user"} />
+            </AvatarIcon>
+            <PlusIcon>
+              <use href={icons + "#icon-avatar-plus"} />
+            </PlusIcon>
+          </AvatarContainer>
+          <InputWrapper>
+            <NameInput 
             type="text"
-            value={content}
+            value={content} /* content = current user name???, or add placeholder*/
             onChange={handleContentChange}
-            placeholder="Enter new username"
-            autoFocus
-          />
-          <SaveBtn type="submit">Save changes</SaveBtn>
-        </form>
+            />
+            <UserIcon>
+            <use href={icons + "#icon-user"} />
+            </UserIcon>
+            <PencilIcon>
+            <use href={icons + "#icon-pencil"} />
+            </PencilIcon>
+          </InputWrapper>
+          <SaveBtn type="button">Save changes</SaveBtn>
       </ModalContainer>
     </Overlay>
   );
