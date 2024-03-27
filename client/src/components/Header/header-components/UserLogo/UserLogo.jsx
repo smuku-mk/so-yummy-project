@@ -14,8 +14,8 @@ export const UserLogo = () => {
   const avatarURL = useSelector(selectAvatarURL);
   const userName = useSelector(selectUserName);
   const isUserModalOpen = useSelector(userModal);
-  const isProfileModalOpen = useSelector(profileModal);
   const isLogutModalOpen = useSelector(logOutModal);
+  console.log(avatarURL);
 
 
   const handleModalClick = () => {

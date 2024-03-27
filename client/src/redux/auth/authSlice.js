@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { register, logIn, logOut } from "./operations";
+import { register, logIn, logOut, uploadAvatar } from "./operations";
 
 const initialState = {
   user: { name: null, email: null, userId: null },
@@ -35,6 +35,9 @@ const authSlice = createSlice({
         state.token = initialState.token;
         state.avatarURL = initialState.avatarURL;
         state.isLoggedIn = initialState.isLoggedIn;
+      })
+      .addCase(uploadAvatar.fulfilled, (state, action) => {
+        state.avatarURL = action.payload;
       });
   },
 });

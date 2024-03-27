@@ -66,3 +66,13 @@ export const logOut = createAsyncThunk(
     }
   }
 );
+
+export const uploadAvatar = createAsyncThunk(
+  "users/uploadAvatar",
+  async (file, thunkAPI) => {
+    const formData = new FormData();
+    formData.append('image', file, file.name);
+    const response = await axios.post("/users/upload", formData);
+    return response.data;
+  }
+);
