@@ -11,10 +11,11 @@ export const LogoutBtn = () => {
   const navigate = useNavigate();
 
   const handleCloseModal = (e) => {  
-      if (e.target === e.currentTarget) {
+    e.stopPropagation();
+    if (e.target === e.currentTarget) {
         dispatch(toggleLogOutModal());
-      }
-    };
+    }
+  };
   const handleLogOut = () => { 
     dispatch(logOut());
     navigate("/");

@@ -7,7 +7,7 @@ export const createUser = async ({
     password,
     verificationToken,
   }) => {
-    const avatar = gravatar.url(email);
+    const avatar = gravatar.url(email);// opcjonalnie zamienić na default url w public/avatars
     return await User.create({
       name,
       email,

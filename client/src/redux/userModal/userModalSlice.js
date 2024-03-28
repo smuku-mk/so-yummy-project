@@ -3,28 +3,28 @@ import { createSlice } from '@reduxjs/toolkit';
 const modalSlice = createSlice({
   name: 'userModal',
   initialState: {
-    isUserModalOpen: false,
-    isProfileModalOpen: false,
+    isUserLogoModalOpen: false,
+    isUserInfoModalOpen: false,
     isLogOutModalOpen: false,
   },
   reducers: {
-    toggleUserModal: (state) => {
-      state.isUserModalOpen = !state.isUserModalOpen;
+    toggleUserLogoModal: (state) => {
+      state.isUserLogoModalOpen = !state.isUserLogoModalOpen;
     },
-    toggleProfileModal: (state) => {
-      state.isProfileModalOpen = !state.isProfileModalOpen;
+    toggleUserInfoModal: (state) => {
+      state.isUserInfoModalOpen = !state.isUserInfoModalOpen;
     },
     toggleLogOutModal: (state) => { 
       state.isLogOutModalOpen = !state.isLogOutModalOpen;
     },
     resetModals: (state) => {
-      state.isUserModalOpen = false;
-      state.isProfileModalOpen = false;
+      state.isUserLogoModalOpen = false;
+      state.isUserInfoModalOpen = false;
       state.isLogOutModalOpen = false;
     },    
   },
 });
 
-export const { toggleUserModal, toggleProfileModal, toggleLogOutModal, resetModals } = modalSlice.actions;
+export const { toggleUserLogoModal, toggleUserInfoModal, toggleLogOutModal, resetModals } = modalSlice.actions;
 
 export const userModalReducer= modalSlice.reducer;

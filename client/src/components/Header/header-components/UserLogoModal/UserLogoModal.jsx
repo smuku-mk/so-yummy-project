@@ -1,26 +1,29 @@
 import { useDispatch } from "react-redux";
-import { toggleProfileModal, toggleUserModal, toggleLogOutModal } from "../../../../redux/userModal/userModalSlice";
+import { toggleUserInfoModal, toggleUserLogoModal, toggleLogOutModal } from "../../../../redux/userModal/userModalSlice";
 import { ModalContainer, Profile, LogOutBtn, Overlay} from "./UserLogoModal.styled";
 
+// w modalach brakuje jeszcze X do zamknięcia, oraz obsługi escape'a. 
+//można do nich podpiąć resetModals z reduxa. onClick i keyDown 
 export const UserLogoModal = () => {
 
     const dispatch = useDispatch();
 
     const handleCloseModal = (e) => {  
-      if (e.target === e.currentTarget) {
-        dispatch(toggleUserModal());
-      }
+      e.stopPropagation();
+      dispatch(toggleUserLogoModal());
     };
     
-    const handleProfileClick = () => {
-        dispatch(toggleProfileModal());
-        dispatch(toggleUserModal());
-      };
+    const handleProfileClick = (e) => {
+      e.stopPropagation();
+      dispatch(toggleUserInfoModal());
+      dispatch(toggleUserLogoModal());
+    };
 
-    const handleLogOutClick = () => {
-        dispatch(toggleLogOutModal());
-        dispatch(toggleUserModal());
-      };
+    const handleLogOutClick = (e) => {
+      e.stopPropagation();
+      dispatch(toggleLogOutModal());
+      dispatch(toggleUserLogoModal());
+    };
      
     return (
       <Overlay onClick={handleCloseModal}>

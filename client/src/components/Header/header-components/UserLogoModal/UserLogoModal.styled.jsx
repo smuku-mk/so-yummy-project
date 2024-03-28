@@ -9,6 +9,7 @@ background-color: white;
 border: 1px solid green;
 border-radius: 8px;
 padding: 30px;
+z-index: 1000;
 `
 export const Profile = styled.p`
 color: black;
@@ -31,5 +32,6 @@ top: 0;
 left: 0;
 width: 100vw;
 height: 100vh;
-background-color: rgba(0, 0, 0, 0.3);
+background-color: rgba(0, 0, 0, 0.5);
+z-index: 999;
 `

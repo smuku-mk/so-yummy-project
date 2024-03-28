@@ -6,10 +6,11 @@ import { currentUser } from "../../redux/auth/operations";
 import { Header } from "../Header";
 import { Footer } from "../Footer";
 import { UserInfoModal } from "../Header/header-components/UserInfoModal/UserInfoModal";
+import { userInfoModal } from "../../redux/userModal/selectors";
 
 export const SharedLayoutPrivate = () => {
   const dispatch = useDispatch();
-  const isProfileModalOpen = useSelector((state) => state.userModal.isProfileModalOpen);
+  const isUserInfoModalOpen = useSelector(userInfoModal);
 
   useEffect(() => {
     dispatch(currentUser());
@@ -19,7 +20,7 @@ export const SharedLayoutPrivate = () => {
   return (
     <>
       <Header />
-      {isProfileModalOpen && < UserInfoModal/>}
+      {isUserInfoModalOpen && < UserInfoModal/>}
       <Suspense fallback={<div>Loading...</div>}>
         <Outlet />
       </Suspense>

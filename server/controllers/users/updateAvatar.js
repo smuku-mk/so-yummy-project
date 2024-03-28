@@ -21,7 +21,7 @@ if (!fs.existsSync(avatarsDir)) {
   await fs.promises.rename(req.file.path, resultUpload);
   await Jimp.read(resultUpload).then(image => image.resize(250, 250).writeAsync(resultUpload));
 
-  await User.findByIdAndUpdate(req.user.id, { avatarURL: filename });
+  await User.findByIdAndUpdate(req.user.id, { avatarURL: `http://localhost:5000/public/avatars/${filename}` });
 
-  return res.status(200).json({ avatarURL: filename });
+  return res.status(200).json({ avatarURL: `http://localhost:5000/public/avatars/${filename}` });
 };

@@ -1,9 +1,17 @@
 import { useDispatch } from "react-redux"; 
 import { useState, useRef } from "react";
-import { toggleProfileModal } from "../../../../redux/userModal/userModalSlice";
+import { toggleUserInfoModal } from "../../../../redux/userModal/userModalSlice";
 import { uploadAvatar } from "../../../../redux/auth/operations";
+import { updateUserName } from "../../../../redux/auth/authSlice";
 import { ModalContainer, SaveBtn, NameInput, InputWrapper, UserIcon, PencilIcon, Overlay, AvatarContainer, AvatarIcon, PlusIcon} from "./UserInfoModal.styled";
 import icons from "../../../../images/icons.svg";
+
+
+// Ewentualnie można przechowywać lokalnie awatar i nawzę usera zanim wyślemy zmiany.
+// Można dzięki temu zastąpić to szare pole nowym awatarem( początkowo też aktualnym).
+// jako placeholder w inpucie wyświetlić aktualną nazwę usera???
+
+//trzeba naprawić te svg...
 
 export const UserInfoModal = () => {
   const [content, setContent] = useState("");
@@ -11,7 +19,7 @@ export const UserInfoModal = () => {
 
   const handleCloseModal = (e) => {  
     if (e.target === e.currentTarget) {
-      dispatch(toggleProfileModal());
+      dispatch(toggleUserInfoModal());
     }
   };
 
@@ -21,7 +29,7 @@ export const UserInfoModal = () => {
 
   const handleSaveChanges = (e) => {
     e.preventDefault();
-    // dispatch save avatar and name
+    dispatch(updateUserName(content));
   };
   console.log(content);
 
@@ -53,7 +61,7 @@ export const UserInfoModal = () => {
           <InputWrapper>
             <NameInput 
             type="text"
-            value={content} /* content = current user name???, or add placeholder*/
+            value={content}
             onChange={handleContentChange}
             />
             <UserIcon>
@@ -63,7 +71,7 @@ export const UserInfoModal = () => {
             <use href={icons + "#icon-pencil"} />
             </PencilIcon>
           </InputWrapper>
-          <SaveBtn type="button">Save changes</SaveBtn>
+          <SaveBtn type="button" onClick={handleSaveChanges}>Save changes</SaveBtn>
       </ModalContainer>
     </Overlay>
   );

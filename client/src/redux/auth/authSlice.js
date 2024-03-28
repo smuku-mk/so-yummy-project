@@ -12,6 +12,11 @@ const initialState = {
 const authSlice = createSlice({
   name: "auth",
   initialState,
+  reducers: {
+    updateUserName: (state, action) => {
+      state.user.name = action.payload;
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(register.fulfilled, (state, action) => {
@@ -37,9 +42,10 @@ const authSlice = createSlice({
         state.isLoggedIn = initialState.isLoggedIn;
       })
       .addCase(uploadAvatar.fulfilled, (state, action) => {
-        state.avatarURL = action.payload;
+        state.avatarURL = action.payload.avatarURL;
       });
   },
 });
 
+export const { updateUserName } = authSlice.actions;
 export const authReducer = authSlice.reducer;

@@ -3,9 +3,8 @@ import { useSelector, useDispatch } from "react-redux";
 import { selectAvatarURL, selectUserName } from "../../../../redux/auth/selectors";
 import { Avatar, Container, Name } from "./UserLogo.styled";
 import { UserLogoModal } from "../UserLogoModal";
-import { userModal, profileModal, logOutModal } from "../../../../redux/userModal/selectors";
-import { toggleUserModal, resetModals } from "../../../../redux/userModal/userModalSlice";
-import { UserInfoModal } from "../UserInfoModal";
+import { userLogoModal, logOutModal } from "../../../../redux/userModal/selectors";
+import { toggleUserLogoModal, resetModals } from "../../../../redux/userModal/userModalSlice";
 import { LogoutBtn } from "../LogoutBtn";
 
 export const UserLogo = () => {
@@ -13,13 +12,12 @@ export const UserLogo = () => {
   const dispatch = useDispatch();
   const avatarURL = useSelector(selectAvatarURL);
   const userName = useSelector(selectUserName);
-  const isUserModalOpen = useSelector(userModal);
-  const isLogutModalOpen = useSelector(logOutModal);
-  console.log(avatarURL);
+  const isUserLogoModalOpen = useSelector(userLogoModal);
+  const isLogOutModalOpen = useSelector(logOutModal);
 
 
   const handleModalClick = () => {
-    dispatch(toggleUserModal());
+    dispatch(toggleUserLogoModal());
   };
 
   useEffect(() => {
@@ -27,11 +25,11 @@ export const UserLogo = () => {
   }, [dispatch]);
 
   return (
-    <Container>
-      <Avatar src={`${avatarURL}`} alt="avatar" onClick={handleModalClick}></Avatar>
+    <Container onClick={handleModalClick}>
+      <Avatar src={`${avatarURL}`} alt="avatar" ></Avatar>
       <Name>{userName}</Name>
-      {isUserModalOpen && <UserLogoModal />}
-      {isLogutModalOpen && <LogoutBtn />}
+      {isUserLogoModalOpen && <UserLogoModal />}
+      {isLogOutModalOpen && <LogoutBtn />}
     </Container>
   );
 };
