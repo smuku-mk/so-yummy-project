@@ -9,6 +9,14 @@ border: 1px solid green;
 border-radius: 8px;
 padding: 30px;
 `
+export const CloseButton = styled.button`
+position: absolute;
+width: 30px;
+height: 30px;
+top: 10px;
+right: 10px;
+`
+
 export const Title= styled.p`
 color: black;
 font-size: 20px;

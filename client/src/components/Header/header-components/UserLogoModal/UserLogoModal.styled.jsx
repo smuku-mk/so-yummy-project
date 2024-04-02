@@ -11,6 +11,14 @@ border-radius: 8px;
 padding: 30px;
 z-index: 1000;
 `
+export const CloseButton = styled.button`
+position: absolute;
+width: 30px;
+height: 30px;
+top: 10px;
+right: 10px;
+`
+
 export const Profile = styled.p`
 color: black;
 font-size: 20px;
@@ -20,7 +28,7 @@ export const LogOutBtn = styled.button`
 width: 125px;
 height: 45px;
 background-color: #8baa36;
-border-radius: 8px;
+border-radius: 15px 50px;
 color: white;
 font-size: 16px;
 border: none;
@@ -35,3 +43,11 @@ height: 100vh;
 background-color: rgba(0, 0, 0, 0.5);
 z-index: 999;
 `
+
+export const PencilIcon = styled.svg`
+position: absolute;
+width: 17px;
+height: 17px;
+right: 20px;
+top: 35px;
+`;

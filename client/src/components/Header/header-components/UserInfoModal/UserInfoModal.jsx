@@ -1,9 +1,9 @@
 import { useDispatch } from "react-redux"; 
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect} from "react";
 import { toggleUserInfoModal } from "../../../../redux/userModal/userModalSlice";
 import { uploadAvatar } from "../../../../redux/auth/operations";
 import { updateUserName } from "../../../../redux/auth/authSlice";
-import { ModalContainer, SaveBtn, NameInput, InputWrapper, UserIcon, PencilIcon, Overlay, AvatarContainer, AvatarIcon, PlusIcon} from "./UserInfoModal.styled";
+import { CloseButton, ModalContainer, SaveBtn, NameInput, InputWrapper, UserIcon, PencilIcon, Overlay, AvatarContainer, AvatarIcon, PlusIcon} from "./UserInfoModal.styled";
 import icons from "../../../../images/icons.svg";
 
 
@@ -16,6 +16,19 @@ import icons from "../../../../images/icons.svg";
 export const UserInfoModal = () => {
   const [content, setContent] = useState("");
   const dispatch = useDispatch();
+
+  const handleEsc = (event) => {
+    if (event.keyCode === 27) {
+        dispatch(toggleUserInfoModal());
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener('keydown', handleEsc);
+    return () => {
+        window.removeEventListener('keydown', handleEsc);
+  };
+  }, []);
 
   const handleCloseModal = (e) => {  
     if (e.target === e.currentTarget) {
@@ -44,11 +57,14 @@ export const UserInfoModal = () => {
     dispatch(uploadAvatar(file));
   };
 
- 
+
 
   return (
     <Overlay onClick={handleCloseModal}>
       <ModalContainer>
+        <CloseButton onClick={handleCloseModal}>
+          <use href={icons + "#icon-avatar-plus"} />
+        </CloseButton>
       <input type="file" onChange={uploadAvatarHandler} ref={fileInputRef} style={{ display: 'none' }} />
       <AvatarContainer onClick={fileInputHandler}>
         <AvatarIcon>

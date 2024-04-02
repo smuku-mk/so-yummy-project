@@ -1,14 +1,29 @@
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 import { toggleLogOutModal } from "../../../../redux/userModal/userModalSlice";
-import { ModalContainer, Title, Overlay, ButtonsContainer, CancelBtn, LogOutBtn} from "./LogoutBtn.styled";
+import { CloseButton, ModalContainer, Title, Overlay, ButtonsContainer, CancelBtn, LogOutBtn} from "./LogoutBtn.styled";
 import { logOut } from "../../../../redux/auth/operations";
+import icons from "../../../../images/icons.svg";
 
 
 export const LogoutBtn = () => {
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
+
+  const handleEsc = (event) => {
+    if (event.keyCode === 27) {
+        dispatch(toggleLogOutModal());
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener('keydown', handleEsc);
+    return () => {
+        window.removeEventListener('keydown', handleEsc);
+  };
+  }, []);
 
   const handleCloseModal = (e) => {  
     e.stopPropagation();
@@ -24,6 +39,9 @@ export const LogoutBtn = () => {
   return (
     <Overlay onClick={handleCloseModal}>
       <ModalContainer>
+        <CloseButton onClick={handleCloseModal}>
+          <use href={icons + "#icon-avatar-plus"} />
+        </CloseButton>
         <Title>Are you sure you want to log out?
         </Title>
         <ButtonsContainer>

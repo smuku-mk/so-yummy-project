@@ -15,6 +15,15 @@ display: flex;
 flex-direction: column;
 align-items: center;
 `
+
+export const CloseButton = styled.button`
+position: absolute;
+width: 30px;
+height: 30px;
+top: 10px;
+right: 10px;
+`
+
 export const SaveBtn = styled.button`
 width: 282px;
 height: 45px;
@@ -25,6 +34,7 @@ font-size: 16px;
 border: none;
 margin-top: 24px;
 `
+
 export const Overlay = styled.div`
 position: fixed;
 top: 0;
@@ -51,6 +61,7 @@ position: absolute;
 top: 25%;
 left: 25%;
 `
+
 export const PlusIcon = styled.svg`
 width: 20px;
 height: 20px;
