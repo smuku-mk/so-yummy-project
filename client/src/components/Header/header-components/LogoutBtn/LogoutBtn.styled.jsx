@@ -6,8 +6,8 @@ top: 10%;
 right: 10%;
 background-color: white;
 border: 1px solid green;
-border-radius: 8px;
-padding: 30px;
+border-radius: 30px;
+padding: 44px 24px;
 `
 export const CloseButton = styled.button`
 position: absolute;
@@ -19,7 +19,9 @@ right: 10px;
 
 export const Title= styled.p`
 color: black;
-font-size: 20px;
+font-size: 14px;
+line-height: 18px;
+padding-bottom: 24px;
 cursor: pointer;   
 `
 export const Overlay = styled.div`
@@ -42,7 +44,8 @@ border-radius: 8px;
 color: white;
 font-size: 16px;
 border: none;
-margin-top: 16px;
+margin-left: 8px;
+
 `
 export const LogOutBtn = styled.button`
 width: 125px;
@@ -52,5 +55,5 @@ border-radius: 8px;
 color: white;
 font-size: 16px;
 border: none;
-margin-top: 16px;
+
 `

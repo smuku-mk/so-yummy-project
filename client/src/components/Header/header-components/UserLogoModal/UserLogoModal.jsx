@@ -1,6 +1,6 @@
 import { useDispatch } from "react-redux";
 import { toggleUserInfoModal, toggleUserLogoModal, toggleLogOutModal } from "../../../../redux/userModal/userModalSlice";
-import { PencilIcon, ModalContainer, Profile, LogOutBtn, Overlay} from "./UserLogoModal.styled";
+import { PencilIcon, ModalContainer, Profile, LogOutBtn, Overlay, Title} from "./UserLogoModal.styled";
 import icons from "../../../../images/icons.svg";
 
 
@@ -28,13 +28,13 @@ export const UserLogoModal = () => {
     return (
       <Overlay onClick={handleCloseModal}>
         <ModalContainer>
-          <div>
+          <Title>
             <Profile onClick={handleProfileClick}>Edit Profile</Profile>
             <PencilIcon>
             <use href={icons + "#icon-pencil"} />
             </PencilIcon>
-          </div>
-          <LogOutBtn onClick={handleLogOutClick}>Log Out</LogOutBtn>
+          </Title>
+          <LogOutBtn onClick={handleLogOutClick}>Log Out &#8594;</LogOutBtn>
         </ModalContainer>
       </Overlay>
       );

@@ -7,6 +7,9 @@ import { userLogoModal, logOutModal } from "../../../../redux/userModal/selector
 import { toggleUserLogoModal, resetModals } from "../../../../redux/userModal/userModalSlice";
 import { LogoutBtn } from "../LogoutBtn";
 
+//Style na mobilce gotowe
+
+
 export const UserLogo = () => {
 
   const dispatch = useDispatch();

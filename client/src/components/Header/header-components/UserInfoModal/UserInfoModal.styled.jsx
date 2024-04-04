@@ -8,7 +8,7 @@ right: 10%;
 width: 330px;
 background-color: white;
 border: 1px solid green;
-border-radius: 8px;
+border-radius: 24px;
 padding: 30px;
 z-index: 1000;
 display: flex;
