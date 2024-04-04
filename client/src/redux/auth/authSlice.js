@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { register, logIn } from "./operations";
+import { register, logIn, logOut, uploadAvatar } from "./operations";
 
 const initialState = {
   user: { name: null, email: null, userId: null },
@@ -12,6 +12,11 @@ const initialState = {
 const authSlice = createSlice({
   name: "auth",
   initialState,
+  reducers: {
+    updateUserName: (state, action) => {
+      state.user.name = action.payload;
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(register.fulfilled, (state, action) => {
@@ -29,8 +34,18 @@ const authSlice = createSlice({
       })
       .addCase(logIn.rejected, (state, action) => {
         state.error = action.payload.message;
+      })
+      .addCase(logOut.fulfilled, (state) => {
+        state.user = initialState.user;
+        state.token = initialState.token;
+        state.avatarURL = initialState.avatarURL;
+        state.isLoggedIn = initialState.isLoggedIn;
+      })
+      .addCase(uploadAvatar.fulfilled, (state, action) => {
+        state.avatarURL = action.payload.avatarURL;
       });
   },
 });
 
+export const { updateUserName } = authSlice.actions;
 export const authReducer = authSlice.reducer;
